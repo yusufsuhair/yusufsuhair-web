@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://yusufsuhair.com",
     title: "Yusuf Suhair - Developer Portfolio",
-    description: "Full-stack developer and software engineer specializing in modern web technologies, React, Next.js, TypeScript, and cloud solutions.",
+    description: "Yusuf Suhair's portfolio.",
     siteName: "Yusuf Suhair Portfolio",
     images: [
       {
