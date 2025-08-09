@@ -17,7 +17,7 @@ export default function ContactWidget() {
 
         <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12 px-4">
           <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-6 shadow-lg hover-lift border border-gray-200 dark:border-gray-700">
-            <Mail className="text-gray-600 mx-auto mb-3 sm:mb-4" size={28} className="sm:w-8 sm:h-8" />
+            <Mail className="text-gray-600 mx-auto mb-3 sm:mb-4 sm:w-8 sm:h-8" size={28} />
             <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 font-title">Email</h3>
             <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">
               <a
@@ -30,7 +30,7 @@ export default function ContactWidget() {
           </div>
 
           <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-6 shadow-lg hover-lift border border-gray-200 dark:border-gray-700">
-            <Github className="text-gray-900 dark:text-white mx-auto mb-3 sm:mb-4" size={28} className="sm:w-8 sm:h-8" />
+            <Github className="text-gray-900 dark:text-white mx-auto mb-3 sm:mb-4 sm:w-8 sm:h-8" size={28} />
             <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 font-title">GitHub</h3>
             <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">
               <a
@@ -45,7 +45,7 @@ export default function ContactWidget() {
           </div>
 
           <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-6 shadow-lg hover-lift border border-gray-200 dark:border-gray-700">
-            <Linkedin className="text-gray-600 mx-auto mb-3 sm:mb-4" size={28} className="sm:w-8 sm:h-8" />
+            <Linkedin className="text-gray-600 mx-auto mb-3 sm:mb-4 sm:w-8 sm:h-8" size={28} />
             <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 font-title">LinkedIn</h3>
             <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">
               <a

@@ -20,7 +20,6 @@ const projectsData: Project[] = [
   },
   {
     title: "MooMetrics Mobile",
-    url: "https://moometrics.io",
     description: "Crypto portfolio tracker and analytics platform for DeFi and NFT assets.",
     android: "https://play.google.com/store/apps/details?id=com.heifereum.moometrics_mobile&hl=en",
     ios: "https://apps.apple.com/my/app/moometrics-crypto-analytics/id6741414782",
@@ -65,7 +64,13 @@ const projectsData: Project[] = [
   {
     title: "Polarythm Landing Page",
     url: "https://polarythm.com",
-    description: "AI-Powered Business Intelligence Solutions",
+    description: "Polarythm -- AI-Powered Business Intelligence Solutions landing page",
+    tech: ["React", "Tone.js", "D3.js", "TypeScript"],
+  },
+  {
+    title: "Heifereum Landing Page",
+    url: "https://heifereum.com",
+    description: "Heifereum Technology Sdn. Bhd. landing page",
     tech: ["React", "Tone.js", "D3.js", "TypeScript"],
   },
   {
@@ -91,18 +96,18 @@ export default function ProjectsWidget() {
 
       <ul className="space-y-8">
         {projectsData.map((project, index) => (
-                      <li
-              key={index}
-              className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover-lift border border-gray-200 dark:border-gray-700 flex flex-col"
-            >
-              <div className="w-full h-2 bg-black" />
-              <div className="p-4 sm:p-6 flex-1">
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3 font-title">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-sm sm:text-base">
-                  {project.description}
-                </p>
+          <li
+            key={index}
+            className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover-lift border border-gray-200 dark:border-gray-700 flex flex-col"
+          >
+            <div className="w-full h-2 bg-black" />
+            <div className="p-4 sm:p-6 flex-1">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3 font-title">
+                {project.title}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-sm sm:text-base">
+                {project.description}
+              </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tech.map((tech, techIndex) => (
                   <span
@@ -113,39 +118,42 @@ export default function ProjectsWidget() {
                   </span>
                 ))}
               </div>
-              
-                                  {project.ios && project.android ? (
-                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
-                        <a
-                          href={project.ios}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-medium flex items-center gap-2 transition-colors text-sm sm:text-base"
-                        >
-                          <Smartphone size={14} className="sm:w-4 sm:h-4 text-black dark:text-black" />
-                          iOS App
-                        </a>
-                        <a
-                          href={project.android}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-medium flex items-center gap-2 transition-colors text-sm sm:text-base"
-                        >
-                          <Smartphone size={14} className="sm:w-4 sm:h-4 text-black dark:text-black" />
-                          Android App
-                        </a>
-                      </div>
-                    ) : (
-                      <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-medium flex items-center gap-2 transition-colors text-sm sm:text-base"
-                      >
-                        View Project
-                        <ExternalLink size={14} className="sm:w-4 sm:h-4 text-black dark:text-black" />
-                      </a>
-                    )}
+
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
+                {project.ios && (
+                  <a
+                    href={project.ios}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-medium flex items-center gap-2 transition-colors text-sm sm:text-base"
+                  >
+                    <Smartphone size={14} className="sm:w-4 sm:h-4 text-black dark:text-black" />
+                    iOS App
+                  </a>
+                )}
+                {project.android && (
+                  <a
+                    href={project.android}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-medium flex items-center gap-2 transition-colors text-sm sm:text-base"
+                  >
+                    <Smartphone size={14} className="sm:w-4 sm:h-4 text-black dark:text-black" />
+                    Android App
+                  </a>
+                )}
+                {project.url && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-medium flex items-center gap-2 transition-colors text-sm sm:text-base"
+                  >
+                    View Project
+                    <ExternalLink size={14} className="sm:w-4 sm:h-4 text-black dark:text-black" />
+                  </a>
+                )}
+              </div>
             </div>
           </li>
         ))}
