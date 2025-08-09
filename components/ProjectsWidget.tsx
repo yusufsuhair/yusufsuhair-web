@@ -85,24 +85,24 @@ const projectsData: Project[] = [
 export default function ProjectsWidget() {
   return (
     <section className="max-w-7xl mx-auto">
-      <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-12 text-center font-title">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8 sm:mb-12 text-center font-title">
         Projects
       </h2>
 
       <ul className="space-y-8">
         {projectsData.map((project, index) => (
-          <li
-            key={index}
-            className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover-lift border border-gray-200 dark:border-gray-700 flex flex-col"
-          >
-            <div className="w-full h-2 bg-black" />
-            <div className="p-6 flex-1">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 font-title">
-                {project.title}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                {project.description}
-              </p>
+                      <li
+              key={index}
+              className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover-lift border border-gray-200 dark:border-gray-700 flex flex-col"
+            >
+              <div className="w-full h-2 bg-black" />
+              <div className="p-4 sm:p-6 flex-1">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3 font-title">
+                  {project.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-sm sm:text-base">
+                  {project.description}
+                </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tech.map((tech, techIndex) => (
                   <span
@@ -114,38 +114,38 @@ export default function ProjectsWidget() {
                 ))}
               </div>
               
-              {project.ios && project.android ? (
-                <div className="flex gap-4">
-                  <a
-                    href={project.ios}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-medium flex items-center gap-2 transition-colors"
-                  >
-                    <Smartphone size={16} className="text-black dark:text-black" />
-                    iOS App
-                  </a>
-                  <a
-                    href={project.android}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-medium flex items-center gap-2 transition-colors"
-                  >
-                    <Smartphone size={16} className="text-black dark:text-black" />
-                    Android App
-                  </a>
-                </div>
-              ) : (
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-medium flex items-center gap-2 transition-colors"
-                >
-                  View Project
-                  <ExternalLink size={16} className="text-black dark:text-black" />
-                </a>
-              )}
+                                  {project.ios && project.android ? (
+                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
+                        <a
+                          href={project.ios}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-medium flex items-center gap-2 transition-colors text-sm sm:text-base"
+                        >
+                          <Smartphone size={14} className="sm:w-4 sm:h-4 text-black dark:text-black" />
+                          iOS App
+                        </a>
+                        <a
+                          href={project.android}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-medium flex items-center gap-2 transition-colors text-sm sm:text-base"
+                        >
+                          <Smartphone size={14} className="sm:w-4 sm:h-4 text-black dark:text-black" />
+                          Android App
+                        </a>
+                      </div>
+                    ) : (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-medium flex items-center gap-2 transition-colors text-sm sm:text-base"
+                      >
+                        View Project
+                        <ExternalLink size={14} className="sm:w-4 sm:h-4 text-black dark:text-black" />
+                      </a>
+                    )}
             </div>
           </li>
         ))}

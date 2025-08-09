@@ -72,7 +72,7 @@ const experienceData: Job[] = [
 export default function ExperienceWidget() {
   return (
     <section className="max-w-4xl mx-auto">
-      <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-12 text-center font-title">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8 sm:mb-12 text-center font-title">
         Experience
       </h2>
 
@@ -80,48 +80,48 @@ export default function ExperienceWidget() {
         {experienceData.map((job, index) => (
           <div
             key={index}
-            className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover-lift border border-gray-200 dark:border-gray-700"
+            className="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg hover-lift border border-gray-200 dark:border-gray-700"
           >
             <div className="flex justify-between items-start mb-4">
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 font-title">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2 font-title">
                   {job.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 font-medium text-lg">
+                <p className="text-gray-600 dark:text-gray-400 font-medium text-base sm:text-lg">
                   {job.company}
                 </p>
               </div>
-              <div className="text-right">
+              <div className="text-right text-sm sm:text-base">
                 <p className="text-gray-600 dark:text-gray-300 flex items-center gap-1">
-                  <Calendar size={16} />
+                  <Calendar size={14} className="sm:w-4 sm:h-4" />
                   {job.period}
                 </p>
                 <p className="text-gray-600 dark:text-gray-300 flex items-center gap-1">
-                  <MapPin size={16} />
+                  <MapPin size={14} className="sm:w-4 sm:h-4" />
                   {job.location}
                 </p>
               </div>
             </div>
 
-            <ul className="text-gray-600 dark:text-gray-300 mb-4 space-y-2">
-              {job.description.map((desc, descIndex) => (
-                <li key={descIndex} className="flex items-start gap-2 leading-relaxed">
-                  <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mt-2 flex-shrink-0"></span>
-                  <span>{desc}</span>
-                </li>
-              ))}
-            </ul>
+                              <ul className="text-gray-600 dark:text-gray-300 mb-4 space-y-2 text-sm sm:text-base">
+                    {job.description.map((desc, descIndex) => (
+                      <li key={descIndex} className="flex items-start gap-2 leading-relaxed">
+                        <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mt-2 flex-shrink-0"></span>
+                        <span>{desc}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-            <div className="flex flex-wrap gap-2">
-              {job.tech.map((tech, techIndex) => (
-                <span
-                  key={techIndex}
-                  className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
+                              <div className="flex flex-wrap gap-2">
+                    {job.tech.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="px-2 sm:px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
           </div>
         ))}
       </div>

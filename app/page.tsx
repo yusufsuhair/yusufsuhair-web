@@ -8,11 +8,10 @@ import {
   X
 } from "lucide-react";
 import { useState } from "react";
-import HomeWidget from "../components/HomeWidget";
 import AboutWidget from "../components/AboutWidget";
 import ExperienceWidget from "../components/ExperienceWidget";
+import HomeWidget from "../components/HomeWidget";
 import ProjectsWidget from "../components/ProjectsWidget";
-import ContactWidget from "../components/ContactWidget";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("home");
@@ -23,7 +22,6 @@ export default function Home() {
     { id: "about", label: "About" },
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
-    { id: "contact", label: "Contact" },
   ];
 
   const toggleSidebar = () => {
@@ -118,11 +116,6 @@ export default function Home() {
         {/* Projects Section */}
         {activeSection === "projects" && (
           <ProjectsWidget />
-        )}
-
-        {/* Contact Section */}
-        {activeSection === "contact" && (
-          <ContactWidget />
         )}
       </main>
     </div>
