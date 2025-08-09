@@ -1,6 +1,6 @@
 "use client";
 
-import { Code, Globe, Smartphone, Cpu } from "lucide-react";
+import { Code, Cpu, Globe, Smartphone } from "lucide-react";
 
 export default function AboutWidget() {
   return (
@@ -22,11 +22,6 @@ export default function AboutWidget() {
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
             I'm a passionate full-stack developer with a love for creating beautiful, functional, and scalable applications.
             With expertise in modern web technologies, I bring ideas to life through clean code and intuitive user experiences.
-          </p>
-
-          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-            My journey in software development has been driven by curiosity and a desire to solve complex problems.
-            I specialize in React, Node.js, Python, and cloud technologies, always staying current with industry best practices.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-6 justify-center">
