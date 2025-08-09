@@ -327,6 +327,18 @@ export default function Home() {
                   tech: ["Flutter"],
                 },
                 {
+                  title: "Fake Video Call Apps",
+                  description: "A suite of fake video call apps featuring celebrities, athletes, and public figures, amassing over 3 million installs across 50+ apps.",
+                  android: "https://play.google.com/store/apps/developer?id=Yusuf+Suhair",
+                  tech: ["Flutter"],
+                },
+                {
+                  title: "Fake Live Apps",
+                  description: "A popular suite of apps that simulate live video streams with celebrities, athletes, and public figures, reaching over 3 million installs across 50+ apps. Includes templates to fake live streams in the style of Twitch, Instagram, TikTok, Facebook, and more.",
+                  android: "https://play.google.com/store/apps/details?id=com.yusufsuhair.fake_live",
+                  tech: ["Flutter"],
+                },
+                {
                   title: "Dialektika",
                   url: "https://dialektika.io",
                   description: "AI-powered debate and argumentation platform for structured discussions.",
