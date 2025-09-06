@@ -46,7 +46,13 @@ const projectsData: Project[] = [
   {
     title: "$WALID Memecoin",
     url: "https://walid.fun",
-    description: "Personal website and creative playground for interactive web experiments.",
+    description: "$WALID Memecoin",
+    tech: ["Next.js", "Framer Motion", "Vercel", "TypeScript"],
+  },
+  {
+    title: "$TSI Memecoin - Trump Survive Index",
+    url: "https://trump-survive.vercel.app",
+    description: "$TSI - Trump Survive Index Memecoin",
     tech: ["Next.js", "Framer Motion", "Vercel", "TypeScript"],
   },
   {
@@ -75,13 +81,13 @@ const projectsData: Project[] = [
   },
   {
     title: "Ejoe Swap (Discontinued)",
-    url: "https://app.ejoe.network",
+    url: "https://ejoe-swap-pancakeswap.vercel.app",
     description: "Decentralized crypto swap platform inspired by PancakeSwap, enabling token exchanges on Ejoe Network. (Project discontinued)",
     tech: ["React", "Solidity", "Web3.js"],
   },
   {
-    title: "Ejoe NFT Marketplace (Discontinued)",
-    url: "https://nft.ejoe.network",
+    title: "Ejoe NFT Marketplace",
+    url: "https://ejoe-nft.vercel.app",
     description: "A decentralized NFT marketplace for the Ejoe Network, allowing users to mint, buy, and sell NFTs with a familiar OpenSea-like experience. (Project discontinued)",
     tech: ["React", "Solidity", "Web3.js"],
   },
