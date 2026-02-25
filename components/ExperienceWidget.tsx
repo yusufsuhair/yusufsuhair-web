@@ -13,9 +13,9 @@ interface Job {
 
 const experienceData: Job[] = [
   {
-    title: "Co-Founder & CTO",
+    title: "Founding Engineer",
     company: "Heifereum Technology Sdn Bhd",
-    period: "March 2024 - Present",
+    period: "March 2024 - January 2026",
     location: "Kuala Lumpur, Malaysia",
     description: [
       "Developed and deployed multiple Web3 applications including NFT marketplace, Layer 2 features, memecoin launch, and staking systems using Solidity and Next.js",
