@@ -1,7 +1,5 @@
 "use client";
 
-import { Calendar, MapPin } from "lucide-react";
-
 interface Job {
   title: string;
   company: string;
@@ -15,115 +13,111 @@ const experienceData: Job[] = [
   {
     title: "Founding Engineer",
     company: "Heifereum Technology Sdn Bhd",
-    period: "March 2024 - January 2026",
+    period: "March 2024 — January 2026",
     location: "Kuala Lumpur, Malaysia",
     description: [
       "Developed and deployed multiple Web3 applications including NFT marketplace, Layer 2 features, memecoin launch, and staking systems using Solidity and Next.js",
-      "Built AlFiqh.com, an AI-powered platform for Islamic knowledge using Python, Next.js, and NestJS with GPT and NLP integration",
+      "Built AIFiqh.com, an AI-powered platform for Islamic knowledge using Python, Next.js, and NestJS with GPT and NLP integration",
       "Engineered MooMetrics.io, a crypto analytics platform with real-time data and AI-based market insights using Python, Next.js, and Node.js",
       "Contributed to Dialektika.io, an AI tool that analyzes social content and sentiment for data-driven decision-making using Python, Next.js, and NestJS",
       "Built an e-commerce system from scratch using MedusaJS and Next.js with multi-vendor and custom admin panel support",
       "Developed BoostFundCoin.org, a crypto-based crowdfunding platform with Web3 integration using Next.js",
       "Created AI-powered face recognition for NuuhaBeauty.com to detect acne and recommend skincare using computer vision and deep learning",
-      "Managed CI/CD pipelines and server infrastructure for smooth deployment and operational stability across all projects"
+      "Managed CI/CD pipelines and server infrastructure for smooth deployment and operational stability across all projects",
     ],
-    tech: ["Python", "Solidity", "JavaScript", "Next.js", "NestJS", "GPT", "NLP", "Node.js", "MedusaJS", "Web3", "Computer Vision", "Deep Learning", "CI/CD"]
+    tech: ["Python", "Solidity", "Next.js", "NestJS", "GPT", "NLP", "Node.js", "MedusaJS", "Web3", "Computer Vision", "CI/CD"],
   },
   {
     title: "Full-Stack Developer",
     company: "SWIFT",
-    period: "March 2022 - March 2024",
+    period: "March 2022 — March 2024",
     location: "Bangsar, Malaysia",
     description: [
       "Maintained SWIFT website having active users of over 11,000 banks, financial institutions, and corporations in more than 200 countries and territories",
       "Developed full-stack web applications (JavaEE, Spring MVC, Spring Boot, AngularJS, Angular) including unit testings",
-      "Worked on CI/CD such as Jenkins, AWS, SSL, Linux, and Ansible"
+      "Worked on CI/CD such as Jenkins, AWS, SSL, Linux, and Ansible",
     ],
-    tech: ["JavaEE", "Spring MVC", "Spring Boot", "AngularJS", "Angular", "Jenkins", "AWS", "SSL", "Linux", "Ansible"]
+    tech: ["JavaEE", "Spring MVC", "Spring Boot", "AngularJS", "Angular", "Jenkins", "AWS", "Linux", "Ansible"],
   },
   {
     title: "Mobile Developer",
-    company: "Google Play Store",
-    period: "August 2019 - Present",
+    company: "Google Play Store (Freelance)",
+    period: "August 2019 — Present",
     location: "Remote",
     description: [
       "Designed UI/UX using Adobe XD",
       "Developed mobile applications based on client requirements using architecture patterns such as MVVM, MVC, and MVP",
       "Published 50+ Android applications on Google Play Store with 5M+ installations",
       "Worked on various freelancing mobile applications, one of the clients was Education Malaysia Indonesia developing a mobile app to promote Malaysian colleges",
-      "Android using Java & Kotlin, cross-platform using Flutter"
     ],
-    tech: ["Java", "Kotlin", "Flutter", "Adobe XD", "MVVM", "MVC", "MVP", "Android"]
+    tech: ["Java", "Kotlin", "Flutter", "Adobe XD", "MVVM", "Android"],
   },
   {
     title: "Full-Stack Developer",
     company: "SICPA",
-    period: "December 2020 - February 2022",
+    period: "December 2020 — February 2022",
     location: "Cyberjaya, Malaysia",
     description: [
-      "Developed full-stack web applications using various technologies such as Apache Kafka, gRPC, Spring Boot, Angular, Oracle, and Docker",
+      "Developed full-stack web applications using Apache Kafka, gRPC, Spring Boot, Angular, Oracle, and Docker",
       "Worked on both monolithic and microservice applications",
-      "Managed on deployments using Docker, Jenkins, Wildfly, JBoss"
+      "Managed deployments using Docker, Jenkins, Wildfly, JBoss",
     ],
-    tech: ["Apache Kafka", "gRPC", "Spring Boot", "Angular", "Oracle", "Docker", "Jenkins", "Wildfly", "JBoss", "Microservices"]
-  }
+    tech: ["Apache Kafka", "gRPC", "Spring Boot", "Angular", "Oracle", "Docker", "Jenkins", "Microservices"],
+  },
 ];
 
 export default function ExperienceWidget() {
   return (
-    <section className="max-w-4xl mx-auto">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8 sm:mb-12 text-center font-title">
-        Experience
-      </h2>
+    <section id="experience" className="py-24">
+      <div className="max-w-3xl mx-auto px-6 lg:px-8">
+        <div className="mb-16">
+          <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-white mb-4">
+            Experience
+          </h2>
+        </div>
 
-      <div className="space-y-8">
-        {experienceData.map((job, index) => (
-          <div
-            key={index}
-            className="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg hover-lift border border-gray-200 dark:border-gray-700"
-          >
-            <div className="flex justify-between items-start mb-4">
-              <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2 font-title">
-                  {job.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 font-medium text-base sm:text-lg">
-                  {job.company}
-                </p>
-              </div>
-              <div className="text-right text-sm sm:text-base">
-                <p className="text-gray-600 dark:text-gray-300 flex items-center gap-1">
-                  <Calendar size={14} className="sm:w-4 sm:h-4" />
-                  {job.period}
-                </p>
-                <p className="text-gray-600 dark:text-gray-300 flex items-center gap-1">
-                  <MapPin size={14} className="sm:w-4 sm:h-4" />
-                  {job.location}
-                </p>
+        <div className="relative border-l border-white/10 ml-3 md:ml-0">
+          {experienceData.map((job, index) => (
+            <div key={index} className="mb-12 ml-8 relative group">
+              <div className="absolute -left-[37px] top-1.5 h-3 w-3 rounded-full bg-zinc-600 ring-4 ring-[#050505] group-hover:bg-white group-hover:shadow-[0_0_15px_rgba(255,255,255,0.6)] transition-all duration-300" />
+
+              <div className="p-6 rounded-2xl bg-[#0a0a0a] border border-white/5 group-hover:border-white/10 transition-colors backdrop-blur-sm">
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-4 gap-2">
+                  <div>
+                    <h3 className="text-lg font-medium text-white tracking-tight">{job.title}</h3>
+                    <div className="text-sm text-zinc-400 mt-1">{job.company}</div>
+                  </div>
+                  <div className="sm:text-right flex-shrink-0">
+                    <span className="text-xs text-zinc-500 font-mono bg-white/5 px-2 py-1 rounded whitespace-nowrap">
+                      {job.period}
+                    </span>
+                    <div className="text-xs text-zinc-600 mt-1.5">{job.location}</div>
+                  </div>
+                </div>
+
+                <ul className="space-y-2 text-sm text-zinc-400 mb-5 list-none">
+                  {job.description.map((desc, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-zinc-600 mt-0.5 flex-shrink-0">→</span>
+                      {desc}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-wrap gap-x-3 gap-y-1 pt-4 border-t border-white/5">
+                  {job.tech.map((tech, i) => (
+                    <span key={i} className="text-xs text-zinc-400">
+                      {tech}
+                      {i < job.tech.length - 1 && (
+                        <span className="ml-3 text-zinc-700">·</span>
+                      )}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-
-                              <ul className="text-gray-600 dark:text-gray-300 mb-4 space-y-2 text-sm sm:text-base">
-                    {job.description.map((desc, descIndex) => (
-                      <li key={descIndex} className="flex items-start gap-2 leading-relaxed">
-                        <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mt-2 flex-shrink-0"></span>
-                        <span>{desc}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                              <div className="flex flex-wrap gap-2">
-                    {job.tech.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-2 sm:px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

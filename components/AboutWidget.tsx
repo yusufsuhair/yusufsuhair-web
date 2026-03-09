@@ -1,47 +1,61 @@
 "use client";
 
-import { Code, Cpu, Globe, Smartphone } from "lucide-react";
+const specializations = [
+  "Full-Stack Development",
+  "Web3 & Blockchain",
+  "Mobile Development (Flutter)",
+  "AI/ML Integration",
+  "DevSecOps & CI/CD",
+  "Smart Contracts (Solidity)",
+];
 
 export default function AboutWidget() {
   return (
-    <section className="max-w-6xl mx-auto flex flex-col items-center justify-center">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8 sm:mb-12 text-center font-title">
-        About Me
-      </h2>
+    <section id="about" className="py-24 relative">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-      <div className="flex flex-col items-center justify-center gap-12 w-full">
-        <div className="flex justify-center">
-          <img
-            src="/yusufsuhair.jpeg"
-            alt="Yusuf Suhair"
-            className="rounded-2xl shadow-lg w-64 h-64 sm:w-80 sm:h-80 object-cover border-4 border-gray-200 dark:border-gray-700"
-          />
-        </div>
-
-        <div className="space-y-6 max-w-2xl text-center px-4">
-          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-            I'm a passionate full-stack developer with a love for creating beautiful, functional, and scalable applications.
-            With expertise in modern web technologies, I bring ideas to life through clean code and intuitive user experiences.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-6 justify-center">
-            <div className="flex items-center gap-2 sm:gap-3 justify-center">
-              <Code className="text-gray-600 sm:w-5 sm:h-5" size={18} />
-              <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300">Full-Stack Development</span>
-            </div>
-            <div className="flex items-center gap-2 sm:gap-3 justify-center">
-              <Globe className="text-gray-600 sm:w-5 sm:h-5" size={18} />
-              <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300">Web 3.0 & Blockchain</span>
-            </div>
-            <div className="flex items-center gap-2 sm:gap-3 justify-center">
-              <Smartphone className="text-gray-600 sm:w-5 sm:h-5" size={18} />
-              <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300">Mobile Development</span>
-            </div>
-            <div className="flex items-center gap-2 sm:gap-3 justify-center">
-              <Cpu className="text-gray-600 sm:w-5 sm:h-5" size={18} />
-              <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300">DevSecOps</span>
+          {/* Photo */}
+          <div className="flex justify-center lg:justify-start">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 rounded-2xl blur-2xl opacity-60" />
+              <img
+                src="/yusufsuhair.jpg"
+                alt="Yusuf Suhair"
+                className="relative rounded-2xl w-72 h-72 sm:w-80 sm:h-80 object-cover border border-white/10 shadow-2xl"
+              />
             </div>
           </div>
+
+          {/* Content */}
+          <div className="space-y-6">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-white mb-4">
+                About Me
+              </h2>
+              <p className="text-zinc-400 text-base leading-relaxed mb-4">
+                I&apos;m a passionate full-stack developer with 5+ years of experience building
+                beautiful, functional, and scalable applications. From crafting AI-powered platforms
+                to deploying Web3 ecosystems and shipping 50+ mobile apps with 5M+ installs —
+                I bring ideas to life through clean code and intuitive user experiences.
+              </p>
+              <p className="text-zinc-500 text-sm leading-relaxed">
+                Previously Founding Engineer at Heifereum Technology and a full-stack developer at
+                SWIFT and SICPA, working across fintech, enterprise, and consumer-facing products
+                in Malaysia and globally.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              {specializations.map((skill) => (
+                <div key={skill} className="flex items-center gap-2 text-sm text-zinc-300">
+                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-500 flex-shrink-0" />
+                  {skill}
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

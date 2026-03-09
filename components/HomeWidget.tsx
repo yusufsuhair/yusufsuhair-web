@@ -1,40 +1,119 @@
 "use client";
 
-import { Download } from "lucide-react";
+import { Download, Github } from "lucide-react";
 
-interface HomeWidgetProps {
-  onViewProjects: () => void;
-}
-
-export default function HomeWidget({ onViewProjects }: HomeWidgetProps) {
+export default function HomeWidget() {
   return (
-    <section className="min-h-screen flex items-center justify-center">
-      <div className="text-center max-w-4xl">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 font-title">
-          Hello, I'm{" "}
-          <span className="gradient-text">Yusuf Suhair</span>
-        </h1>
+    <section className="min-h-screen flex items-center pt-24 pb-16">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
 
-        <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-          Software Engineer
-        </p>
+          {/* Left: Content */}
+          <div className="flex flex-col items-start space-y-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-zinc-400 backdrop-blur-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+              Available for new opportunities
+            </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
-          <a 
-            href="/yusuf-suhair-cv.pdf" 
-            download="Yusuf-Suhair-CV.pdf"
-            className="bg-gradient-to-r from-gray-800 to-black hover:from-gray-700 hover:to-gray-800 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-gray-500/25 hover:shadow-xl transition-all duration-300 hover-lift text-sm sm:text-base"
-          >
-            <Download size={18} className="sm:w-5 sm:h-5" />
-            Download CV
-          </a>
-          <button
-            className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-gray-800 hover:text-gray-800 px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 hover-lift text-sm sm:text-base"
-            onClick={onViewProjects}
-            type="button"
-          >
-            View Projects
-          </button>
+            <div className="space-y-4">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-[1.1]">
+                Fullstack Developer crafting{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-zinc-600">
+                  scalable systems
+                </span>
+                .
+              </h1>
+              <p className="text-lg md:text-xl text-zinc-400 max-w-lg leading-relaxed">
+                Specializing in backend engineering, Web3, AI-powered platforms, and mobile development — 5+ years building products used by millions.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-4 pt-4">
+              <a
+                href="/yusuf-suhair-cv.pdf"
+                download="Yusuf-Suhair-CV.pdf"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium text-black bg-white rounded-full hover:bg-zinc-200 hover:scale-[1.02] transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+              >
+                <Download size={16} />
+                Download CV
+              </a>
+              <a
+                href="https://github.com/yusufsuhair"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium text-white bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
+              >
+                <Github size={16} />
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          {/* Right: Terminal Visual */}
+          <div className="relative lg:ml-auto w-full max-w-lg group">
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 rounded-2xl blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-50" />
+
+            <div className="relative rounded-2xl bg-[#0a0a0a] border border-white/10 shadow-2xl overflow-hidden">
+              {/* Terminal Header */}
+              <div className="flex items-center px-4 py-3 border-b border-white/5 bg-[#0f0f0f]">
+                <div className="flex space-x-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                </div>
+                <div className="mx-auto text-xs text-zinc-500 font-mono">yusuf@dev-env:~</div>
+              </div>
+
+              {/* Terminal Body */}
+              <div className="p-6 font-mono text-sm space-y-3">
+                <div>
+                  <span className="text-purple-400">const</span>{" "}
+                  <span className="text-blue-400">developer</span>{" "}
+                  <span className="text-purple-400">=</span> {"{"}
+                </div>
+                <div className="pl-4 space-y-1">
+                  <div>
+                    <span className="text-zinc-400">name:</span>{" "}
+                    <span className="text-green-400">&apos;Yusuf Suhair&apos;</span>,
+                  </div>
+                  <div>
+                    <span className="text-zinc-400">role:</span>{" "}
+                    <span className="text-green-400">&apos;Fullstack Engineer&apos;</span>,
+                  </div>
+                  <div>
+                    <span className="text-zinc-400">stack:</span> [
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-green-400">&apos;Next.js&apos;</span>,{" "}
+                    <span className="text-green-400">&apos;Python&apos;</span>,{" "}
+                    <span className="text-green-400">&apos;Solidity&apos;</span>,
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-green-400">&apos;Flutter&apos;</span>,{" "}
+                    <span className="text-green-400">&apos;Spring Boot&apos;</span>
+                  </div>
+                  <div>],</div>
+                  <div>
+                    <span className="text-zinc-400">focus:</span> [
+                    <span className="text-green-400">&apos;Web3&apos;</span>,{" "}
+                    <span className="text-green-400">&apos;AI/ML&apos;</span>,{" "}
+                    <span className="text-green-400">&apos;Mobile&apos;</span>],
+                  </div>
+                  <div>
+                    <span className="text-zinc-400">location:</span>{" "}
+                    <span className="text-green-400">&apos;Kuala Lumpur, MY&apos;</span>
+                  </div>
+                </div>
+                <div>{"}"}</div>
+                <div className="flex items-center gap-2 pt-2">
+                  <span className="text-green-400">➜</span>
+                  <span className="text-blue-400">~</span>
+                  <span className="animate-pulse w-2 h-4 bg-zinc-400 inline-block" />
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

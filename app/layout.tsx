@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
-import { Raleway, Open_Sans } from "next/font/google";
+import { Inter, Raleway } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 const raleway = Raleway({
   subsets: ["latin"],
   variable: "--font-raleway",
 });
 
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  variable: "--font-open-sans",
-});
-
 export const metadata: Metadata = {
-  title: "Yusuf Suhair - Developer Portfolio",
-  description: "Full-stack developer and software engineer specializing in modern web technologies, React, Next.js, TypeScript, and cloud solutions. View my projects and experience.",
+  metadataBase: new URL("https://yusufsuhair.com"),
+  title: "Yusuf Suhair | Fullstack Developer",
+  description: "Full-stack developer and software engineer specializing in modern web technologies, React, Next.js, TypeScript, Web3, and cloud solutions. View my projects and experience.",
   keywords: [
     "Yusuf Suhair",
     "developer",
@@ -28,7 +29,10 @@ export const metadata: Metadata = {
     "portfolio",
     "frontend",
     "backend",
-    "cloud computing"
+    "cloud computing",
+    "Web3",
+    "Blockchain",
+    "Flutter",
   ],
   authors: [{ name: "Yusuf Suhair" }],
   creator: "Yusuf Suhair",
@@ -48,12 +52,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://yusufsuhair.com",
-    title: "Yusuf Suhair - Developer Portfolio",
-    description: "Yusuf Suhair's portfolio.",
+    title: "Yusuf Suhair | Fullstack Developer",
+    description: "Full-stack developer specializing in Web3, AI-powered platforms, and mobile development.",
     siteName: "Yusuf Suhair Portfolio",
     images: [
       {
-        url: "/yusufsuhair.jpeg",
+        url: "/yusufsuhair.jpg",
         width: 1200,
         height: 630,
         alt: "Yusuf Suhair - Developer Portfolio",
@@ -62,9 +66,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yusuf Suhair - Developer Portfolio",
-    description: "Full-stack developer and software engineer specializing in modern web technologies",
-    images: ["/yusufsuhair.jpeg"],
+    title: "Yusuf Suhair | Fullstack Developer",
+    description: "Full-stack developer specializing in modern web technologies",
+    images: ["/yusufsuhair.jpg"],
     creator: "@yusufsuhair",
   },
   alternates: {
@@ -73,8 +77,8 @@ export const metadata: Metadata = {
   category: "technology",
   classification: "portfolio",
   other: {
-    "theme-color": "#000000",
-    "color-scheme": "dark light",
+    "theme-color": "#050505",
+    "color-scheme": "dark",
   },
 };
 
@@ -84,8 +88,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body suppressHydrationWarning className={`${raleway.variable} ${openSans.variable} font-open-sans antialiased`}>
+    <html lang="en" className="scroll-smooth dark">
+      <body
+        suppressHydrationWarning
+        className={`${inter.variable} ${raleway.variable} antialiased`}
+      >
         {children}
       </body>
     </html>

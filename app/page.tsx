@@ -1,122 +1,66 @@
 "use client";
 
-import {
-  Github,
-  Linkedin,
-  Mail,
-  Menu,
-  X
-} from "lucide-react";
-import { useState } from "react";
-import AboutWidget from "../components/AboutWidget";
-import ExperienceWidget from "../components/ExperienceWidget";
-import HomeWidget from "../components/HomeWidget";
-import ProjectsWidget from "../components/ProjectsWidget";
+import AboutWidget from "@/components/AboutWidget";
+import ContactWidget from "@/components/ContactWidget";
+import ExperienceWidget from "@/components/ExperienceWidget";
+import HomeWidget from "@/components/HomeWidget";
+import ProjectsWidget from "@/components/ProjectsWidget";
+import SkillsWidget from "@/components/SkillsWidget";
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState("home");
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  const sections = [
-    { id: "home", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "experience", label: "Experience" },
-    { id: "projects", label: "Projects" },
-  ];
-
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
-
-  const closeSidebar = () => {
-    setSidebarOpen(false);
-  };
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      {/* Mobile Menu Button */}
-      <button
-        onClick={toggleSidebar}
-        className="fixed top-4 left-4 z-60 p-3 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-xl border border-gray-200/50 dark:border-gray-700/50 lg:hidden"
-      >
-        {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
-      </button>
+    <div
+      className="min-h-screen bg-[#050505] text-zinc-300 antialiased selection:bg-white/20 selection:text-white"
+      style={{ fontFamily: "var(--font-inter), sans-serif" }}
+    >
+      {/* Background Ambient Glow */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-blue-500/10 blur-[120px] rounded-full mix-blend-screen" />
+        <div className="absolute top-[20%] right-[-10%] w-[40%] h-[40%] bg-purple-500/10 blur-[120px] rounded-full mix-blend-screen" />
+      </div>
 
       {/* Navigation */}
-      <nav className={`fixed top-0 left-0 h-full w-80 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-r border-gray-200/50 dark:border-gray-700/50 z-50 transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        } lg:translate-x-0`}>
-        <div className="p-8">
-          <div className="text-3xl font-bold gradient-text mb-12 font-title">
-
+      <nav className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-[#050505]/70 border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+          <a href="#" className="text-xl font-medium tracking-tighter text-white">
+            YS.
+          </a>
+          <div className="hidden md:flex items-center gap-8 text-sm">
+            <a href="#about" className="text-zinc-400 hover:text-white transition-colors">
+              About
+            </a>
+            <a href="#projects" className="text-zinc-400 hover:text-white transition-colors">
+              Projects
+            </a>
+            <a href="#experience" className="text-zinc-400 hover:text-white transition-colors">
+              Experience
+            </a>
+            <a href="#skills" className="text-zinc-400 hover:text-white transition-colors">
+              Skills
+            </a>
           </div>
-
-          <ul className="space-y-2">
-            {sections.map((section) => (
-              <li key={section.id}>
-                <button
-                  onClick={() => {
-                    setActiveSection(section.id);
-                    closeSidebar(); // Close sidebar on mobile after selection
-                  }}
-                  className={`w-full text-left px-6 py-4 rounded-xl transition-all duration-300 flex items-center gap-3 group ${activeSection === section.id
-                    ? "bg-gradient-to-r from-gray-800 to-black text-white shadow-lg shadow-gray-500/25 dark:from-gray-700 dark:to-gray-800"
-                    : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white"
-                    }`}
-                >
-                  <span className="font-medium">{section.label}</span>
-                  {activeSection === section.id && (
-                    <div className="w-1 h-6 bg-white rounded-full ml-auto" />
-                  )}
-                </button>
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-            <div className="flex space-x-4">
-              <a href="mailto:yusufmohdsuhair@gmail.com" className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                <Mail size={20} className="text-gray-600 dark:text-gray-300" />
-              </a>
-              <a href="https://github.com/yusufsuhair" className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                <Github size={20} className="text-gray-600 dark:text-gray-300" />
-              </a>
-              <a href="https://linkedin.com/in/yusufsuhair" className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                <Linkedin size={20} className="text-gray-600 dark:text-gray-300" />
-              </a>
-            </div>
-          </div>
+          <a
+            href="#contact"
+            className="px-4 py-2 text-sm font-medium text-black bg-white rounded-full hover:scale-105 transition-transform duration-300"
+          >
+            Let&apos;s talk
+          </a>
         </div>
       </nav>
 
-      {/* Overlay for mobile */}
-      {sidebarOpen && (
-        <div
-          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 lg:hidden"
-          onClick={closeSidebar}
-        />
-      )}
+      <main className="relative z-10">
+        <HomeWidget />
+        <AboutWidget />
+        <ProjectsWidget />
+        <ExperienceWidget />
+        <SkillsWidget />
+        <ContactWidget />
 
-      {/* Main Content */}
-      <main className="lg:ml-80 p-4 lg:p-8 pt-16 lg:pt-8">
-        {/* Hero Section */}
-        {activeSection === "home" && (
-          <HomeWidget onViewProjects={() => setActiveSection("projects")} />
-        )}
-
-        {/* About Section */}
-        {activeSection === "about" && (
-          <AboutWidget />
-        )}
-
-        {/* Experience Section */}
-        {activeSection === "experience" && (
-          <ExperienceWidget />
-        )}
-
-        {/* Projects Section */}
-        {activeSection === "projects" && (
-          <ProjectsWidget />
-        )}
+        <footer className="py-8 border-t border-white/5 text-center">
+          <p className="text-xs text-zinc-600 font-mono uppercase tracking-widest">
+            © {new Date().getFullYear()} Yusuf Suhair. All rights reserved.
+          </p>
+        </footer>
       </main>
     </div>
   );
