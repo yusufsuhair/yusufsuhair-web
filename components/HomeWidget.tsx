@@ -17,14 +17,14 @@ export default function HomeWidget() {
 
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-[1.1]">
-                Fullstack Developer crafting{" "}
+                Fullstack & DevSecOps Engineer crafting{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-zinc-600">
                   scalable systems
                 </span>
                 .
               </h1>
               <p className="text-lg md:text-xl text-zinc-400 max-w-lg leading-relaxed">
-                Specializing in backend engineering, Web3, AI-powered platforms, and mobile development — 5+ years building products used by millions.
+                Specializing in backend engineering, Web3, AI-powered platforms, mobile development, and DevSecOps — CI/CD pipelines, containerization, Kubernetes, and secure deployments — 5+ years building products used by millions.
               </p>
             </div>
 
@@ -78,7 +78,7 @@ export default function HomeWidget() {
                   </div>
                   <div>
                     <span className="text-zinc-400">role:</span>{" "}
-                    <span className="text-green-400">&apos;Fullstack Engineer&apos;</span>,
+                    <span className="text-green-400">&apos;Fullstack & DevSecOps Engineer&apos;</span>,
                   </div>
                   <div>
                     <span className="text-zinc-400">stack:</span> [
@@ -90,14 +90,40 @@ export default function HomeWidget() {
                   </div>
                   <div className="pl-4">
                     <span className="text-green-400">&apos;Flutter&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Spring Boot&apos;</span>
+                    <span className="text-green-400">&apos;Spring Boot&apos;</span>,
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-green-400">&apos;Docker&apos;</span>,{" "}
+                    <span className="text-green-400">&apos;Kubernetes&apos;</span>,{" "}
+                    <span className="text-green-400">&apos;Ansible&apos;</span>
+                  </div>
+                  <div>],</div>
+                  <div>
+                    <span className="text-zinc-400">devops:</span> [
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-green-400">&apos;CI/CD&apos;</span>,{" "}
+                    <span className="text-green-400">&apos;Containerization&apos;</span>,
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-green-400">&apos;Kubernetes&apos;</span>,{" "}
+                    <span className="text-green-400">&apos;Terraform&apos;</span>,
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-green-400">&apos;GitHub Actions&apos;</span>,{" "}
+                    <span className="text-green-400">&apos;Jenkins&apos;</span>,
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-green-400">&apos;Ansible&apos;</span>,{" "}
+                    <span className="text-green-400">&apos;Deployment&apos;</span>
                   </div>
                   <div>],</div>
                   <div>
                     <span className="text-zinc-400">focus:</span> [
                     <span className="text-green-400">&apos;Web3&apos;</span>,{" "}
                     <span className="text-green-400">&apos;AI/ML&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Mobile&apos;</span>],
+                    <span className="text-green-400">&apos;Mobile&apos;</span>,{" "}
+                    <span className="text-green-400">&apos;DevSecOps&apos;</span>],
                   </div>
                   <div>
                     <span className="text-zinc-400">location:</span>{" "}
