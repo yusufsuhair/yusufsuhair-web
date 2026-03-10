@@ -1,7 +1,15 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx next:*)"
+      "Bash(npx next:*)",
+      "WebFetch(domain:youtube.com)",
+      "WebFetch(domain:www.youtube.com)",
+      "Bash(ls public/ && which node && node --version && npx playwright --version 2>/dev/null || echo \"playwright not available\")",
+      "Bash(node /tmp/screenshot.mjs 2>&1)",
+      "Bash(which npx:*)",
+      "Bash(npx playwright:*)",
+      "Bash(ls -lh /Users/yusufsuhair/Documents/yusufsuhair-web/public/screenshot-*.jpg 2>/dev/null)"
     ]
-  }
+  },
+  "bypassPermissions": true
 }

@@ -6,6 +6,7 @@ import ExperienceWidget from "@/components/ExperienceWidget";
 import HomeWidget from "@/components/HomeWidget";
 import ProjectsWidget from "@/components/ProjectsWidget";
 import SkillsWidget from "@/components/SkillsWidget";
+import YoutubeWidget from "@/components/YoutubeWidget";
 
 export default function Home() {
   return (
@@ -38,6 +39,9 @@ export default function Home() {
             <a href="#skills" className="text-zinc-400 hover:text-white transition-colors">
               Skills
             </a>
+            <a href="#youtube" className="text-zinc-400 hover:text-white transition-colors">
+              YouTube
+            </a>
           </div>
           <a
             href="#contact"
@@ -54,6 +58,7 @@ export default function Home() {
         <ProjectsWidget />
         <ExperienceWidget />
         <SkillsWidget />
+        <YoutubeWidget />
         <ContactWidget />
 
         <footer className="py-8 border-t border-white/5 text-center">
