@@ -57,10 +57,10 @@ export const metadata: Metadata = {
     siteName: "Yusuf Suhair Portfolio",
     images: [
       {
-        url: "/yusufsuhair.jpg",
+        url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Yusuf Suhair - Developer Portfolio",
+        alt: "Yusuf Suhair - Open Graph Preview",
       },
     ],
   },
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Yusuf Suhair | Fullstack Developer",
     description: "Full-stack developer specializing in modern web technologies",
-    images: ["/yusufsuhair.jpg"],
+    images: ["/og.png"],
     creator: "@yusufsuhair",
   },
   alternates: {
@@ -76,6 +76,11 @@ export const metadata: Metadata = {
   },
   category: "technology",
   classification: "portfolio",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
   other: {
     "theme-color": "#050505",
     "color-scheme": "dark",

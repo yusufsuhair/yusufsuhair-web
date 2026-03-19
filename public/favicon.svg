@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="YS.">
+  <!-- Simple text-based favicon derived from the navbar logo -->
+  <text
+    x="256"
+    y="275"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-family="Inter, Raleway, Arial, sans-serif"
+    font-size="220"
+    font-weight="700"
+    fill="#000000"
+  >
+    YS.
+  </text>
+</svg>
+

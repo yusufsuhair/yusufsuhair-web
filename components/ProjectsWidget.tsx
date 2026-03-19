@@ -17,11 +17,28 @@ interface Project {
 
 const projectsData: Project[] = [
   {
-    title: "MooMetrics",
+    title: "$REMBUYANG Memecoin",
+    url: "https://rembuyang.vercel.app",
+    description:
+      "The biggest Roti John restaurant memecoin: a decentralized, community-owned $REMBUYANG experience with an on-chain ecosystem, tokenomics, and live market stats.",
+    tech: [],
+    category: "crypto",
+    image: "/screenshot-rembuyang.jpg",
+  },
+  {
+    title: "MooMetrics - Crypto Analytics Platform",
     url: "https://moometrics.io",
     description: "Advanced crypto portfolio tracker and analytics platform for DeFi and NFT assets with real-time insights.",
     tech: ["Next.js", "TypeScript", "Tailwind", "Node.js", "Python"],
     image: "/screenshot-moometrics.jpg",
+    category: "web",
+  },
+  {
+    title: "myClipper - Content Creation Platform",
+    url: "https://myclipper.vercel.app/",
+    description: "Run campaigns or apply to them. Get paid per views. Business owners set commission per 1k views; clippers apply and get paid when views are delivered — one platform for both.",
+    tech: ["Next.js", "TypeScript", "Tailwind"],
+    image: "/screenshot-myclipper.png",
     category: "web",
   },
   {
@@ -74,9 +91,10 @@ const projectsData: Project[] = [
     storesOnly: true,
   },
   {
-    title: "BoostFundCoin",
+    title: "BoostFundCoin - Crypto Crowdfunding Platform",
     url: "https://boostfundcoin.org",
-    description: "Decentralized fundraising platform leveraging blockchain and smart contracts.",
+    description:
+      "BoostFundCoin is a decentralized crypto crowdfunding platform powered by blockchain and smart contracts, enabling transparent fundraising, automated contributions, and on-chain project delivery.",
     tech: ["Solidity", "Next.js", "Web3.js", "Ethereum"],
     image: "/screenshot-boostfundcoin.jpg",
     category: "crypto",
@@ -90,7 +108,7 @@ const projectsData: Project[] = [
     category: "web",
   },
   {
-    title: "Ejoe Swap (Discontinued)",
+    title: "Ejoe Swap (PancakeSwap Clone)",
     url: "https://ejoe-swap-pancakeswap.vercel.app",
     description: "Decentralized crypto swap platform inspired by PancakeSwap on Ejoe Network.",
     tech: ["React", "Solidity", "Web3.js"],

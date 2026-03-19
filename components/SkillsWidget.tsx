@@ -19,7 +19,23 @@ const skillGroups = [
     icon: Cloud,
     label: "DevOps & Cloud",
     color: "text-purple-400",
-    skills: ["AWS", "Docker", "Jenkins", "CI/CD", "Linux", "Ansible", "Wildfly / JBoss"],
+    skills: [
+      "AWS",
+      "ELB",
+      "Terraform",
+      "Kubernetes",
+      "Docker",
+      "Jenkins",
+      "CI/CD",
+      "Linux",
+      "Ansible",
+      "Supabase",
+      "Firebase",
+      "Sentry",
+      "Kibana",
+      "ELK",
+      "Wildfly / JBoss",
+    ],
   },
   {
     icon: Link,
@@ -28,8 +44,6 @@ const skillGroups = [
     skills: ["Solidity", "Web3.js", "Ethereum", "NLP / GPT", "Computer Vision", "Deep Learning"],
   },
 ];
-
-const tools = ["VS Code", "GitHub", "Docker", "Figma", "Postman", "AWS Console"];
 
 export default function SkillsWidget() {
   return (
@@ -71,23 +85,6 @@ export default function SkillsWidget() {
               </div>
             );
           })}
-        </div>
-
-        {/* Daily Tools */}
-        <div className="text-center">
-          <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-6">
-            Daily Environment
-          </p>
-          <div className="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto">
-            {tools.map((tool) => (
-              <div
-                key={tool}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-b from-white/10 to-transparent border border-white/10 text-sm text-white hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,255,255,0.08)] transition-all cursor-default backdrop-blur-sm"
-              >
-                {tool}
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
