@@ -5,6 +5,7 @@ import ContactWidget from "@/components/ContactWidget";
 import ExperienceWidget from "@/components/ExperienceWidget";
 import HomeWidget from "@/components/HomeWidget";
 import Navbar from "@/components/Navbar";
+import TerminalModal from "@/components/TerminalModal";
 import ProjectsWidget from "@/components/ProjectsWidget";
 import SkillsWidget from "@/components/SkillsWidget";
 import StatsWidget from "@/components/StatsWidget";
@@ -24,6 +25,7 @@ export default function Home() {
 
       <Navbar />
 
+      <TerminalModal />
       <main className="relative z-10">
         <HomeWidget />
         <StatsWidget />
