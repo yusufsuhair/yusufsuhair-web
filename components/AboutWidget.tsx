@@ -40,9 +40,9 @@ export default function AboutWidget() {
                 I bring ideas to life through clean code and intuitive user experiences.
               </p>
               <p className="text-zinc-500 text-sm leading-relaxed">
-                Previously Founding Engineer at Heifereum Technology and a full-stack developer at
-                SWIFT and SICPA, working across fintech, enterprise, and consumer-facing products
-                in Malaysia and globally.
+                Software Engineer (Web, Mobile, DevOps) at Aixelink Sàrl. Previously Founding Engineer
+                at Heifereum Technology and a full-stack developer at SWIFT and SICPA, working across
+                fintech, enterprise, and consumer-facing products in Malaysia and globally.
               </p>
             </div>
 

@@ -11,6 +11,17 @@ interface Job {
 
 const experienceData: Job[] = [
   {
+    title: "Software Engineer (Web, Mobile, DevOps)",
+    company: "Aixelink Sàrl",
+    period: "April 2026 — Present",
+    location: "Remote",
+    description: [
+      "Building and shipping web and mobile software end to end, from implementation through testing and release.",
+      "Improving CI/CD, cloud or server infrastructure, and operational workflows to support reliable deployments.",
+    ],
+    tech: ["Web", "Mobile", "DevOps", "CI/CD"],
+  },
+  {
     title: "Founding Engineer",
     company: "Heifereum Technology Sdn Bhd",
     period: "March 2024 — January 2026",
