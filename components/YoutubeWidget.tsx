@@ -25,11 +25,11 @@ export default function YoutubeWidget() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Section Header */}
-        <div className="mb-12">
+        <div className="mb-12 text-center">
           <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-white mb-4">
             On YouTube
           </h2>
-          <p className="text-zinc-400 text-base max-w-2xl">
+          <p className="text-zinc-400 text-base max-w-2xl mx-auto">
             I also create content — tutorials, tech stories, and behind-the-scenes of building products.
           </p>
         </div>

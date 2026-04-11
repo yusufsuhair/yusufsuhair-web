@@ -166,11 +166,11 @@ export default function ProjectsWidget() {
   return (
     <section id="projects" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="mb-12">
+        <div className="mb-12 text-center">
           <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-white mb-4">
             Selected Work
           </h2>
-          <p className="text-zinc-400 text-base max-w-2xl">
+          <p className="text-zinc-400 text-base max-w-2xl mx-auto">
             A collection of systems, platforms, and tools I&apos;ve architected and shipped — from
             Web3 protocols to AI-driven apps and mobile products.
           </p>

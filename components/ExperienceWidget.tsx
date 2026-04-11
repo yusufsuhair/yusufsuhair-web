@@ -81,10 +81,13 @@ export default function ExperienceWidget() {
   return (
     <section id="experience" className="py-24">
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
-        <div className="mb-16">
+        <div className="mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-white mb-4">
             Experience
           </h2>
+          <p className="text-zinc-400 text-base">
+            6+ years across fintech, Web3, enterprise, and mobile — from startup founding engineer to global institutions.
+          </p>
         </div>
 
         <div className="relative border-l border-white/10 ml-3 md:ml-0">
