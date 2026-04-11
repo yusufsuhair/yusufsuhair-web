@@ -34,9 +34,9 @@ export default function Home() {
         <HomeWidget />
         <StatsWidget />
         <AboutWidget />
-        <ProjectsWidget />
         <ExperienceWidget />
         <SkillsWidget />
+        <ProjectsWidget />
         <YoutubeWidget />
         <ContactWidget />
 
