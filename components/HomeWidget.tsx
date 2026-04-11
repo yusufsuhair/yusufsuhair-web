@@ -95,6 +95,7 @@ export default function HomeWidget() {
                   <div className="pl-4">
                     <span className="text-green-400">&apos;Flutter&apos;</span>,{" "}
                     <span className="text-green-400">&apos;Kotlin&apos;</span>,{" "}
+                    <span className="text-green-400">&apos;Java&apos;</span>,{" "}
                     <span className="text-green-400">&apos;Solidity&apos;</span>,
                   </div>
                   <div>],</div>
@@ -109,7 +110,8 @@ export default function HomeWidget() {
                   <div className="pl-4">
                     <span className="text-green-400">&apos;GitHub Actions&apos;</span>,{" "}
                     <span className="text-green-400">&apos;Jenkins&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Ansible&apos;</span>
+                    <span className="text-green-400">&apos;Ansible&apos;</span>,{" "}
+                    <span className="text-green-400">&apos;Trivy&apos;</span>
                   </div>
                   <div>],</div>
                   <div>
