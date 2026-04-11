@@ -1,8 +1,11 @@
 "use client";
 
-import { Download, Github } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
+
+const CAREER_START_YEAR = 2020;
 
 export default function HomeWidget() {
+  const yearsOfExperience = new Date().getFullYear() - CAREER_START_YEAR;
   return (
     <section className="min-h-screen flex items-center pt-24 pb-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
@@ -24,18 +27,19 @@ export default function HomeWidget() {
                 .
               </h1>
               <p className="text-lg md:text-xl text-zinc-400 max-w-lg leading-relaxed">
-                Specializing in backend engineering, Web3, AI-powered platforms, mobile development, and DevSecOps — CI/CD pipelines, containerization, Kubernetes, and secure deployments — 5+ years building products used by millions.
+                {yearsOfExperience}+ years building secure, reliable systems — from Web3 protocols and AI platforms to mobile apps and enterprise backends. I own the full lifecycle: architecture, implementation, and deployment.
               </p>
             </div>
 
             <div className="flex flex-wrap items-center gap-4 pt-4">
               <a
-                href="/yusuf-suhair-cv.pdf"
-                download="Yusuf-Suhair-CV.pdf"
+                href="https://linkedin.com/in/yusufsuhair"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium text-black bg-white rounded-full hover:bg-zinc-200 hover:scale-[1.02] transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
               >
-                <Download size={16} />
-                Download CV
+                <Linkedin size={16} />
+                Contact me on LinkedIn
               </a>
               <a
                 href="https://github.com/yusufsuhair"
@@ -85,37 +89,27 @@ export default function HomeWidget() {
                   </div>
                   <div className="pl-4">
                     <span className="text-green-400">&apos;Next.js&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Python&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Solidity&apos;</span>,
+                    <span className="text-green-400">&apos;Spring Boot&apos;</span>,{" "}
+                    <span className="text-green-400">&apos;Python&apos;</span>,
                   </div>
                   <div className="pl-4">
                     <span className="text-green-400">&apos;Flutter&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Spring Boot&apos;</span>,
-                  </div>
-                  <div className="pl-4">
-                    <span className="text-green-400">&apos;Docker&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Kubernetes&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Ansible&apos;</span>
+                    <span className="text-green-400">&apos;Kotlin&apos;</span>,{" "}
+                    <span className="text-green-400">&apos;Solidity&apos;</span>,
                   </div>
                   <div>],</div>
                   <div>
                     <span className="text-zinc-400">devops:</span> [
                   </div>
                   <div className="pl-4">
-                    <span className="text-green-400">&apos;CI/CD&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Containerization&apos;</span>,
-                  </div>
-                  <div className="pl-4">
+                    <span className="text-green-400">&apos;Docker&apos;</span>,{" "}
                     <span className="text-green-400">&apos;Kubernetes&apos;</span>,{" "}
                     <span className="text-green-400">&apos;Terraform&apos;</span>,
                   </div>
                   <div className="pl-4">
                     <span className="text-green-400">&apos;GitHub Actions&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Jenkins&apos;</span>,
-                  </div>
-                  <div className="pl-4">
-                    <span className="text-green-400">&apos;Ansible&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Deployment&apos;</span>
+                    <span className="text-green-400">&apos;Jenkins&apos;</span>,{" "}
+                    <span className="text-green-400">&apos;Ansible&apos;</span>
                   </div>
                   <div>],</div>
                   <div>

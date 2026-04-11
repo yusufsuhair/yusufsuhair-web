@@ -8,7 +8,8 @@
       "Bash(node /tmp/screenshot.mjs 2>&1)",
       "Bash(which npx:*)",
       "Bash(npx playwright:*)",
-      "Bash(ls -lh /Users/yusufsuhair/Documents/yusufsuhair-web/public/screenshot-*.jpg 2>/dev/null)"
+      "Bash(ls -lh /Users/yusufsuhair/Documents/yusufsuhair-web/public/screenshot-*.jpg 2>/dev/null)",
+      "Bash(npx tsc:*)"
     ]
   },
   "bypassPermissions": true

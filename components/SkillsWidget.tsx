@@ -1,19 +1,19 @@
 "use client";
 
-import { Monitor, Server, Cloud, Link } from "lucide-react";
+import { Monitor, Server, Cloud, Link, ShieldCheck } from "lucide-react";
 
 const skillGroups = [
   {
     icon: Monitor,
     label: "Frontend & Mobile",
     color: "text-blue-400",
-    skills: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Angular", "Flutter", "AngularJS"],
+    skills: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Angular", "Flutter", "Kotlin", "Java", "Android"],
   },
   {
     icon: Server,
     label: "Backend & APIs",
     color: "text-green-400",
-    skills: ["Node.js", "NestJS", "Spring Boot", "Python", "Java EE", "gRPC", "MedusaJS"],
+    skills: ["Node.js", "NestJS", "Spring Boot", "Python", "Java EE", "gRPC", "Apache Kafka"],
   },
   {
     icon: Cloud,
@@ -21,21 +21,26 @@ const skillGroups = [
     color: "text-purple-400",
     skills: [
       "AWS",
-      "ELB",
       "Terraform",
       "Kubernetes",
       "Docker",
       "Jenkins",
+      "GitHub Actions",
       "CI/CD",
       "Linux",
       "Ansible",
       "Supabase",
       "Firebase",
+      "ELK / Kibana",
       "Sentry",
-      "Kibana",
-      "ELK",
       "Wildfly / JBoss",
     ],
+  },
+  {
+    icon: ShieldCheck,
+    label: "Security (DevSecOps)",
+    color: "text-red-400",
+    skills: ["SonarQube", "Trivy", "OWASP ZAP", "Snyk", "Vault", "SSL/TLS", "SAST / DAST", "Penetration Testing", "Secure CI/CD"],
   },
   {
     icon: Link,

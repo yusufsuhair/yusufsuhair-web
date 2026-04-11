@@ -3,13 +3,16 @@
 const specializations = [
   "Full-Stack Development",
   "Web3 & Blockchain",
-  "Mobile Development (Flutter)",
+  "Mobile Development (Flutter, Kotlin, Java)",
   "AI/ML Integration",
   "DevSecOps & CI/CD",
   "Smart Contracts (Solidity)",
 ];
 
+const CAREER_START_YEAR = 2020;
+
 export default function AboutWidget() {
+  const yearsOfExperience = new Date().getFullYear() - CAREER_START_YEAR;
   return (
     <section id="about" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -34,10 +37,10 @@ export default function AboutWidget() {
                 About Me
               </h2>
               <p className="text-zinc-400 text-base leading-relaxed mb-4">
-                I&apos;m a passionate full-stack developer with 5+ years of experience building
-                beautiful, functional, and scalable applications. From crafting AI-powered platforms
-                to deploying Web3 ecosystems and shipping 50+ mobile apps with 5M+ installs —
-                I bring ideas to life through clean code and intuitive user experiences.
+                I&apos;m a full-stack engineer with {yearsOfExperience}+ years building secure, reliable, and scalable
+                systems. From architecting AI-powered platforms to deploying Web3 ecosystems and
+                shipping 50+ mobile apps with 5M+ installs — I own the full stack from implementation
+                to production infrastructure.
               </p>
               <p className="text-zinc-500 text-sm leading-relaxed">
                 Software Engineer (Web, Mobile, DevOps) at Aixelink Sàrl. Previously Founding Engineer

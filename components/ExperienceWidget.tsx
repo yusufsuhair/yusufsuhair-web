@@ -44,7 +44,7 @@ const experienceData: Job[] = [
     period: "March 2022 — March 2024",
     location: "Bangsar, Malaysia",
     description: [
-      "Maintained SWIFT website having active users of over 11,000 banks, financial institutions, and corporations in more than 200 countries and territories",
+      "Contributed to web platforms supporting SWIFT's network of 11,000+ financial institutions and corporations across 200+ countries and territories",
       "Developed full-stack web applications (JavaEE, Spring MVC, Spring Boot, AngularJS, Angular) including unit testings",
       "Worked on CI/CD such as Jenkins, AWS, SSL, Linux, and Ansible",
     ],
@@ -52,7 +52,7 @@ const experienceData: Job[] = [
   },
   {
     title: "Mobile Developer",
-    company: "Google Play Store (Freelance)",
+    company: "Independent Mobile Developer (Freelance)",
     period: "August 2019 — Present",
     location: "Remote",
     description: [
