@@ -13,11 +13,6 @@ export default function HomeWidget() {
 
           {/* Left: Content */}
           <div className="flex flex-col items-start space-y-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-zinc-400 backdrop-blur-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-              Available for new opportunities
-            </div>
-
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-[1.1]">
                 Fullstack & DevSecOps Engineer crafting{" "}
