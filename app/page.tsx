@@ -4,6 +4,7 @@ import AboutWidget from "@/components/AboutWidget";
 import ContactWidget from "@/components/ContactWidget";
 import ExperienceWidget from "@/components/ExperienceWidget";
 import HomeWidget from "@/components/HomeWidget";
+import BackToTop from "@/components/BackToTop";
 import CursorFollower from "@/components/CursorFollower";
 import LoadingScreen from "@/components/LoadingScreen";
 import Navbar from "@/components/Navbar";
@@ -29,6 +30,7 @@ export default function Home() {
 
       <LoadingScreen />
       <CursorFollower />
+      <BackToTop />
       <TerminalModal />
       <main className="relative z-10">
         <HomeWidget />
