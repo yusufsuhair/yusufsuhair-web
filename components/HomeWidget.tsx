@@ -88,7 +88,7 @@ export default function HomeWidget() {
                     <span className="text-zinc-400">stack:</span> [
                   </div>
                   <div className="pl-4">
-                    <span className="text-green-400">&apos;Next.js&apos;</span>,{" "}
+                    <span className="text-green-400">&apos;TypeScript&apos;</span>,{" "}
                     <span className="text-green-400">&apos;Spring Boot&apos;</span>,{" "}
                     <span className="text-green-400">&apos;Python&apos;</span>,
                   </div>
@@ -108,7 +108,7 @@ export default function HomeWidget() {
                     <span className="text-green-400">&apos;Terraform&apos;</span>,
                   </div>
                   <div className="pl-4">
-                    <span className="text-green-400">&apos;GitHub Actions&apos;</span>,{" "}
+                    <span className="text-green-400">&apos;CI/CD&apos;</span>,{" "}
                     <span className="text-green-400">&apos;Jenkins&apos;</span>,{" "}
                     <span className="text-green-400">&apos;Ansible&apos;</span>,{" "}
                     <span className="text-green-400">&apos;Trivy&apos;</span>
@@ -116,6 +116,7 @@ export default function HomeWidget() {
                   <div>],</div>
                   <div>
                     <span className="text-zinc-400">focus:</span> [
+                    <span className="text-green-400">&apos;Web Dev&apos;</span>,{" "}
                     <span className="text-green-400">&apos;Web3&apos;</span>,{" "}
                     <span className="text-green-400">&apos;AI/ML&apos;</span>,{" "}
                     <span className="text-green-400">&apos;Mobile&apos;</span>,{" "}

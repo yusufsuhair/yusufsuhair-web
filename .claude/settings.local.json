@@ -9,7 +9,9 @@
       "Bash(which npx:*)",
       "Bash(npx playwright:*)",
       "Bash(ls -lh /Users/yusufsuhair/Documents/yusufsuhair-web/public/screenshot-*.jpg 2>/dev/null)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(npm install:*)",
+      "Bash(node:*)"
     ]
   },
   "bypassPermissions": true
