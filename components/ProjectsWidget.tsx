@@ -117,6 +117,8 @@ const projectsData: Project[] = [
   },
 ];
 
+const MOBILE_LIMIT = 4;
+
 const categories = [
   { id: "all", label: "All" },
   { id: "web", label: "Web Apps" },
@@ -154,6 +156,7 @@ const categoryConfig = {
 
 export default function ProjectsWidget() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [showAll, setShowAll] = useState(false);
 
   const filteredProjects =
     selectedCategory === "all"
@@ -178,7 +181,7 @@ export default function ProjectsWidget() {
           {categories.map((cat) => (
             <button
               key={cat.id}
-              onClick={() => setSelectedCategory(cat.id)}
+              onClick={() => { setSelectedCategory(cat.id); setShowAll(false); }}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 selectedCategory === cat.id
                   ? "bg-white text-black"
@@ -200,7 +203,7 @@ export default function ProjectsWidget() {
             return (
               <div
                 key={index}
-                className={`group relative flex flex-col rounded-2xl bg-[#0f0f0f] border border-white/5 ${config.border} hover:border-white/15 transition-all duration-500 overflow-hidden hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)]`}
+                className={`group relative flex flex-col rounded-2xl bg-[#0f0f0f] border border-white/5 ${config.border} hover:border-white/15 transition-all duration-500 overflow-hidden hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)] ${index >= MOBILE_LIMIT && !showAll ? "hidden md:flex" : ""}`}
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
@@ -372,6 +375,18 @@ export default function ProjectsWidget() {
             );
           })}
         </div>
+
+        {/* Show more — mobile only */}
+        {!showAll && filteredProjects.length > MOBILE_LIMIT && (
+          <div className="mt-8 flex justify-center md:hidden">
+            <button
+              onClick={() => setShowAll(true)}
+              className="px-6 py-3 text-sm font-medium text-zinc-400 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 hover:text-white transition-all duration-300"
+            >
+              Show {filteredProjects.length - MOBILE_LIMIT} more projects
+            </button>
+          </div>
+        )}
 
         {filteredProjects.length === 0 && (
           <div className="text-center py-16">
