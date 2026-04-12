@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { SiReact, SiSpringboot, SiKubernetes, SiEthereum, SiOpenai } from "react-icons/si";
 import { FaShieldAlt } from "react-icons/fa";
 import type { IconType } from "react-icons";
@@ -84,7 +85,11 @@ export default function SkillsWidget() {
         </div>
 
         {/* Terminal window */}
-        <div className="rounded-2xl bg-[#0a0a0a] border border-white/10 overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="rounded-2xl bg-[#0a0a0a] border border-white/10 overflow-hidden">
 
           {/* Title bar */}
           <div className="flex items-center px-4 py-3 border-b border-white/5 bg-[#0f0f0f]">
@@ -154,7 +159,7 @@ export default function SkillsWidget() {
               <span className="w-2 h-4 bg-zinc-400 animate-pulse inline-block" />
             </div>
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

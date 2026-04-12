@@ -1,5 +1,12 @@
 "use client";
 
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 },
+};
+
 const specializations = [
   "Full-Stack Development",
   "Web3 & Blockchain",
@@ -19,7 +26,11 @@ export default function AboutWidget() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Photo */}
-          <div className="flex justify-center lg:justify-start">
+          <motion.div
+            variants={fadeUp} initial="hidden" whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="flex justify-center lg:justify-start">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 rounded-2xl blur-2xl opacity-60" />
               <img
@@ -28,10 +39,14 @@ export default function AboutWidget() {
                 className="relative rounded-2xl w-72 h-72 sm:w-80 sm:h-80 object-cover border border-white/10 shadow-2xl"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Content */}
-          <div className="space-y-6">
+          <motion.div
+            variants={fadeUp} initial="hidden" whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.12 }}
+            className="space-y-6">
             <div>
               <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-white mb-4">
                 About Me
@@ -57,7 +72,7 @@ export default function AboutWidget() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

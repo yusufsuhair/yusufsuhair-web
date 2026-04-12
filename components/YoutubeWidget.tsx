@@ -1,6 +1,7 @@
 "use client";
 
 import { Play, ExternalLink, Youtube } from "lucide-react";
+import { motion } from "framer-motion";
 
 const featuredVideos = [
   {
@@ -25,20 +26,27 @@ export default function YoutubeWidget() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Section Header */}
-        <div className="mb-12 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="mb-12 text-center">
           <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-white mb-4">
             On YouTube
           </h2>
           <p className="text-zinc-400 text-base max-w-2xl mx-auto">
             I also create content — tutorials, tech stories, and behind-the-scenes of building products.
           </p>
-        </div>
+        </motion.div>
 
         {/* Video Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          {featuredVideos.map((video) => (
-            <a
+          {featuredVideos.map((video, i) => (
+            <motion.a
               key={video.id}
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.4, ease: "easeOut", delay: i * 0.08 }}
               href={`https://youtube.com/watch?v=${video.id}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -78,7 +86,7 @@ export default function YoutubeWidget() {
                   Watch on YouTube
                 </div>
               </div>
-            </a>
+            </motion.a>
           ))}
         </div>
 

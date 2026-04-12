@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 interface Job {
   title: string;
   company: string;
@@ -81,18 +83,27 @@ export default function ExperienceWidget() {
   return (
     <section id="experience" className="py-24">
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
-        <div className="mb-16 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-white mb-4">
             Experience
           </h2>
           <p className="text-zinc-400 text-base">
             6+ years across fintech, Web3, enterprise, and mobile — from startup founding engineer to global institutions.
           </p>
-        </div>
+        </motion.div>
 
         <div className="relative border-l border-white/10 ml-3 md:ml-0">
           {experienceData.map((job, index) => (
-            <div key={index} className="mb-12 ml-8 relative group">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.45, ease: "easeOut", delay: index * 0.07 }}
+              className="mb-12 ml-8 relative group">
               <div className="absolute -left-[37px] top-1.5 h-3 w-3 rounded-full bg-zinc-600 ring-4 ring-[#050505] group-hover:bg-white group-hover:shadow-[0_0_15px_rgba(255,255,255,0.6)] transition-all duration-300" />
 
               <div className="p-6 rounded-2xl bg-[#0a0a0a] border border-white/5 group-hover:border-white/10 transition-colors backdrop-blur-sm">
@@ -129,7 +140,7 @@ export default function ExperienceWidget() {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

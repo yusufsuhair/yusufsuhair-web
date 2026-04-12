@@ -1,13 +1,18 @@
 "use client";
 
 import { Github, Linkedin, Mail } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function ContactWidget() {
   return (
     <section id="contact" className="py-32 relative">
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
 
-        <div className="p-[1px] rounded-3xl bg-gradient-to-b from-white/20 to-transparent relative group">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="p-[1px] rounded-3xl bg-gradient-to-b from-white/20 to-transparent relative group">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl rounded-3xl" />
 
           <div className="bg-[#050505] rounded-3xl p-8 md:p-16 relative h-full w-full overflow-hidden text-center backdrop-blur-xl">
@@ -52,7 +57,7 @@ export default function ContactWidget() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

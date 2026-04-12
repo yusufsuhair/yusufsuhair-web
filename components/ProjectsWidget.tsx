@@ -2,6 +2,7 @@
 
 import { ExternalLink, Globe, Smartphone, Link, Cpu, Code2 } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 interface Project {
   title: string;
@@ -166,7 +167,11 @@ export default function ProjectsWidget() {
   return (
     <section id="projects" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="mb-12 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="mb-12 text-center">
           <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-white mb-4">
             Selected Work
           </h2>
@@ -174,7 +179,7 @@ export default function ProjectsWidget() {
             A collection of systems, platforms, and tools I&apos;ve architected and shipped — from
             Web3 protocols to AI-driven apps and mobile products.
           </p>
-        </div>
+        </motion.div>
 
         {/* Category Filter */}
         <div className="flex flex-wrap gap-2 mb-10">
@@ -201,8 +206,11 @@ export default function ProjectsWidget() {
             const projectLink = project.url || project.android || project.ios;
 
             return (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.4, ease: "easeOut", delay: (index % 3) * 0.07 }}
                 className={`group relative flex flex-col rounded-2xl bg-[#0f0f0f] border border-white/5 ${config.border} hover:border-white/15 transition-all duration-500 overflow-hidden hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)] ${index >= MOBILE_LIMIT && !showAll ? "hidden md:flex" : ""}`}
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -371,12 +379,13 @@ export default function ProjectsWidget() {
                     )}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
 
         {/* Show more — mobile only */}
+
         {!showAll && filteredProjects.length > MOBILE_LIMIT && (
           <div className="mt-8 flex justify-center md:hidden">
             <button
