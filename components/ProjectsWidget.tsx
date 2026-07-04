@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 
 interface Project {
   title: string;
+  role: string;
   url?: string;
   description: string;
   tech: string[];
@@ -19,6 +20,7 @@ interface Project {
 const projectsData: Project[] = [
   {
     title: "$REMBUYANG Memecoin",
+    role: "Founder / Lead Engineer",
     url: "https://rembuyang.vercel.app",
     description:
       "The biggest Roti John restaurant memecoin: a decentralized, community-owned $REMBUYANG experience with an on-chain ecosystem, tokenomics, and live market stats.",
@@ -28,6 +30,7 @@ const projectsData: Project[] = [
   },
   {
     title: "MooMetrics - Crypto Analytics Platform",
+    role: "CTO / Lead Engineer",
     url: "https://moometrics.io",
     description: "Advanced crypto portfolio tracker and analytics platform for DeFi and NFT assets with real-time insights.",
     tech: ["Next.js", "TypeScript", "Tailwind", "Node.js", "Python"],
@@ -36,6 +39,7 @@ const projectsData: Project[] = [
   },
   {
     title: "myClipper - Content Creation Platform",
+    role: "Built by me",
     url: "https://myclipper.vercel.app/",
     description: "Run campaigns or apply to them. Get paid per views. Business owners set commission per 1k views; clippers apply and get paid when views are delivered — one platform for both.",
     tech: ["Next.js", "TypeScript", "Tailwind"],
@@ -44,6 +48,7 @@ const projectsData: Project[] = [
   },
   {
     title: "MooMetrics Mobile",
+    role: "Lead Mobile Engineer",
     description: "Native mobile app for crypto portfolio tracking with advanced analytics and real-time alerts.",
     android: "https://play.google.com/store/apps/details?id=com.heifereum.moometrics_mobile&hl=en",
     ios: "https://apps.apple.com/my/app/moometrics-crypto-analytics/id6741414782",
@@ -53,7 +58,8 @@ const projectsData: Project[] = [
   },
   {
     title: "Memecoin Launchpad Projects",
-    url: "https://walid.fun",
+    role: "CTO / Lead Web3 Engineer",
+    url: "https://walid-memecoin-website.vercel.app/",
     description: "Series of community-driven memecoin launches including $WALID and $TSI (Trump Survive Index) — each with dedicated landing pages, tokenomics, staking mechanics, and on-chain integrations.",
     tech: ["Next.js", "TypeScript", "Framer Motion", "Solidity", "Web3.js"],
     image: "/screenshot-walid.jpg",
@@ -61,6 +67,7 @@ const projectsData: Project[] = [
   },
   {
     title: "AIFiqh",
+    role: "Lead AI Engineer",
     url: "https://aifiqh.com",
     description: "AI-powered Islamic Q&A platform providing accurate fiqh and religious guidance.",
     tech: ["Next.js", "Python", "NestJS", "NLP"],
@@ -69,6 +76,7 @@ const projectsData: Project[] = [
   },
   {
     title: "Celebrity Video Call Entertainment Apps",
+    role: "Founder / Mobile Developer",
     description: "Entertainment suite of celebrity video call simulation apps, reaching 5M+ installs across 50+ published titles.",
     android: "https://play.google.com/store/apps/developer?id=Yusuf+Suhair",
     tech: ["Flutter", "Java", "Kotlin"],
@@ -77,6 +85,7 @@ const projectsData: Project[] = [
   },
   {
     title: "Live Streaming Simulation Apps",
+    role: "Founder / Mobile Developer",
     description: "Mobile apps simulating live streaming experiences featuring celebrities, with 3M+ installs and reusable platform templates.",
     android: "https://play.google.com/store/apps/details?id=com.yusufsuhair.fake_live",
     tech: ["Flutter", "Java"],
@@ -84,16 +93,8 @@ const projectsData: Project[] = [
     storesOnly: true,
   },
   {
-    title: "BoostFundCoin - Crypto Crowdfunding Platform",
-    url: "https://boostfundcoin.org",
-    description:
-      "BoostFundCoin is a decentralized crypto crowdfunding platform powered by blockchain and smart contracts, enabling transparent fundraising, automated contributions, and on-chain project delivery.",
-    tech: ["Solidity", "Next.js", "Web3.js", "Ethereum"],
-    image: "/screenshot-boostfundcoin.jpg",
-    category: "crypto",
-  },
-  {
     title: "Heifereum Landing Page",
+    role: "CTO & Co-Founder",
     url: "https://heifereum.com",
     description: "Technology company landing page showcasing innovative solutions and services.",
     tech: ["React", "Tone.js", "D3.js", "TypeScript"],
@@ -102,6 +103,7 @@ const projectsData: Project[] = [
   },
   {
     title: "Ejoe Swap (PancakeSwap Clone)",
+    role: "Web3 Engineer",
     url: "https://ejoe-swap-pancakeswap.vercel.app",
     description: "Decentralized crypto swap platform inspired by PancakeSwap on Ejoe Network.",
     tech: ["React", "Solidity", "Web3.js"],
@@ -110,6 +112,7 @@ const projectsData: Project[] = [
   },
   {
     title: "Ejoe NFT Marketplace",
+    role: "Web3 Engineer",
     url: "https://ejoe-nft.vercel.app",
     description: "OpenSea-style NFT marketplace for Ejoe Network with minting and trading features.",
     tech: ["React", "Solidity", "Web3.js"],
@@ -320,6 +323,9 @@ export default function ProjectsWidget() {
 
                 {/* Card Body */}
                 <div className="p-5 flex-1 flex flex-col relative z-10">
+                  <div className="mb-2 text-[10px] font-medium uppercase tracking-widest text-zinc-500">
+                    {project.role}
+                  </div>
                   <h3 className="text-base font-medium text-white mb-2 tracking-tight">
                     {project.title}
                   </h3>

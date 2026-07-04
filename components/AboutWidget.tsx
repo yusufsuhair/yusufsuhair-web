@@ -12,6 +12,7 @@ const specializations = [
   "Web3 & Blockchain",
   "Mobile Development (Flutter, Kotlin, Java)",
   "AI/ML Integration",
+  "AI Automation & Assistant Setup",
   "DevSecOps & CI/CD",
   "Smart Contracts (Solidity)",
 ];
@@ -58,9 +59,10 @@ export default function AboutWidget() {
                 to production infrastructure.
               </p>
               <p className="text-zinc-500 text-sm leading-relaxed">
-                Software Engineer (Web, Mobile, DevOps) at Aixelink Sàrl. Previously Founding Engineer
-                at Heifereum Technology and a full-stack developer at SWIFT and SICPA, working across
-                fintech, enterprise, and consumer-facing products in Malaysia and globally.
+                Founder of YS Academy and Founding Engineer (Mobile, Web, AI, DevOps) at Aixelink Sàrl.
+                Previously CTO & Co-Founder at Heifereum Technology and a full-stack developer at SWIFT
+                and SICPA, working across fintech, enterprise, and consumer-facing products in Malaysia
+                and globally.
               </p>
             </div>
 

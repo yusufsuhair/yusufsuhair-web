@@ -56,7 +56,7 @@ const CMDS: Record<string, () => React.ReactNode> = {
       {w("Yusuf Suhair")}
       <p>{d("Role      ")} Fullstack & DevSecOps Engineer</p>
       <p>{d("Location  ")} Kuala Lumpur, Malaysia</p>
-      <p>{d("Company   ")} Aixelink Sàrl (Remote)</p>
+      <p>{d("Company   ")} YS Academy / Aixelink Sàrl (Remote)</p>
       <p>{d("XP        ")} 6+ years</p>
       <p>{d("Status    ")} {g("● Available for opportunities")}</p>
     </div>
@@ -69,8 +69,9 @@ const CMDS: Record<string, () => React.ReactNode> = {
         from AI-powered platforms to Web3 ecosystems and 50+ mobile apps with 5M+ installs.
       </p>
       <p className="text-zinc-500 leading-relaxed">
-        Currently at Aixelink Sàrl. Previously Founding Engineer at Heifereum Technology
-        and full-stack dev at SWIFT and SICPA across fintech and enterprise products.
+        Founder of YS Academy and currently Founding Engineer at Aixelink Sàrl. Previously
+        CTO & Co-Founder at Heifereum Technology and full-stack dev at SWIFT and SICPA
+        across fintech and enterprise products.
       </p>
     </div>
   ),
@@ -83,6 +84,7 @@ const CMDS: Record<string, () => React.ReactNode> = {
         ["DevOps & Cloud",    "Docker · Kubernetes · Terraform · AWS · CI/CD · Ansible"],
         ["Security",         "SonarQube · Trivy · OWASP ZAP · Snyk · SAST/DAST"],
         ["Web3 & AI",        "Solidity · Web3.js · Ethereum · GPT · Computer Vision"],
+        ["AI Automation",     "n8n · OpenClaw · Hermes · assistant setup · workflow automation"],
       ].map(([label, skills]) => (
         <div key={label} className="grid grid-cols-[180px_1fr]">
           {b(label)}
@@ -95,8 +97,9 @@ const CMDS: Record<string, () => React.ReactNode> = {
   experience: () => (
     <div className="space-y-2 text-sm">
       {[
-        ["Apr 2026 – Present",   "Software Engineer",    "Aixelink Sàrl"],
-        ["Mar 2024 – Jan 2026",  "Founding Engineer",    "Heifereum Technology"],
+        ["Jun 2026 – Present",   "Founder",              "YS Academy"],
+        ["Apr 2026 – Present",   "Founding Engineer",    "Aixelink Sàrl"],
+        ["Mar 2024 – Jan 2026",  "CTO & Co-Founder",     "Heifereum Technology"],
         ["Mar 2022 – Mar 2024",  "Full-Stack Developer", "SWIFT"],
         ["Dec 2020 – Feb 2022",  "Full-Stack Developer", "SICPA"],
         ["Aug 2019 – Present",   "Mobile Developer",     "Freelance"],
@@ -114,7 +117,6 @@ const CMDS: Record<string, () => React.ReactNode> = {
       {[
         ["MooMetrics",    "Crypto analytics platform",         "https://moometrics.io"],
         ["AIFiqh",        "AI-powered Islamic Q&A platform",   "https://aifiqh.com"],
-        ["BoostFundCoin", "Decentralised crypto crowdfunding", "https://boostfundcoin.org"],
         ["myClipper",     "Content creation & campaigns",      "https://myclipper.vercel.app"],
         ["Heifereum",     "Web3 tech company landing page",    "https://heifereum.com"],
       ].map(([name, desc, url]) => (

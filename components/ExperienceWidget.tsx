@@ -13,18 +13,27 @@ interface Job {
 
 const experienceData: Job[] = [
   {
-    title: "Software Engineer (Web, Mobile, DevOps)",
+    title: "Founder",
+    company: "YS Academy",
+    period: "June 2026 — Present",
+    location: "Remote",
+    description: [
+      "Helping beginners and business-minded learners build real-world websites, automations, and digital products using AI, vibe coding, and modern no-code/low-code tools.",
+    ],
+    tech: ["AI", "Vibe Coding", "No-Code", "Low-Code", "Automation", "Web"],
+  },
+  {
+    title: "Founding Engineer (Mobile, Web, AI, DevOps)",
     company: "Aixelink Sàrl",
     period: "April 2026 — Present",
     location: "Remote",
     description: [
-      "Building and shipping web and mobile software end to end, from implementation through testing and release.",
-      "Improving CI/CD, cloud or server infrastructure, and operational workflows to support reliable deployments.",
+      "Architected and deployed the full infrastructure stack including Nginx static serving, Cloudflare Tunnel/ngrok public exposure, and Android WebView bridge integration connecting native device APIs to a web-based UI.",
     ],
-    tech: ["Web", "Mobile", "DevOps", "CI/CD"],
+    tech: ["Mobile", "Web", "AI", "DevOps", "Nginx", "Cloudflare Tunnel", "Android WebView"],
   },
   {
-    title: "Founding Engineer",
+    title: "CTO & Co-Founder (Mobile, Web, Blockchain)",
     company: "Heifereum Technology Sdn Bhd",
     period: "March 2024 — January 2026",
     location: "Kuala Lumpur, Malaysia",
@@ -34,7 +43,6 @@ const experienceData: Job[] = [
       "Engineered MooMetrics.io, a crypto analytics platform with real-time data and AI-based market insights using Python, Next.js, and Node.js",
       "Contributed to Dialektika.io, an AI tool that analyzes social content and sentiment for data-driven decision-making using Python, Next.js, and NestJS",
       "Built an e-commerce system from scratch using MedusaJS and Next.js with multi-vendor and custom admin panel support",
-      "Developed BoostFundCoin.org, a crypto-based crowdfunding platform with Web3 integration using Next.js",
       "Created AI-powered face recognition for NuuhaBeauty.com to detect acne and recommend skincare using computer vision and deep learning",
       "Managed CI/CD pipelines and server infrastructure for smooth deployment and operational stability across all projects",
     ],

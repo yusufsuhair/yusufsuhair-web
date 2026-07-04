@@ -64,6 +64,14 @@ const skillGroups: SkillGroup[] = [
     command: "cat ai-ml.txt",
     skills: ["NLP / GPT", "Computer Vision", "Deep Learning", "Python (ML)", "TensorFlow", "OpenAI API"],
   },
+  {
+    id: "ai-automation",
+    label: "ai-automation",
+    Icon: SiOpenai,
+    iconColor: "#22d3ee",
+    command: "cat ai-automation.txt",
+    skills: ["AI Automation Development", "Assistant Setup", "n8n", "OpenClaw", "Hermes", "Workflow Automation", "Agentic Tools", "No-Code / Low-Code AI"],
+  },
 ];
 
 export default function SkillsWidget() {

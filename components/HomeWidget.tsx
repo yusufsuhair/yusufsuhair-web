@@ -3,6 +3,12 @@
 import { Github, Linkedin } from "lucide-react";
 
 const CAREER_START_YEAR = 2020;
+const outcomes = [
+  "50+ apps shipped",
+  "5M+ installs",
+  "Enterprise fintech experience",
+  "AI/Web3 product launches",
+];
 
 export default function HomeWidget() {
   const yearsOfExperience = new Date().getFullYear() - CAREER_START_YEAR;
@@ -24,6 +30,16 @@ export default function HomeWidget() {
               <p className="text-lg md:text-xl text-zinc-400 max-w-lg leading-relaxed">
                 {yearsOfExperience}+ years building secure, reliable systems — from Web3 protocols and AI platforms to mobile apps and enterprise backends. I own the full lifecycle: architecture, implementation, and deployment.
               </p>
+              <div className="flex flex-wrap gap-2 pt-2">
+                {outcomes.map((outcome) => (
+                  <span
+                    key={outcome}
+                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium uppercase tracking-widest text-zinc-300"
+                  >
+                    {outcome}
+                  </span>
+                ))}
+              </div>
             </div>
 
             <div className="flex flex-wrap items-center gap-4 pt-4">
