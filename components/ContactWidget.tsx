@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Linkedin, Mail } from "lucide-react";
+import { ArrowUpRight, Github, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function ContactWidget() {
@@ -28,11 +28,11 @@ export default function ContactWidget() {
               </p>
 
               <a
-                href="mailto:yusufmohdsuhair@gmail.com"
+                href="/services"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium text-black bg-white rounded-full hover:scale-105 transition-transform duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)] mb-12"
               >
-                <Mail size={16} />
-                yusufmohdsuhair@gmail.com
+                View Services
+                <ArrowUpRight size={16} />
               </a>
 
               <div className="flex items-center justify-center gap-8 border-t border-white/10 pt-8 mt-4">
