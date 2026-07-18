@@ -11,8 +11,8 @@ const SEQUENCE = [
   { symbol: "➜", color: "text-white",     text: "ready." },
 ];
 
-const STEP_DELAY = 280; // ms between each line
-const EXIT_DELAY = SEQUENCE.length * STEP_DELAY + 500;
+const STEP_DELAY = 90; // ms between each line
+const EXIT_DELAY = SEQUENCE.length * STEP_DELAY + 200;
 
 export default function LoadingScreen() {
   const [step, setStep] = useState(0);
@@ -36,7 +36,7 @@ export default function LoadingScreen() {
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
+          transition={{ duration: 0.25, ease: "easeInOut" }}
           className="fixed inset-0 z-[200] bg-[#050505] flex items-center justify-center"
         >
           <div className="font-mono text-sm space-y-2 w-64">

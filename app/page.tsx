@@ -2,7 +2,6 @@
 
 import AboutWidget from "@/components/AboutWidget";
 import ContactWidget from "@/components/ContactWidget";
-import ExperienceWidget from "@/components/ExperienceWidget";
 import HomeWidget from "@/components/HomeWidget";
 import BackToTop from "@/components/BackToTop";
 import CursorFollower from "@/components/CursorFollower";
@@ -36,7 +35,6 @@ export default function Home() {
         <HomeWidget />
         <StatsWidget />
         <AboutWidget />
-        <ExperienceWidget />
         <SkillsWidget />
         <ProjectsWidget />
         <YoutubeWidget />

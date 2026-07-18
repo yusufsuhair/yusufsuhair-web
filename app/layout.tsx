@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Raleway } from "next/font/google";
+import { Inter, Raleway, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
@@ -11,6 +11,11 @@ const inter = Inter({
 const raleway = Raleway({
   subsets: ["latin"],
   variable: "--font-raleway",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
 });
 
 export const metadata: Metadata = {
@@ -105,7 +110,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth dark">
       <body
         suppressHydrationWarning
-        className={`${inter.variable} ${raleway.variable} antialiased`}
+        className={`${inter.variable} ${raleway.variable} ${jetbrainsMono.variable} antialiased`}
       >
         {children}
         <Analytics />

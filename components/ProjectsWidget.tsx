@@ -66,15 +66,6 @@ const projectsData: Project[] = [
     category: "crypto",
   },
   {
-    title: "AIFiqh",
-    role: "Lead AI Engineer",
-    url: "https://aifiqh.com",
-    description: "AI-powered Islamic Q&A platform providing accurate fiqh and religious guidance.",
-    tech: ["Next.js", "Python", "NestJS", "NLP"],
-    image: "/screenshot-aifiqh.jpg",
-    category: "ai",
-  },
-  {
     title: "Celebrity Video Call Entertainment Apps",
     role: "Founder / Mobile Developer",
     description: "Entertainment suite of celebrity video call simulation apps, reaching 5M+ installs across 50+ published titles.",

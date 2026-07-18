@@ -1,41 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
-  { href: "#youtube", label: "YouTube" },
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
 ];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
-
-  useEffect(() => {
-    const sectionIds = navLinks.map((l) => l.href.slice(1));
-
-    const onScroll = () => {
-      const scrollY = window.scrollY + window.innerHeight / 3;
-
-      let current = "";
-      for (const id of sectionIds) {
-        const el = document.getElementById(id);
-        if (el && el.offsetTop <= scrollY) {
-          current = id;
-        }
-      }
-      setActiveSection(current);
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll(); // run once on mount
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const pathname = usePathname();
+  const contactHref = pathname === "/" ? "#contact" : "/#contact";
 
   const handleLinkClick = () => setMobileOpen(false);
 
@@ -43,14 +21,14 @@ export default function Navbar() {
     <nav className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-[#050505]/70 border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="text-xl font-medium tracking-tighter text-white">
+        <a href="/" className="text-xl font-medium tracking-tighter text-white">
           YS.
         </a>
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8 text-sm">
           {navLinks.map((link) => {
-            const isActive = activeSection === link.href.slice(1);
+            const isActive = pathname === link.href;
             return (
               <a
                 key={link.href}
@@ -75,7 +53,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           {/* Desktop CTA */}
           <a
-            href="#contact"
+            href={contactHref}
             className="hidden md:inline-flex px-4 py-2 text-sm font-medium text-black bg-white rounded-full hover:scale-105 transition-transform duration-300"
           >
             Let&apos;s talk
@@ -115,7 +93,7 @@ export default function Navbar() {
           >
             <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1">
               {navLinks.map((link) => {
-                const isActive = activeSection === link.href.slice(1);
+                const isActive = pathname === link.href;
                 return (
                   <a
                     key={link.href}
@@ -132,7 +110,7 @@ export default function Navbar() {
                 );
               })}
               <a
-                href="#contact"
+                href={contactHref}
                 onClick={handleLinkClick}
                 className="mt-2 px-4 py-3 text-sm font-medium text-black bg-white rounded-xl text-center hover:bg-zinc-200 transition-colors"
               >
