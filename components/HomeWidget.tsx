@@ -1,153 +1,100 @@
 "use client";
 
-import { Github, Linkedin } from "lucide-react";
+import { Github, Instagram, Linkedin, Mail, Youtube } from "lucide-react";
+import { FaThreads } from "react-icons/fa6";
+import { TypingAnimation } from "@/components/ui/typing-animation";
 
-const CAREER_START_YEAR = 2020;
-const outcomes = [
-  "50+ apps shipped",
-  "5M+ installs",
-  "Enterprise fintech experience",
-  "AI/Web3 product launches",
+const CAREER_START_YEAR = 2019;
+const mono = { fontFamily: "var(--font-jetbrains-mono), monospace" };
+
+const socialLinks = [
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/yusufsuhair",
+    icon: <Linkedin size={20} aria-hidden="true" />,
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/yusufsuhair",
+    icon: <Github size={20} aria-hidden="true" />,
+  },
+  {
+    label: "Threads",
+    href: "https://www.threads.net/@yusufsuhair",
+    icon: <FaThreads size={20} aria-hidden="true" />,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/yusufsuhair",
+    icon: <Instagram size={20} aria-hidden="true" />,
+  },
+  {
+    label: "YouTube",
+    href: "https://youtube.com/c/YusufSuhair",
+    icon: <Youtube size={21} aria-hidden="true" />,
+  },
+  {
+    label: "Gmail",
+    href: "mailto:yusufmohdsuhair@gmail.com",
+    icon: <Mail size={20} aria-hidden="true" />,
+  },
 ];
 
 export default function HomeWidget() {
   const yearsOfExperience = new Date().getFullYear() - CAREER_START_YEAR;
+
   return (
-    <section className="min-h-screen flex items-center pt-24 pb-16">
+    <section className="min-h-[78vh] flex items-center pt-28 pb-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
+        <div className="max-w-4xl mx-auto text-center">
+          <TypingAnimation
+            as="h1"
+            typeSpeed={75}
+            delay={250}
+            aria-label="Hello, I'm Yusuf."
+            className="min-h-[3.75rem] sm:min-h-[4.5rem] md:min-h-[5.5rem] text-5xl sm:text-6xl md:text-7xl font-medium tracking-tight text-white leading-tight"
+          >
+            Hello, I&apos;m Yusuf.
+          </TypingAnimation>
+          <p
+            className="mt-4 text-[11px] uppercase tracking-[0.18em] text-zinc-500"
+            style={mono}
+          >
+            Software Engineer · AI Agent Builder · Founder, YS Academy
+          </p>
 
-          {/* Left: Content */}
-          <div className="flex flex-col items-start space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-[1.1]">
-                Fullstack & DevSecOps Engineer crafting{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-zinc-600">
-                  scalable systems
-                </span>
-                .
-              </h1>
-              <p className="text-lg md:text-xl text-zinc-400 max-w-lg leading-relaxed">
-                {yearsOfExperience}+ years building secure, reliable systems — from Web3 protocols and AI platforms to mobile apps and enterprise backends. I own the full lifecycle: architecture, implementation, and deployment.
-              </p>
-              <div className="flex flex-wrap gap-2 pt-2">
-                {outcomes.map((outcome) => (
+          <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
+            {socialLinks.map(({ label, href, icon }) => {
+              const opensNewTab = href.startsWith("http");
+
+              return (
+                <a
+                  key={label}
+                  href={href}
+                  target={opensNewTab ? "_blank" : undefined}
+                  rel={opensNewTab ? "noopener noreferrer" : undefined}
+                  aria-label={label}
+                  className="group relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-zinc-300 transition-colors duration-200 hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                >
+                  {icon}
                   <span
-                    key={outcome}
-                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium uppercase tracking-widest text-zinc-300"
+                    role="tooltip"
+                    className="pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 whitespace-nowrap rounded bg-white px-2 py-1 text-xs font-medium text-black opacity-0 shadow-lg transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100"
                   >
-                    {outcome}
+                    {label}
                   </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-4 pt-4">
-              <a
-                href="https://linkedin.com/in/yusufsuhair"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium text-black bg-white rounded-full hover:bg-zinc-200 hover:scale-[1.02] transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
-              >
-                <Linkedin size={16} />
-                Contact me on LinkedIn
-              </a>
-              <a
-                href="https://github.com/yusufsuhair"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium text-white bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
-              >
-                <Github size={16} />
-                GitHub
-              </a>
-            </div>
+                </a>
+              );
+            })}
           </div>
 
-          {/* Right: Terminal Visual */}
-          <div className="relative lg:ml-auto w-full max-w-lg group">
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 rounded-2xl blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-50" />
-
-            <div className="relative rounded-2xl bg-[#0a0a0a] border border-white/10 shadow-2xl overflow-hidden">
-              {/* Terminal Header */}
-              <div className="flex items-center px-4 py-3 border-b border-white/5 bg-[#0f0f0f]">
-                <div className="flex space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                </div>
-                <div className="mx-auto text-xs text-zinc-500 font-mono">yusuf@dev-env:~</div>
-              </div>
-
-              {/* Terminal Body */}
-              <div className="p-6 font-mono text-sm space-y-3">
-                <div>
-                  <span className="text-purple-400">const</span>{" "}
-                  <span className="text-blue-400">developer</span>{" "}
-                  <span className="text-purple-400">=</span> {"{"}
-                </div>
-                <div className="pl-4 space-y-1">
-                  <div>
-                    <span className="text-zinc-400">name:</span>{" "}
-                    <span className="text-green-400">&apos;Yusuf Suhair&apos;</span>,
-                  </div>
-                  <div>
-                    <span className="text-zinc-400">role:</span>{" "}
-                    <span className="text-green-400">&apos;Fullstack & DevSecOps Engineer&apos;</span>,
-                  </div>
-                  <div>
-                    <span className="text-zinc-400">stack:</span> [
-                  </div>
-                  <div className="pl-4">
-                    <span className="text-green-400">&apos;TypeScript&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Spring Boot&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Python&apos;</span>,
-                  </div>
-                  <div className="pl-4">
-                    <span className="text-green-400">&apos;Flutter&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Kotlin&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Java&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Solidity&apos;</span>,
-                  </div>
-                  <div>],</div>
-                  <div>
-                    <span className="text-zinc-400">devops:</span> [
-                  </div>
-                  <div className="pl-4">
-                    <span className="text-green-400">&apos;Docker&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Kubernetes&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Terraform&apos;</span>,
-                  </div>
-                  <div className="pl-4">
-                    <span className="text-green-400">&apos;CI/CD&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Jenkins&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Ansible&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Trivy&apos;</span>
-                  </div>
-                  <div>],</div>
-                  <div>
-                    <span className="text-zinc-400">focus:</span> [
-                    <span className="text-green-400">&apos;Web Dev&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Web3&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;AI/ML&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;Mobile&apos;</span>,{" "}
-                    <span className="text-green-400">&apos;DevSecOps&apos;</span>],
-                  </div>
-                  <div>
-                    <span className="text-zinc-400">location:</span>{" "}
-                    <span className="text-green-400">&apos;Kuala Lumpur, MY&apos;</span>
-                  </div>
-                </div>
-                <div>{"}"}</div>
-                <div className="flex items-center gap-2 pt-2">
-                  <span className="text-green-400">➜</span>
-                  <span className="text-blue-400">~</span>
-                  <span className="animate-pulse w-2 h-4 bg-zinc-400 inline-block" />
-                </div>
-              </div>
-            </div>
-          </div>
-
+          <p className="mt-10 mx-auto max-w-[540px] text-sm md:text-base text-zinc-400 leading-relaxed">
+            I&apos;m a software engineer and AI agent builder with {yearsOfExperience}+ years of
+            experience. I&apos;ve shipped 50+ web and mobile products, with my mobile apps
+            reaching 5M+ installs. Through YS Academy, I teach people to build apps with AI,
+            create AI agents and automate workflows. I also help businesses implement these
+            technologies in their operations.
+          </p>
         </div>
       </div>
     </section>

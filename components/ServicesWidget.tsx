@@ -1,9 +1,9 @@
 "use client";
 
 import type { ComponentType, ReactNode } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { BookOpen, ArrowUpRight, Link2, MessageCircle, Users, ChevronDown, CheckCircle2, Info } from "lucide-react";
+import { BookOpen, Link2, MessageCircle, Users, ChevronDown, CheckCircle2, Info } from "lucide-react";
 
 const mono = { fontFamily: "var(--font-jetbrains-mono), monospace" };
 
@@ -18,34 +18,56 @@ const getYearsSince = (start: Date): number => {
   return years;
 };
 
-type Icon = ComponentType<{ size?: number }>;
+type Icon = ComponentType<{ size?: number; className?: string }>;
 
 interface Service {
   id: string;
+  anchor?: "web" | "hermes" | "n8n";
   title: string;
   description: string;
   price: string;
-  iconWrapClass?: string;
   Icon?: Icon;
-  iconClass: string;
   renderIcon?: () => ReactNode;
   cta: { label: string; href: string; Icon: Icon };
   caption: { label: string; Icon: Icon };
   details?: ReactNode;
 }
 
-const BrowserMockup = () => (
-  <div className="w-full h-full rounded-lg overflow-hidden bg-white flex flex-col">
-    <div className="h-2.5 bg-[#1c1a16]/5 flex items-center gap-0.5 px-1.5 shrink-0">
-      <span className="w-1 h-1 rounded-full bg-red-400" />
-      <span className="w-1 h-1 rounded-full bg-amber-400" />
-      <span className="w-1 h-1 rounded-full bg-green-400" />
+const MacOSBrowserPreview = () => (
+  <motion.div
+    whileHover={{ y: -2, scale: 1.03 }}
+    transition={{ type: "spring", stiffness: 360, damping: 24 }}
+    className="w-16 h-12 md:w-20 md:h-[60px] overflow-hidden rounded-md border border-white/15 bg-[#0a0a0a] shadow-[0_8px_24px_rgba(0,0,0,0.45)]"
+    aria-hidden="true"
+  >
+    <div className="flex h-3.5 md:h-4 items-center gap-1 border-b border-white/10 bg-[#161616] px-1.5">
+      <span className="h-1.5 w-1.5 rounded-full bg-[#ff5f57]" />
+      <span className="h-1.5 w-1.5 rounded-full bg-[#febc2e]" />
+      <span className="h-1.5 w-1.5 rounded-full bg-[#28c840]" />
+      <span className="ml-0.5 h-1.5 flex-1 rounded-full border border-white/10 bg-white/5" />
     </div>
-    <div className="flex-1 bg-gradient-to-br from-blue-100 via-indigo-50 to-purple-100 p-1.5 flex flex-col gap-1 justify-center">
-      <div className="h-1 w-7 bg-white/80 rounded-full" />
-      <div className="h-1 w-5 bg-white/60 rounded-full" />
+
+    <div className="h-[calc(100%-14px)] bg-[#070707] p-1.5 md:h-[calc(100%-16px)] md:p-2">
+      <div className="mb-1 flex items-center justify-between">
+        <span className="h-1.5 w-5 rounded-full bg-zinc-200" />
+        <div className="flex gap-1">
+          <span className="h-1 w-2.5 rounded-full bg-zinc-700" />
+          <span className="h-1 w-2.5 rounded-full bg-zinc-700" />
+        </div>
+      </div>
+      <div className="grid h-[calc(100%-6px)] grid-cols-[1.1fr_0.9fr] gap-1.5 rounded-sm border border-white/5 bg-[#101010] p-1.5 shadow-[0_1px_3px_rgba(15,23,42,0.08)]">
+        <div className="flex flex-col justify-center gap-1">
+          <span className="h-1.5 w-full rounded-full bg-zinc-200" />
+          <span className="h-1 w-4/5 rounded-full bg-zinc-700" />
+          <span className="mt-0.5 h-2 w-5 rounded-sm bg-[#2563eb]" />
+        </div>
+        <div className="relative overflow-hidden rounded-sm bg-blue-500/15">
+          <span className="absolute bottom-1 left-1 h-3 w-3 rounded-sm bg-blue-300/40" />
+          <span className="absolute right-1 top-1 h-1.5 w-4 rounded-full bg-[#60a5fa]" />
+        </div>
+      </div>
     </div>
-  </div>
+  </motion.div>
 );
 
 interface PricingTier {
@@ -180,38 +202,35 @@ const pricingSheet: PricingGroup[] = [
 ];
 
 const TierCard = ({ tier }: { tier: PricingTier }) => (
-  <div className="relative group h-full">
-    <div className="absolute -inset-0.5 bg-gradient-to-b from-blue-400/30 to-purple-400/30 rounded-2xl blur opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-    <div className="relative rounded-2xl border border-[#1c1a16]/10 bg-white p-5 h-full flex flex-col shadow-sm">
-      <h5 className="font-semibold text-base text-[#1c1a16] mb-1">{tier.name}</h5>
-      <div className="text-2xl font-bold text-[#1c1a16] tracking-tight mb-4" style={mono}>
-        {tier.price}
-      </div>
-
-      {tier.blurb && (
-        <div className="flex items-start gap-2.5 px-3 py-2.5 rounded-xl bg-[#1c1a16]/[0.03] border border-[#1c1a16]/8 mb-4">
-          <Info size={14} className="text-blue-500 shrink-0 mt-0.5" />
-          <p className="text-xs font-medium text-[#4a463d] leading-relaxed">{tier.blurb}</p>
-        </div>
-      )}
-
-      {tier.items.length > 0 && (
-        <ul className="space-y-2.5 flex-1">
-          {tier.items.map((item) => (
-            <li key={item} className="flex items-start gap-2.5 text-sm text-[#4a463d]">
-              <CheckCircle2 size={16} className="text-blue-500 shrink-0 mt-0.5" />
-              {item}
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {tier.note && (
-        <p className="text-xs text-[#8a8371] italic mt-4 pt-4 border-t border-[#1c1a16]/10">
-          {tier.note}
-        </p>
-      )}
+  <div className="rounded-2xl border border-white/5 bg-[#0a0a0a] p-5 h-full flex flex-col">
+    <h5 className="font-semibold text-sm text-white mb-1">{tier.name}</h5>
+    <div className="text-xl font-semibold text-white tracking-tight mb-4" style={mono}>
+      {tier.price}
     </div>
+
+    {tier.blurb && (
+      <div className="flex items-start gap-2.5 px-3 py-2.5 rounded-lg bg-white/5 border border-white/5 mb-4">
+        <Info size={14} className="text-blue-400 shrink-0 mt-0.5" />
+        <p className="text-xs text-zinc-400 leading-relaxed">{tier.blurb}</p>
+      </div>
+    )}
+
+    {tier.items.length > 0 && (
+      <ul className="space-y-2.5 flex-1">
+        {tier.items.map((item) => (
+          <li key={item} className="flex items-start gap-2.5 text-sm text-zinc-400">
+            <CheckCircle2 size={16} className="text-blue-400 shrink-0 mt-0.5" />
+            {item}
+          </li>
+        ))}
+      </ul>
+    )}
+
+    {tier.note && (
+      <p className="text-xs text-zinc-500 mt-4 pt-4 border-t border-white/5">
+        {tier.note}
+      </p>
+    )}
   </div>
 );
 
@@ -219,7 +238,7 @@ const HermesDetails = () => (
   <div className="space-y-8">
     {pricingSheet.map((group) => (
       <div key={group.title}>
-        <h4 className="text-xs font-semibold uppercase tracking-widest text-[#8a8371] mb-3" style={mono}>
+        <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500 mb-3" style={mono}>
           {group.title}
         </h4>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
@@ -269,36 +288,28 @@ const WebDevDetails = () => (
   </div>
 );
 
-const ComingSoonDetails = () => (
-  <p className="text-sm text-[#8a8371]">Full details coming soon.</p>
-);
-
 const developmentServices: Service[] = [
   {
     id: "01",
     title: "Mobile App Development",
     description: "Native and cross-platform apps (Flutter, Kotlin, Java) from idea to Play Store launch.",
     price: "Custom quote",
-    iconClass: "bg-slate-500/10",
-    iconWrapClass: "w-20 h-16 rounded-xl",
     renderIcon: () => (
-      <div className="flex items-center gap-2">
-        <img src="/appstore-logo.png" alt="App Store" className="w-6 h-6 object-contain" />
-        <img src="/playstore-logo.png" alt="Play Store" className="w-6 h-6 object-contain" />
+      <div className="flex items-center gap-2.5">
+        <img src="/appstore-logo.png" alt="App Store" className="w-8 h-8 md:w-9 md:h-9 object-contain" />
+        <img src="/playstore-logo.png" alt="Play Store" className="w-8 h-8 md:w-9 md:h-9 object-contain" />
       </div>
     ),
     cta: { label: "Get Quote", href: waLink("Hi Yusuf, I'm interested in Mobile App Development. Can you share more details?"), Icon: MessageCircle },
     caption: { label: "chat on WhatsApp", Icon: MessageCircle },
-    details: <ComingSoonDetails />,
   },
   {
     id: "02",
+    anchor: "web",
     title: "Web Development",
     description: "Premium landing pages to full custom web platforms — payment gateways, backend logic, and everything in between.",
     price: "Starting from RM2000",
-    iconClass: "border border-[#1c1a16]/10",
-    iconWrapClass: "w-20 h-16 rounded-xl p-0.5",
-    renderIcon: () => <BrowserMockup />,
+    renderIcon: () => <MacOSBrowserPreview />,
     cta: { label: "Get Started", href: waLink("Hi Yusuf, I'm interested in Web Development (Starting from RM2000). Can you share more details?"), Icon: MessageCircle },
     caption: { label: "chat on WhatsApp", Icon: MessageCircle },
     details: <WebDevDetails />,
@@ -312,19 +323,17 @@ const coachingServices: Service[] = [
     description: "Weekly live workshops teaching AI-assisted development and automation",
     price: "RM100/month (founding member)",
     Icon: BookOpen,
-    iconClass: "bg-amber-500/10 text-amber-600",
     cta: { label: "Visit YS Academy", href: "https://ysacademy.my", Icon: Link2 },
     caption: { label: "weekly live workshops", Icon: Users },
   },
   {
     id: "02",
+    anchor: "hermes",
     title: "Hermes 1-to-1 Class",
     description: "Private, hands-on session on setting up and running Hermes AI agents for your own business.",
     price: "From RM799",
-    iconClass: "bg-white",
-    iconWrapClass: "w-16 h-16 rounded-full overflow-hidden",
     renderIcon: () => (
-      <img src="/hermes-logo.png" alt="Hermes AI" className="w-full h-full object-cover" />
+      <img src="/hermes-logo.png" alt="Hermes AI" className="w-full h-full rounded-lg border border-white/10 object-cover grayscale brightness-200 contrast-125" />
     ),
     cta: { label: "Book Class", href: waLink("Hi Yusuf, I'm interested in the Hermes 1-to-1 Class (From RM799). Can you share more details?"), Icon: MessageCircle },
     caption: { label: "chat on WhatsApp", Icon: MessageCircle },
@@ -332,12 +341,12 @@ const coachingServices: Service[] = [
   },
   {
     id: "03",
+    anchor: "n8n",
     title: "n8n 1-to-1 Class",
     description: "Private, hands-on session on building automated workflows with n8n for your business.",
     price: "Starting from RM799",
-    iconClass: "bg-[#ea4b71]/10",
     renderIcon: () => (
-      <img src="/n8n.svg" alt="n8n" className="w-9 h-9 object-contain" />
+      <img src="/n8n.svg" alt="n8n" className="w-12 h-12 md:w-14 md:h-14 rounded-md bg-white p-1.5 object-contain" />
     ),
     cta: { label: "Book Class", href: waLink("Hi Yusuf, I'm interested in the n8n 1-to-1 Class (Starting from RM799). Can you share more details?"), Icon: MessageCircle },
     caption: { label: "chat on WhatsApp", Icon: MessageCircle },
@@ -359,135 +368,163 @@ export default function ServicesWidget() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const yearsOfExperience = getYearsSince(CAREER_START);
 
+  useEffect(() => {
+    let focusTimer: number | undefined;
+
+    const openServiceFromHash = () => {
+      const anchor = decodeURIComponent(window.location.hash.slice(1));
+      const match = serviceSections
+        .flatMap((section) =>
+          section.services.map((service) => ({ sectionTitle: section.title, service })),
+        )
+        .find(({ service }) => service.anchor === anchor && service.details);
+
+      if (!match || !match.service.anchor) return;
+
+      setExpandedId(match.sectionTitle + "-" + match.service.id);
+      window.clearTimeout(focusTimer);
+      focusTimer = window.setTimeout(() => {
+        const target = document.getElementById(match.service.anchor!);
+        target?.scrollIntoView({ behavior: "auto", block: "start" });
+        target?.focus({ preventScroll: true });
+      }, 360);
+    };
+
+    openServiceFromHash();
+    window.addEventListener("hashchange", openServiceFromHash);
+
+    return () => {
+      window.clearTimeout(focusTimer);
+      window.removeEventListener("hashchange", openServiceFromHash);
+    };
+  }, []);
+
   return (
-    <section className="relative bg-[#f3eee2] text-[#1c1a16]">
-      <div className="max-w-5xl mx-auto px-6">
+    <section className="relative bg-transparent text-white">
+      <div className="max-w-4xl mx-auto px-6">
 
         {/* Profile */}
         <motion.header
-          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 mb-16 text-center md:text-left"
+          className="flex flex-col md:flex-row items-center md:items-start gap-7 md:gap-10 pb-14 mb-14 border-b border-white/5 text-center md:text-left"
         >
-          <div className="w-32 h-32 md:w-36 md:h-36 rounded-2xl overflow-hidden border border-[#1c1a16]/10 shadow-sm shrink-0 bg-[#e5ddc8]">
+          <div className="w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden border border-white/10 shrink-0 bg-[#0f0f0f]">
             <img
               src="/yusufsuhair.jpg"
               alt="Yusuf Suhair"
-              className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700 ease-out"
+              className="w-full h-full object-cover object-top"
             />
           </div>
 
-          <div className="flex flex-col items-center md:items-start">
-            <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-[#1c1a16]">
+          <div className="flex flex-col items-center md:items-start md:pt-1">
+            <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
               Yusuf Suhair
             </h1>
-            <p className="text-xs text-[#8a8371] mt-2" style={mono}>
+            <p className="text-[11px] uppercase tracking-[0.18em] text-zinc-500 mt-2.5" style={mono}>
               Software Engineer · AI Agent Builder · Founder, YS Academy
             </p>
-            <p className="text-[#4a463d] text-sm md:text-base mt-4 max-w-[500px] leading-relaxed">
+            <p className="text-zinc-400 text-sm md:text-base mt-5 max-w-[540px] leading-relaxed">
               I&apos;m a software engineer and AI agent builder with {yearsOfExperience}+ years of
               experience. I&apos;ve shipped 50+ web and mobile products, with my mobile apps
               reaching 5M+ installs. Through YS Academy, I teach people to build apps with AI,
               create AI agents and automate workflows. I also help businesses implement these
               technologies in their operations.
             </p>
-            <p className="text-xs tracking-[0.15em] uppercase text-[#8a8371] mt-6" style={mono}>
-              build · automate · teach
-            </p>
           </div>
         </motion.header>
 
         {/* Service sections */}
-        <div className="pb-16">
-        {serviceSections.map((section, sectionIndex) => (
-          <div key={section.title} className={sectionIndex > 0 ? "mt-12" : ""}>
-            <h2 className="text-xl font-semibold tracking-tight text-[#1c1a16] mb-5">
-              {section.title}
-            </h2>
-            <div className="space-y-4 md:space-y-5">
-              {section.services.map((service, index) => {
-                const key = `${section.title}-${service.id}`;
-                const isExpanded = expandedId === key;
-                return (
-                  <motion.div
-                    key={key}
-                    initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-60px" }}
-                    transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.06 }}
-                    className="relative group bg-[#faf7ee] rounded-xl border border-[#1c1a16]/10 hover:border-[#1c1a16]/25 transition-colors duration-300 p-5 md:p-6 mt-4 md:mt-0"
-                  >
-                    <div className="absolute -top-3 -left-3 w-8 h-8 bg-[#1c1a16] text-[#faf7ee] text-xs flex items-center justify-center rounded-lg shadow-sm z-10 transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 duration-300" style={mono}>
-                      {service.id}
-                    </div>
+        <div className="pb-20 space-y-14">
+          {serviceSections.map((section) => (
+            <div key={section.title}>
+              <div className="flex items-center gap-4 mb-2">
+                <h2 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-zinc-500" style={mono}>
+                  {section.title}
+                </h2>
+                <div className="h-px flex-1 bg-white/5" />
+              </div>
 
-                    <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
-                      <div className={`flex items-center justify-center shrink-0 ${service.iconWrapClass ?? "w-16 h-16 rounded-full"} ${service.iconClass}`}>
-                        {service.renderIcon ? service.renderIcon() : service.Icon && <service.Icon size={28} />}
-                      </div>
+              <div>
+                {section.services.map((service, index) => {
+                  const key = `${section.title}-${service.id}`;
+                  const isExpanded = expandedId === key;
+                  return (
+                    <motion.div
+                      key={key}
+                      id={service.anchor}
+                      tabIndex={service.anchor ? -1 : undefined}
+                      initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-60px" }}
+                      transition={{ duration: 0.35, ease: "easeOut", delay: index * 0.05 }}
+                      className="scroll-mt-24 py-7 border-b border-white/5 outline-none transition-colors target:bg-white/[0.03] target:ring-1 target:ring-inset target:ring-white/10"
+                    >
+                      <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+                        <div className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 shrink-0 text-zinc-400">
+                          {service.renderIcon ? service.renderIcon() : service.Icon && <service.Icon size={38} />}
+                        </div>
 
-                      <div className="flex-1">
-                        <h3 className="font-semibold text-base text-[#1c1a16]">{service.title}</h3>
-                        <p className="text-sm text-[#8a8371] mt-1">{service.description}</p>
-                        <div className="mt-2.5">
-                          <span className="text-xs text-[#4a463d] bg-[#1c1a16]/5 px-2 py-1 rounded" style={mono}>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="font-semibold text-sm text-white">{service.title}</h3>
+                          <p className="text-sm text-zinc-400 mt-1 leading-relaxed">{service.description}</p>
+                        </div>
+
+                        <div className="flex flex-row md:flex-col items-center md:items-end justify-between gap-3 shrink-0 w-full md:w-auto md:text-right">
+                          <span className="text-sm font-medium text-white whitespace-nowrap" style={mono}>
                             {service.price}
                           </span>
+                          <a
+                            href={service.cta.href}
+                            target={service.cta.href.startsWith("http") ? "_blank" : undefined}
+                            rel={service.cta.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                            className="inline-flex items-center justify-center gap-2 bg-white text-black text-sm font-medium px-4 py-2 rounded-full hover:bg-zinc-200 transition-colors"
+                          >
+                            {service.cta.label}
+                            <service.cta.Icon size={14} />
+                          </a>
+                          <div className="hidden md:flex items-center gap-1.5 text-[11px] text-zinc-600" style={mono}>
+                            <service.caption.Icon size={12} />
+                            {service.caption.label}
+                          </div>
                         </div>
                       </div>
 
-                      <div className="flex flex-col items-start md:items-end mt-2 md:mt-0 shrink-0 w-full md:w-auto">
-                        <a
-                          href={service.cta.href}
-                          target={service.cta.href.startsWith("http") ? "_blank" : undefined}
-                          rel={service.cta.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                          className="inline-flex items-center justify-center gap-2 bg-[#1c1a16] text-[#faf7ee] text-sm font-medium px-4 py-2.5 rounded-lg hover:bg-black transition-colors w-full md:w-auto"
-                        >
-                          {service.cta.label}
-                          <service.cta.Icon size={15} />
-                        </a>
-                        <div className="flex items-center gap-1.5 text-xs text-[#8a8371] mt-2.5 md:mt-2" style={mono}>
-                          <service.caption.Icon size={12} />
-                          {service.caption.label}
-                        </div>
-                      </div>
-                    </div>
+                      {service.details && (
+                        <>
+                          <button
+                            onClick={() => setExpandedId(isExpanded ? null : key)}
+                            className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-500 mt-4 md:ml-28 hover:text-white transition-colors"
+                            style={mono}
+                          >
+                            {isExpanded ? "Hide full pricing details" : "View full pricing details"}
+                            <motion.span animate={{ rotate: isExpanded ? 180 : 0 }} transition={{ duration: 0.2 }}>
+                              <ChevronDown size={14} />
+                            </motion.span>
+                          </button>
 
-                    {service.details && (
-                      <>
-                        <button
-                          onClick={() => setExpandedId(isExpanded ? null : key)}
-                          className="hidden md:inline-flex items-center gap-1 text-xs text-[#1c1a16] mt-4 hover:text-[#5c574a] transition-colors"
-                          style={mono}
-                        >
-                          {isExpanded ? "Hide full pricing details" : "View full pricing details"}
-                          <motion.span animate={{ rotate: isExpanded ? 180 : 0 }} transition={{ duration: 0.2 }}>
-                            <ChevronDown size={14} />
-                          </motion.span>
-                        </button>
-
-                        <AnimatePresence initial={false}>
-                          {isExpanded && (
-                            <motion.div
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: "auto", opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              transition={{ duration: 0.3, ease: "easeInOut" }}
-                              className="hidden md:block overflow-hidden"
-                            >
-                              <div className="mt-4 pt-4 border-t border-[#1c1a16]/10">
-                                {service.details}
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </>
-                    )}
-                  </motion.div>
-                );
-              })}
+                          <AnimatePresence initial={false}>
+                            {isExpanded && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.3, ease: "easeInOut" }}
+                                className="block overflow-hidden"
+                              >
+                                <div className="mt-5 pt-6 md:ml-28 border-t border-white/5">
+                                  {service.details}
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </>
+                      )}
+                    </motion.div>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
         </div>
       </div>
     </section>

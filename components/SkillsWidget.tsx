@@ -57,20 +57,12 @@ const skillGroups: SkillGroup[] = [
     skills: ["Solidity", "Web3.js", "Ethereum", "Smart Contracts", "NFT", "DeFi"],
   },
   {
-    id: "ai-ml",
-    label: "ai-ml",
-    Icon: SiOpenai,
-    iconColor: "#34d399",
-    command: "cat ai-ml.txt",
-    skills: ["NLP / GPT", "Computer Vision", "Deep Learning", "Python (ML)", "TensorFlow", "OpenAI API"],
-  },
-  {
-    id: "ai-automation",
-    label: "ai-automation",
+    id: "ai-agents-automation",
+    label: "ai-agents-automation",
     Icon: SiOpenai,
     iconColor: "#22d3ee",
-    command: "cat ai-automation.txt",
-    skills: ["AI Automation Development", "Assistant Setup", "n8n", "OpenClaw", "Hermes", "Workflow Automation", "Agentic Tools", "No-Code / Low-Code AI"],
+    command: "cat ai-agents-automation.txt",
+    skills: ["Hermes", "OpenClaw", "Ollama", "n8n", "OpenRouter", "MCP", "Browserbase", "Firecrawl", "Telegram Bots", "AI Agent Setup", "Workflow Automation", "Agentic Tools"],
   },
 ];
 

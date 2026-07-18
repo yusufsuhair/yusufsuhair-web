@@ -54,10 +54,10 @@ const CMDS: Record<string, () => React.ReactNode> = {
   whoami: () => (
     <div className="space-y-1 text-sm">
       {w("Yusuf Suhair")}
-      <p>{d("Role      ")} Fullstack & DevSecOps Engineer</p>
+      <p>{d("Role      ")} Software Engineer · AI Agent Builder · Founder, YS Academy</p>
       <p>{d("Location  ")} Kuala Lumpur, Malaysia</p>
       <p>{d("Company   ")} YS Academy / Aixelink Sàrl (Remote)</p>
-      <p>{d("XP        ")} 6+ years</p>
+      <p>{d("XP        ")} 7+ years</p>
       <p>{d("Status    ")} {g("● Available for opportunities")}</p>
     </div>
   ),
@@ -65,8 +65,8 @@ const CMDS: Record<string, () => React.ReactNode> = {
   about: () => (
     <div className="space-y-2 max-w-lg text-sm">
       <p className="text-zinc-300 leading-relaxed">
-        Full-stack engineer with 6+ years building secure, reliable, and scalable systems —
-        from AI-powered platforms to Web3 ecosystems and 50+ mobile apps with 5M+ installs.
+        Software engineer and AI agent builder with 7+ years shipping reliable products —
+        from agent automations and Web3 platforms to 50+ mobile apps with 5M+ installs.
       </p>
       <p className="text-zinc-500 leading-relaxed">
         Founder of YS Academy and currently Founding Engineer at Aixelink Sàrl. Previously
@@ -172,10 +172,10 @@ const CMDS: Record<string, () => React.ReactNode> = {
         <p>{g("yusuf")}{d("@")}{g("dev-env")}</p>
         <p className="text-zinc-700">──────────────────────</p>
         <p>{b("OS:       ")}<span className="text-zinc-300">Human v1.0 (Engineer Edition)</span></p>
-        <p>{b("Role:     ")}<span className="text-zinc-300">Fullstack & DevSecOps</span></p>
+        <p>{b("Role:     ")}<span className="text-zinc-300">Software Eng · AI Agent Builder</span></p>
         <p>{b("Location: ")}<span className="text-zinc-300">Kuala Lumpur, MY</span></p>
-        <p>{b("Stack:    ")}<span className="text-zinc-300">TS · Spring Boot · Flutter</span></p>
-        <p>{b("Uptime:   ")}<span className="text-zinc-300">6+ years</span></p>
+        <p>{b("Stack:    ")}<span className="text-zinc-300">TS · Flutter · Hermes · n8n</span></p>
+        <p>{b("Uptime:   ")}<span className="text-zinc-300">7+ years</span></p>
         <p>{b("Status:   ")}{g("● Online & Available")}</p>
       </div>
     </div>
@@ -219,7 +219,7 @@ const CMDS: Record<string, () => React.ReactNode> = {
     </div>
   ),
 
-  "npm install life": () => g("✓ life installed. 6+ years of experience added to /node_modules."),
+  "npm install life": () => g("✓ life installed. 7+ years of experience added to /node_modules."),
 
   hack: () => (
     <div className="space-y-1 text-sm">

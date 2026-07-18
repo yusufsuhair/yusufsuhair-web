@@ -1,6 +1,7 @@
 "use client";
 
 import BackToTop from "@/components/BackToTop";
+import CursorFollower from "@/components/CursorFollower";
 import LoadingScreen from "@/components/LoadingScreen";
 import Navbar from "@/components/Navbar";
 import ServicesWidget from "@/components/ServicesWidget";
@@ -9,19 +10,26 @@ import TerminalModal from "@/components/TerminalModal";
 export default function Services() {
   return (
     <div
-      className="min-h-screen bg-[#f3eee2] text-[#1c1a16] antialiased"
+      className="min-h-screen bg-[#050505] text-zinc-300 antialiased selection:bg-white/20 selection:text-white"
       style={{ fontFamily: "var(--font-inter), sans-serif" }}
     >
+      {/* Background Ambient Glow */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-blue-500/10 blur-[120px] rounded-full mix-blend-screen" />
+        <div className="absolute top-[20%] right-[-10%] w-[40%] h-[40%] bg-purple-500/10 blur-[120px] rounded-full mix-blend-screen" />
+      </div>
+
       <Navbar />
 
       <LoadingScreen />
+      <CursorFollower />
       <BackToTop />
       <TerminalModal />
       <main className="relative z-10 pt-32">
         <ServicesWidget />
 
-        <footer className="py-8 border-t border-[#1c1a16]/10 text-center">
-          <p className="text-xs text-[#8a8371] font-mono uppercase tracking-widest">
+        <footer className="py-8 border-t border-white/5 text-center">
+          <p className="text-xs text-zinc-600 font-mono uppercase tracking-widest">
             © {new Date().getFullYear()} Yusuf Suhair. All rights reserved.
           </p>
         </footer>

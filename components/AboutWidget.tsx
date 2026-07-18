@@ -7,24 +7,14 @@ const fadeUp = {
   visible: { opacity: 1, y: 0 },
 };
 
-const specializations = [
-  "Full-Stack Development",
-  "Web3 & Blockchain",
-  "Mobile Development (Flutter, Kotlin, Java)",
-  "AI/ML Integration",
-  "AI Automation & Assistant Setup",
-  "DevSecOps & CI/CD",
-  "Smart Contracts (Solidity)",
-];
-
-const CAREER_START_YEAR = 2020;
+const CAREER_START_YEAR = 2019;
 
 export default function AboutWidget() {
   const yearsOfExperience = new Date().getFullYear() - CAREER_START_YEAR;
   return (
     <section id="about" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[20rem_minmax(0,1fr)] lg:gap-12 items-center">
 
           {/* Photo */}
           <motion.div
@@ -53,27 +43,10 @@ export default function AboutWidget() {
                 About Me
               </h2>
               <p className="text-zinc-400 text-base leading-relaxed mb-4">
-                I&apos;m a full-stack engineer with {yearsOfExperience}+ years building secure, reliable, and scalable
-                systems. From architecting AI-powered platforms to deploying Web3 ecosystems and
-                shipping 50+ mobile apps with 5M+ installs — I own the full stack from implementation
-                to production infrastructure.
-              </p>
-              <p className="text-zinc-500 text-sm leading-relaxed">
-                Founder of YS Academy and Founding Engineer (Mobile, Web, AI, DevOps) at Aixelink Sàrl.
-                Previously CTO & Co-Founder at Heifereum Technology and a full-stack developer at SWIFT
-                and SICPA, working across fintech, enterprise, and consumer-facing products in Malaysia
-                and globally.
+                I&apos;m a software engineer and AI agent builder with {yearsOfExperience}+ years shipping secure, reliable products. From building agent automations and web platforms to deploying Web3 ecosystems and shipping 50+ mobile apps with 5M+ installs — I own the full lifecycle from implementation to production infrastructure.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-              {specializations.map((skill) => (
-                <div key={skill} className="flex items-center gap-2 text-sm text-zinc-300">
-                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-500 flex-shrink-0" />
-                  {skill}
-                </div>
-              ))}
-            </div>
           </motion.div>
 
         </div>
