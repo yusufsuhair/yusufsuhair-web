@@ -333,7 +333,7 @@ const coachingServices: Service[] = [
     description: "Private, hands-on session on setting up and running Hermes AI agents for your own business.",
     price: "From RM799",
     renderIcon: () => (
-      <img src="/hermes-logo.png" alt="Hermes AI" className="w-full h-full rounded-lg border border-white/10 object-cover grayscale brightness-200 contrast-125" />
+      <img src="/hermes-logo.png" alt="Hermes AI" className="w-full h-full object-contain" />
     ),
     cta: { label: "Book Class", href: waLink("Hi Yusuf, I'm interested in the Hermes 1-to-1 Class (From RM799). Can you share more details?"), Icon: MessageCircle },
     caption: { label: "chat on WhatsApp", Icon: MessageCircle },
