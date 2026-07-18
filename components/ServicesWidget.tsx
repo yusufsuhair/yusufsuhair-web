@@ -3,10 +3,13 @@
 import type { ComponentType, ReactNode } from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { BookOpen, ArrowUpRight, Link2, Mail, Users, ChevronDown, CheckCircle2, Info } from "lucide-react";
+import { BookOpen, ArrowUpRight, Link2, MessageCircle, Users, ChevronDown, CheckCircle2, Info } from "lucide-react";
 import { SiAppstore, SiGoogleplay } from "react-icons/si";
 
 const mono = { fontFamily: "var(--font-jetbrains-mono), monospace" };
+
+const WHATSAPP_NUMBER = "601123709141";
+const waLink = (message: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
 type Icon = ComponentType<{ size?: number }>;
 
@@ -280,8 +283,8 @@ const services: Service[] = [
     renderIcon: () => (
       <img src="/hermes-logo.png" alt="Hermes AI" className="w-full h-full object-cover" />
     ),
-    cta: { label: "Book Class", href: "mailto:yusufmohdsuhair@gmail.com?subject=Hermes 1-to-1 Class Booking", Icon: ArrowUpRight },
-    caption: { label: "reply within 24h", Icon: Mail },
+    cta: { label: "Book Class", href: waLink("Hi Yusuf, I'm interested in the Hermes 1-to-1 Class (From RM799). Can you share more details?"), Icon: MessageCircle },
+    caption: { label: "chat on WhatsApp", Icon: MessageCircle },
     details: <HermesDetails />,
   },
   {
@@ -293,8 +296,8 @@ const services: Service[] = [
     renderIcon: () => (
       <img src="/n8n.svg" alt="n8n" className="w-9 h-9 object-contain" />
     ),
-    cta: { label: "Book Class", href: "mailto:yusufmohdsuhair@gmail.com?subject=n8n 1-to-1 Class Booking", Icon: ArrowUpRight },
-    caption: { label: "reply within 24h", Icon: Mail },
+    cta: { label: "Book Class", href: waLink("Hi Yusuf, I'm interested in the n8n 1-to-1 Class (Starting from RM799). Can you share more details?"), Icon: MessageCircle },
+    caption: { label: "chat on WhatsApp", Icon: MessageCircle },
     details: <HermesDetails />,
   },
   {
@@ -310,8 +313,8 @@ const services: Service[] = [
         <SiGoogleplay size={23} className="text-[#00b26a]" />
       </div>
     ),
-    cta: { label: "Get Quote", href: "mailto:yusufmohdsuhair@gmail.com?subject=Mobile App Development Inquiry", Icon: ArrowUpRight },
-    caption: { label: "reply within 24h", Icon: Mail },
+    cta: { label: "Get Quote", href: waLink("Hi Yusuf, I'm interested in Mobile App Development. Can you share more details?"), Icon: MessageCircle },
+    caption: { label: "chat on WhatsApp", Icon: MessageCircle },
     details: <ComingSoonDetails />,
   },
   {
@@ -322,8 +325,8 @@ const services: Service[] = [
     iconClass: "border border-[#1c1a16]/10",
     iconWrapClass: "w-20 h-16 rounded-xl p-0.5",
     renderIcon: () => <BrowserMockup />,
-    cta: { label: "Get Started", href: "mailto:yusufmohdsuhair@gmail.com?subject=Web Development Inquiry", Icon: ArrowUpRight },
-    caption: { label: "reply within 24h", Icon: Mail },
+    cta: { label: "Get Started", href: waLink("Hi Yusuf, I'm interested in Web Development (Starting from RM2000). Can you share more details?"), Icon: MessageCircle },
+    caption: { label: "chat on WhatsApp", Icon: MessageCircle },
     details: <WebDevDetails />,
   },
 ];
