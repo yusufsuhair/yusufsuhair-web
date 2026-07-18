@@ -37,28 +37,28 @@ const MacOSBrowserPreview = () => (
   <motion.div
     whileHover={{ y: -2, scale: 1.03 }}
     transition={{ type: "spring", stiffness: 360, damping: 24 }}
-    className="w-16 h-12 md:w-20 md:h-[60px] overflow-hidden rounded-md border border-white/15 bg-[#0a0a0a] shadow-[0_8px_24px_rgba(0,0,0,0.45)]"
+    className="w-16 h-12 md:w-20 md:h-[60px] overflow-hidden rounded-md border border-zinc-300 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.12)]"
     aria-hidden="true"
   >
-    <div className="flex h-3.5 md:h-4 items-center gap-1 border-b border-white/10 bg-[#161616] px-1.5">
+    <div className="flex h-3.5 md:h-4 items-center gap-1 border-b border-zinc-200 bg-zinc-100 px-1.5">
       <span className="h-1.5 w-1.5 rounded-full bg-[#ff5f57]" />
       <span className="h-1.5 w-1.5 rounded-full bg-[#febc2e]" />
       <span className="h-1.5 w-1.5 rounded-full bg-[#28c840]" />
-      <span className="ml-0.5 h-1.5 flex-1 rounded-full border border-white/10 bg-white/5" />
+      <span className="ml-0.5 h-1.5 flex-1 rounded-full border border-zinc-200 bg-white" />
     </div>
 
-    <div className="h-[calc(100%-14px)] bg-[#070707] p-1.5 md:h-[calc(100%-16px)] md:p-2">
+    <div className="h-[calc(100%-14px)] bg-white p-1.5 md:h-[calc(100%-16px)] md:p-2">
       <div className="mb-1 flex items-center justify-between">
-        <span className="h-1.5 w-5 rounded-full bg-zinc-200" />
+        <span className="h-1.5 w-5 rounded-full bg-zinc-800" />
         <div className="flex gap-1">
-          <span className="h-1 w-2.5 rounded-full bg-zinc-700" />
-          <span className="h-1 w-2.5 rounded-full bg-zinc-700" />
+          <span className="h-1 w-2.5 rounded-full bg-zinc-300" />
+          <span className="h-1 w-2.5 rounded-full bg-zinc-300" />
         </div>
       </div>
-      <div className="grid h-[calc(100%-6px)] grid-cols-[1.1fr_0.9fr] gap-1.5 rounded-sm border border-white/5 bg-[#101010] p-1.5 shadow-[0_1px_3px_rgba(15,23,42,0.08)]">
+      <div className="grid h-[calc(100%-6px)] grid-cols-[1.1fr_0.9fr] gap-1.5 rounded-sm border border-zinc-200 bg-zinc-50 p-1.5 shadow-[0_1px_3px_rgba(15,23,42,0.08)]">
         <div className="flex flex-col justify-center gap-1">
-          <span className="h-1.5 w-full rounded-full bg-zinc-200" />
-          <span className="h-1 w-4/5 rounded-full bg-zinc-700" />
+          <span className="h-1.5 w-full rounded-full bg-zinc-800" />
+          <span className="h-1 w-4/5 rounded-full bg-zinc-300" />
           <span className="mt-0.5 h-2 w-5 rounded-sm bg-[#2563eb]" />
         </div>
         <div className="relative overflow-hidden rounded-sm bg-blue-500/15">
@@ -202,24 +202,24 @@ const pricingSheet: PricingGroup[] = [
 ];
 
 const TierCard = ({ tier }: { tier: PricingTier }) => (
-  <div className="rounded-2xl border border-white/5 bg-[#0a0a0a] p-5 h-full flex flex-col">
-    <h5 className="font-semibold text-sm text-white mb-1">{tier.name}</h5>
-    <div className="text-xl font-semibold text-white tracking-tight mb-4" style={mono}>
+  <div className="rounded-lg border border-zinc-200 bg-white shadow-sm p-5 h-full flex flex-col">
+    <h5 className="font-semibold text-sm text-zinc-950 mb-1">{tier.name}</h5>
+    <div className="text-xl font-semibold text-zinc-950 tracking-tight mb-4" style={mono}>
       {tier.price}
     </div>
 
     {tier.blurb && (
-      <div className="flex items-start gap-2.5 px-3 py-2.5 rounded-lg bg-white/5 border border-white/5 mb-4">
-        <Info size={14} className="text-blue-400 shrink-0 mt-0.5" />
-        <p className="text-xs text-zinc-400 leading-relaxed">{tier.blurb}</p>
+      <div className="flex items-start gap-2.5 px-3 py-2.5 rounded-lg bg-zinc-50 border border-zinc-200 mb-4">
+        <Info size={14} className="text-blue-600 shrink-0 mt-0.5" />
+        <p className="text-xs text-zinc-600 leading-relaxed">{tier.blurb}</p>
       </div>
     )}
 
     {tier.items.length > 0 && (
       <ul className="space-y-2.5 flex-1">
         {tier.items.map((item) => (
-          <li key={item} className="flex items-start gap-2.5 text-sm text-zinc-400">
-            <CheckCircle2 size={16} className="text-blue-400 shrink-0 mt-0.5" />
+          <li key={item} className="flex items-start gap-2.5 text-sm text-zinc-600">
+            <CheckCircle2 size={16} className="text-blue-600 shrink-0 mt-0.5" />
             {item}
           </li>
         ))}
@@ -227,7 +227,7 @@ const TierCard = ({ tier }: { tier: PricingTier }) => (
     )}
 
     {tier.note && (
-      <p className="text-xs text-zinc-500 mt-4 pt-4 border-t border-white/5">
+      <p className="text-xs text-zinc-500 mt-4 pt-4 border-t border-zinc-200">
         {tier.note}
       </p>
     )}
@@ -318,22 +318,13 @@ const developmentServices: Service[] = [
 
 const coachingServices: Service[] = [
   {
-    id: "01",
-    title: "Vibe Coding & AI Automation Class",
-    description: "Weekly live workshops teaching AI-assisted development and automation",
-    price: "RM100/month (founding member)",
-    Icon: BookOpen,
-    cta: { label: "Visit YS Academy", href: "https://ysacademy.my", Icon: Link2 },
-    caption: { label: "weekly live workshops", Icon: Users },
-  },
-  {
     id: "02",
     anchor: "hermes",
     title: "Hermes 1-to-1 Class",
     description: "Private, hands-on session on setting up and running Hermes AI agents for your own business.",
     price: "From RM799",
     renderIcon: () => (
-      <img src="/hermes-logo.png" alt="Hermes AI" className="w-full h-full object-contain" />
+      <img src="/hermes-logo.png" alt="Hermes AI" className="w-full h-full border-0 bg-transparent object-contain" />
     ),
     cta: { label: "Book Class", href: waLink("Hi Yusuf, I'm interested in the Hermes 1-to-1 Class (From RM799). Can you share more details?"), Icon: MessageCircle },
     caption: { label: "chat on WhatsApp", Icon: MessageCircle },
@@ -346,11 +337,20 @@ const coachingServices: Service[] = [
     description: "Private, hands-on session on building automated workflows with n8n for your business.",
     price: "Starting from RM799",
     renderIcon: () => (
-      <img src="/n8n.svg" alt="n8n" className="w-12 h-12 md:w-14 md:h-14 rounded-md bg-white p-1.5 object-contain" />
+      <img src="/n8n.svg" alt="n8n" className="w-12 h-12 md:w-14 md:h-14 object-contain" />
     ),
     cta: { label: "Book Class", href: waLink("Hi Yusuf, I'm interested in the n8n 1-to-1 Class (Starting from RM799). Can you share more details?"), Icon: MessageCircle },
     caption: { label: "chat on WhatsApp", Icon: MessageCircle },
     details: <HermesDetails />,
+  },
+  {
+    id: "01",
+    title: "Vibe Coding & AI Automation Class",
+    description: "Weekly live workshops teaching AI-assisted development and automation",
+    price: "RM100/month (founding member)",
+    Icon: BookOpen,
+    cta: { label: "Visit YS Academy", href: "https://ysacademy.my", Icon: Link2 },
+    caption: { label: "weekly live workshops", Icon: Users },
   },
 ];
 
@@ -400,16 +400,16 @@ export default function ServicesWidget() {
   }, []);
 
   return (
-    <section className="relative bg-transparent text-white">
-      <div className="max-w-4xl mx-auto px-6">
+    <section className="relative bg-transparent text-zinc-900">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Profile */}
         <motion.header
           initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="flex flex-col md:flex-row items-center md:items-start gap-7 md:gap-10 pb-14 mb-14 border-b border-white/5 text-center md:text-left"
+          className="flex flex-col md:flex-row items-center gap-7 md:gap-10 pb-14 mb-14 border-b border-zinc-200 text-center md:text-left"
         >
-          <div className="w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden border border-white/10 shrink-0 bg-[#0f0f0f]">
+          <div className="w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden border border-zinc-200 shrink-0 bg-white">
             <img
               src="/yusufsuhair.jpg"
               alt="Yusuf Suhair"
@@ -417,14 +417,14 @@ export default function ServicesWidget() {
             />
           </div>
 
-          <div className="flex flex-col items-center md:items-start md:pt-1">
-            <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
+          <div className="flex flex-col items-center md:items-start">
+            <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-950">
               Yusuf Suhair
             </h1>
             <p className="text-[11px] uppercase tracking-[0.18em] text-zinc-500 mt-2.5" style={mono}>
               Software Engineer · AI Agent Builder · Founder, YS Academy
             </p>
-            <p className="text-zinc-400 text-sm md:text-base mt-5 max-w-[540px] leading-relaxed">
+            <p className="text-zinc-600 text-sm md:text-base mt-5 max-w-[540px] leading-relaxed">
               I&apos;m a software engineer and AI agent builder with {yearsOfExperience}+ years of
               experience. I&apos;ve shipped 50+ web and mobile products, with my mobile apps
               reaching 5M+ installs. Through YS Academy, I teach people to build apps with AI,
@@ -442,7 +442,7 @@ export default function ServicesWidget() {
                 <h2 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-zinc-500" style={mono}>
                   {section.title}
                 </h2>
-                <div className="h-px flex-1 bg-white/5" />
+                <div className="h-px flex-1 bg-zinc-200" />
               </div>
 
               <div>
@@ -457,32 +457,32 @@ export default function ServicesWidget() {
                       initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, margin: "-60px" }}
                       transition={{ duration: 0.35, ease: "easeOut", delay: index * 0.05 }}
-                      className="scroll-mt-24 py-7 border-b border-white/5 outline-none transition-colors target:bg-white/[0.03] target:ring-1 target:ring-inset target:ring-white/10"
+                      className="scroll-mt-24 py-7 border-b border-zinc-200 outline-none transition-colors target:bg-blue-50 target:ring-1 target:ring-inset target:ring-blue-200"
                     >
                       <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
-                        <div className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 shrink-0 text-zinc-400">
+                        <div className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 shrink-0 text-zinc-500">
                           {service.renderIcon ? service.renderIcon() : service.Icon && <service.Icon size={38} />}
                         </div>
 
                         <div className="flex-1 min-w-0">
-                          <h3 className="font-semibold text-sm text-white">{service.title}</h3>
-                          <p className="text-sm text-zinc-400 mt-1 leading-relaxed">{service.description}</p>
+                          <h3 className="font-semibold text-sm text-zinc-950">{service.title}</h3>
+                          <p className="text-sm text-zinc-600 mt-1 leading-relaxed">{service.description}</p>
                         </div>
 
-                        <div className="flex flex-row md:flex-col items-center md:items-end justify-between gap-3 shrink-0 w-full md:w-auto md:text-right">
-                          <span className="text-sm font-medium text-white whitespace-nowrap" style={mono}>
+                        <div className="flex flex-wrap md:flex-col items-center md:items-end justify-between gap-3 shrink-0 w-full md:w-auto md:text-right">
+                          <span className="text-sm font-medium text-zinc-950 whitespace-nowrap" style={mono}>
                             {service.price}
                           </span>
                           <a
                             href={service.cta.href}
                             target={service.cta.href.startsWith("http") ? "_blank" : undefined}
                             rel={service.cta.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                            className="inline-flex items-center justify-center gap-2 bg-white text-black text-sm font-medium px-4 py-2 rounded-full hover:bg-zinc-200 transition-colors"
+                            className="inline-flex items-center justify-center gap-2 bg-zinc-950 text-white text-sm font-medium px-4 py-2 rounded-full hover:bg-zinc-800 transition-colors"
                           >
                             {service.cta.label}
                             <service.cta.Icon size={14} />
                           </a>
-                          <div className="hidden md:flex items-center gap-1.5 text-[11px] text-zinc-600" style={mono}>
+                          <div className="hidden md:flex items-center gap-1.5 text-[11px] text-zinc-500" style={mono}>
                             <service.caption.Icon size={12} />
                             {service.caption.label}
                           </div>
@@ -493,7 +493,7 @@ export default function ServicesWidget() {
                         <>
                           <button
                             onClick={() => setExpandedId(isExpanded ? null : key)}
-                            className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-500 mt-4 md:ml-28 hover:text-white transition-colors"
+                            className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-500 mt-4 md:ml-28 hover:text-zinc-950 transition-colors"
                             style={mono}
                           >
                             {isExpanded ? "Hide full pricing details" : "View full pricing details"}
@@ -511,7 +511,7 @@ export default function ServicesWidget() {
                                 transition={{ duration: 0.3, ease: "easeInOut" }}
                                 className="block overflow-hidden"
                               >
-                                <div className="mt-5 pt-6 md:ml-28 border-t border-white/5">
+                                <div className="mt-5 pt-6 md:ml-28 border-t border-zinc-200">
                                   {service.details}
                                 </div>
                               </motion.div>

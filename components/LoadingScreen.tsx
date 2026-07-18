@@ -4,19 +4,24 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const SEQUENCE = [
-  { symbol: "➜", color: "text-zinc-500", text: "initialising portfolio..." },
-  { symbol: "✓", color: "text-green-400", text: "experience loaded" },
-  { symbol: "✓", color: "text-green-400", text: "skills compiled" },
-  { symbol: "✓", color: "text-green-400", text: "projects deployed" },
-  { symbol: "➜", color: "text-white",     text: "ready." },
+  { symbol: "➜", text: "initialising portfolio..." },
+  { symbol: "✓", text: "experience loaded" },
+  { symbol: "✓", text: "skills compiled" },
+  { symbol: "✓", text: "projects deployed" },
+  { symbol: "➜", text: "ready." },
 ];
 
-const STEP_DELAY = 90; // ms between each line
+const STEP_DELAY = 90;
 const EXIT_DELAY = SEQUENCE.length * STEP_DELAY + 200;
 
-export default function LoadingScreen() {
+interface LoadingScreenProps {
+  theme?: "dark" | "light";
+}
+
+export default function LoadingScreen({ theme = "dark" }: LoadingScreenProps) {
   const [step, setStep] = useState(0);
   const [visible, setVisible] = useState(true);
+  const isLight = theme === "light";
 
   useEffect(() => {
     const timers: ReturnType<typeof setTimeout>[] = [];
@@ -37,26 +42,56 @@ export default function LoadingScreen() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25, ease: "easeInOut" }}
-          className="fixed inset-0 z-[200] bg-[#050505] flex items-center justify-center"
+          className={`fixed inset-0 z-[200] flex items-center justify-center ${
+            isLight ? "bg-[#f7f7f8]" : "bg-[#050505]"
+          }`}
         >
           <div className="font-mono text-sm space-y-2 w-64">
-            {SEQUENCE.slice(0, step + 1).map((line, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -8 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.2 }}
-                className="flex items-center gap-3"
-              >
-                <span className={`flex-shrink-0 ${line.color}`}>{line.symbol}</span>
-                <span className={i === step && i < SEQUENCE.length - 1 ? "text-white" : "text-zinc-400"}>
-                  {line.text}
-                </span>
-                {i === step && i < SEQUENCE.length - 1 && (
-                  <span className="w-2 h-3.5 bg-zinc-400 animate-pulse inline-block ml-0.5" />
-                )}
-              </motion.div>
-            ))}
+            {SEQUENCE.slice(0, step + 1).map((line, i) => {
+              const isCurrent = i === step && i < SEQUENCE.length - 1;
+              const symbolColor =
+                line.symbol === "✓"
+                  ? isLight
+                    ? "text-green-600"
+                    : "text-green-400"
+                  : isLight
+                    ? "text-zinc-700"
+                    : i === SEQUENCE.length - 1
+                      ? "text-white"
+                      : "text-zinc-500";
+
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -8 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="flex items-center gap-3"
+                >
+                  <span className={`flex-shrink-0 ${symbolColor}`}>{line.symbol}</span>
+                  <span
+                    className={
+                      isCurrent
+                        ? isLight
+                          ? "text-zinc-950"
+                          : "text-white"
+                        : isLight
+                          ? "text-zinc-600"
+                          : "text-zinc-400"
+                    }
+                  >
+                    {line.text}
+                  </span>
+                  {isCurrent && (
+                    <span
+                      className={`ml-0.5 inline-block h-3.5 w-2 animate-pulse ${
+                        isLight ? "bg-zinc-700" : "bg-zinc-400"
+                      }`}
+                    />
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
       )}
