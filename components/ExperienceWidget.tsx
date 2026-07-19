@@ -33,6 +33,19 @@ const experienceData: Job[] = [
     tech: ["Mobile", "Web", "AI", "DevOps", "Nginx", "Cloudflare Tunnel", "Android WebView"],
   },
   {
+    title: "Mobile Developer",
+    company: "Google Play Store",
+    period: "August 2019 — Present",
+    location: "Remote",
+    description: [
+      "Designed UI/UX using Adobe XD",
+      "Developed mobile applications based on client requirements using architecture patterns such as MVVM, MVC, and MVP",
+      "Published 50+ Android applications on Google Play Store with 5M+ installations",
+      "Worked on various freelancing mobile applications, one of the clients was Education Malaysia Indonesia developing a mobile app to promote Malaysian colleges",
+    ],
+    tech: ["Java", "Kotlin", "Flutter", "Adobe XD", "MVVM", "Android"],
+  },
+  {
     title: "CTO & Co-Founder (Mobile, Web, Blockchain)",
     company: "Heifereum Technology Sdn Bhd",
     period: "March 2024 — January 2026",
@@ -61,19 +74,6 @@ const experienceData: Job[] = [
     tech: ["JavaEE", "Spring MVC", "Spring Boot", "AngularJS", "Angular", "Jenkins", "AWS", "Linux", "Ansible"],
   },
   {
-    title: "Mobile Developer",
-    company: "Independent Mobile Developer (Freelance)",
-    period: "August 2019 — Present",
-    location: "Remote",
-    description: [
-      "Designed UI/UX using Adobe XD",
-      "Developed mobile applications based on client requirements using architecture patterns such as MVVM, MVC, and MVP",
-      "Published 50+ Android applications on Google Play Store with 5M+ installations",
-      "Worked on various freelancing mobile applications, one of the clients was Education Malaysia Indonesia developing a mobile app to promote Malaysian colleges",
-    ],
-    tech: ["Java", "Kotlin", "Flutter", "Adobe XD", "MVVM", "Android"],
-  },
-  {
     title: "Full-Stack Developer",
     company: "SICPA",
     period: "December 2020 — February 2022",
@@ -88,6 +88,9 @@ const experienceData: Job[] = [
 ];
 
 export default function ExperienceWidget() {
+  const CAREER_START_YEAR = 2019;
+  const yearsOfExperience = new Date().getFullYear() - CAREER_START_YEAR;
+
   return (
     <section id="experience" className="py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -100,7 +103,7 @@ export default function ExperienceWidget() {
             Experience
           </h2>
           <p className="text-zinc-400 text-base">
-            6+ years across fintech, Web3, enterprise, and mobile — from startup founding engineer to global institutions.
+            {yearsOfExperience}+ years across fintech, Web3, enterprise, and mobile — from startup founding engineer to global institutions.
           </p>
         </motion.div>
 

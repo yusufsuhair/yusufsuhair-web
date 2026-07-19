@@ -3,7 +3,7 @@
 import type { ComponentType, ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { BookOpen, Link2, MessageCircle, Users, ChevronDown, CheckCircle2, Info } from "lucide-react";
+import { BookOpen, Link2, MessageCircle, ChevronDown, Check, Minus } from "lucide-react";
 
 const mono = { fontFamily: "var(--font-jetbrains-mono), monospace" };
 
@@ -29,7 +29,6 @@ interface Service {
   Icon?: Icon;
   renderIcon?: () => ReactNode;
   cta: { label: string; href: string; Icon: Icon };
-  caption: { label: string; Icon: Icon };
   details?: ReactNode;
 }
 
@@ -73,9 +72,13 @@ const MacOSBrowserPreview = () => (
 interface PricingTier {
   name: string;
   price: string;
-  blurb?: string;
+  pricePrefix?: string;
+  priceCadence?: string;
+  bestFor?: string;
   items: string[];
   note?: string;
+  popular?: boolean;
+  ctaMessage: string;
 }
 
 interface PricingGroup {
@@ -83,14 +86,15 @@ interface PricingGroup {
   tiers: PricingTier[];
 }
 
-const pricingSheet: PricingGroup[] = [
+const hermesPricingSheet: PricingGroup[] = [
   {
     title: "1. AI Agent Coaching",
     tiers: [
       {
         name: "AI Agent Coaching",
-        price: "RM500/hour",
-        blurb: "For developers, business owners, or teams who want to learn how to build and use AI Agents.",
+        price: "RM500",
+        priceCadence: "/hour",
+        bestFor: "Developers, business owners, or teams who want to learn how to build and use AI Agents.",
         items: [
           "Hermes AI",
           "Hermes Desktop Setup",
@@ -107,6 +111,7 @@ const pricingSheet: PricingGroup[] = [
           "Troubleshooting & Q&A",
         ],
         note: "You learn. You build. I guide.",
+        ctaMessage: "Hi Yusuf, I'm interested in AI Agent Coaching (RM500/hour). Can you share more details?",
       },
     ],
   },
@@ -116,7 +121,8 @@ const pricingSheet: PricingGroup[] = [
       {
         name: "Starter Setup",
         price: "RM799",
-        blurb: "Suitable for individuals or developers.",
+        priceCadence: "one-time",
+        bestFor: "Individuals or developers.",
         items: [
           "Hermes installation",
           "VPS configuration",
@@ -125,27 +131,29 @@ const pricingSheet: PricingGroup[] = [
           "Basic AI profile configuration",
           "Initial testing",
         ],
+        ctaMessage: "Hi Yusuf, I'm interested in the Starter Setup (RM799). Can you share more details?",
       },
       {
         name: "Business Setup",
         price: "RM1,999",
-        blurb: "Suitable for businesses looking to deploy AI Agents.",
+        priceCadence: "one-time",
+        bestFor: "Businesses looking to deploy AI Agents.",
+        popular: true,
         items: [
+          "Everything in Starter, plus:",
           "Full Hermes deployment",
           "Multi-profile AI Agent setup",
-          "Browserbase integration",
-          "Firecrawl integration",
-          "Telegram integration",
-          "Prompt engineering",
-          "AI workflow configuration",
-          "Testing & deployment",
-          "Knowledge handover",
+          "Browserbase & Firecrawl integration",
+          "Prompt engineering & AI workflow configuration",
+          "Testing, deployment & knowledge handover",
         ],
+        ctaMessage: "Hi Yusuf, I'm interested in the Business Setup (RM1,999). Can you share more details?",
       },
       {
         name: "Custom Setup",
-        price: "Starting from RM3,000",
-        blurb: "Suitable for custom business solutions such as:",
+        price: "RM3,000",
+        pricePrefix: "Starting from",
+        bestFor: "Custom business solutions such as:",
         items: [
           "AI Customer Service",
           "AI Sales Assistant",
@@ -156,15 +164,17 @@ const pricingSheet: PricingGroup[] = [
           "AI Automation Workflow",
         ],
         note: "Final pricing depends on project scope and integrations.",
+        ctaMessage: "Hi Yusuf, I'm interested in a Custom AI Agent Setup (starting from RM3,000). Can you share more details?",
       },
     ],
   },
   {
-    title: "Monthly Support & Retainer",
+    title: "3. Monthly Support & Retainer",
     tiers: [
       {
         name: "Basic",
-        price: "RM500/month",
+        price: "RM500",
+        priceCadence: "/month",
         items: [
           "1 hour consultation",
           "Prompt optimisation",
@@ -172,18 +182,22 @@ const pricingSheet: PricingGroup[] = [
           "Bug fixes",
           "WhatsApp / Email support",
         ],
+        ctaMessage: "Hi Yusuf, I'm interested in Basic monthly support (RM500/month). Can you share more details?",
       },
       {
         name: "Business",
-        price: "RM1000/month",
+        price: "RM1000",
+        priceCadence: "/month",
+        popular: true,
         items: [
+          "Everything in Basic, plus:",
           "Up to 3 hours consultation",
-          "Workflow optimisation",
-          "New prompt development",
+          "Workflow optimisation & new prompt development",
           "AI performance tuning",
           "Priority support",
           "Monthly review session",
         ],
+        ctaMessage: "Hi Yusuf, I'm interested in Business monthly support (RM1000/month). Can you share more details?",
       },
       {
         name: "Enterprise",
@@ -196,65 +210,46 @@ const pricingSheet: PricingGroup[] = [
           "AI strategy & architecture consulting",
           "Priority response SLA",
         ],
+        ctaMessage: "Hi Yusuf, I'm interested in Enterprise support & retainer (custom quote). Can you share more details?",
       },
     ],
   },
 ];
 
-const TierCard = ({ tier }: { tier: PricingTier }) => (
-  <div className="rounded-lg border border-zinc-200 bg-white shadow-sm p-5 h-full flex flex-col">
-    <h5 className="font-semibold text-sm text-zinc-950 mb-1">{tier.name}</h5>
-    <div className="text-xl font-semibold text-zinc-950 tracking-tight mb-4" style={mono}>
-      {tier.price}
-    </div>
-
-    {tier.blurb && (
-      <div className="flex items-start gap-2.5 px-3 py-2.5 rounded-lg bg-zinc-50 border border-zinc-200 mb-4">
-        <Info size={14} className="text-blue-600 shrink-0 mt-0.5" />
-        <p className="text-xs text-zinc-600 leading-relaxed">{tier.blurb}</p>
-      </div>
-    )}
-
-    {tier.items.length > 0 && (
-      <ul className="space-y-2.5 flex-1">
-        {tier.items.map((item) => (
-          <li key={item} className="flex items-start gap-2.5 text-sm text-zinc-600">
-            <CheckCircle2 size={16} className="text-blue-600 shrink-0 mt-0.5" />
-            {item}
-          </li>
-        ))}
-      </ul>
-    )}
-
-    {tier.note && (
-      <p className="text-xs text-zinc-500 mt-4 pt-4 border-t border-zinc-200">
-        {tier.note}
-      </p>
-    )}
-  </div>
-);
-
-const HermesDetails = () => (
-  <div className="space-y-8">
-    {pricingSheet.map((group) => (
-      <div key={group.title}>
-        <h4 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500 mb-3" style={mono}>
-          {group.title}
-        </h4>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
-          {group.tiers.map((tier) => (
-            <TierCard key={tier.name} tier={tier} />
-          ))}
-        </div>
-      </div>
-    ))}
-  </div>
-);
+const n8nPricingSheet: PricingGroup[] = [
+  {
+    title: "1. n8n Automation Coaching",
+    tiers: [
+      {
+        name: "n8n 1-to-1 Coaching",
+        price: "RM500",
+        priceCadence: "/hour",
+        bestFor: "Developers, business owners, or teams who want to automate business workflows with n8n.",
+        items: [
+          "Workflow Design & Building",
+          "Self-Hosting (VPS / Docker)",
+          "Webhooks & API Integrations",
+          "Telegram Bot Integration",
+          "AI Nodes & LLM Chains",
+          "Google Sheets & Airtable",
+          "Error Handling & Retries",
+          "Cron & Scheduled Workflows",
+          "Credentials & Auth Setup",
+          "Data Transformation (Code Nodes)",
+          "Troubleshooting & Q&A",
+        ],
+        note: "You learn. You build. I guide.",
+        ctaMessage: "Hi Yusuf, I'm interested in n8n 1-to-1 Coaching (RM500/hour). Can you share more details?",
+      },
+    ],
+  },
+];
 
 const webDevTiers: PricingTier[] = [
   {
     name: "Landing Page",
     price: "RM2000",
+    priceCadence: "one-time",
     items: [
       "Single premium page design",
       "Premium & Modern UI/UX design",
@@ -263,11 +258,12 @@ const webDevTiers: PricingTier[] = [
       "No SSO / login systems",
       "No backend logic",
     ],
+    ctaMessage: "Hi Yusuf, I'm interested in the Landing Page (RM2000). Can you share more details?",
   },
   {
     name: "Custom Web Development",
     price: "Custom pricing",
-    blurb: "For projects that need more than a landing page.",
+    bestFor: "Projects that need more than a landing page.",
     items: [
       "Payment gateway integration",
       "Authentication / SSO",
@@ -277,13 +273,168 @@ const webDevTiers: PricingTier[] = [
       "Ongoing feature development",
     ],
     note: "Final pricing depends on project scope and integrations.",
+    ctaMessage: "Hi Yusuf, I'm interested in Custom Web Development. Can you share more details?",
   },
 ];
 
-const WebDevDetails = () => (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
-    {webDevTiers.map((tier) => (
-      <TierCard key={tier.name} tier={tier} />
+const TierPrice = ({ tier, large = false }: { tier: PricingTier; large?: boolean }) => (
+  <div>
+    {tier.pricePrefix && (
+      <span className="block text-[11px] text-zinc-500 mb-1.5" style={mono}>
+        {tier.pricePrefix}
+      </span>
+    )}
+    <span
+      className={`${large ? "text-3xl md:text-4xl" : "text-[28px]"} leading-none font-semibold tracking-tight text-zinc-950`}
+      style={mono}
+    >
+      {tier.price}
+    </span>
+    {tier.priceCadence && (
+      <span className="ml-1.5 text-xs text-zinc-500" style={mono}>
+        {tier.priceCadence}
+      </span>
+    )}
+  </div>
+);
+
+const TierCta = ({ tier }: { tier: PricingTier }) => (
+  <a
+    href={waLink(tier.ctaMessage)}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={`mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+      tier.popular
+        ? "bg-blue-600 text-white hover:bg-blue-700"
+        : "border border-zinc-300 text-zinc-700 hover:border-zinc-950 hover:text-zinc-950"
+    }`}
+  >
+    Chat on WhatsApp
+    <MessageCircle size={14} />
+  </a>
+);
+
+const TierFeature = ({ item }: { item: string }) => {
+  if (item.startsWith("Everything in")) {
+    return <li className="text-xs font-semibold text-zinc-900 pb-0.5">{item}</li>;
+  }
+  const isExclusion = item.startsWith("No ");
+  return (
+    <li className="flex items-start gap-2 text-sm text-zinc-600">
+      {isExclusion ? (
+        <Minus size={14} className="text-zinc-400 shrink-0 mt-[3px]" />
+      ) : (
+        <Check size={14} className="text-blue-600 shrink-0 mt-[3px]" />
+      )}
+      {item}
+    </li>
+  );
+};
+
+const TierCard = ({ tier }: { tier: PricingTier }) => (
+  <div
+    className={`rounded-xl border bg-white p-6 h-full flex flex-col ${
+      tier.popular
+        ? "border-blue-600/70 ring-1 ring-blue-600/20 shadow-[0_12px_32px_rgba(37,99,235,0.10)]"
+        : "border-zinc-200 shadow-sm"
+    }`}
+  >
+    {tier.popular && (
+      <span
+        className="inline-flex self-start items-center rounded-full bg-blue-600 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white mb-3"
+        style={mono}
+      >
+        Most Popular
+      </span>
+    )}
+    <h5 className="font-semibold text-sm text-zinc-950">{tier.name}</h5>
+    {tier.bestFor && (
+      <p className="text-xs text-zinc-500 mt-1.5 leading-relaxed">
+        <span className="font-medium text-zinc-700">Best for:</span> {tier.bestFor}
+      </p>
+    )}
+
+    <div className="mt-4 mb-5 pb-5 border-b border-zinc-100">
+      <TierPrice tier={tier} />
+    </div>
+
+    <ul className="space-y-2 flex-1">
+      {tier.items.map((item) => (
+        <TierFeature key={item} item={item} />
+      ))}
+    </ul>
+
+    {tier.note && (
+      <p className="text-xs text-zinc-500 mt-4 pt-4 border-t border-zinc-100">{tier.note}</p>
+    )}
+
+    <TierCta tier={tier} />
+  </div>
+);
+
+const WideTierCard = ({ tier }: { tier: PricingTier }) => (
+  <div className="rounded-xl border border-zinc-200 bg-white shadow-sm p-6 md:p-7 flex flex-col md:flex-row gap-6 md:gap-10">
+    <div className="shrink-0 md:w-72 flex flex-col">
+      <h5 className="font-semibold text-sm text-zinc-950">{tier.name}</h5>
+      {tier.bestFor && (
+        <p className="text-xs text-zinc-500 mt-1.5 leading-relaxed">
+          <span className="font-medium text-zinc-700">Best for:</span> {tier.bestFor}
+        </p>
+      )}
+      <div className="mt-4">
+        <TierPrice tier={tier} large />
+      </div>
+      {tier.note && <p className="text-xs text-zinc-500 mt-3">{tier.note}</p>}
+      <div className="mt-auto">
+        <TierCta tier={tier} />
+      </div>
+    </div>
+
+    <div className="flex-1 md:border-l md:border-zinc-100 md:pl-10">
+      <p
+        className="text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500 mb-3"
+        style={mono}
+      >
+        Topics covered
+      </p>
+      <div className="flex flex-wrap gap-2">
+        {tier.items.map((item) => (
+          <span
+            key={item}
+            className="text-xs text-zinc-600 border border-zinc-200 bg-zinc-50 rounded-full px-2.5 py-1"
+          >
+            {item}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
+const PricingDetails = ({ groups }: { groups: PricingGroup[] }) => (
+  <div className="space-y-8">
+    {groups.map((group) => (
+      <div key={group.title}>
+        <h4
+          className="text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500 mb-4"
+          style={mono}
+        >
+          {group.title}
+        </h4>
+        {group.tiers.length === 1 ? (
+          <WideTierCard tier={group.tiers[0]} />
+        ) : (
+          <div
+            className={`grid grid-cols-1 gap-4 items-stretch ${
+              group.tiers.length === 2 ? "md:grid-cols-2" : "md:grid-cols-3"
+            }`}
+          >
+            {group.tiers.map((tier) => (
+              <TierCard key={tier.name} tier={tier} />
+            ))}
+          </div>
+        )}
+      </div>
     ))}
   </div>
 );
@@ -301,7 +452,6 @@ const developmentServices: Service[] = [
       </div>
     ),
     cta: { label: "Get Quote", href: waLink("Hi Yusuf, I'm interested in Mobile App Development. Can you share more details?"), Icon: MessageCircle },
-    caption: { label: "chat on WhatsApp", Icon: MessageCircle },
   },
   {
     id: "02",
@@ -311,14 +461,13 @@ const developmentServices: Service[] = [
     price: "Starting from RM2000",
     renderIcon: () => <MacOSBrowserPreview />,
     cta: { label: "Get Started", href: waLink("Hi Yusuf, I'm interested in Web Development (Starting from RM2000). Can you share more details?"), Icon: MessageCircle },
-    caption: { label: "chat on WhatsApp", Icon: MessageCircle },
-    details: <WebDevDetails />,
+    details: <PricingDetails groups={[{ title: "Web Development Pricing", tiers: webDevTiers }]} />,
   },
 ];
 
 const coachingServices: Service[] = [
   {
-    id: "02",
+    id: "01",
     anchor: "hermes",
     title: "Hermes 1-to-1 Class",
     description: "Private, hands-on session on setting up and running Hermes AI agents for your own business.",
@@ -327,11 +476,10 @@ const coachingServices: Service[] = [
       <img src="/hermes-logo.png" alt="Hermes AI" className="w-full h-full border-0 bg-transparent object-contain" />
     ),
     cta: { label: "Book Class", href: waLink("Hi Yusuf, I'm interested in the Hermes 1-to-1 Class (From RM799). Can you share more details?"), Icon: MessageCircle },
-    caption: { label: "chat on WhatsApp", Icon: MessageCircle },
-    details: <HermesDetails />,
+    details: <PricingDetails groups={hermesPricingSheet} />,
   },
   {
-    id: "03",
+    id: "02",
     anchor: "n8n",
     title: "n8n 1-to-1 Class",
     description: "Private, hands-on session on building automated workflows with n8n for your business.",
@@ -340,28 +488,27 @@ const coachingServices: Service[] = [
       <img src="/n8n.svg" alt="n8n" className="w-12 h-12 md:w-14 md:h-14 object-contain" />
     ),
     cta: { label: "Book Class", href: waLink("Hi Yusuf, I'm interested in the n8n 1-to-1 Class (Starting from RM799). Can you share more details?"), Icon: MessageCircle },
-    caption: { label: "chat on WhatsApp", Icon: MessageCircle },
-    details: <HermesDetails />,
+    details: <PricingDetails groups={n8nPricingSheet} />,
   },
   {
-    id: "01",
+    id: "03",
     title: "Vibe Coding & AI Automation Class",
     description: "Weekly live workshops teaching AI-assisted development and automation",
     price: "RM100/month (founding member)",
     Icon: BookOpen,
     cta: { label: "Visit YS Academy", href: "https://ysacademy.my", Icon: Link2 },
-    caption: { label: "weekly live workshops", Icon: Users },
   },
 ];
 
 interface ServiceSection {
+  id: string;
   title: string;
   services: Service[];
 }
 
 const serviceSections: ServiceSection[] = [
-  { title: "Development", services: developmentServices },
-  { title: "Coaching & Mentoring", services: coachingServices },
+  { id: "development", title: "Development", services: developmentServices },
+  { id: "coaching", title: "Coaching & Mentoring", services: coachingServices },
 ];
 
 export default function ServicesWidget() {
@@ -407,7 +554,7 @@ export default function ServicesWidget() {
         <motion.header
           initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="flex flex-col md:flex-row items-center gap-7 md:gap-10 pb-14 mb-14 border-b border-zinc-200 text-center md:text-left"
+          className="flex flex-col md:flex-row items-center justify-center gap-7 md:gap-10 pb-14 mb-14 border-b border-zinc-200 text-center md:text-left"
         >
           <div className="w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden border border-zinc-200 shrink-0 bg-white">
             <img
@@ -434,10 +581,34 @@ export default function ServicesWidget() {
           </div>
         </motion.header>
 
+        {/* Section jump-nav */}
+        <motion.nav
+          initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+          className="flex flex-wrap items-center gap-x-8 gap-y-3 -mt-6 mb-12"
+        >
+          <span className="text-[11px] uppercase tracking-[0.18em] text-zinc-400" style={mono}>
+            Jump to
+          </span>
+          {serviceSections.map((section, index) => (
+            <a
+              key={section.id}
+              href={`#${section.id}`}
+              className="group inline-flex items-baseline gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500 hover:text-zinc-950 transition-colors"
+              style={mono}
+            >
+              <span className="text-zinc-400 group-hover:text-blue-600 transition-colors">
+                0{index + 1}
+              </span>
+              {section.title}
+            </a>
+          ))}
+        </motion.nav>
+
         {/* Service sections */}
         <div className="pb-20 space-y-14">
           {serviceSections.map((section) => (
-            <div key={section.title}>
+            <div key={section.title} id={section.id} className="scroll-mt-24">
               <div className="flex items-center gap-4 mb-2">
                 <h2 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-zinc-500" style={mono}>
                   {section.title}
@@ -470,7 +641,7 @@ export default function ServicesWidget() {
                         </div>
 
                         <div className="flex flex-wrap md:flex-col items-center md:items-end justify-between gap-3 shrink-0 w-full md:w-auto md:text-right">
-                          <span className="text-sm font-medium text-zinc-950 whitespace-nowrap" style={mono}>
+                          <span className="text-base md:text-lg font-semibold text-zinc-950 whitespace-nowrap" style={mono}>
                             {service.price}
                           </span>
                           <a
@@ -482,10 +653,6 @@ export default function ServicesWidget() {
                             {service.cta.label}
                             <service.cta.Icon size={14} />
                           </a>
-                          <div className="hidden md:flex items-center gap-1.5 text-[11px] text-zinc-500" style={mono}>
-                            <service.caption.Icon size={12} />
-                            {service.caption.label}
-                          </div>
                         </div>
                       </div>
 
@@ -493,7 +660,7 @@ export default function ServicesWidget() {
                         <>
                           <button
                             onClick={() => setExpandedId(isExpanded ? null : key)}
-                            className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-500 mt-4 md:ml-28 hover:text-zinc-950 transition-colors"
+                            className="mt-5 md:ml-28 inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3.5 py-1.5 text-xs font-medium text-zinc-500 hover:border-zinc-400 hover:text-zinc-950 transition-colors"
                             style={mono}
                           >
                             {isExpanded ? "Hide full pricing details" : "View full pricing details"}
@@ -525,6 +692,30 @@ export default function ServicesWidget() {
               </div>
             </div>
           ))}
+
+          {/* Closing fallback card */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="rounded-2xl border border-zinc-200 bg-white p-8 md:p-10 text-center shadow-sm"
+          >
+            <h3 className="text-lg md:text-xl font-semibold tracking-tight text-zinc-950">
+              Not sure which one fits?
+            </h3>
+            <p className="text-sm text-zinc-600 mt-2 max-w-md mx-auto leading-relaxed">
+              Tell me about your project or goals — I&apos;ll point you to the right setup, class, or plan.
+            </p>
+            <a
+              href={waLink("Hi Yusuf, I'm not sure which service fits my needs. Can you help me decide?")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center justify-center gap-2 bg-zinc-950 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-zinc-800 transition-colors"
+            >
+              Chat with me
+              <MessageCircle size={14} />
+            </a>
+          </motion.div>
         </div>
       </div>
     </section>

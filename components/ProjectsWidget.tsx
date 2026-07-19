@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink, Globe, Smartphone, Link, Cpu, Code2 } from "lucide-react";
+import { ExternalLink, Globe, Smartphone, Link, Code2 } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -13,7 +13,7 @@ interface Project {
   android?: string;
   ios?: string;
   image?: string;
-  category: "web" | "mobile" | "crypto" | "ai";
+  category: "web" | "mobile" | "crypto";
   storesOnly?: boolean;
 }
 
@@ -119,7 +119,6 @@ const categories = [
   { id: "web", label: "Web Apps" },
   { id: "mobile", label: "Mobile" },
   { id: "crypto", label: "Crypto / Web3" },
-  { id: "ai", label: "AI / ML" },
 ];
 
 const categoryConfig = {
@@ -140,12 +139,6 @@ const categoryConfig = {
     color: "text-orange-400",
     bg: "from-orange-500/15 to-orange-600/5",
     border: "group-hover:border-orange-500/30",
-  },
-  ai: {
-    icon: Cpu,
-    color: "text-emerald-400",
-    bg: "from-emerald-500/15 to-emerald-600/5",
-    border: "group-hover:border-emerald-500/30",
   },
 };
 

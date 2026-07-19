@@ -1,6 +1,5 @@
 "use client";
 
-import AboutWidget from "@/components/AboutWidget";
 import ContactWidget from "@/components/ContactWidget";
 import HomeWidget from "@/components/HomeWidget";
 import BackToTop from "@/components/BackToTop";
@@ -10,8 +9,9 @@ import Navbar from "@/components/Navbar";
 import TerminalModal from "@/components/TerminalModal";
 import ProjectsWidget from "@/components/ProjectsWidget";
 import SkillsWidget from "@/components/SkillsWidget";
-import StatsWidget from "@/components/StatsWidget";
 import YoutubeWidget from "@/components/YoutubeWidget";
+import StatsWidget from "@/components/StatsWidget";
+import ExperienceWidget from "@/components/ExperienceWidget";
 
 export default function Home() {
   return (
@@ -34,8 +34,8 @@ export default function Home() {
       <main className="relative z-10">
         <HomeWidget />
         <StatsWidget />
-        <AboutWidget />
         <SkillsWidget />
+        <ExperienceWidget />
         <ProjectsWidget />
         <YoutubeWidget />
         <ContactWidget />

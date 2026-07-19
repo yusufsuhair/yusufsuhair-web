@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 
+const CAREER_START_YEAR = 2019;
+const yearsOfExperience = new Date().getFullYear() - CAREER_START_YEAR;
+
 const stats = [
-  { value: "6+", label: "Years Experience" },
+  { value: yearsOfExperience + "+", label: "Years Experience" },
   { value: "50+", label: "Apps Shipped" },
   { value: "5M+", label: "App Installs" },
 ];

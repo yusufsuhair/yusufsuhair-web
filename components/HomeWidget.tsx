@@ -40,13 +40,80 @@ const socialLinks = [
   },
 ];
 
+const photoFrames = [
+  {
+    rotation: "-rotate-6",
+    desktopPosition: "left-2 top-[7%]",
+    imagePosition: "center 18%",
+    imageScale: "scale-[1.08]",
+  },
+  {
+    rotation: "rotate-5",
+    desktopPosition: "left-14 bottom-[3%]",
+    imagePosition: "42% 32%",
+    imageScale: "scale-[1.16]",
+  },
+  {
+    rotation: "rotate-6",
+    desktopPosition: "right-2 top-[9%]",
+    imagePosition: "58% 20%",
+    imageScale: "scale-[1.1]",
+  },
+  {
+    rotation: "-rotate-5",
+    desktopPosition: "right-14 bottom-[2%]",
+    imagePosition: "center 36%",
+    imageScale: "scale-[1.18]",
+  },
+];
+
+interface PhotoPrintProps {
+  compact?: boolean;
+  desktopPosition: string;
+  imagePosition: string;
+  imageScale: string;
+  rotation: string;
+}
+
+function PhotoPrint({
+  compact = false,
+  desktopPosition,
+  imagePosition,
+  imageScale,
+  rotation,
+}: PhotoPrintProps) {
+  return (
+    <div
+      aria-hidden="true"
+      className={`${
+        compact
+          ? "relative w-full p-1 pb-3"
+          : `absolute hidden w-32 p-2 pb-7 xl:block 2xl:w-36 ${desktopPosition}`
+      } ${rotation} rounded-sm bg-white shadow-[0_18px_45px_rgba(0,0,0,0.35)] ring-1 ring-black/10`}
+    >
+      <div className="aspect-[4/5] overflow-hidden bg-zinc-100">
+        <img
+          src="/yusufsuhair.jpg"
+          alt=""
+          className={`h-full w-full object-cover ${imageScale}`}
+          style={{ objectPosition: imagePosition }}
+        />
+      </div>
+    </div>
+  );
+}
+
 export default function HomeWidget() {
   const yearsOfExperience = new Date().getFullYear() - CAREER_START_YEAR;
 
   return (
-    <section className="min-h-[78vh] flex items-center pt-28 pb-20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
-        <div className="max-w-4xl mx-auto text-center">
+    <section className="relative min-h-[78vh] overflow-hidden pt-28 pb-20 flex items-center">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 w-full">
+        {photoFrames.map((frame) => (
+          <PhotoPrint key={frame.desktopPosition} {...frame} />
+        ))}
+
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <TypingAnimation
             as="h1"
             typeSpeed={75}
@@ -62,6 +129,12 @@ export default function HomeWidget() {
           >
             Software Engineer · AI Agent Builder · Founder, YS Academy
           </p>
+
+          <div className="mx-auto mt-8 grid max-w-md grid-cols-4 items-center gap-2 px-1 xl:hidden">
+            {photoFrames.map((frame) => (
+              <PhotoPrint key={frame.desktopPosition} compact {...frame} />
+            ))}
+          </div>
 
           <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
             {socialLinks.map(({ label, href, icon }) => {
