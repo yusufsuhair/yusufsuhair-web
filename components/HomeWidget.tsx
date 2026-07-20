@@ -42,33 +42,38 @@ const socialLinks = [
 
 const photoFrames = [
   {
+    src: "/yusufsuhair.jpg",
     rotation: "-rotate-6",
     desktopPosition: "left-2 top-[7%]",
     imagePosition: "center 18%",
     imageScale: "scale-[1.08]",
   },
   {
+    src: "/hero2.jpg",
     rotation: "rotate-5",
     desktopPosition: "left-14 bottom-[3%]",
-    imagePosition: "42% 32%",
-    imageScale: "scale-[1.16]",
+    imagePosition: "center 25%",
+    imageScale: "scale-[1.05]",
   },
   {
+    src: "/hero3.jpg",
     rotation: "rotate-6",
     desktopPosition: "right-2 top-[9%]",
-    imagePosition: "58% 20%",
-    imageScale: "scale-[1.1]",
+    imagePosition: "center 30%",
+    imageScale: "scale-[1.05]",
   },
   {
+    src: "/hero4.jpg",
     rotation: "-rotate-5",
     desktopPosition: "right-14 bottom-[2%]",
-    imagePosition: "center 36%",
-    imageScale: "scale-[1.18]",
+    imagePosition: "center 22%",
+    imageScale: "scale-[1.1]",
   },
 ];
 
 interface PhotoPrintProps {
   compact?: boolean;
+  src: string;
   desktopPosition: string;
   imagePosition: string;
   imageScale: string;
@@ -77,6 +82,7 @@ interface PhotoPrintProps {
 
 function PhotoPrint({
   compact = false,
+  src,
   desktopPosition,
   imagePosition,
   imageScale,
@@ -93,7 +99,7 @@ function PhotoPrint({
     >
       <div className="aspect-[4/5] overflow-hidden bg-zinc-100">
         <img
-          src="/yusufsuhair.jpg"
+          src={src}
           alt=""
           className={`h-full w-full object-cover ${imageScale}`}
           style={{ objectPosition: imagePosition }}
