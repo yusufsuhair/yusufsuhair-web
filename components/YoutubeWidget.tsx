@@ -13,8 +13,8 @@ const featuredVideos = [
     title: "Aku Punya Gaming/Programming Setup Tour | Edisi Work from Home",
   },
   {
-    id: "cMwsHGnY9tY",
-    title: "wish birthday tiktokstar/instafamous imanopie pakai progamming | programmer takde keje",
+    id: "kc8o4RCIO7w",
+    title: "Kenapa Programmer Banyak Pakai Macbook?",
   },
 ];
 
