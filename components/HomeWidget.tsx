@@ -101,6 +101,8 @@ function PhotoPrint({
         <img
           src={src}
           alt=""
+          loading="lazy"
+          decoding="async"
           className={`h-full w-full object-cover ${imageScale}`}
           style={{ objectPosition: imagePosition }}
         />
