@@ -3,11 +3,13 @@
 import type { ComponentType, ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { BookOpen, Link2, MessageCircle, ChevronDown, Check, Minus } from "lucide-react";
+import { BookOpen, Link2, MessageCircle, ChevronDown, Check, Minus, Workflow } from "lucide-react";
 
 const mono = { fontFamily: "var(--font-jetbrains-mono), monospace" };
 
 const WHATSAPP_NUMBER = "601123709141";
+const YS_ACADEMY_URL = "https://ysacademy.my";
+const MUDAHAI_URL = "https://mudahai.com";
 const waLink = (message: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
 const CAREER_START = new Date(2019, 6, 1); // July 2019
@@ -24,6 +26,7 @@ interface Service {
   id: string;
   anchor?: "web" | "hermes" | "n8n";
   title: string;
+  qualifier?: string;
   description: string;
   price: string;
   Icon?: Icon;
@@ -88,7 +91,7 @@ interface PricingGroup {
 
 const hermesPricingSheet: PricingGroup[] = [
   {
-    title: "1. AI Agent Coaching",
+    title: "AI Agent Coaching",
     tiers: [
       {
         name: "AI Agent Coaching",
@@ -115,110 +118,11 @@ const hermesPricingSheet: PricingGroup[] = [
       },
     ],
   },
-  {
-    title: "2. AI Agent Setup & Implementation",
-    tiers: [
-      {
-        name: "Starter Setup",
-        price: "RM799",
-        priceCadence: "one-time",
-        bestFor: "Individuals or developers.",
-        items: [
-          "Hermes installation",
-          "VPS configuration",
-          "Telegram Bot integration",
-          "OpenRouter / Ollama setup",
-          "Basic AI profile configuration",
-          "Initial testing",
-        ],
-        ctaMessage: "Hi Yusuf, I'm interested in the Starter Setup (RM799). Can you share more details?",
-      },
-      {
-        name: "Business Setup",
-        price: "RM1,999",
-        priceCadence: "one-time",
-        bestFor: "Businesses looking to deploy AI Agents.",
-        popular: true,
-        items: [
-          "Everything in Starter, plus:",
-          "Full Hermes deployment",
-          "Multi-profile AI Agent setup",
-          "Browserbase & Firecrawl integration",
-          "Prompt engineering & AI workflow configuration",
-          "Testing, deployment & knowledge handover",
-        ],
-        ctaMessage: "Hi Yusuf, I'm interested in the Business Setup (RM1,999). Can you share more details?",
-      },
-      {
-        name: "Custom Setup",
-        price: "RM3,000",
-        pricePrefix: "Starting from",
-        bestFor: "Custom business solutions such as:",
-        items: [
-          "AI Customer Service",
-          "AI Sales Assistant",
-          "AI Competitor Intelligence",
-          "AI Research Agent",
-          "AI Marketing Agent",
-          "Internal Knowledge Assistant",
-          "AI Automation Workflow",
-        ],
-        note: "Final pricing depends on project scope and integrations.",
-        ctaMessage: "Hi Yusuf, I'm interested in a Custom AI Agent Setup (starting from RM3,000). Can you share more details?",
-      },
-    ],
-  },
-  {
-    title: "3. Monthly Support & Retainer",
-    tiers: [
-      {
-        name: "Basic",
-        price: "RM500",
-        priceCadence: "/month",
-        items: [
-          "1 hour consultation",
-          "Prompt optimisation",
-          "Minor improvements",
-          "Bug fixes",
-          "WhatsApp / Email support",
-        ],
-        ctaMessage: "Hi Yusuf, I'm interested in Basic monthly support (RM500/month). Can you share more details?",
-      },
-      {
-        name: "Business",
-        price: "RM1000",
-        priceCadence: "/month",
-        popular: true,
-        items: [
-          "Everything in Basic, plus:",
-          "Up to 3 hours consultation",
-          "Workflow optimisation & new prompt development",
-          "AI performance tuning",
-          "Priority support",
-          "Monthly review session",
-        ],
-        ctaMessage: "Hi Yusuf, I'm interested in Business monthly support (RM1000/month). Can you share more details?",
-      },
-      {
-        name: "Enterprise",
-        price: "Custom Quote",
-        items: [
-          "Multiple AI Agents",
-          "Continuous optimisation",
-          "New feature implementation",
-          "Team support",
-          "AI strategy & architecture consulting",
-          "Priority response SLA",
-        ],
-        ctaMessage: "Hi Yusuf, I'm interested in Enterprise support & retainer (custom quote). Can you share more details?",
-      },
-    ],
-  },
 ];
 
 const n8nPricingSheet: PricingGroup[] = [
   {
-    title: "1. n8n Automation Coaching",
+    title: "n8n Automation Coaching",
     tiers: [
       {
         name: "n8n 1-to-1 Coaching",
@@ -444,14 +348,14 @@ const developmentServices: Service[] = [
     id: "01",
     title: "Mobile App Development",
     description: "Native and cross-platform apps (Flutter, Kotlin, Java) from idea to Play Store launch.",
-    price: "Custom quote",
+    price: "Starting from RM3,000",
     renderIcon: () => (
       <div className="flex items-center gap-2.5">
         <img src="/appstore-logo.png" alt="App Store" className="w-8 h-8 md:w-9 md:h-9 object-contain" />
         <img src="/playstore-logo.png" alt="Play Store" className="w-8 h-8 md:w-9 md:h-9 object-contain" />
       </div>
     ),
-    cta: { label: "Get Quote", href: waLink("Hi Yusuf, I'm interested in Mobile App Development. Can you share more details?"), Icon: MessageCircle },
+    cta: { label: "Get Quote", href: waLink("Hi Yusuf, I'm interested in Mobile App Development (Starting from RM3,000). Can you share more details?"), Icon: MessageCircle },
   },
   {
     id: "02",
@@ -470,33 +374,55 @@ const coachingServices: Service[] = [
     id: "01",
     anchor: "hermes",
     title: "Hermes 1-to-1 Class",
+    qualifier: "You already run a business and want AI agents working in it",
     description: "Private, hands-on session on setting up and running Hermes AI agents for your own business.",
-    price: "From RM799",
+    price: "RM500/hour",
     renderIcon: () => (
       <img src="/hermes-logo.png" alt="Hermes AI" className="w-full h-full border-0 bg-transparent object-contain" />
     ),
-    cta: { label: "Book Class", href: waLink("Hi Yusuf, I'm interested in the Hermes 1-to-1 Class (From RM799). Can you share more details?"), Icon: MessageCircle },
+    cta: { label: "Book Class", href: waLink("Hi Yusuf, I'm interested in the Hermes 1-to-1 Class (RM500/hour). Can you share more details?"), Icon: MessageCircle },
     details: <PricingDetails groups={hermesPricingSheet} />,
   },
   {
     id: "02",
     anchor: "n8n",
     title: "n8n 1-to-1 Class",
+    qualifier: "You want to learn workflow automation hands-on",
     description: "Private, hands-on session on building automated workflows with n8n for your business.",
-    price: "Starting from RM799",
+    price: "RM500/hour",
     renderIcon: () => (
       <img src="/n8n.svg" alt="n8n" className="w-12 h-12 md:w-14 md:h-14 object-contain" />
     ),
-    cta: { label: "Book Class", href: waLink("Hi Yusuf, I'm interested in the n8n 1-to-1 Class (Starting from RM799). Can you share more details?"), Icon: MessageCircle },
+    cta: { label: "Book Class", href: waLink("Hi Yusuf, I'm interested in the n8n 1-to-1 Class (RM500/hour). Can you share more details?"), Icon: MessageCircle },
     details: <PricingDetails groups={n8nPricingSheet} />,
   },
+];
+
+interface ProductLink {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  href: string;
+  Icon: Icon;
+}
+
+const otherProducts: ProductLink[] = [
   {
-    id: "03",
-    title: "Vibe Coding & AI Automation Class",
-    description: "Weekly live workshops teaching AI-assisted development and automation",
-    price: "RM100/month (founding member)",
+    id: "academy",
+    name: "YS Academy",
+    tagline: "Learn to build it yourself",
+    description: "Weekly live workshops on AI-assisted development and automation. Low-ticket membership, DIY.",
+    href: YS_ACADEMY_URL,
     Icon: BookOpen,
-    cta: { label: "Visit YS Academy", href: "https://ysacademy.my", Icon: Link2 },
+  },
+  {
+    id: "mudahai",
+    name: "MudahAI",
+    tagline: "Get it built for you",
+    description: "Done-for-you AI agents for SMEs — bookings, reminders and follow-ups handled on WhatsApp.",
+    href: MUDAHAI_URL,
+    Icon: Workflow,
   },
 ];
 
@@ -507,8 +433,8 @@ interface ServiceSection {
 }
 
 const serviceSections: ServiceSection[] = [
-  { id: "development", title: "Development", services: developmentServices },
   { id: "coaching", title: "Coaching & Mentoring", services: coachingServices },
+  { id: "development", title: "Development", services: developmentServices },
 ];
 
 export default function ServicesWidget() {
@@ -637,6 +563,9 @@ export default function ServicesWidget() {
 
                         <div className="flex-1 min-w-0">
                           <h3 className="font-semibold text-sm text-zinc-950">{service.title}</h3>
+                          {service.qualifier && (
+                            <p className="text-xs font-medium text-blue-600 mt-1">{service.qualifier}</p>
+                          )}
                           <p className="text-sm text-zinc-600 mt-1 leading-relaxed">{service.description}</p>
                         </div>
 
@@ -692,6 +621,43 @@ export default function ServicesWidget() {
               </div>
             </div>
           ))}
+
+          {/* Other businesses — brief pointers, no pricing here */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+          >
+            <div className="flex items-center gap-4 mb-5">
+              <h2 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-zinc-500" style={mono}>
+                Also Building
+              </h2>
+              <div className="h-px flex-1 bg-zinc-200" />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {otherProducts.map((product) => (
+                <a
+                  key={product.id}
+                  href={product.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-4 rounded-xl border border-zinc-200 bg-white p-5 hover:border-zinc-400 transition-colors"
+                >
+                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-zinc-100 text-zinc-500 shrink-0">
+                    <product.Icon size={18} />
+                  </div>
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-semibold text-sm text-zinc-950">{product.name}</h3>
+                      <span className="text-xs text-zinc-500">— {product.tagline}</span>
+                    </div>
+                    <p className="text-xs text-zinc-500 mt-1 leading-relaxed">{product.description}</p>
+                  </div>
+                  <Link2 size={14} className="ml-auto shrink-0 mt-1 text-zinc-400 group-hover:text-zinc-950 transition-colors" />
+                </a>
+              ))}
+            </div>
+          </motion.div>
 
           {/* Closing fallback card */}
           <motion.div
