@@ -96,7 +96,7 @@ const hermesPricingSheet: PricingGroup[] = [
       {
         name: "AI Agent Coaching",
         price: "RM500",
-        priceCadence: "/hour",
+        priceCadence: "/90 min",
         bestFor: "Developers, business owners, or teams who want to learn how to build and use AI Agents.",
         items: [
           "Hermes AI",
@@ -114,7 +114,7 @@ const hermesPricingSheet: PricingGroup[] = [
           "Troubleshooting & Q&A",
         ],
         note: "You learn. You build. I guide.",
-        ctaMessage: "Hi Yusuf, I'm interested in AI Agent Coaching (RM500/hour). Can you share more details?",
+        ctaMessage: "Hi Yusuf, I'm interested in AI Agent Coaching (RM500/90 min). Can you share more details?",
       },
     ],
   },
@@ -127,7 +127,7 @@ const n8nPricingSheet: PricingGroup[] = [
       {
         name: "n8n 1-to-1 Coaching",
         price: "RM500",
-        priceCadence: "/hour",
+        priceCadence: "/90 min",
         bestFor: "Developers, business owners, or teams who want to automate business workflows with n8n.",
         items: [
           "Workflow Design & Building",
@@ -143,7 +143,7 @@ const n8nPricingSheet: PricingGroup[] = [
           "Troubleshooting & Q&A",
         ],
         note: "You learn. You build. I guide.",
-        ctaMessage: "Hi Yusuf, I'm interested in n8n 1-to-1 Coaching (RM500/hour). Can you share more details?",
+        ctaMessage: "Hi Yusuf, I'm interested in n8n 1-to-1 Coaching (RM500/90 min). Can you share more details?",
       },
     ],
   },
@@ -376,11 +376,11 @@ const coachingServices: Service[] = [
     title: "Hermes 1-to-1 Class",
     qualifier: "You already run a business and want AI agents working in it",
     description: "Private, hands-on session on setting up and running Hermes AI agents for your own business.",
-    price: "RM500/hour",
+    price: "RM500/90 min",
     renderIcon: () => (
       <img src="/hermes-logo.png" alt="Hermes AI" className="w-full h-full border-0 bg-transparent object-contain" />
     ),
-    cta: { label: "Book Class", href: waLink("Hi Yusuf, I'm interested in the Hermes 1-to-1 Class (RM500/hour). Can you share more details?"), Icon: MessageCircle },
+    cta: { label: "Book Class", href: waLink("Hi Yusuf, I'm interested in the Hermes 1-to-1 Class (RM500/90 min). Can you share more details?"), Icon: MessageCircle },
     details: <PricingDetails groups={hermesPricingSheet} />,
   },
   {
@@ -389,11 +389,11 @@ const coachingServices: Service[] = [
     title: "n8n 1-to-1 Class",
     qualifier: "You want to learn workflow automation hands-on",
     description: "Private, hands-on session on building automated workflows with n8n for your business.",
-    price: "RM500/hour",
+    price: "RM500/90 min",
     renderIcon: () => (
       <img src="/n8n.svg" alt="n8n" className="w-12 h-12 md:w-14 md:h-14 object-contain" />
     ),
-    cta: { label: "Book Class", href: waLink("Hi Yusuf, I'm interested in the n8n 1-to-1 Class (RM500/hour). Can you share more details?"), Icon: MessageCircle },
+    cta: { label: "Book Class", href: waLink("Hi Yusuf, I'm interested in the n8n 1-to-1 Class (RM500/90 min). Can you share more details?"), Icon: MessageCircle },
     details: <PricingDetails groups={n8nPricingSheet} />,
   },
 ];
