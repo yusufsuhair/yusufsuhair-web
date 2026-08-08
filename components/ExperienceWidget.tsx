@@ -7,6 +7,7 @@ interface Job {
   company: string;
   period: string;
   location: string;
+  summary?: string;
   description: string[];
   tech: string[];
 }
@@ -14,13 +15,17 @@ interface Job {
 const experienceData: Job[] = [
   {
     title: "Founder",
-    company: "YS Academy",
+    company: "YS Academy & MudahAI",
     period: "June 2026 — Present",
-    location: "Remote",
+    location: "Malaysia · Remote",
+    summary: "Built two complementary AI businesses: YS Academy teaches individuals to build apps, agents and automations, while MudahAI delivers managed AI agents for business operations.",
     description: [
-      "Helping beginners and business-minded learners build real-world websites, automations, and digital products using AI, vibe coding, and modern no-code/low-code tools.",
+      "Run live AI-assisted development and automation programmes through YS Academy",
+      "Design, deploy and maintain production AI agents through MudahAI",
+      "Build WhatsApp booking, reminder, follow-up and business workflow systems",
+      "Lead product development, infrastructure, client delivery and technical strategy",
     ],
-    tech: ["AI", "Vibe Coding", "No-Code", "Low-Code", "Automation", "Web"],
+    tech: ["AI Agents", "Automation", "n8n", "WhatsApp API", "Education", "SaaS", "DevOps"],
   },
   {
     title: "Founding Engineer (Mobile, Web, AI, DevOps)",
@@ -131,6 +136,9 @@ export default function ExperienceWidget() {
                   </div>
                 </div>
 
+                {job.summary && (
+                  <p className="text-sm text-zinc-400 leading-relaxed mb-4">{job.summary}</p>
+                )}
                 <ul className="space-y-2 text-sm text-zinc-400 mb-5 list-none">
                   {job.description.map((desc, i) => (
                     <li key={i} className="flex items-start gap-2">

@@ -13,106 +13,74 @@ interface Project {
   android?: string;
   ios?: string;
   image?: string;
+  cta?: string;
   category: "web" | "mobile" | "crypto";
   storesOnly?: boolean;
 }
 
 const projectsData: Project[] = [
   {
-    title: "$REMBUYANG Memecoin",
-    role: "Founder / Lead Engineer",
-    url: "https://rembuyang.vercel.app",
+    title: "MudahAI — Managed AI Agents for Businesses",
+    role: "Founder / AI Agent Builder",
+    url: "https://mudahai.com",
     description:
-      "The biggest Roti John restaurant memecoin: a decentralized, community-owned $REMBUYANG experience with an on-chain ecosystem, tokenomics, and live market stats.",
-    tech: ["Next.js", "TypeScript", "Solidity", "Web3.js"],
-    category: "crypto",
-    image: "/screenshot-rembuyang.jpg",
+      "A done-for-you AI operations system that handles WhatsApp enquiries, bookings, reminders, rescheduling and follow-ups, with human escalation built into the workflow.",
+    tech: ["AI Agents", "n8n", "WhatsApp Cloud API", "OpenAI", "Supabase", "DevOps"],
+    category: "web",
+    image: "https://mudahai.com/opengraph-image?b83510d8ccd8f3df",
+    cta: "Visit MudahAI",
   },
   {
-    title: "MooMetrics - Crypto Analytics Platform",
+    title: "YS Academy — AI Development Learning Platform",
+    role: "Founder / Full-Stack Engineer",
+    url: "https://ysacademy.my",
+    description: "A subscription learning platform with live workshops, member accounts, Stripe billing, lesson progress, access expiry and Telegram community integration.",
+    tech: ["Next.js", "Supabase", "Stripe", "Telegram", "AI Education"],
+    category: "web",
+    image: "https://ysacademy.my/og.jpg",
+    cta: "Visit YS Academy",
+  },
+  {
+    title: "Consumer Mobile App Portfolio",
+    role: "Founder / Mobile Developer",
+    description: "Built and published entertainment apps across Android, with the portfolio contributing to more than 5 million installs. Ronaldo Fake Chat & Video Call: 4.0★ · 1M+ downloads.",
+    android: "https://play.google.com/store/apps/details?id=com.yusufsuhair.ronaldofakevideocall&hl=en",
+    tech: ["Android", "Flutter", "Java", "Kotlin", "Google Play"],
+    category: "mobile",
+    storesOnly: true,
+  },
+  {
+    title: "MooMetrics — Crypto Analytics Ecosystem",
     role: "CTO / Lead Engineer",
     url: "https://moometrics.io",
-    description: "Advanced crypto portfolio tracker and analytics platform for DeFi and NFT assets with real-time insights.",
-    tech: ["Next.js", "TypeScript", "Tailwind", "Node.js", "Python"],
-    image: "/screenshot-moometrics.jpg",
-    category: "web",
-  },
-  {
-    title: "myClipper - Content Creation Platform",
-    role: "Built by me",
-    url: "https://myclipper.vercel.app/",
-    description: "Run campaigns or apply to them. Get paid per views. Business owners set commission per 1k views; clippers apply and get paid when views are delivered — one platform for both.",
-    tech: ["Next.js", "TypeScript", "Tailwind"],
-    image: "/screenshot-myclipper.png",
-    category: "web",
-  },
-  {
-    title: "MooMetrics Mobile",
-    role: "Lead Mobile Engineer",
-    description: "Native mobile app for crypto portfolio tracking with advanced analytics and real-time alerts.",
     android: "https://play.google.com/store/apps/details?id=com.heifereum.moometrics_mobile&hl=en",
     ios: "https://apps.apple.com/my/app/moometrics-crypto-analytics/id6741414782",
-    tech: ["Flutter"],
-    category: "mobile",
-    storesOnly: true,
-  },
-  {
-    title: "Memecoin Launchpad Projects",
-    role: "CTO / Lead Web3 Engineer",
-    url: "https://walid-memecoin-website.vercel.app/",
-    description: "Series of community-driven memecoin launches including $WALID and $TSI (Trump Survive Index) — each with dedicated landing pages, tokenomics, staking mechanics, and on-chain integrations.",
-    tech: ["Next.js", "TypeScript", "Framer Motion", "Solidity", "Web3.js"],
-    image: "/screenshot-walid.jpg",
-    category: "crypto",
-  },
-  {
-    title: "Celebrity Video Call Entertainment Apps",
-    role: "Founder / Mobile Developer",
-    description: "Entertainment suite of celebrity video call simulation apps, reaching 5M+ installs across 50+ published titles.",
-    android: "https://play.google.com/store/apps/developer?id=Yusuf+Suhair",
-    tech: ["Flutter", "Java", "Kotlin"],
-    category: "mobile",
-    storesOnly: true,
-  },
-  {
-    title: "Live Streaming Simulation Apps",
-    role: "Founder / Mobile Developer",
-    description: "Mobile apps simulating live streaming experiences featuring celebrities, with 3M+ installs and reusable platform templates.",
-    android: "https://play.google.com/store/apps/details?id=com.yusufsuhair.fake_live",
-    tech: ["Flutter", "Java"],
-    category: "mobile",
-    storesOnly: true,
-  },
-  {
-    title: "Heifereum Landing Page",
-    role: "CTO & Co-Founder",
-    url: "https://heifereum.com",
-    description: "Technology company landing page showcasing innovative solutions and services.",
-    tech: ["React", "Tone.js", "D3.js", "TypeScript"],
-    image: "/screenshot-heifereum.jpg",
+    description: "Built a full product ecosystem spanning a web analytics platform, mobile app, real-time portfolio insights and production infrastructure for DeFi and NFT assets.",
+    tech: ["Next.js", "Flutter", "Node.js", "Python", "DevOps"],
+    image: "https://moometrics.io/images/og-moometrics.png",
     category: "web",
   },
   {
-    title: "Ejoe Swap (PancakeSwap Clone)",
-    role: "Web3 Engineer",
-    url: "https://ejoe-swap-pancakeswap.vercel.app",
-    description: "Decentralized crypto swap platform inspired by PancakeSwap on Ejoe Network.",
-    tech: ["React", "Solidity", "Web3.js"],
-    image: "/screenshot-ejoe-swap.jpg",
-    category: "crypto",
+    title: "myClipper — Content Creation Platform",
+    role: "Full-Stack Engineer",
+    url: "https://myclipper.vercel.app/",
+    description: "A SaaS platform where businesses run campaigns and creators earn based on views delivered, with commission-based workflows for both sides of the marketplace.",
+    tech: ["Next.js", "TypeScript", "Tailwind", "SaaS"],
+    image: "https://myclipper.com/og.png",
+    category: "web",
   },
   {
-    title: "Ejoe NFT Marketplace",
-    role: "Web3 Engineer",
-    url: "https://ejoe-nft.vercel.app",
-    description: "OpenSea-style NFT marketplace for Ejoe Network with minting and trading features.",
-    tech: ["React", "Solidity", "Web3.js"],
-    image: "/screenshot-ejoe-nft.jpg",
+    title: "Earlier Web3 & Blockchain Work",
+    role: "CTO / Lead Web3 Engineer",
+    url: "https://heifereum.com",
+    description: "Selected earlier work across Heifereum, token launch platforms and the Ejoe swap and NFT ecosystem — covering product development, smart contracts and Web3 infrastructure.",
+    tech: ["Solidity", "Next.js", "React", "Web3.js", "DevOps"],
+    image: "https://walid.fun/images/og-walid.png",
     category: "crypto",
   },
 ];
 
-const MOBILE_LIMIT = 4;
+const MOBILE_LIMIT = 6;
 
 const categories = [
   { id: "all", label: "All" },
@@ -163,8 +131,8 @@ export default function ProjectsWidget() {
             Selected Work
           </h2>
           <p className="text-zinc-400 text-base max-w-2xl mx-auto">
-            A collection of systems, platforms, and tools I&apos;ve architected and shipped — from
-            Web3 protocols to AI-driven apps and mobile products.
+            AI businesses, products and systems I&apos;ve built — supported by a track record across
+            mobile, SaaS and Web3.
           </p>
         </motion.div>
 
@@ -342,7 +310,7 @@ export default function ProjectsWidget() {
                         className={`inline-flex items-center gap-1.5 text-xs text-zinc-400 hover:${config.color} transition-colors`}
                       >
                         <ExternalLink size={12} />
-                        Live
+                        {project.cta || "Live"}
                       </a>
                     )}
                     {project.android && (
