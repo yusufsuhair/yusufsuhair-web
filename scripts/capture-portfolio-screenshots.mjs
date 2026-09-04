@@ -12,9 +12,8 @@ const projects = [
   { filename: "01-mudahai.webp", url: "https://mudahai.com" },
   { filename: "02-ys-academy.webp", url: "https://ysacademy.my" },
   { filename: "03-ronaldo-fake-chat.webp", url: "https://play.google.com/store/apps/details?id=com.yusufsuhair.ronaldofakevideocall&hl=en" },
-  { filename: "04-moometrics.webp", url: "https://moometrics.io" },
   { filename: "05-myclipper.webp", url: "https://myclipper.vercel.app" },
-  { filename: "06-earlier-web3.webp", url: "https://heifereum.com" },
+  { filename: "06-ejoe-nft.webp", url: "http://ejoe-nft.vercel.app/" },
 ];
 
 const hiddenSelectors = [

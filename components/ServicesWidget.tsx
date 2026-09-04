@@ -3,7 +3,7 @@
 import type { ComponentType, ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { BookOpen, Link2, MessageCircle, ChevronDown, Check, Minus, Workflow } from "lucide-react";
+import { Link2, MessageCircle, ChevronDown, Check, Minus, ClipboardCheck } from "lucide-react";
 
 const mono = { fontFamily: "var(--font-jetbrains-mono), monospace" };
 
@@ -372,6 +372,15 @@ const developmentServices: Service[] = [
 const coachingServices: Service[] = [
   {
     id: "01",
+    title: "1-to-1 Audit, Coaching & Mentoring",
+    qualifier: "You know AI should be in your business but not where to start",
+    description: "Private session to audit how you work today, find where AI actually pays off, and leave with a build order you can act on. Tool-agnostic.",
+    price: "RM500/90 min",
+    Icon: ClipboardCheck,
+    cta: { label: "Book Session", href: waLink("Hi Yusuf, I'm interested in the 1-to-1 Audit, Coaching & Mentoring session (RM500/90 min). Can you share more details?"), Icon: MessageCircle },
+  },
+  {
+    id: "02",
     anchor: "hermes",
     title: "Hermes 1-to-1 Class",
     qualifier: "You already run a business and want AI agents working in it",
@@ -384,7 +393,7 @@ const coachingServices: Service[] = [
     details: <PricingDetails groups={hermesPricingSheet} />,
   },
   {
-    id: "02",
+    id: "03",
     anchor: "n8n",
     title: "n8n 1-to-1 Class",
     qualifier: "You want to learn workflow automation hands-on",
@@ -404,7 +413,7 @@ interface ProductLink {
   tagline: string;
   description: string;
   href: string;
-  Icon: Icon;
+  logo: string;
 }
 
 const otherProducts: ProductLink[] = [
@@ -414,7 +423,7 @@ const otherProducts: ProductLink[] = [
     tagline: "Learn to build it yourself",
     description: "Weekly live workshops on AI-assisted development and automation. Low-ticket membership, DIY.",
     href: YS_ACADEMY_URL,
-    Icon: BookOpen,
+    logo: "/ys-academy-logo.png",
   },
   {
     id: "mudahai",
@@ -422,7 +431,7 @@ const otherProducts: ProductLink[] = [
     tagline: "Get it built for you",
     description: "Done-for-you AI agents for SMEs — bookings, reminders and follow-ups handled on WhatsApp.",
     href: MUDAHAI_URL,
-    Icon: Workflow,
+    logo: "/mudahai-logo.png",
   },
 ];
 
@@ -484,7 +493,7 @@ export default function ServicesWidget() {
         >
           <div className="w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden border border-zinc-200 shrink-0 bg-white">
             <img
-              src="/yusufsuhair.jpg"
+              src="/hero1.jpg"
               alt="Yusuf Suhair"
               className="w-full h-full object-cover object-top"
             />
@@ -499,7 +508,7 @@ export default function ServicesWidget() {
             </p>
             <p className="text-zinc-600 text-sm md:text-base mt-5 max-w-[540px] leading-relaxed">
               I&apos;m a software engineer and AI agent builder with {yearsOfExperience}+ years of
-              experience. I&apos;ve shipped 50+ web and mobile products, with my mobile apps
+              experience. I&apos;ve shipped 60+ web and mobile products, with my mobile apps
               reaching 5M+ installs. Through YS Academy, I teach people to build apps with AI,
               create AI agents and automate workflows. I also help businesses implement these
               technologies in their operations.
@@ -643,8 +652,10 @@ export default function ServicesWidget() {
                   rel="noopener noreferrer"
                   className="group flex items-start gap-4 rounded-xl border border-zinc-200 bg-white p-5 hover:border-zinc-400 transition-colors"
                 >
-                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-zinc-100 text-zinc-500 shrink-0">
-                    <product.Icon size={18} />
+                  {/* Tile needs a definite size — with an auto-sized box the logo
+                      falls back to its intrinsic dimensions. h-16 ≈ the title+description block. */}
+                  <div className="flex items-center justify-center w-16 h-16 rounded-lg bg-zinc-100 shrink-0 overflow-hidden">
+                    <img src={product.logo} alt="" className="w-11 h-11 object-contain" />
                   </div>
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">

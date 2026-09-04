@@ -10,6 +10,7 @@ import TerminalModal from "@/components/TerminalModal";
 import ProjectsWidget from "@/components/ProjectsWidget";
 import SkillsWidget from "@/components/SkillsWidget";
 import YoutubeWidget from "@/components/YoutubeWidget";
+import InstagramWidget from "@/components/InstagramWidget";
 import StatsWidget from "@/components/StatsWidget";
 import ExperienceWidget from "@/components/ExperienceWidget";
 
@@ -38,6 +39,7 @@ export default function Home() {
         <ExperienceWidget />
         <ProjectsWidget />
         <YoutubeWidget />
+        <InstagramWidget />
         <ContactWidget />
 
         <footer className="py-8 border-t border-white/5 text-center">

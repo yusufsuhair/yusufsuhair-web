@@ -42,7 +42,7 @@ const socialLinks = [
 
 const photoFrames = [
   {
-    src: "/yusufsuhair.jpg",
+    src: "/hero1.jpg",
     rotation: "-rotate-6",
     desktopPosition: "left-2 top-[7%]",
     imagePosition: "center 18%",
@@ -171,7 +171,7 @@ export default function HomeWidget() {
 
           <p className="mt-10 mx-auto max-w-[540px] text-sm md:text-base text-zinc-400 leading-relaxed">
             I&apos;m a software engineer and AI agent builder with 7+ years of experience. I&apos;ve
-            shipped 50+ web and mobile products, with my mobile apps reaching 5M+ installs.
+            shipped 60+ web and mobile products, with my mobile apps reaching 5M+ installs.
             Through YS Academy, I teach people to build with AI. Through MudahAI, I design,
             deploy and maintain AI agents for businesses.
           </p>

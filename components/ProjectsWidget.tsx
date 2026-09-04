@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink, Globe, Smartphone, Link, Code2 } from "lucide-react";
+import { ExternalLink, Globe, Smartphone, Link, Code2, ShoppingBag } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -14,7 +14,7 @@ interface Project {
   ios?: string;
   image?: string;
   cta?: string;
-  category: "web" | "mobile" | "crypto";
+  category: "web" | "mobile" | "crypto" | "ecommerce";
   storesOnly?: boolean;
 }
 
@@ -31,13 +31,13 @@ const projectsData: Project[] = [
     cta: "Visit MudahAI",
   },
   {
-    title: "YS Academy — AI Development Learning Platform",
+    title: "YS Academy - Kelas AI Online",
     role: "Founder / Full-Stack Engineer",
     url: "https://ysacademy.my",
     description: "A subscription learning platform with live workshops, member accounts, Stripe billing, lesson progress, access expiry and Telegram community integration.",
     tech: ["Next.js", "Supabase", "Stripe", "Telegram", "AI Education"],
     category: "web",
-    image: "https://ysacademy.my/og.jpg",
+    image: "/screenshot-ys-academy.png",
     cta: "Visit YS Academy",
   },
   {
@@ -50,33 +50,52 @@ const projectsData: Project[] = [
     storesOnly: true,
   },
   {
-    title: "MooMetrics — Crypto Analytics Ecosystem",
-    role: "CTO / Lead Engineer",
-    url: "https://moometrics.io",
-    android: "https://play.google.com/store/apps/details?id=com.heifereum.moometrics_mobile&hl=en",
-    ios: "https://apps.apple.com/my/app/moometrics-crypto-analytics/id6741414782",
-    description: "Built a full product ecosystem spanning a web analytics platform, mobile app, real-time portfolio insights and production infrastructure for DeFi and NFT assets.",
-    tech: ["Next.js", "Flutter", "Node.js", "Python", "DevOps"],
-    image: "https://moometrics.io/images/og-moometrics.png",
-    category: "web",
-  },
-  {
     title: "myClipper — Content Creation Platform",
     role: "Full-Stack Engineer",
     url: "https://myclipper.vercel.app/",
     description: "A SaaS platform where businesses run campaigns and creators earn based on views delivered, with commission-based workflows for both sides of the marketplace.",
     tech: ["Next.js", "TypeScript", "Tailwind", "SaaS"],
-    image: "https://myclipper.com/og.png",
+    image: "/screenshot-myclipper.png",
     category: "web",
   },
   {
-    title: "Earlier Web3 & Blockchain Work",
+    title: "$EJOE NFT Marketplace",
     role: "CTO / Lead Web3 Engineer",
-    url: "https://heifereum.com",
-    description: "Selected earlier work across Heifereum, token launch platforms and the Ejoe swap and NFT ecosystem — covering product development, smart contracts and Web3 infrastructure.",
+    url: "http://ejoe-nft.vercel.app/",
+    description: "An NFT marketplace for discovering, collecting and selling NFTs — wallet connect, search and filtering by item type, sale type and price range, backed by smart contracts and Web3 infrastructure.",
     tech: ["Solidity", "Next.js", "React", "Web3.js", "DevOps"],
-    image: "https://walid.fun/images/og-walid.png",
+    image: "/screenshot-ejoe-nft.png",
     category: "crypto",
+  },
+  {
+    title: "$WALID Memecoin Landing Page",
+    role: "Full-Stack Engineer",
+    url: "https://walid-memecoin-website.vercel.app/",
+    description:
+      "A meme-native landing page for the $WALID token — viral lore, how-to-buy walkthrough, contract address copy, pump.fun buy flow and in-page mini games.",
+    tech: ["Next.js", "React", "Tailwind", "Solana", "pump.fun"],
+    image: "/screenshot-walid.png",
+    category: "crypto",
+  },
+  {
+    title: "$REMBUYANG Memecoin Landing Page",
+    role: "Full-Stack Engineer",
+    url: "https://rembuyang.vercel.app/",
+    description:
+      "A community memecoin landing page with wallet connect, live price and 24h change, buy flow and a built-in anthem player running as a persistent bottom bar.",
+    tech: ["Next.js", "React", "Tailwind", "Web3", "Wallet Connect"],
+    image: "/screenshot-rembuyang.png",
+    category: "crypto",
+  },
+  {
+    title: "NuuhaBeauty — Halal Korean Skincare Store",
+    role: "AI / Computer Vision Engineer",
+    url: "https://nuuhabeauty.com/",
+    description:
+      "A Shopify storefront for a halal Korean skincare brand, with an AI face-recognition feature that detects acne from a selfie and recommends products using computer vision and deep learning.",
+    tech: ["Shopify", "Computer Vision", "Deep Learning", "Python", "E-commerce"],
+    image: "/screenshot-nuuhabeauty.png",
+    category: "ecommerce",
   },
 ];
 
@@ -87,6 +106,7 @@ const categories = [
   { id: "web", label: "Web Apps" },
   { id: "mobile", label: "Mobile" },
   { id: "crypto", label: "Crypto / Web3" },
+  { id: "ecommerce", label: "E-commerce" },
 ];
 
 const categoryConfig = {
@@ -107,6 +127,12 @@ const categoryConfig = {
     color: "text-orange-400",
     bg: "from-orange-500/15 to-orange-600/5",
     border: "group-hover:border-orange-500/30",
+  },
+  ecommerce: {
+    icon: ShoppingBag,
+    color: "text-rose-400",
+    bg: "from-rose-500/15 to-rose-600/5",
+    border: "group-hover:border-rose-500/30",
   },
 };
 

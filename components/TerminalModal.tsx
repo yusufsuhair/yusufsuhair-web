@@ -115,7 +115,6 @@ const CMDS: Record<string, () => React.ReactNode> = {
   projects: () => (
     <div className="space-y-1.5 text-sm">
       {[
-        ["MooMetrics",    "Crypto analytics platform",         "https://moometrics.io"],
         ["AIFiqh",        "AI-powered Islamic Q&A platform",   "https://aifiqh.com"],
         ["myClipper",     "Content creation & campaigns",      "https://myclipper.vercel.app"],
         ["Heifereum",     "Web3 tech company landing page",    "https://heifereum.com"],

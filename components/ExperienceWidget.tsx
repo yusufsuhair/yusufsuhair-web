@@ -14,9 +14,19 @@ interface Job {
 
 const experienceData: Job[] = [
   {
+    title: "Founding Engineer (Mobile, Web, AI, DevOps)",
+    company: "Aixelink Sàrl",
+    period: "April 2026 — Present",
+    location: "Remote",
+    description: [
+      "Architected and deployed the full infrastructure stack including Nginx static serving, Cloudflare Tunnel/ngrok public exposure, and Android WebView bridge integration connecting native device APIs to a web-based UI.",
+    ],
+    tech: ["Mobile", "Web", "AI", "DevOps", "Nginx", "Cloudflare Tunnel", "Android WebView"],
+  },
+  {
     title: "Founder",
     company: "YS Academy & MudahAI",
-    period: "June 2026 — Present",
+    period: "January 2026 — Present",
     location: "Malaysia · Remote",
     summary: "Built two complementary AI businesses: YS Academy teaches individuals to build apps, agents and automations, while MudahAI delivers managed AI agents for business operations.",
     description: [
@@ -26,16 +36,6 @@ const experienceData: Job[] = [
       "Lead product development, infrastructure, client delivery and technical strategy",
     ],
     tech: ["AI Agents", "Automation", "n8n", "WhatsApp API", "Education", "SaaS", "DevOps"],
-  },
-  {
-    title: "Founding Engineer (Mobile, Web, AI, DevOps)",
-    company: "Aixelink Sàrl",
-    period: "April 2026 — Present",
-    location: "Remote",
-    description: [
-      "Architected and deployed the full infrastructure stack including Nginx static serving, Cloudflare Tunnel/ngrok public exposure, and Android WebView bridge integration connecting native device APIs to a web-based UI.",
-    ],
-    tech: ["Mobile", "Web", "AI", "DevOps", "Nginx", "Cloudflare Tunnel", "Android WebView"],
   },
   {
     title: "Mobile Developer",
