@@ -51,6 +51,16 @@ const projectsData: Project[] = [
     category: "crypto",
   },
   {
+    title: "Dalbass - Platform Sinyal XAUUSD",
+    role: "Full-Stack Engineer",
+    url: "https://dalbass.com",
+    description:
+      "A gold (XAUUSD) trading signal platform — scalping and intraday signals with entry, stop loss and TP1–TP3 levels, an automatic lot calculator, open performance recaps and Telegram delivery.",
+    tech: ["Next.js", "React", "Tailwind", "Telegram", "Trading"],
+    image: "/screenshot-dalbass.png",
+    category: "crypto",
+  },
+  {
     title: "Consumer Mobile App Portfolio",
     role: "Founder / Mobile Developer",
     description: "Built and published entertainment apps across Android, with the portfolio contributing to more than 5 million installs. Ronaldo Fake Chat & Video Call: 4.0★ · 1M+ downloads.",
