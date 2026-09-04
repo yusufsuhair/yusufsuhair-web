@@ -112,9 +112,7 @@ export default function InstagramWidget() {
             <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center">
               <Instagram size={15} className="text-zinc-400" />
             </div>
-            <p className="text-sm text-zinc-400">
-              I post build breakdowns and automation tips at @yusufsuhair.
-            </p>
+            <p className="text-sm text-zinc-400">@yusufsuhair</p>
           </div>
           <a
             href={PROFILE_URL}

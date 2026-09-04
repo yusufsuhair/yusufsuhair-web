@@ -20,7 +20,7 @@ interface Project {
 
 const projectsData: Project[] = [
   {
-    title: "MudahAI — Managed AI Agents for Businesses",
+    title: "MudahAI - Managed AI Agents for Businesses",
     role: "Founder / AI Agent Builder",
     url: "https://mudahai.com",
     description:

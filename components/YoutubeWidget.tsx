@@ -96,9 +96,7 @@ export default function YoutubeWidget() {
             <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center">
               <Youtube size={15} className="text-zinc-400" />
             </div>
-            <p className="text-sm text-zinc-400">
-              More content on my channel — subscribe to stay updated.
-            </p>
+            <p className="text-sm text-zinc-400">@YusufSuhair</p>
           </div>
           <a
             href={CHANNEL_URL}
