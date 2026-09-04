@@ -7,7 +7,7 @@ const yearsOfExperience = new Date().getFullYear() - CAREER_START_YEAR;
 
 const stats = [
   { value: yearsOfExperience + "+", label: "Years Experience" },
-  { value: "50+", label: "Apps Shipped" },
+  { value: "60+", label: "Apps Shipped" },
   { value: "5M+", label: "App Installs" },
 ];
 
