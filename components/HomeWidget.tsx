@@ -135,7 +135,7 @@ export default function HomeWidget() {
             className="mt-4 text-[11px] uppercase tracking-[0.18em] text-zinc-500"
             style={mono}
           >
-            Software Engineer · AI Agent Builder · Founder
+            Software Engineer · AI Agent Builder · Content Creator · Founder
           </p>
 
           <div className="mx-auto mt-8 grid max-w-md grid-cols-4 items-center gap-2 px-1 xl:hidden">
@@ -173,7 +173,8 @@ export default function HomeWidget() {
             I&apos;m a software engineer and AI agent builder with 7+ years of experience. I&apos;ve
             shipped 60+ web and mobile products, with my mobile apps reaching 5M+ installs.
             Through YS Academy, I teach people to build with AI. Through MudahAI, I design,
-            deploy and maintain AI agents for businesses.
+            deploy and maintain AI agents for businesses. I also create content on YouTube and
+            Instagram, breaking down AI, automation and what it takes to ship real products.
           </p>
         </div>
       </div>

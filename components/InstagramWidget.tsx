@@ -15,7 +15,26 @@ interface Reel {
 }
 
 // Top reels by views. Update the numbers when they move.
-const featuredReels: Reel[] = [];
+const featuredReels: Reel[] = [
+  {
+    url: "https://www.instagram.com/yusufsuhair/reel/DcgKvbpp3rr/",
+    thumb: "/reel-1.jpg",
+    title: "Tanya ChatGPT — apa dia tahu pasal korang",
+    views: "59.5K",
+  },
+  {
+    url: "https://www.instagram.com/yusufsuhair/reel/DclN8urpGAF/",
+    thumb: "/reel-2.jpg",
+    title: "ChatGPT boleh cari keluarga lengkap korang",
+    views: "30.4K",
+  },
+  {
+    url: "https://www.instagram.com/yusufsuhair/reel/DcyYXK2JfGS/",
+    thumb: "/reel-3.jpg",
+    title: "ChatGPT boleh jadi interior designer",
+    views: "27.6K",
+  },
+];
 
 const PROFILE_URL = "https://www.instagram.com/yusufsuhair/";
 
@@ -53,8 +72,8 @@ export default function InstagramWidget() {
               rel="noopener noreferrer"
               className="group relative flex flex-col rounded-2xl bg-[#0f0f0f] border border-white/5 hover:border-white/15 transition-all duration-500 overflow-hidden hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)]"
             >
-              {/* Reel cover — reels are 9:16 */}
-              <div className="aspect-[9/16] w-full relative overflow-hidden bg-zinc-900">
+              {/* Cover ratio matches the IG grid crop these were captured at */}
+              <div className="aspect-[227/320] w-full relative overflow-hidden bg-zinc-900">
                 <img
                   src={reel.thumb}
                   alt={reel.title}
