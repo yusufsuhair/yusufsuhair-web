@@ -41,6 +41,16 @@ const projectsData: Project[] = [
     cta: "Visit YS Academy",
   },
   {
+    title: "Fynecta - The Intelligent Terminal for Global Market",
+    role: "Full-Stack Engineer",
+    url: "https://www.fynecta.io/",
+    description:
+      "A trading terminal for crypto and commodities — live price feeds, portfolio performance tracking and real-time trade signals, with algorithmic strategies running the managed portfolios.",
+    tech: ["Next.js", "React", "Tailwind", "Real-time Data", "Trading"],
+    image: "/screenshot-fynecta.png",
+    category: "crypto",
+  },
+  {
     title: "Consumer Mobile App Portfolio",
     role: "Founder / Mobile Developer",
     description: "Built and published entertainment apps across Android, with the portfolio contributing to more than 5 million installs. Ronaldo Fake Chat & Video Call: 4.0★ · 1M+ downloads.",
