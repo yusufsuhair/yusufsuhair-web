@@ -14,16 +14,6 @@ interface Job {
 
 const experienceData: Job[] = [
   {
-    title: "Founding Engineer (Mobile, Web, AI, DevOps)",
-    company: "Aixelink Sàrl",
-    period: "April 2026 — Present",
-    location: "Remote",
-    description: [
-      "Architected and deployed the full infrastructure stack including Nginx static serving, Cloudflare Tunnel/ngrok public exposure, and Android WebView bridge integration connecting native device APIs to a web-based UI.",
-    ],
-    tech: ["Mobile", "Web", "AI", "DevOps", "Nginx", "Cloudflare Tunnel", "Android WebView"],
-  },
-  {
     title: "Founder",
     company: "YS Academy & MudahAI",
     period: "January 2026 — Present",

@@ -98,7 +98,6 @@ const CMDS: Record<string, () => React.ReactNode> = {
     <div className="space-y-2 text-sm">
       {[
         ["Jun 2026 – Present",   "Founder",              "YS Academy"],
-        ["Apr 2026 – Present",   "Founding Engineer",    "Aixelink Sàrl"],
         ["Mar 2024 – Jan 2026",  "CTO & Co-Founder",     "Heifereum Technology"],
         ["Mar 2022 – Mar 2024",  "Full-Stack Developer", "SWIFT"],
         ["Dec 2020 – Feb 2022",  "Full-Stack Developer", "SICPA"],
