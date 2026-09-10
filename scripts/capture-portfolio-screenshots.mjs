@@ -10,6 +10,7 @@ const outputDir = path.join(rootDir, "public", "projects");
 
 const projects = [
   { filename: "01-mudahai.webp", url: "https://mudahai.com" },
+  { filename: "07-lepakmamak.webp", url: "https://lepakmamak.my" },
   { filename: "02-ys-academy.webp", url: "https://ysacademy.my" },
   { filename: "03-ronaldo-fake-chat.webp", url: "https://play.google.com/store/apps/details?id=com.yusufsuhair.ronaldofakevideocall&hl=en" },
   { filename: "05-myclipper.webp", url: "https://myclipper.vercel.app" },

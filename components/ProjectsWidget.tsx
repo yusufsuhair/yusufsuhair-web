@@ -31,6 +31,17 @@ const projectsData: Project[] = [
     cta: "Visit MudahAI",
   },
   {
+    title: "LepakMamak — Malaysian Multiplayer Browser Game",
+    role: "Creator / Full-Stack Engineer",
+    url: "https://lepakmamak.my",
+    description:
+      "A free multiplayer browser game set in a miniature Kuala Lumpur, where players can explore the city, ride around, meet friends at the mamak and chat through live text and voice.",
+    tech: ["Three.js", "WebGL", "Supabase", "Multiplayer", "Voice Chat"],
+    category: "web",
+    image: "https://lepakmamak.my/og.png",
+    cta: "Play LepakMamak",
+  },
+  {
     title: "YS Academy - Kelas AI Online",
     role: "Founder / Full-Stack Engineer",
     url: "https://ysacademy.my",
