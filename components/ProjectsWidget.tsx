@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink, Globe, Smartphone, Link, Code2, ShoppingBag } from "lucide-react";
+import { ExternalLink, Globe, Smartphone, Link, Code2, ShoppingBag, Gamepad2 } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -14,7 +14,7 @@ interface Project {
   ios?: string;
   image?: string;
   cta?: string;
-  category: "web" | "mobile" | "crypto" | "ecommerce";
+  category: "web" | "mobile" | "games" | "crypto" | "ecommerce";
   storesOnly?: boolean;
 }
 
@@ -37,7 +37,7 @@ const projectsData: Project[] = [
     description:
       "A free multiplayer browser game set in a miniature Kuala Lumpur, where players can explore the city, ride around, meet friends at the mamak and chat through live text and voice.",
     tech: ["Three.js", "WebGL", "Supabase", "Multiplayer", "Voice Chat"],
-    category: "web",
+    category: "games",
     image: "https://lepakmamak.my/og.png",
     cta: "Play LepakMamak",
   },
@@ -158,6 +158,7 @@ const categories = [
   { id: "all", label: "All" },
   { id: "web", label: "Web Apps" },
   { id: "mobile", label: "Mobile" },
+  { id: "games", label: "Games" },
   { id: "crypto", label: "Crypto / Web3" },
   { id: "ecommerce", label: "E-commerce" },
 ];
@@ -174,6 +175,12 @@ const categoryConfig = {
     color: "text-purple-400",
     bg: "from-purple-500/15 to-purple-600/5",
     border: "group-hover:border-purple-500/30",
+  },
+  games: {
+    icon: Gamepad2,
+    color: "text-emerald-400",
+    bg: "from-emerald-500/15 to-emerald-600/5",
+    border: "group-hover:border-emerald-500/30",
   },
   crypto: {
     icon: Link,
