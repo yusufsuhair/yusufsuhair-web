@@ -10,8 +10,8 @@
     "build:cloudflare": "opennextjs-cloudflare build",
     "deploy:portfolio": "opennextjs-cloudflare deploy",
     "deploy": "npm run build:cloudflare && npm run deploy:portfolio",
-    "deploy:fake-live": "wrangler pages deploy --config landing-pages/fake-live/wrangler.jsonc --branch=main",
-    "deploy:fake-celebs": "wrangler pages deploy --config landing-pages/fake-celebs-call/wrangler.jsonc --branch=main"
+    "deploy:fake-live": "wrangler pages deploy public --cwd landing-pages/fake-live --project-name=fake-live-prank --branch=main",
+    "deploy:fake-celebs": "wrangler pages deploy public --cwd landing-pages/fake-celebs-call --project-name=fake-celebs-call --branch=main"
   },
   "dependencies": {
     "@next/font": "^14.2.15",
