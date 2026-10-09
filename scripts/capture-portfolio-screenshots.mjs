@@ -15,6 +15,7 @@ const projects = [
   { filename: "10-ai-balance.webp", url: "https://aibalance.pages.dev/" },
   { filename: "08-shotivo.webp", url: "https://shotivo.pages.dev/" },
   { filename: "09-ganti-solat.webp", url: "https://gantisolat.pages.dev/" },
+  { filename: "11-tiny-stats.webp", url: "https://tiny-stats.pages.dev/" },
   { filename: "03-ronaldo-fake-chat.webp", url: "https://play.google.com/store/apps/details?id=com.yusufsuhair.ronaldofakevideocall&hl=en" },
   { filename: "05-myclipper.webp", url: "https://myclipper.vercel.app" },
   { filename: "06-ejoe-nft.webp", url: "http://ejoe-nft.vercel.app/" },

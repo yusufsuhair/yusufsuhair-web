@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink, Globe, Smartphone, Link, Code2, ShoppingBag, Gamepad2 } from "lucide-react";
+import { ExternalLink, Globe, Smartphone, Link, Code2, ShoppingBag, Gamepad2, PanelsTopLeft } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -14,7 +14,7 @@ interface Project {
   ios?: string;
   image?: string;
   cta?: string;
-  category: "web" | "mobile" | "games" | "crypto" | "ecommerce";
+  category: "web" | "mobile" | "widget" | "games" | "crypto" | "ecommerce";
   storesOnly?: boolean;
 }
 
@@ -94,6 +94,17 @@ const projectsData: Project[] = [
     category: "mobile",
     image: "/projects/09-ganti-solat.webp",
     cta: "Explore Ganti Solat",
+  },
+  {
+    title: "Tiny Stats: Mac Performance Monitor",
+    role: "Creator / macOS Developer",
+    url: "https://tiny-stats.pages.dev/",
+    description:
+      "A lightweight Mac menu bar monitor for CPU, RAM and GPU, with memory pressure, top processes and five-minute usage history. Built natively for Apple silicon, with performance readings kept on your Mac.",
+    tech: ["Swift", "AppKit", "macOS", "Apple Silicon"],
+    category: "widget",
+    image: "/projects/11-tiny-stats.webp",
+    cta: "Explore Tiny Stats",
   },
   {
     title: "Fynecta: The Intelligent Terminal for Global Market",
@@ -180,13 +191,14 @@ const categories = [
   { id: "all", label: "All" },
   { id: "web", label: "Web Apps" },
   { id: "mobile", label: "Mobile" },
+  { id: "widget", label: "Widget" },
   { id: "games", label: "Games" },
   { id: "crypto", label: "Crypto / Web3" },
   { id: "ecommerce", label: "E-commerce" },
 ];
 
 // fallback glyph for a card with no screenshot
-const categoryIcon = { web: Globe, mobile: Smartphone, games: Gamepad2, crypto: Link, ecommerce: ShoppingBag };
+const categoryIcon = { web: Globe, mobile: Smartphone, widget: PanelsTopLeft, games: Gamepad2, crypto: Link, ecommerce: ShoppingBag };
 
 const PlayStoreGlyph = () => (
   <svg viewBox="0 0 24 24" className="w-7 h-7 text-white" fill="currentColor" aria-hidden>
