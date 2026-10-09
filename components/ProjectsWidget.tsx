@@ -63,6 +63,17 @@ const projectsData: Project[] = [
     cta: "Visit YS Academy",
   },
   {
+    title: "Shotivo — Screenshot & Video Mockup Studio",
+    role: "Founder / Mobile Developer",
+    url: "https://shotivo.pages.dev/",
+    description:
+      "A mobile studio for turning screenshots and screen recordings into device mockups, with customizable frames and backgrounds, saved styles, batch image exports and on-device video processing for iOS and Android.",
+    tech: ["Flutter", "Dart", "iOS", "Android"],
+    category: "mobile",
+    image: "/projects/08-shotivo.webp",
+    cta: "Explore Shotivo",
+  },
+  {
     title: "Fynecta - The Intelligent Terminal for Global Market",
     role: "Full-Stack Engineer",
     url: "https://www.fynecta.io/",
