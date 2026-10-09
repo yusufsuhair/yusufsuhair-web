@@ -63,6 +63,17 @@ const projectsData: Project[] = [
     cta: "Visit YS Academy",
   },
   {
+    title: "AI Balance: Credit Tracker",
+    role: "Founder / Mobile Developer",
+    url: "https://aibalance.pages.dev/",
+    description:
+      "A mobile dashboard for AI API credits: balances and monthly spend from nine providers, including OpenAI, Claude, DeepSeek and OpenRouter, with balance history, low-balance alerts, model usage reports and home-screen widgets. Keys stay on the phone.",
+    tech: ["Flutter", "Dart", "iOS", "Android", "WidgetKit"],
+    category: "mobile",
+    image: "/projects/10-ai-balance.webp",
+    cta: "Explore AI Balance",
+  },
+  {
     title: "Shotivo: Screenshot & Video Mockup Studio",
     role: "Founder / Mobile Developer",
     url: "https://shotivo.pages.dev/",
