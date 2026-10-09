@@ -17,15 +17,14 @@ const uid = () => ++_uid;
 
 const PROMPT = "visitor@yusufsuhair:~$";
 
-// ── Helpers ─────────────────────────────────���──────────────────────────��──────
+// colour helpers for command output
 const g = (t: string) => <span className="text-green-400">{t}</span>;
 const b = (t: string) => <span className="text-blue-400">{t}</span>;
-const d = (t: string) => <span className="text-zinc-500">{t}</span>;
+const d = (t: string) => <span className="text-zinc-400">{t}</span>;
 const w = (t: string) => <span className="text-white font-medium">{t}</span>;
 const r = (t: string) => <span className="text-red-400">{t}</span>;
 const y = (t: string) => <span className="text-yellow-400">{t}</span>;
 
-// ── Command registry ──────────────────────────────────────────────────────────
 const CMDS: Record<string, () => React.ReactNode> = {
   help: () => (
     <div className="space-y-1">
@@ -58,20 +57,20 @@ const CMDS: Record<string, () => React.ReactNode> = {
       <p>{d("Location  ")} Kuala Lumpur, Malaysia</p>
       <p>{d("Company   ")} YS Academy / Aixelink Sàrl (Remote)</p>
       <p>{d("XP        ")} 7+ years</p>
-      <p>{d("Status    ")} {g("● Available for opportunities")}</p>
+      <p>{d("Status    ")} {g("Available for opportunities")}</p>
     </div>
   ),
 
   about: () => (
     <div className="space-y-2 max-w-lg text-sm">
       <p className="text-zinc-300 leading-relaxed">
-        Software engineer and AI agent builder with 7+ years shipping reliable products —
-        from agent automations and Web3 platforms to 50+ mobile apps with 5M+ installs.
+        Software engineer and AI agent builder with 7+ years shipping products: agent automations,
+        Web3 platforms and 50+ Android apps with 5M+ installs.
       </p>
-      <p className="text-zinc-500 leading-relaxed">
-        Founder of YS Academy and currently Founding Engineer at Aixelink Sàrl. Previously
-        CTO & Co-Founder at Heifereum Technology and full-stack dev at SWIFT and SICPA
-        across fintech and enterprise products.
+      <p className="text-zinc-400 leading-relaxed">
+        Founder of YS Academy and MudahAI, and currently Founding Engineer at Aixelink Sàrl.
+        Previously CTO & Co-Founder at Heifereum Technology and full-stack developer at SWIFT and
+        SICPA, across fintech and enterprise products.
       </p>
     </div>
   ),
@@ -82,8 +81,8 @@ const CMDS: Record<string, () => React.ReactNode> = {
         ["Frontend & Mobile", "Next.js · React · TypeScript · Flutter · Kotlin · Java"],
         ["Backend & APIs",    "Spring Boot · Node.js · NestJS · Python · gRPC · Kafka"],
         ["DevOps & Cloud",    "Docker · Kubernetes · Terraform · AWS · CI/CD · Ansible"],
-        ["Security",         "SonarQube · Trivy · OWASP ZAP · Snyk · SAST/DAST"],
-        ["Web3 & AI",        "Solidity · Web3.js · Ethereum · GPT · Computer Vision"],
+        ["Security",          "SonarQube · Trivy · OWASP ZAP · Snyk · SAST/DAST"],
+        ["Web3 & AI",         "Solidity · Web3.js · Ethereum · GPT · Computer Vision"],
         ["AI Automation",     "n8n · OpenClaw · Hermes · assistant setup · workflow automation"],
       ].map(([label, skills]) => (
         <div key={label} className="grid grid-cols-[180px_1fr]">
@@ -94,17 +93,19 @@ const CMDS: Record<string, () => React.ReactNode> = {
     </div>
   ),
 
+  // keep in step with ExperienceWidget's timeline
   experience: () => (
     <div className="space-y-2 text-sm">
       {[
-        ["Jun 2026 – Present",   "Founder",              "YS Academy"],
-        ["Mar 2024 – Jan 2026",  "CTO & Co-Founder",     "Heifereum Technology"],
-        ["Mar 2022 – Mar 2024",  "Full-Stack Developer", "SWIFT"],
-        ["Dec 2020 – Feb 2022",  "Full-Stack Developer", "SICPA"],
-        ["Aug 2019 – Present",   "Mobile Developer",     "Freelance"],
+        ["Apr 2026 to now",      "Founding Engineer",    "Aixelink Sàrl"],
+        ["Jan 2026 to now",      "Founder",              "YS Academy & MudahAI"],
+        ["Mar 2024 to Jan 2026", "CTO & Co-Founder",     "Heifereum Technology"],
+        ["Mar 2022 to Mar 2024", "Full-Stack Developer", "SWIFT"],
+        ["Dec 2020 to Feb 2022", "Full-Stack Developer", "SICPA"],
+        ["Aug 2019 to now",      "Mobile Developer",     "Independent, Google Play"],
       ].map(([period, title, company]) => (
         <div key={company} className="grid grid-cols-[200px_1fr]">
-          <span className="text-zinc-600 font-mono text-xs mt-0.5">{period}</span>
+          <span className="text-zinc-400 font-mono text-xs mt-0.5">{period}</span>
           <p>{w(title)}{d(` @ ${company}`)}</p>
         </div>
       ))}
@@ -123,30 +124,35 @@ const CMDS: Record<string, () => React.ReactNode> = {
             className="text-green-400 hover:underline hover:text-green-300 transition-colors">
             {name}
           </a>
-          <span className="text-zinc-500">{desc}</span>
+          <span className="text-zinc-400">{desc}</span>
         </div>
       ))}
-      <p className="text-zinc-600 text-xs mt-1">↑ click a name to open</p>
+      <p className="text-zinc-400 text-xs mt-1">Click a name to open it.</p>
     </div>
   ),
 
   contact: () => (
     <div className="space-y-1 text-sm">
-      <div className="grid grid-cols-[80px_1fr]">
+      <div className="grid grid-cols-[90px_1fr]">
         {d("Email    ")}
-        <a href="mailto:yusufmohdsuhair@gmail.com"
-          className="text-green-400 hover:underline">
+        <a href="mailto:yusufmohdsuhair@gmail.com" className="text-green-400 hover:underline">
           yusufmohdsuhair@gmail.com
         </a>
       </div>
-      <div className="grid grid-cols-[80px_1fr]">
+      <div className="grid grid-cols-[90px_1fr]">
+        {d("WhatsApp ")}
+        <a href="https://wa.me/601123709141" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:underline">
+          +60 11-2370 9141
+        </a>
+      </div>
+      <div className="grid grid-cols-[90px_1fr]">
         {d("LinkedIn ")}
         <a href="https://linkedin.com/in/yusufsuhair" target="_blank" rel="noopener noreferrer"
           className="text-blue-400 hover:underline">
           linkedin.com/in/yusufsuhair
         </a>
       </div>
-      <div className="grid grid-cols-[80px_1fr]">
+      <div className="grid grid-cols-[90px_1fr]">
         {d("GitHub   ")}
         <a href="https://github.com/yusufsuhair" target="_blank" rel="noopener noreferrer"
           className="text-blue-400 hover:underline">
@@ -158,7 +164,7 @@ const CMDS: Record<string, () => React.ReactNode> = {
 
   neofetch: () => (
     <div className="flex gap-6 text-sm font-mono">
-      <pre className="text-green-400 text-xs leading-tight select-none">{
+      <pre className="text-green-400 text-xs leading-tight select-none" aria-hidden="true">{
 `██╗   ██╗███████╗
 ╚██╗ ██╔╝██╔════╝
  ╚████╔╝ ███████╗
@@ -168,13 +174,13 @@ const CMDS: Record<string, () => React.ReactNode> = {
       </pre>
       <div className="space-y-0.5 self-center">
         <p>{g("yusuf")}{d("@")}{g("dev-env")}</p>
-        <p className="text-zinc-700">──────────────────────</p>
+        <p className="text-zinc-700" aria-hidden="true">──────────────────────</p>
         <p>{b("OS:       ")}<span className="text-zinc-300">Human v1.0 (Engineer Edition)</span></p>
         <p>{b("Role:     ")}<span className="text-zinc-300">Software Eng · AI Agent Builder</span></p>
         <p>{b("Location: ")}<span className="text-zinc-300">Kuala Lumpur, MY</span></p>
         <p>{b("Stack:    ")}<span className="text-zinc-300">TS · Flutter · Hermes · n8n</span></p>
         <p>{b("Uptime:   ")}<span className="text-zinc-300">7+ years</span></p>
-        <p>{b("Status:   ")}{g("● Online & Available")}</p>
+        <p>{b("Status:   ")}{g("Open to new projects")}</p>
       </div>
     </div>
   ),
@@ -184,7 +190,7 @@ const CMDS: Record<string, () => React.ReactNode> = {
       {["about.txt", "experience.txt", "projects/", "skills.txt", "contact.txt", ".secrets", "README.md"].map((f) => (
         <span key={f} className={
           f.endsWith("/") ? "text-blue-400" :
-          f.startsWith(".") ? "text-zinc-600" :
+          f.startsWith(".") ? "text-zinc-400 italic" :
           "text-zinc-300"
         }>{f}</span>
       ))}
@@ -195,11 +201,11 @@ const CMDS: Record<string, () => React.ReactNode> = {
   "cat experience.txt": () => CMDS.experience(),
   "cat skills.txt":     () => CMDS.skills(),
   "cat contact.txt":    () => CMDS.contact(),
-  "cat .secrets":       () => r("Permission denied. Some things stay secret. 🔐"),
+  "cat .secrets":       () => r("Permission denied. Some things stay secret."),
   "cat README.md":      () => <span className="text-zinc-400 text-sm">Built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.</span>,
   "cat readme.md":      () => CMDS["cat README.md"](),
 
-  sudo:               () => r("Permission denied. You are not in the sudoers file. This incident will be reported. 😄"),
+  sudo:               () => r("Permission denied. You are not in the sudoers file. This incident will be reported."),
   "sudo rm -rf /":    () => r("Nice try. This isn't that kind of server."),
   "sudo rm -rf *":    () => r("Nice try. This isn't that kind of server."),
 
@@ -210,7 +216,7 @@ const CMDS: Record<string, () => React.ReactNode> = {
         ["e4f5g6h", "fix: solved production incident at 3am"],
         ["i7j8k9l", "refactor: rewrote everything (again)"],
         ["m1n2o3p", "chore: deployed Web3 platform to mainnet"],
-        ["q4r5s6t", "init: started coding journey in 2020"],
+        ["q4r5s6t", "init: started as a mobile developer in 2019"],
       ].map(([hash, msg]) => (
         <p key={hash}>{y(`commit ${hash}`)} <span className="text-zinc-400">{msg}</span></p>
       ))}
@@ -223,7 +229,7 @@ const CMDS: Record<string, () => React.ReactNode> = {
     <div className="space-y-1 text-sm">
       <p className="text-green-400">Initialising hack sequence...</p>
       <p className="text-green-400">Access granted. Welcome to the matrix.</p>
-      <p className="text-zinc-500 text-xs">Just kidding. But as a DevSecOps engineer, I do find real vulnerabilities.</p>
+      <p className="text-zinc-400 text-xs">Just kidding. But as a DevSecOps engineer, I do find real vulnerabilities.</p>
     </div>
   ),
 
@@ -234,20 +240,18 @@ const CMDS: Record<string, () => React.ReactNode> = {
   uname: () => <span className="text-zinc-300 text-sm font-mono">Portfolio OS v2026 (Next.js/TypeScript)</span>,
 };
 
-// ── Welcome banner ────────────────────────────────────────────────────────────
 const WELCOME: Line[] = [
   {
     id: uid(), kind: "output", content: (
       <div className="space-y-0.5 text-sm">
         <p className="text-green-400 font-medium">Welcome to Yusuf&apos;s interactive terminal.</p>
-        <p className="text-zinc-500">Type <span className="text-white">help</span> to see available commands.</p>
-        <p className="text-zinc-600 text-xs">──────────────────────────────────────</p>
+        <p className="text-zinc-400">Type <span className="text-white">help</span> to see available commands, or press Esc to close.</p>
+        <p className="text-zinc-700 text-xs" aria-hidden="true">──────────────────────────────────────</p>
       </div>
     )
   },
 ];
 
-// ── Component ─────────────────────────────────────────────────────────────────
 export default function TerminalModal() {
   const [open, setOpen] = useState(false);
   const [lines, setLines] = useState<Line[]>(WELCOME);
@@ -257,15 +261,34 @@ export default function TerminalModal() {
 
   const inputRef = useRef<HTMLInputElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
 
-  // Auto-focus input when terminal opens
+  // closing hands focus back to the button that opened the terminal
+  const close = () => {
+    setOpen(false);
+    triggerRef.current?.focus();
+  };
+
   useEffect(() => {
-    if (open) setTimeout(() => inputRef.current?.focus(), 50);
+    if (!open) return;
+    const t = setTimeout(() => inputRef.current?.focus(), 50);
+    const onKey = (e: globalThis.KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        triggerRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => {
+      clearTimeout(t);
+      document.removeEventListener("keydown", onKey);
+    };
   }, [open]);
 
-  // Scroll to bottom on new lines
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    bottomRef.current?.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" });
   }, [lines]);
 
   const pushLines = (...newLines: Line[]) =>
@@ -274,12 +297,10 @@ export default function TerminalModal() {
   const runCommand = (raw: string) => {
     const cmd = raw.trim().toLowerCase();
 
-    // echo input
     pushLines({ id: uid(), kind: "input", content: raw.trim() });
 
     if (!cmd) return;
 
-    // update command history
     setCmdHistory((h) => [raw.trim(), ...h]);
     setHistIdx(-1);
 
@@ -289,7 +310,7 @@ export default function TerminalModal() {
     }
 
     if (cmd === "exit") {
-      setOpen(false);
+      close();
       return;
     }
 
@@ -302,9 +323,9 @@ export default function TerminalModal() {
         content: (
           <span className="text-sm">
             {r(`command not found: ${raw.trim()}`)}
-            {d("  — type ")}
+            {d(". Type ")}
             <span className="text-white">help</span>
-            {d(" for available commands")}
+            {d(" for available commands.")}
           </span>
         ),
       });
@@ -313,6 +334,8 @@ export default function TerminalModal() {
 
   const onKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
+      // without this, "exit" moves focus to the trigger and the same Enter press clicks it open again
+      e.preventDefault();
       runCommand(input);
       setInput("");
     } else if (e.key === "ArrowUp") {
@@ -325,42 +348,53 @@ export default function TerminalModal() {
       const next = Math.max(histIdx - 1, -1);
       setHistIdx(next);
       setInput(next === -1 ? "" : cmdHistory[next]);
-    } else if (e.key === "Tab") {
-      e.preventDefault();
-      // simple tab completion
+    } else if (e.key === "Tab" && !e.shiftKey && input.trim()) {
+      // complete a partly typed command; with nothing to complete, Tab moves focus as usual
       const match = Object.keys(CMDS).find((k) => k.startsWith(input.toLowerCase()) && k !== input.toLowerCase());
-      if (match) setInput(match);
+      if (match) {
+        e.preventDefault();
+        setInput(match);
+      }
     }
+  };
+
+  // keep Tab inside the open dialog
+  const trapTab = (e: KeyboardEvent<HTMLDivElement>) => {
+    if (e.key !== "Tab" || e.defaultPrevented) return;
+    const items = [...(dialogRef.current?.querySelectorAll<HTMLElement>("a[href], button, input") ?? [])];
+    if (!items.length) return;
+    const i = items.indexOf(document.activeElement as HTMLElement);
+    const next = e.shiftKey ? (i <= 0 ? items.length - 1 : i - 1) : (i === items.length - 1 ? 0 : i + 1);
+    e.preventDefault();
+    items[next].focus();
   };
 
   return (
     <>
-      {/* Floating trigger */}
       <motion.button
+        ref={triggerRef}
+        type="button"
         onClick={() => setOpen(true)}
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-3 rounded-2xl bg-[#0a0a0a] border border-white/10 text-zinc-400 hover:text-white hover:border-white/25 transition-all duration-300 shadow-2xl backdrop-blur-sm group"
+        aria-haspopup="dialog"
+        className="fixed bottom-6 right-6 z-50 flex min-h-11 items-center gap-2 px-4 rounded-2xl bg-[#0a0a0a] border border-white/10 text-zinc-400 hover:text-white hover:border-white/25 transition-colors duration-300 shadow-2xl group"
         whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 0.97 }}
       >
-        <Terminal size={16} className="group-hover:text-green-400 transition-colors" />
+        <Terminal size={16} aria-hidden="true" className="group-hover:text-green-400 transition-colors" />
         <span className="text-sm font-mono">terminal</span>
-        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
       </motion.button>
 
-      {/* Modal */}
       <AnimatePresence>
         {open && (
           <>
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setOpen(false)}
+              onClick={close}
               className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm"
             />
 
-            {/* Terminal window */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -369,33 +403,34 @@ export default function TerminalModal() {
               className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
             >
               <div
+                ref={dialogRef}
+                role="dialog"
+                aria-modal="true"
+                aria-label="Interactive terminal"
+                onKeyDown={trapTab}
                 className="w-full max-w-2xl rounded-2xl bg-[#0a0a0a] border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.8)] overflow-hidden pointer-events-auto"
-                onClick={(e) => e.stopPropagation()}
               >
-                {/* Title bar */}
-                <div className="flex items-center px-4 py-3 border-b border-white/5 bg-[#0f0f0f]">
-                  <div className="flex items-center gap-2">
-                    <button
-                      onClick={() => setOpen(false)}
-                      className="w-3 h-3 rounded-full bg-red-500/80 hover:bg-red-500 transition-colors"
-                    />
-                    <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                    <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                <div className="flex items-center pl-4 pr-1 py-0.5 border-b border-white/5 bg-[#0f0f0f]">
+                  <div className="flex items-center gap-2" aria-hidden="true">
+                    <span className="w-3 h-3 rounded-full bg-red-500/80" />
+                    <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                    <span className="w-3 h-3 rounded-full bg-green-500/80" />
                   </div>
-                  <div className="mx-auto flex items-center gap-2 text-xs text-zinc-500 font-mono">
-                    <Terminal size={11} />
-                    visitor@yusufsuhair.dev — zsh
+                  <div className="mx-auto flex items-center gap-2 text-xs text-zinc-400 font-mono">
+                    <Terminal size={11} aria-hidden="true" />
+                    visitor@yusufsuhair: zsh
                   </div>
                   <button
-                    onClick={() => setOpen(false)}
-                    className="text-zinc-600 hover:text-zinc-400 transition-colors"
+                    type="button"
+                    onClick={close}
+                    aria-label="Close terminal"
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-zinc-400 hover:text-white transition-colors"
                   >
-                    <X size={14} />
+                    <X size={16} aria-hidden="true" />
                   </button>
                 </div>
 
-                {/* Output area */}
-                <div className="h-96 overflow-y-auto p-5 font-mono text-sm space-y-2 scroll-smooth">
+                <div role="log" aria-live="polite" className="h-96 overflow-y-auto p-5 font-mono text-sm space-y-2 motion-safe:scroll-smooth">
                   {lines.map((line) => (
                     <div key={line.id}>
                       {line.kind === "input" ? (
@@ -404,25 +439,25 @@ export default function TerminalModal() {
                           <span className="text-white">{line.content}</span>
                         </div>
                       ) : (
-                        <div className="pl-0">{line.content}</div>
+                        <div>{line.content}</div>
                       )}
                     </div>
                   ))}
                   <div ref={bottomRef} />
                 </div>
 
-                {/* Input area */}
                 <div
-                  className="flex items-center gap-2 px-5 py-4 border-t border-white/5 bg-[#0a0a0a]"
+                  className="flex items-center gap-2 px-5 py-4 border-t border-white/5 bg-[#0a0a0a] focus-within:ring-1 focus-within:ring-inset focus-within:ring-green-400/50"
                   onClick={() => inputRef.current?.focus()}
                 >
-                  <span className="text-green-400 font-mono text-sm flex-shrink-0 select-none">{PROMPT}</span>
+                  <span className="text-green-400 font-mono text-sm flex-shrink-0 select-none" aria-hidden="true">{PROMPT}</span>
                   <input
                     ref={inputRef}
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     onKeyDown={onKeyDown}
-                    className="flex-1 bg-transparent text-white font-mono text-sm outline-none caret-green-400 placeholder:text-zinc-700"
+                    aria-label="Terminal command"
+                    className="flex-1 min-w-0 bg-transparent text-white font-mono text-sm outline-none caret-green-400 placeholder:text-zinc-400"
                     placeholder="type a command..."
                     autoComplete="off"
                     spellCheck={false}

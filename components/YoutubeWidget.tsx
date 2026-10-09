@@ -35,7 +35,7 @@ export default function YoutubeWidget() {
             On YouTube
           </h2>
           <p className="text-zinc-400 text-base max-w-2xl mx-auto">
-            I also create content — tutorials, tech stories, and behind-the-scenes of building products.
+            Tutorials, tech stories and behind-the-scenes videos about building products.
           </p>
         </motion.div>
 
@@ -69,7 +69,7 @@ export default function YoutubeWidget() {
 
                 {/* Play button overlay */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-12 h-12 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm flex items-center justify-center scale-90 group-hover:scale-100 transition-transform duration-300">
+                  <div className="w-12 h-12 rounded-full bg-black/60 border border-white/20 flex items-center justify-center scale-90 group-hover:scale-100 transition-transform duration-300">
                     <Play size={18} className="text-white ml-0.5" fill="white" />
                   </div>
                 </div>
@@ -81,8 +81,8 @@ export default function YoutubeWidget() {
                   {video.title}
                 </h3>
 
-                <div className="flex items-center gap-1.5 mt-auto pt-3 border-t border-white/5 text-xs text-zinc-500 group-hover:text-red-400 transition-colors">
-                  <ExternalLink size={11} />
+                <div className="flex items-center gap-1.5 mt-auto pt-3 border-t border-white/5 text-xs text-zinc-400 group-hover:text-red-400 transition-colors">
+                  <ExternalLink size={11} aria-hidden="true" />
                   Watch on YouTube
                 </div>
               </div>
@@ -102,7 +102,7 @@ export default function YoutubeWidget() {
             href={CHANNEL_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2 text-sm font-medium text-white bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all duration-300"
+            className="flex-shrink-0 inline-flex min-h-11 items-center gap-2 px-5 text-sm font-medium text-white bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors duration-300"
           >
             View Channel
             <ExternalLink size={13} className="opacity-60" />

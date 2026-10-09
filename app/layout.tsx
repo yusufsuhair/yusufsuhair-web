@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, Raleway, JetBrains_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+
+const SITE_URL = "https://yusufsuhair.xyz";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-});
-
-const raleway = Raleway({
-  subsets: ["latin"],
-  variable: "--font-raleway",
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -19,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yusufsuhair.com"),
+  metadataBase: new URL(SITE_URL),
   title: "Yusuf Suhair | Software Engineer & AI Agent Builder",
   description: "Software Engineer, AI Agent Builder, and Founder of YS Academy with 7+ years shipping web, mobile, enterprise, Web3, and automation products. Builds assistants and workflows with Hermes, OpenClaw, Ollama, and n8n.",
   keywords: [
@@ -56,7 +52,7 @@ export const metadata: Metadata = {
     "Kuala Lumpur",
     "portfolio",
   ],
-  authors: [{ name: "Yusuf Suhair", url: "https://yusufsuhair.com" }],
+  authors: [{ name: "Yusuf Suhair", url: SITE_URL }],
   creator: "Yusuf Suhair",
   publisher: "Yusuf Suhair",
   robots: {
@@ -73,7 +69,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://yusufsuhair.com",
+    url: SITE_URL,
     title: "Yusuf Suhair | Software Engineer & AI Agent Builder",
     description: "7+ years shipping web, mobile, enterprise, and Web3 products, plus AI agent automations with Hermes, OpenClaw, Ollama, and n8n.",
     siteName: "Yusuf Suhair",
@@ -82,7 +78,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Yusuf Suhair — Software Engineer and AI Agent Builder",
+        alt: "Yusuf Suhair, Software Engineer and AI Agent Builder",
       },
     ],
   },
@@ -94,7 +90,7 @@ export const metadata: Metadata = {
     creator: "@yusufsuhair",
   },
   alternates: {
-    canonical: "https://yusufsuhair.com",
+    canonical: SITE_URL,
   },
   category: "technology",
   icons: {
@@ -114,13 +110,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth dark">
+    <html lang="en" className="motion-safe:scroll-smooth dark">
       <body
         suppressHydrationWarning
-        className={`${inter.variable} ${raleway.variable} ${jetbrainsMono.variable} antialiased`}
+        className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
         {children}
-        <Analytics />
       </body>
     </html>
   );

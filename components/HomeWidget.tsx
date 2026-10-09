@@ -2,9 +2,11 @@
 
 import { Github, Instagram, Linkedin, Mail, Youtube } from "lucide-react";
 import { FaThreads } from "react-icons/fa6";
+import { useReducedMotion } from "framer-motion";
 import { TypingAnimation } from "@/components/ui/typing-animation";
 
 const CAREER_START_YEAR = 2019;
+const PLAY_DEVELOPER_URL = "https://play.google.com/store/apps/developer?id=Yusuf+Suhair";
 const mono = { fontFamily: "var(--font-jetbrains-mono), monospace" };
 
 const socialLinks = [
@@ -113,6 +115,10 @@ function PhotoPrint({
 
 export default function HomeWidget() {
   const yearsOfExperience = new Date().getFullYear() - CAREER_START_YEAR;
+  const reduceMotion = useReducedMotion();
+  const headingClass =
+    "min-h-[3.75rem] sm:min-h-[4.5rem] md:min-h-[5.5rem] text-5xl sm:text-6xl md:text-7xl font-medium tracking-tight text-white leading-tight";
+  const evidenceLink = "text-zinc-200 underline decoration-white/30 underline-offset-4 hover:decoration-white";
 
   return (
     <section className="relative min-h-[78vh] overflow-hidden pt-28 pb-20 flex items-center">
@@ -122,17 +128,21 @@ export default function HomeWidget() {
         ))}
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <TypingAnimation
-            as="h1"
-            typeSpeed={75}
-            delay={250}
-            aria-label="Hello, I'm Yusuf."
-            className="min-h-[3.75rem] sm:min-h-[4.5rem] md:min-h-[5.5rem] text-5xl sm:text-6xl md:text-7xl font-medium tracking-tight text-white leading-tight"
-          >
-            Hello, I&apos;m Yusuf.
-          </TypingAnimation>
+          {reduceMotion ? (
+            <h1 className={headingClass}>Hello, I&apos;m Yusuf.</h1>
+          ) : (
+            <TypingAnimation
+              as="h1"
+              typeSpeed={75}
+              delay={250}
+              aria-label="Hello, I'm Yusuf."
+              className={headingClass}
+            >
+              Hello, I&apos;m Yusuf.
+            </TypingAnimation>
+          )}
           <p
-            className="mt-4 text-[11px] uppercase tracking-[0.18em] text-zinc-500"
+            className="mt-4 text-[11px] uppercase tracking-[0.12em] text-zinc-400"
             style={mono}
           >
             Software Engineer · AI Agent Builder · Content Creator · Founder
@@ -170,9 +180,16 @@ export default function HomeWidget() {
           </div>
 
           <p className="mt-10 mx-auto max-w-[540px] text-sm md:text-base text-zinc-400 leading-relaxed">
-            I&apos;m a software engineer and AI agent builder with 7+ years of experience. I&apos;ve
-            shipped 60+ web and mobile products, with my mobile apps reaching 5M+ installs.
-            Through YS Academy, I teach people to build with AI. Through MudahAI, I design,
+            I&apos;m a software engineer and AI agent builder with {yearsOfExperience}+ years of
+            experience. I&apos;ve shipped{" "}
+            <a href="#projects" className={evidenceLink}>
+              60+ web and mobile products
+            </a>
+            , with my mobile apps reaching{" "}
+            <a href={PLAY_DEVELOPER_URL} target="_blank" rel="noopener noreferrer" className={evidenceLink}>
+              5M+ installs on Google Play
+            </a>
+            . Through YS Academy, I teach people to build with AI. Through MudahAI, I design,
             deploy and maintain AI agents for businesses. I also create content on YouTube and
             Instagram, breaking down AI, automation and what it takes to ship real products.
           </p>

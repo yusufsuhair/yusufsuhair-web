@@ -1,44 +1,54 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
+
+const WHATSAPP_URL = `https://wa.me/601123709141?text=${encodeURIComponent("Hi Yusuf, I found you through yusufsuhair.xyz.")}`;
+const EMAIL = "yusufmohdsuhair@gmail.com";
 
 export default function ContactWidget() {
   return (
-    <section id="contact" className="py-20 md:py-24 relative">
+    <section id="contact" className="py-20 md:py-24 relative scroll-mt-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-
         <motion.div
           initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="p-[1px] rounded-3xl bg-gradient-to-b from-white/20 to-transparent relative group">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl rounded-3xl" />
+          className="rounded-3xl border border-white/10 bg-[#0a0a0a] px-6 py-12 sm:px-10 md:px-14 md:py-16 text-center"
+        >
+          <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-white mb-4">
+            Have a project or a role in mind?
+          </h2>
+          <p className="text-zinc-400 text-base md:text-lg max-w-xl mx-auto mb-8">
+            Message me on WhatsApp or email. I&apos;m open to new projects, coaching and roles.
+          </p>
 
-          <div className="bg-[#050505] rounded-3xl px-6 py-12 sm:px-10 md:px-14 md:py-16 relative h-full w-full overflow-hidden text-center backdrop-blur-xl">
-            <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-
-            <div className="relative z-10">
-              <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-white mb-4">
-                Let&apos;s build something.
-              </h2>
-              <p className="text-zinc-400 text-base md:text-lg max-w-xl mx-auto mb-8">
-                Open for new opportunities and interesting projects. Feel free to reach out if you
-                want to collaborate or just say hi.
-              </p>
-
-              <a
-                href="/services"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-medium text-black bg-white rounded-full hover:scale-105 transition-transform duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
-              >
-                View Services
-                <ArrowUpRight size={16} />
-              </a>
-
-            </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center justify-center gap-2 px-6 text-sm font-medium text-black bg-white rounded-full hover:bg-zinc-200 transition-colors"
+            >
+              <MessageCircle size={16} aria-hidden="true" />
+              Chat on WhatsApp
+            </a>
+            <a
+              href={`mailto:${EMAIL}`}
+              className="inline-flex min-h-11 items-center justify-center gap-2 px-6 text-sm font-medium text-white border border-white/15 rounded-full hover:bg-white/10 transition-colors"
+            >
+              <Mail size={16} aria-hidden="true" />
+              {EMAIL}
+            </a>
           </div>
-        </motion.div>
 
+          <a
+            href="/services"
+            className="mt-6 inline-flex min-h-11 items-center text-sm text-zinc-400 underline decoration-white/30 underline-offset-4 hover:text-white hover:decoration-white"
+          >
+            See services and pricing
+          </a>
+        </motion.div>
       </div>
     </section>
   );

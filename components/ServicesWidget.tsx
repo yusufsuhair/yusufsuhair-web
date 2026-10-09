@@ -10,9 +10,10 @@ const mono = { fontFamily: "var(--font-jetbrains-mono), monospace" };
 const WHATSAPP_NUMBER = "601123709141";
 const YS_ACADEMY_URL = "https://ysacademy.my";
 const MUDAHAI_URL = "https://mudahai.com";
+const PLAY_DEVELOPER_URL = "https://play.google.com/store/apps/developer?id=Yusuf+Suhair";
 const waLink = (message: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
-const CAREER_START = new Date(2019, 6, 1); // July 2019
+const CAREER_START = new Date(2019, 7, 1); // August 2019, as on the experience timeline
 const getYearsSince = (start: Date): number => {
   const now = new Date();
   let years = now.getFullYear() - start.getFullYear();
@@ -34,43 +35,6 @@ interface Service {
   cta: { label: string; href: string; Icon: Icon };
   details?: ReactNode;
 }
-
-const MacOSBrowserPreview = () => (
-  <motion.div
-    whileHover={{ y: -2, scale: 1.03 }}
-    transition={{ type: "spring", stiffness: 360, damping: 24 }}
-    className="w-16 h-12 md:w-20 md:h-[60px] overflow-hidden rounded-md border border-zinc-300 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.12)]"
-    aria-hidden="true"
-  >
-    <div className="flex h-3.5 md:h-4 items-center gap-1 border-b border-zinc-200 bg-zinc-100 px-1.5">
-      <span className="h-1.5 w-1.5 rounded-full bg-[#ff5f57]" />
-      <span className="h-1.5 w-1.5 rounded-full bg-[#febc2e]" />
-      <span className="h-1.5 w-1.5 rounded-full bg-[#28c840]" />
-      <span className="ml-0.5 h-1.5 flex-1 rounded-full border border-zinc-200 bg-white" />
-    </div>
-
-    <div className="h-[calc(100%-14px)] bg-white p-1.5 md:h-[calc(100%-16px)] md:p-2">
-      <div className="mb-1 flex items-center justify-between">
-        <span className="h-1.5 w-5 rounded-full bg-zinc-800" />
-        <div className="flex gap-1">
-          <span className="h-1 w-2.5 rounded-full bg-zinc-300" />
-          <span className="h-1 w-2.5 rounded-full bg-zinc-300" />
-        </div>
-      </div>
-      <div className="grid h-[calc(100%-6px)] grid-cols-[1.1fr_0.9fr] gap-1.5 rounded-sm border border-zinc-200 bg-zinc-50 p-1.5 shadow-[0_1px_3px_rgba(15,23,42,0.08)]">
-        <div className="flex flex-col justify-center gap-1">
-          <span className="h-1.5 w-full rounded-full bg-zinc-800" />
-          <span className="h-1 w-4/5 rounded-full bg-zinc-300" />
-          <span className="mt-0.5 h-2 w-5 rounded-sm bg-[#2563eb]" />
-        </div>
-        <div className="relative overflow-hidden rounded-sm bg-blue-500/15">
-          <span className="absolute bottom-1 left-1 h-3 w-3 rounded-sm bg-blue-300/40" />
-          <span className="absolute right-1 top-1 h-1.5 w-4 rounded-full bg-[#60a5fa]" />
-        </div>
-      </div>
-    </div>
-  </motion.div>
-);
 
 interface PricingTier {
   name: string;
@@ -113,7 +77,7 @@ const hermesPricingSheet: PricingGroup[] = [
           "AI Automation",
           "Troubleshooting & Q&A",
         ],
-        note: "You learn. You build. I guide.",
+        note: "You build it yourself, with me guiding each step.",
         ctaMessage: "Hi Yusuf, I'm interested in AI Agent Coaching (RM500/90 min). Can you share more details?",
       },
     ],
@@ -142,7 +106,7 @@ const n8nPricingSheet: PricingGroup[] = [
           "Data Transformation (Code Nodes)",
           "Troubleshooting & Q&A",
         ],
-        note: "You learn. You build. I guide.",
+        note: "You build it yourself, with me guiding each step.",
         ctaMessage: "Hi Yusuf, I'm interested in n8n 1-to-1 Coaching (RM500/90 min). Can you share more details?",
       },
     ],
@@ -152,17 +116,17 @@ const n8nPricingSheet: PricingGroup[] = [
 const webDevTiers: PricingTier[] = [
   {
     name: "Landing Page",
-    price: "RM2000",
+    price: "RM2,000",
     priceCadence: "one-time",
     items: [
-      "Single premium page design",
-      "Premium & Modern UI/UX design",
+      "One-page design",
+      "Custom UI/UX design",
       "Basic SEO",
       "No e-commerce",
       "No SSO / login systems",
       "No backend logic",
     ],
-    ctaMessage: "Hi Yusuf, I'm interested in the Landing Page (RM2000). Can you share more details?",
+    ctaMessage: "Hi Yusuf, I'm interested in the Landing Page (RM2,000). Can you share more details?",
   },
   {
     name: "Custom Web Development",
@@ -207,7 +171,7 @@ const TierCta = ({ tier }: { tier: PricingTier }) => (
     href={waLink(tier.ctaMessage)}
     target="_blank"
     rel="noopener noreferrer"
-    className={`mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+    className={`mt-5 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full px-4 text-sm font-medium transition-colors ${
       tier.popular
         ? "bg-blue-600 text-white hover:bg-blue-700"
         : "border border-zinc-300 text-zinc-700 hover:border-zinc-950 hover:text-zinc-950"
@@ -226,7 +190,7 @@ const TierFeature = ({ item }: { item: string }) => {
   return (
     <li className="flex items-start gap-2 text-sm text-zinc-600">
       {isExclusion ? (
-        <Minus size={14} className="text-zinc-400 shrink-0 mt-[3px]" />
+        <Minus size={14} className="text-zinc-500 shrink-0 mt-[3px]" />
       ) : (
         <Check size={14} className="text-blue-600 shrink-0 mt-[3px]" />
       )}
@@ -296,7 +260,7 @@ const WideTierCard = ({ tier }: { tier: PricingTier }) => (
 
     <div className="flex-1 md:border-l md:border-zinc-100 md:pl-10">
       <p
-        className="text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500 mb-3"
+        className="text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-3"
         style={mono}
       >
         Topics covered
@@ -320,7 +284,7 @@ const PricingDetails = ({ groups }: { groups: PricingGroup[] }) => (
     {groups.map((group) => (
       <div key={group.title}>
         <h4
-          className="text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500 mb-4"
+          className="text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-4"
           style={mono}
         >
           {group.title}
@@ -361,10 +325,12 @@ const developmentServices: Service[] = [
     id: "02",
     anchor: "web",
     title: "Web Development",
-    description: "Premium landing pages to full custom web platforms — payment gateways, backend logic, and everything in between.",
-    price: "Starting from RM2000",
-    renderIcon: () => <MacOSBrowserPreview />,
-    cta: { label: "Get Started", href: waLink("Hi Yusuf, I'm interested in Web Development (Starting from RM2000). Can you share more details?"), Icon: MessageCircle },
+    description: "Landing pages and custom web platforms, including payment gateways and backend logic.",
+    price: "Starting from RM2,000",
+    renderIcon: () => (
+      <img src="/projects/02-ys-academy.webp" alt="" className="w-16 h-12 md:w-20 md:h-[60px] rounded-md border border-zinc-300 object-cover object-top" />
+    ),
+    cta: { label: "Get Quote", href: waLink("Hi Yusuf, I'm interested in Web Development (Starting from RM2,000). Can you share more details?"), Icon: MessageCircle },
     details: <PricingDetails groups={[{ title: "Web Development Pricing", tiers: webDevTiers }]} />,
   },
 ];
@@ -429,7 +395,7 @@ const otherProducts: ProductLink[] = [
     id: "mudahai",
     name: "MudahAI",
     tagline: "Get it built for you",
-    description: "Done-for-you AI agents for SMEs — bookings, reminders and follow-ups handled on WhatsApp.",
+    description: "Done-for-you AI agents for SMEs: bookings, reminders and follow-ups handled on WhatsApp.",
     href: MUDAHAI_URL,
     logo: "/mudahai-logo.png",
   },
@@ -503,13 +469,20 @@ export default function ServicesWidget() {
             <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-950">
               Yusuf Suhair
             </h1>
-            <p className="text-[11px] uppercase tracking-[0.18em] text-zinc-500 mt-2.5" style={mono}>
+            <p className="text-[11px] uppercase tracking-[0.12em] text-zinc-500 mt-2.5" style={mono}>
               Software Engineer · AI Agent Builder · Founder, YS Academy
             </p>
             <p className="text-zinc-600 text-sm md:text-base mt-5 max-w-[540px] leading-relaxed">
               I&apos;m a software engineer and AI agent builder with {yearsOfExperience}+ years of
-              experience. I&apos;ve shipped 60+ web and mobile products, with my mobile apps
-              reaching 5M+ installs. Through YS Academy, I teach people to build apps with AI,
+              experience. I&apos;ve shipped{" "}
+              <a href="/#projects" className="text-zinc-900 underline decoration-zinc-400 underline-offset-4 hover:decoration-zinc-900">
+                60+ web and mobile products
+              </a>
+              , with my mobile apps reaching{" "}
+              <a href={PLAY_DEVELOPER_URL} target="_blank" rel="noopener noreferrer" className="text-zinc-900 underline decoration-zinc-400 underline-offset-4 hover:decoration-zinc-900">
+                5M+ installs on Google Play
+              </a>
+              . Through YS Academy, I teach people to build apps with AI,
               create AI agents and automate workflows. I also help businesses implement these
               technologies in their operations.
             </p>
@@ -522,17 +495,17 @@ export default function ServicesWidget() {
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
           className="flex flex-wrap items-center gap-x-8 gap-y-3 -mt-6 mb-12"
         >
-          <span className="text-[11px] uppercase tracking-[0.18em] text-zinc-400" style={mono}>
+          <span className="text-[11px] uppercase tracking-[0.12em] text-zinc-500" style={mono}>
             Jump to
           </span>
           {serviceSections.map((section, index) => (
             <a
               key={section.id}
               href={`#${section.id}`}
-              className="group inline-flex items-baseline gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500 hover:text-zinc-950 transition-colors"
+              className="group inline-flex min-h-11 items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-500 hover:text-zinc-950 transition-colors"
               style={mono}
             >
-              <span className="text-zinc-400 group-hover:text-blue-600 transition-colors">
+              <span className="text-zinc-500 group-hover:text-blue-600 transition-colors">
                 0{index + 1}
               </span>
               {section.title}
@@ -545,7 +518,7 @@ export default function ServicesWidget() {
           {serviceSections.map((section) => (
             <div key={section.title} id={section.id} className="scroll-mt-24">
               <div className="flex items-center gap-4 mb-2">
-                <h2 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-zinc-500" style={mono}>
+                <h2 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-500" style={mono}>
                   {section.title}
                 </h2>
                 <div className="h-px flex-1 bg-zinc-200" />
@@ -555,6 +528,7 @@ export default function ServicesWidget() {
                 {section.services.map((service, index) => {
                   const key = `${section.title}-${service.id}`;
                   const isExpanded = expandedId === key;
+                  const panelId = `pricing-${section.id}-${service.id}`;
                   return (
                     <motion.div
                       key={key}
@@ -586,7 +560,7 @@ export default function ServicesWidget() {
                             href={service.cta.href}
                             target={service.cta.href.startsWith("http") ? "_blank" : undefined}
                             rel={service.cta.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                            className="inline-flex items-center justify-center gap-2 bg-zinc-950 text-white text-sm font-medium px-4 py-2 rounded-full hover:bg-zinc-800 transition-colors"
+                            className="inline-flex min-h-11 items-center justify-center gap-2 bg-zinc-950 text-white text-sm font-medium px-4 rounded-full hover:bg-zinc-800 transition-colors"
                           >
                             {service.cta.label}
                             <service.cta.Icon size={14} />
@@ -597,8 +571,11 @@ export default function ServicesWidget() {
                       {service.details && (
                         <>
                           <button
+                            type="button"
                             onClick={() => setExpandedId(isExpanded ? null : key)}
-                            className="mt-5 md:ml-28 inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3.5 py-1.5 text-xs font-medium text-zinc-500 hover:border-zinc-400 hover:text-zinc-950 transition-colors"
+                            aria-expanded={isExpanded}
+                            aria-controls={panelId}
+                            className="mt-5 md:ml-28 inline-flex min-h-11 items-center gap-2 rounded-full border border-zinc-200 bg-white px-4 text-xs font-medium text-zinc-600 hover:border-zinc-400 hover:text-zinc-950 transition-colors"
                             style={mono}
                           >
                             {isExpanded ? "Hide full pricing details" : "View full pricing details"}
@@ -610,6 +587,7 @@ export default function ServicesWidget() {
                           <AnimatePresence initial={false}>
                             {isExpanded && (
                               <motion.div
+                                id={panelId}
                                 initial={{ height: 0, opacity: 0 }}
                                 animate={{ height: "auto", opacity: 1 }}
                                 exit={{ height: 0, opacity: 0 }}
@@ -638,7 +616,7 @@ export default function ServicesWidget() {
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
             <div className="flex items-center gap-4 mb-5">
-              <h2 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-zinc-500" style={mono}>
+              <h2 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-500" style={mono}>
                 Also Building
               </h2>
               <div className="h-px flex-1 bg-zinc-200" />
@@ -660,7 +638,7 @@ export default function ServicesWidget() {
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
                       <h3 className="font-semibold text-sm text-zinc-950">{product.name}</h3>
-                      <span className="text-xs text-zinc-500">— {product.tagline}</span>
+                      <span className="text-xs text-zinc-500"><span aria-hidden="true">· </span>{product.tagline}</span>
                     </div>
                     <p className="text-xs text-zinc-500 mt-1 leading-relaxed">{product.description}</p>
                   </div>
@@ -681,13 +659,13 @@ export default function ServicesWidget() {
               Not sure which one fits?
             </h3>
             <p className="text-sm text-zinc-600 mt-2 max-w-md mx-auto leading-relaxed">
-              Tell me about your project or goals — I&apos;ll point you to the right setup, class, or plan.
+              Tell me about your project or goals, and I&apos;ll point you to the right setup, class or plan.
             </p>
             <a
               href={waLink("Hi Yusuf, I'm not sure which service fits my needs. Can you help me decide?")}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center justify-center gap-2 bg-zinc-950 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-zinc-800 transition-colors"
+              className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 bg-zinc-950 text-white text-sm font-medium px-5 rounded-full hover:bg-zinc-800 transition-colors"
             >
               Chat with me
               <MessageCircle size={14} />

@@ -6,33 +6,28 @@ import { motion } from "framer-motion";
 interface Reel {
   /** Full reel URL, e.g. https://www.instagram.com/reel/ABC123/ */
   url: string;
-  /** Cover image in /public — screenshot the reel cover and drop it in */
+  /** Cover image in /public: screenshot the reel cover and drop it in */
   thumb: string;
   /** Hook / first line of the caption */
   title: string;
-  /** View count as displayed, e.g. "412K" */
-  views: string;
 }
 
-// Top reels by views. Update the numbers when they move.
+// Top reels by views at the time they were picked.
 const featuredReels: Reel[] = [
   {
     url: "https://www.instagram.com/yusufsuhair/reel/DcgKvbpp3rr/",
     thumb: "/reel-1.jpg",
-    title: "Tanya ChatGPT — apa dia tahu pasal korang",
-    views: "59.5K",
+    title: "Tanya ChatGPT: apa dia tahu pasal korang",
   },
   {
     url: "https://www.instagram.com/yusufsuhair/reel/DclN8urpGAF/",
     thumb: "/reel-2.jpg",
     title: "ChatGPT boleh cari keluarga lengkap korang",
-    views: "30.4K",
   },
   {
     url: "https://www.instagram.com/yusufsuhair/reel/DcyYXK2JfGS/",
     thumb: "/reel-3.jpg",
     title: "ChatGPT boleh jadi interior designer",
-    views: "27.6K",
   },
 ];
 
@@ -55,7 +50,7 @@ export default function InstagramWidget() {
             On Instagram
           </h2>
           <p className="text-zinc-400 text-base max-w-2xl mx-auto">
-            Short-form breakdowns of AI automation, agents and building products — my most watched reels.
+            Short breakdowns of AI automation, agents and building products. These are my most watched reels.
           </p>
         </motion.div>
 
@@ -85,19 +80,14 @@ export default function InstagramWidget() {
 
                 {/* Play button overlay */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-12 h-12 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm flex items-center justify-center scale-90 group-hover:scale-100 transition-transform duration-300">
+                  <div className="w-12 h-12 rounded-full bg-black/60 border border-white/20 flex items-center justify-center scale-90 group-hover:scale-100 transition-transform duration-300">
                     <Play size={18} className="text-white ml-0.5" fill="white" />
                   </div>
                 </div>
 
-                {/* View count + hook, over the cover */}
+                {/* Hook, over the cover */}
                 <div className="absolute inset-x-0 bottom-0 p-4">
-                  <div className="flex items-center gap-1.5 mb-2 text-white">
-                    <Play size={12} fill="currentColor" />
-                    <span className="text-sm font-medium tabular-nums">{reel.views}</span>
-                    <span className="text-xs text-zinc-400">views</span>
-                  </div>
-                  <p className="text-xs text-zinc-300 leading-snug line-clamp-2">
+                  <p className="text-xs text-zinc-200 leading-snug line-clamp-2">
                     {reel.title}
                   </p>
                 </div>
@@ -118,7 +108,7 @@ export default function InstagramWidget() {
             href={PROFILE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2 text-sm font-medium text-white bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all duration-300"
+            className="flex-shrink-0 inline-flex min-h-11 items-center gap-2 px-5 text-sm font-medium text-white bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors duration-300"
           >
             Follow
             <ExternalLink size={13} className="opacity-60" />

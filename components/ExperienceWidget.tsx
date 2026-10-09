@@ -16,7 +16,7 @@ const experienceData: Job[] = [
   {
     title: "Founding Engineer (Mobile, Web, AI, DevOps)",
     company: "Aixelink Sàrl",
-    period: "April 2026 — Present",
+    period: "April 2026 to present",
     location: "Remote",
     description: [
       "Architected and deployed the full infrastructure stack including Nginx static serving, Cloudflare Tunnel/ngrok public exposure, and Android WebView bridge integration connecting native device APIs to a web-based UI.",
@@ -26,7 +26,7 @@ const experienceData: Job[] = [
   {
     title: "Founder",
     company: "YS Academy & MudahAI",
-    period: "January 2026 — Present",
+    period: "January 2026 to present",
     location: "Malaysia · Remote",
     summary: "Built two complementary AI businesses: YS Academy teaches individuals to build apps, agents and automations, while MudahAI delivers managed AI agents for business operations.",
     description: [
@@ -39,8 +39,8 @@ const experienceData: Job[] = [
   },
   {
     title: "Mobile Developer",
-    company: "Google Play Store",
-    period: "August 2019 — Present",
+    company: "Independent developer on Google Play",
+    period: "August 2019 to present",
     location: "Remote",
     description: [
       "Designed UI/UX using Adobe XD",
@@ -53,7 +53,7 @@ const experienceData: Job[] = [
   {
     title: "CTO & Co-Founder (Mobile, Web, Blockchain)",
     company: "Heifereum Technology Sdn Bhd",
-    period: "March 2024 — January 2026",
+    period: "March 2024 to January 2026",
     location: "Kuala Lumpur, Malaysia",
     description: [
       "Developed and deployed multiple Web3 applications including NFT marketplace, Layer 2 features, memecoin launch, and staking systems using Solidity and Next.js",
@@ -69,7 +69,7 @@ const experienceData: Job[] = [
   {
     title: "Full-Stack Developer",
     company: "SWIFT",
-    period: "March 2022 — March 2024",
+    period: "March 2022 to March 2024",
     location: "Bangsar, Malaysia",
     description: [
       "Contributed to web platforms supporting SWIFT's network of 11,000+ financial institutions and corporations across 200+ countries and territories",
@@ -81,7 +81,7 @@ const experienceData: Job[] = [
   {
     title: "Full-Stack Developer",
     company: "SICPA",
-    period: "December 2020 — February 2022",
+    period: "December 2020 to February 2022",
     location: "Cyberjaya, Malaysia",
     description: [
       "Developed full-stack web applications using Apache Kafka, gRPC, Spring Boot, Angular, Oracle, and Docker",
@@ -103,12 +103,12 @@ export default function ExperienceWidget() {
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mb-16 text-center">
+          className="mb-12">
           <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-white mb-4">
             Experience
           </h2>
-          <p className="text-zinc-400 text-base">
-            {yearsOfExperience}+ years across fintech, Web3, enterprise, and mobile — from startup founding engineer to global institutions.
+          <p className="text-zinc-400 text-base max-w-2xl">
+            {yearsOfExperience}+ years across fintech, Web3, enterprise and mobile, at startups and at global institutions like SWIFT.
           </p>
         </motion.div>
 
@@ -120,19 +120,19 @@ export default function ExperienceWidget() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.45, ease: "easeOut", delay: index * 0.07 }}
               className="mb-12 ml-8 relative group">
-              <div className="absolute -left-[37px] top-1.5 h-3 w-3 rounded-full bg-zinc-600 ring-4 ring-[#050505] group-hover:bg-white group-hover:shadow-[0_0_15px_rgba(255,255,255,0.6)] transition-all duration-300" />
+              <div className="absolute -left-[37px] top-1.5 h-3 w-3 rounded-full bg-zinc-600 ring-4 ring-[#050505] group-hover:bg-white transition-colors duration-300" />
 
-              <div className="p-6 rounded-2xl bg-[#0a0a0a] border border-white/5 group-hover:border-white/10 transition-colors backdrop-blur-sm">
+              <div className="p-6 rounded-2xl bg-[#0a0a0a] border border-white/5 group-hover:border-white/10 transition-colors">
                 <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-4 gap-2">
                   <div>
                     <h3 className="text-lg font-medium text-white tracking-tight">{job.title}</h3>
                     <div className="text-sm text-zinc-400 mt-1">{job.company}</div>
                   </div>
                   <div className="sm:text-right flex-shrink-0">
-                    <span className="text-xs text-zinc-500 font-mono bg-white/5 px-2 py-1 rounded whitespace-nowrap">
+                    <span className="text-xs text-zinc-400 font-mono bg-white/5 px-2 py-1 rounded whitespace-nowrap">
                       {job.period}
                     </span>
-                    <div className="text-xs text-zinc-600 mt-1.5">{job.location}</div>
+                    <div className="text-xs text-zinc-400 mt-1.5">{job.location}</div>
                   </div>
                 </div>
 
@@ -142,7 +142,7 @@ export default function ExperienceWidget() {
                 <ul className="space-y-2 text-sm text-zinc-400 mb-5 list-none">
                   {job.description.map((desc, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className="text-zinc-600 mt-0.5 flex-shrink-0">→</span>
+                      <span aria-hidden="true" className="text-zinc-600 mt-0.5 flex-shrink-0">→</span>
                       {desc}
                     </li>
                   ))}
@@ -153,7 +153,7 @@ export default function ExperienceWidget() {
                     <span key={i} className="text-xs text-zinc-400">
                       {tech}
                       {i < job.tech.length - 1 && (
-                        <span className="ml-3 text-zinc-700">·</span>
+                        <span aria-hidden="true" className="ml-3 text-zinc-700">·</span>
                       )}
                     </span>
                   ))}
