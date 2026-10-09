@@ -42,6 +42,17 @@ const projectsData: Project[] = [
     cta: "Play LepakMamak",
   },
   {
+    title: "Slipstream — Interactive F1 Field Guide",
+    role: "Creator / 3D Web Engineer",
+    url: "https://f1.yusufsuhair.xyz",
+    description:
+      "A 3D study site for the 2026 Formula 1 season: hands-on lessons on the cars, active aero, power units, tyres, circuits, race starts, flags and the steering wheel, plus a quiz, with a physically modelled engine and crowd soundtrack.",
+    tech: ["Three.js", "WebGL", "Web Audio", "Blender", "Cloudflare Workers"],
+    category: "web",
+    image: "/screenshot-slipstream-f1.png",
+    cta: "Open Slipstream",
+  },
+  {
     title: "YS Academy - Kelas AI Online",
     role: "Founder / Full-Stack Engineer",
     url: "https://ysacademy.my",
