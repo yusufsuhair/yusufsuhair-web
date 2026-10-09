@@ -85,6 +85,17 @@ const projectsData: Project[] = [
     cta: "Explore Shotivo",
   },
   {
+    title: "Ganti Solat: Missed Prayer & Fast Tracker",
+    role: "Founder / Mobile Developer",
+    url: "https://gantisolat.pages.dev/",
+    description:
+      "A private Malay app for making up missed prayers and fasts, with a balance for each prayer time, a daily qada target, sourced reminders and home-screen widgets. No account; records stay on the phone.",
+    tech: ["Flutter", "Dart", "iOS", "Android", "WidgetKit"],
+    category: "mobile",
+    image: "/projects/09-ganti-solat.webp",
+    cta: "Explore Ganti Solat",
+  },
+  {
     title: "Fynecta: The Intelligent Terminal for Global Market",
     role: "Full-Stack Engineer",
     url: "https://www.fynecta.io/",
