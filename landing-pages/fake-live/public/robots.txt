@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fake-live-prank.pages.dev/sitemap.xml

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fake-celebs-call.pages.dev/sitemap.xml

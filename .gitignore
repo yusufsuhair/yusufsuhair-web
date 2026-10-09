@@ -41,3 +41,8 @@ logs
 
 # next/image cache
 /public/cache
+
+# Cloudflare deployment output and local credentials
+.open-next/
+.wrangler/
+.dev.vars*
