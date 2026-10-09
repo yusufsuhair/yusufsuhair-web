@@ -107,6 +107,17 @@ const projectsData: Project[] = [
     cta: "Explore Teleprompter",
   },
   {
+    title: "Petal: Period & Cycle Tracker",
+    role: "Founder / Mobile Developer",
+    url: "https://petalcycle.pages.dev/",
+    description:
+      "An iOS period and cycle tracker with visual check-ins for flow, symptoms, mood and daily notes, a cycle overview and journal history. Entries stay on the device, with journal export and deletion controls. Coming to iOS.",
+    tech: ["iOS", "Cycle Tracking", "Visual Journaling", "On-device Storage"],
+    category: "mobile",
+    image: "/projects/13-petal.webp",
+    cta: "Explore Petal",
+  },
+  {
     title: "Tiny Stats: Mac Performance Monitor",
     role: "Creator / macOS Developer",
     url: "https://tiny-stats.pages.dev/",
