@@ -96,6 +96,17 @@ const projectsData: Project[] = [
     cta: "Explore Ganti Solat",
   },
   {
+    title: "Teleprompter: Floating Scripts & Video Recording",
+    role: "Founder / Mobile Developer",
+    url: "https://teleprompter-float.pages.dev/",
+    description:
+      "An iPhone and iPad teleprompter with floating scripts over TikTok, Instagram, Camera and Zoom, plus built-in video recording. Adjustable scrolling, text styling and camera controls keep lines close to the lens, with scripts saved locally and recordings sent to Photos.",
+    tech: ["iOS", "iPadOS", "Picture in Picture", "Video Recording"],
+    category: "mobile",
+    image: "/projects/12-teleprompter.webp",
+    cta: "Explore Teleprompter",
+  },
+  {
     title: "Tiny Stats: Mac Performance Monitor",
     role: "Creator / macOS Developer",
     url: "https://tiny-stats.pages.dev/",
