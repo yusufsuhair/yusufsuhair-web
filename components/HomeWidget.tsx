@@ -6,7 +6,6 @@ import { useReducedMotion } from "framer-motion";
 import { TypingAnimation } from "@/components/ui/typing-animation";
 
 const CAREER_START_YEAR = 2019;
-const PLAY_DEVELOPER_URL = "https://play.google.com/store/apps/developer?id=Yusuf+Suhair";
 const mono = { fontFamily: "var(--font-jetbrains-mono), monospace" };
 
 const socialLinks = [
@@ -186,10 +185,7 @@ export default function HomeWidget() {
               70+ web and mobile products
             </a>
             , with my mobile apps reaching{" "}
-            <a href={PLAY_DEVELOPER_URL} target="_blank" rel="noopener noreferrer" className={evidenceLink}>
-              6M+ installs on Google Play
-            </a>
-            . Through YS Academy, I teach people to build with AI. Through MudahAI, I design,
+            <span className="underline underline-offset-4">6M+ installs on Google Play Store &amp; iOS App Store</span>. Through YS Academy, I teach people to build with AI. Through MudahAI, I design,
             deploy and maintain AI agents for businesses. I also create content on YouTube and
             Instagram, breaking down AI, automation and what it takes to ship real products.
           </p>

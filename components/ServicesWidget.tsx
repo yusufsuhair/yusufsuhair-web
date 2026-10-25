@@ -10,7 +10,6 @@ const mono = { fontFamily: "var(--font-jetbrains-mono), monospace" };
 const WHATSAPP_NUMBER = "601123709141";
 const YS_ACADEMY_URL = "https://ysacademy.my";
 const MUDAHAI_URL = "https://mudahai.com";
-const PLAY_DEVELOPER_URL = "https://play.google.com/store/apps/developer?id=Yusuf+Suhair";
 const waLink = (message: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
 const CAREER_START = new Date(2019, 7, 1); // August 2019, as on the experience timeline
@@ -479,10 +478,7 @@ export default function ServicesWidget() {
                 70+ web and mobile products
               </a>
               , with my mobile apps reaching{" "}
-              <a href={PLAY_DEVELOPER_URL} target="_blank" rel="noopener noreferrer" className="text-zinc-900 underline decoration-zinc-400 underline-offset-4 hover:decoration-zinc-900">
-                6M+ installs on Google Play
-              </a>
-              . Through YS Academy, I teach people to build apps with AI,
+              <span className="underline underline-offset-4">6M+ installs on Google Play Store &amp; iOS App Store</span>. Through YS Academy, I teach people to build apps with AI,
               create AI agents and automate workflows. I also help businesses implement these
               technologies in their operations.
             </p>
