@@ -183,11 +183,11 @@ export default function HomeWidget() {
             I&apos;m a software engineer and AI agent builder with {yearsOfExperience}+ years of
             experience. I&apos;ve shipped{" "}
             <a href="#projects" className={evidenceLink}>
-              60+ web and mobile products
+              70+ web and mobile products
             </a>
             , with my mobile apps reaching{" "}
             <a href={PLAY_DEVELOPER_URL} target="_blank" rel="noopener noreferrer" className={evidenceLink}>
-              5M+ installs on Google Play
+              6M+ installs on Google Play
             </a>
             . Through YS Academy, I teach people to build with AI. Through MudahAI, I design,
             deploy and maintain AI agents for businesses. I also create content on YouTube and

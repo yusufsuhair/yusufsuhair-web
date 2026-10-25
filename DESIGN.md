@@ -50,6 +50,6 @@ Recorded from the site as shipped on 2026-10-09, after the antislop audit (`anti
 
 ## Content rules
 
-- **Numbers:** each one links to its evidence: projects for "60+ products", the Google Play developer page for "5M+ installs".
+- **Numbers:** each one links to its evidence: projects for "70+ products", the Google Play developer page for "6M+ installs".
 - **Facts:** the experience timeline is the source of truth, and the terminal's `experience` and `about` follow it.
 - **Punctuation:** no em dashes in copy. Use a colon in titles ("Name: tagline") and "to" in date ranges.

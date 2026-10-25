@@ -65,7 +65,7 @@ const CMDS: Record<string, () => React.ReactNode> = {
     <div className="space-y-2 max-w-lg text-sm">
       <p className="text-zinc-300 leading-relaxed">
         Software engineer and AI agent builder with 7+ years shipping products: agent automations,
-        Web3 platforms and 50+ Android apps with 5M+ installs.
+        Web3 platforms and 50+ Android apps with 6M+ installs.
       </p>
       <p className="text-zinc-400 leading-relaxed">
         Founder of YS Academy and MudahAI, and currently Founding Engineer at Aixelink Sàrl.

@@ -45,7 +45,7 @@ const experienceData: Job[] = [
     description: [
       "Designed UI/UX using Adobe XD",
       "Developed mobile applications based on client requirements using architecture patterns such as MVVM, MVC, and MVP",
-      "Published 50+ Android applications on Google Play Store with 5M+ installations",
+      "Published 50+ Android applications on Google Play Store with 6M+ installations",
       "Worked on various freelancing mobile applications, one of the clients was Education Malaysia Indonesia developing a mobile app to promote Malaysian colleges",
     ],
     tech: ["Java", "Kotlin", "Flutter", "Adobe XD", "MVVM", "Android"],

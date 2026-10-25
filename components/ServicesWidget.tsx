@@ -476,11 +476,11 @@ export default function ServicesWidget() {
               I&apos;m a software engineer and AI agent builder with {yearsOfExperience}+ years of
               experience. I&apos;ve shipped{" "}
               <a href="/#projects" className="text-zinc-900 underline decoration-zinc-400 underline-offset-4 hover:decoration-zinc-900">
-                60+ web and mobile products
+                70+ web and mobile products
               </a>
               , with my mobile apps reaching{" "}
               <a href={PLAY_DEVELOPER_URL} target="_blank" rel="noopener noreferrer" className="text-zinc-900 underline decoration-zinc-400 underline-offset-4 hover:decoration-zinc-900">
-                5M+ installs on Google Play
+                6M+ installs on Google Play
               </a>
               . Through YS Academy, I teach people to build apps with AI,
               create AI agents and automate workflows. I also help businesses implement these
