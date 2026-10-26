@@ -30,7 +30,7 @@ const experienceData: Job[] = [
     location: "Malaysia · Remote",
     summary: "Built two complementary AI businesses: YS Academy teaches individuals to build apps, agents and automations, while MudahAI delivers managed AI agents for business operations.",
     description: [
-      "Run live AI-assisted development and automation programmes through YS Academy",
+      "Run live AI-assisted development and automation programmes through YS Academy as an HRD Corp TTT Certified Trainer",
       "Design, deploy and maintain production AI agents through MudahAI",
       "Build WhatsApp booking, reminder, follow-up and business workflow systems",
       "Lead product development, infrastructure, client delivery and technical strategy",
@@ -45,7 +45,7 @@ const experienceData: Job[] = [
     description: [
       "Designed UI/UX using Adobe XD",
       "Developed mobile applications based on client requirements using architecture patterns such as MVVM, MVC, and MVP",
-      "Published 50+ Android applications on Google Play Store with 6M+ installations",
+      "Published 70+ Android applications on Google Play Store with 6M+ installations",
       "Worked on various freelancing mobile applications, one of the clients was Education Malaysia Indonesia developing a mobile app to promote Malaysian colleges",
     ],
     tech: ["Java", "Kotlin", "Flutter", "Adobe XD", "MVVM", "Android"],

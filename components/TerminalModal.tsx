@@ -65,10 +65,10 @@ const CMDS: Record<string, () => React.ReactNode> = {
     <div className="space-y-2 max-w-lg text-sm">
       <p className="text-zinc-300 leading-relaxed">
         Software engineer and AI agent builder with 7+ years shipping products: agent automations,
-        Web3 platforms and 50+ Android apps with 6M+ installs.
+        Web3 platforms and 70+ Android apps with 6M+ installs.
       </p>
       <p className="text-zinc-400 leading-relaxed">
-        Founder of YS Academy and MudahAI, and currently Founding Engineer at Aixelink Sàrl.
+        HRD Corp TTT Certified Trainer, founder of YS Academy and MudahAI, and currently Founding Engineer at Aixelink Sàrl.
         Previously CTO & Co-Founder at Heifereum Technology and full-stack developer at SWIFT and
         SICPA, across fintech and enterprise products.
       </p>

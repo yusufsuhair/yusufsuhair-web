@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Yusuf Suhair | Software Engineer & AI Agent Builder",
-  description: "Software Engineer, AI Agent Builder, and Founder of YS Academy with 7+ years shipping web, mobile, enterprise, Web3, and automation products. Builds assistants and workflows with Hermes, OpenClaw, Ollama, and n8n.",
+  description: "Software Engineer, AI Agent Builder, HRD Corp TTT Certified Trainer, and Founder of YS Academy with 7+ years shipping web, mobile, enterprise, Web3, and automation products. Builds assistants and workflows with Hermes, OpenClaw, Ollama, and n8n.",
   keywords: [
     "Yusuf Suhair",
     "Fullstack Engineer",
@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     "Ollama",
     "n8n",
     "YS Academy",
+    "HRD Corp TTT Certified Trainer",
     "Web Developer",
     "Mobile Developer",
     "Android Developer",
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     title: "Yusuf Suhair | Software Engineer & AI Agent Builder",
-    description: "7+ years shipping web, mobile, enterprise, and Web3 products, plus AI agent automations with Hermes, OpenClaw, Ollama, and n8n.",
+    description: "HRD Corp TTT Certified Trainer with 7+ years shipping web, mobile, enterprise, and Web3 products, plus AI agent automations with Hermes, OpenClaw, Ollama, and n8n.",
     siteName: "Yusuf Suhair",
     images: [
       {
@@ -85,7 +86,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Yusuf Suhair | Software Engineer & AI Agent Builder",
-    description: "7+ years shipping web, mobile, enterprise, Web3, and AI agent automation products.",
+    description: "HRD Corp TTT Certified Trainer with 7+ years shipping web, mobile, enterprise, Web3, and AI agent automation products.",
     images: ["/og.png"],
     creator: "@yusufsuhair",
   },

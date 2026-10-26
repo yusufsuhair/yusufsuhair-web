@@ -185,7 +185,7 @@ export default function HomeWidget() {
               70+ web and mobile products
             </a>
             , with my mobile apps reaching{" "}
-            <span className="underline underline-offset-4">6M+ installs on Google Play Store &amp; iOS App Store</span>. Through YS Academy, I teach people to build with AI. Through MudahAI, I design,
+            <span className="underline underline-offset-4">6M+ installs on Google Play Store &amp; iOS App Store</span>. I&apos;m an HRD Corp TTT Certified Trainer. Through YS Academy, I teach people to build with AI. Through MudahAI, I design,
             deploy and maintain AI agents for businesses. I also create content on YouTube and
             Instagram, breaking down AI, automation and what it takes to ship real products.
           </p>

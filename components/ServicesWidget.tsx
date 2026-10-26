@@ -478,7 +478,7 @@ export default function ServicesWidget() {
                 70+ web and mobile products
               </a>
               , with my mobile apps reaching{" "}
-              <span className="underline underline-offset-4">6M+ installs on Google Play Store &amp; iOS App Store</span>. Through YS Academy, I teach people to build apps with AI,
+              <span className="underline underline-offset-4">6M+ installs on Google Play Store &amp; iOS App Store</span>. I&apos;m an HRD Corp TTT Certified Trainer. Through YS Academy, I teach people to build apps with AI,
               create AI agents and automate workflows. I also help businesses implement these
               technologies in their operations.
             </p>
