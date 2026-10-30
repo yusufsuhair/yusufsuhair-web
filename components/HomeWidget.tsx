@@ -189,6 +189,9 @@ export default function HomeWidget() {
             deploy and maintain AI agents for businesses. I also create content on YouTube and
             Instagram, breaking down AI, automation and what it takes to ship real products.
           </p>
+          <a href="#certifications" className="mt-4 inline-flex min-h-11 items-center text-sm text-zinc-400 underline underline-offset-4 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+            View certifications and professional development
+          </a>
         </div>
       </div>
     </section>

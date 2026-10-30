@@ -11,6 +11,7 @@ import SkillsWidget from "@/components/SkillsWidget";
 import YoutubeWidget from "@/components/YoutubeWidget";
 import InstagramWidget from "@/components/InstagramWidget";
 import ExperienceWidget from "@/components/ExperienceWidget";
+import CertificationsWidget from "@/components/CertificationsWidget";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
           <HomeWidget />
           <SkillsWidget />
           <ExperienceWidget />
+          <CertificationsWidget />
           <ProjectsWidget />
           <YoutubeWidget />
           <InstagramWidget />
