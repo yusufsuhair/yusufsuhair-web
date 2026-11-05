@@ -85,8 +85,8 @@ export default function SkillsWidget() {
           initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="rounded-2xl bg-[#0a0a0a] border border-white/10 overflow-hidden">
-          <div className="flex items-center px-4 py-3 border-b border-white/5 bg-[#0f0f0f]">
+          className="rounded-2xl bg-surface border border-white/10 overflow-hidden">
+          <div className="flex items-center px-4 py-3 border-b border-white/5 bg-surface-raised">
             <div aria-hidden="true" className="flex space-x-2">
               <div className="w-3 h-3 rounded-full bg-red-500/80" />
               <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
@@ -96,7 +96,7 @@ export default function SkillsWidget() {
               yusuf@dev-env: ~/skills
             </div>
           </div>
-          <div role="group" aria-label="Skill areas" className="flex border-b border-white/5 bg-[#0c0c0c] overflow-x-auto scrollbar-none">
+          <div role="group" aria-label="Skill areas" className="flex border-b border-white/5 bg-surface-tab overflow-x-auto scrollbar-none">
             {skillGroups.map((group, i) => {
               const isActive = active === i;
               return (
@@ -108,7 +108,7 @@ export default function SkillsWidget() {
                   onClick={() => setActive(i)}
                   className={`flex min-h-11 shrink-0 items-center gap-2 px-4 py-3 text-xs focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-white font-mono whitespace-nowrap border-r border-white/5 transition-colors duration-150 ${
                     isActive
-                      ? "bg-[#0a0a0a] text-white border-t-2 border-t-[var(--tab-color)]"
+                      ? "bg-surface text-white border-t-2 border-t-[var(--tab-color)]"
                       : "text-zinc-400 hover:text-zinc-300 hover:bg-white/5 border-t-2 border-t-transparent"
                   }`}
                   style={{ "--tab-color": group.iconColor } as React.CSSProperties}

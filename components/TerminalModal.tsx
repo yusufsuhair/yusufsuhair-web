@@ -68,7 +68,7 @@ const CMDS: Record<string, () => React.ReactNode> = {
         Web3 platforms and 70+ Android apps with 6M+ installs.
       </p>
       <p className="text-zinc-400 leading-relaxed">
-        HRD Corp TTT Certified Trainer, founder of YS Academy and MudahAI, and currently Founding Engineer at Aixelink Sàrl.
+        Founder of YS Academy and MudahAI, HRD Corp Train-the-Trainer completed, and currently Founding Engineer at Aixelink Sàrl.
         Previously CTO & Co-Founder at Heifereum Technology and full-stack developer at SWIFT and
         SICPA, across fintech and enterprise products.
       </p>
@@ -376,7 +376,7 @@ export default function TerminalModal() {
         type="button"
         onClick={() => setOpen(true)}
         aria-haspopup="dialog"
-        className="fixed bottom-6 right-6 z-50 flex min-h-11 items-center gap-2 px-4 rounded-2xl bg-[#0a0a0a] border border-white/10 text-zinc-400 hover:text-white hover:border-white/25 transition-colors duration-300 shadow-2xl group"
+        className="js-only fixed bottom-6 right-6 z-50 flex min-h-11 items-center gap-2 px-4 rounded-2xl bg-surface border border-white/10 text-zinc-400 hover:text-white hover:border-white/25 transition-colors duration-300 shadow-2xl group"
         whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 0.97 }}
       >
@@ -408,9 +408,9 @@ export default function TerminalModal() {
                 aria-modal="true"
                 aria-label="Interactive terminal"
                 onKeyDown={trapTab}
-                className="w-full max-w-2xl rounded-2xl bg-[#0a0a0a] border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.8)] overflow-hidden pointer-events-auto"
+                className="w-full max-w-2xl rounded-2xl bg-surface border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.8)] overflow-hidden pointer-events-auto"
               >
-                <div className="flex items-center pl-4 pr-1 py-0.5 border-b border-white/5 bg-[#0f0f0f]">
+                <div className="flex items-center pl-4 pr-1 py-0.5 border-b border-white/5 bg-surface-raised">
                   <div className="flex items-center gap-2" aria-hidden="true">
                     <span className="w-3 h-3 rounded-full bg-red-500/80" />
                     <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
@@ -447,7 +447,7 @@ export default function TerminalModal() {
                 </div>
 
                 <div
-                  className="flex items-center gap-2 px-5 py-4 border-t border-white/5 bg-[#0a0a0a] focus-within:ring-1 focus-within:ring-inset focus-within:ring-green-400/50"
+                  className="flex items-center gap-2 px-5 py-4 border-t border-white/5 bg-surface focus-within:ring-1 focus-within:ring-inset focus-within:ring-green-400/50"
                   onClick={() => inputRef.current?.focus()}
                 >
                   <span className="text-green-400 font-mono text-sm flex-shrink-0 select-none" aria-hidden="true">{PROMPT}</span>

@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Yusuf Suhair | Software Engineer & AI Agent Builder",
-  description: "Software Engineer, AI Agent Builder, HRD Corp TTT Certified Trainer, and Founder of YS Academy with 7+ years shipping web, mobile, enterprise, Web3, and automation products. Builds assistants and workflows with Hermes, OpenClaw, Ollama, and n8n.",
+  description: "Software Engineer, AI Agent Builder and Founder of YS Academy, with HRD Corp Train-the-Trainer completed and 7+ years shipping web, mobile, enterprise, Web3, and automation products. Builds assistants and workflows with Hermes, OpenClaw, Ollama, and n8n.",
   keywords: [
     "Yusuf Suhair",
     "Fullstack Engineer",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "Ollama",
     "n8n",
     "YS Academy",
-    "HRD Corp TTT Certified Trainer",
+    "HRD Corp Train-the-Trainer",
     "Web Developer",
     "Mobile Developer",
     "Android Developer",
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     title: "Yusuf Suhair | Software Engineer & AI Agent Builder",
-    description: "HRD Corp TTT Certified Trainer with 7+ years shipping web, mobile, enterprise, and Web3 products, plus AI agent automations with Hermes, OpenClaw, Ollama, and n8n.",
+    description: "Software engineer with HRD Corp Train-the-Trainer completed and 7+ years shipping web, mobile, enterprise, and Web3 products, plus AI agent automations with Hermes, OpenClaw, Ollama, and n8n.",
     siteName: "Yusuf Suhair",
     images: [
       {
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Yusuf Suhair | Software Engineer & AI Agent Builder",
-    description: "HRD Corp TTT Certified Trainer with 7+ years shipping web, mobile, enterprise, Web3, and AI agent automation products.",
+    description: "Software engineer with HRD Corp Train-the-Trainer completed and 7+ years shipping web, mobile, enterprise, Web3, and AI agent automation products.",
     images: ["/og.png"],
     creator: "@yusufsuhair",
   },
@@ -105,6 +105,13 @@ export const metadata: Metadata = {
   },
 };
 
+// Without JavaScript, scroll reveals never fire and toggles can't open, so show everything.
+const NO_SCRIPT_STYLES = `
+  [style*="opacity:0"] { opacity: 1 !important; transform: none !important; }
+  .phone-collapsed { display: flex !important; }
+  .js-only { display: none !important; }
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -112,10 +119,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="motion-safe:scroll-smooth dark">
+      <head>
+        <noscript>
+          <style dangerouslySetInnerHTML={{ __html: NO_SCRIPT_STYLES }} />
+        </noscript>
+      </head>
       <body
         suppressHydrationWarning
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-2.5 focus:z-[100] focus:inline-flex focus:min-h-11 focus:items-center focus:rounded-full focus:bg-white focus:px-4 focus:text-sm focus:font-medium focus:text-black focus:ring-2 focus:ring-black"
+        >
+          Skip to main content
+        </a>
         {children}
       </body>
     </html>

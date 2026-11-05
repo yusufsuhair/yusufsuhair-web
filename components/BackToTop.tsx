@@ -31,7 +31,7 @@ export default function BackToTop({ theme = "dark" }: BackToTopProps) {
       className={`fixed bottom-6 left-6 z-50 inline-flex h-11 w-11 items-center justify-center rounded-xl border shadow-lg transition-colors duration-300 ${
         isLight
           ? "border-zinc-200 bg-white text-zinc-600 hover:border-zinc-400 hover:text-zinc-950"
-          : "border-white/10 bg-[#0a0a0a] text-zinc-400 hover:border-white/25 hover:text-white"
+          : "border-white/10 bg-surface text-zinc-400 hover:border-white/25 hover:text-white"
       }`}
     >
       <ArrowUp size={16} />

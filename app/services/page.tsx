@@ -10,14 +10,14 @@ export default function Services() {
   return (
     <MotionConfig reducedMotion="user">
       <div
-        className="min-h-screen bg-[#f7f7f8] text-zinc-700 antialiased selection:bg-zinc-900 selection:text-white"
+        className="min-h-screen bg-page-light text-zinc-700 antialiased selection:bg-zinc-900 selection:text-white"
         style={{ fontFamily: "var(--font-inter), sans-serif", colorScheme: "light" }}
       >
         <Navbar theme="light" />
 
         <BackToTop theme="light" />
         <TerminalModal />
-        <main className="relative pt-32">
+        <main id="main-content" tabIndex={-1} className="relative pt-32 outline-none">
           <ServicesWidget />
 
           <footer className="border-t border-zinc-200 py-8 text-center">

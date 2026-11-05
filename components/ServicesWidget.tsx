@@ -4,6 +4,7 @@ import type { ComponentType, ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link2, MessageCircle, ChevronDown, Check, Minus, ClipboardCheck } from "lucide-react";
+import BioOpening from "@/components/BioOpening";
 
 const mono = { fontFamily: "var(--font-jetbrains-mono), monospace" };
 
@@ -11,14 +12,6 @@ const WHATSAPP_NUMBER = "601123709141";
 const YS_ACADEMY_URL = "https://ysacademy.my";
 const MUDAHAI_URL = "https://mudahai.com";
 const waLink = (message: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-
-const CAREER_START = new Date(2019, 7, 1); // August 2019, as on the experience timeline
-const getYearsSince = (start: Date): number => {
-  const now = new Date();
-  let years = now.getFullYear() - start.getFullYear();
-  if (now.getMonth() < start.getMonth()) years--;
-  return years;
-};
 
 type Icon = ComponentType<{ size?: number; className?: string }>;
 
@@ -314,8 +307,8 @@ const developmentServices: Service[] = [
     price: "Starting from RM3,000",
     renderIcon: () => (
       <div className="flex items-center gap-2.5">
-        <img src="/appstore-logo.png" alt="App Store" className="w-8 h-8 md:w-9 md:h-9 object-contain" />
-        <img src="/playstore-logo.png" alt="Play Store" className="w-8 h-8 md:w-9 md:h-9 object-contain" />
+        <img src="/appstore-logo.png" alt="App Store" loading="lazy" decoding="async" className="w-8 h-8 md:w-9 md:h-9 object-contain" />
+        <img src="/playstore-logo.png" alt="Play Store" loading="lazy" decoding="async" className="w-8 h-8 md:w-9 md:h-9 object-contain" />
       </div>
     ),
     cta: { label: "Get Quote", href: waLink("Hi Yusuf, I'm interested in Mobile App Development (Starting from RM3,000). Can you share more details?"), Icon: MessageCircle },
@@ -327,7 +320,7 @@ const developmentServices: Service[] = [
     description: "Landing pages and custom web platforms, including payment gateways and backend logic.",
     price: "Starting from RM2,000",
     renderIcon: () => (
-      <img src="/projects/02-ys-academy.webp" alt="" className="w-16 h-12 md:w-20 md:h-[60px] rounded-md border border-zinc-300 object-cover object-top" />
+      <img src="/projects/ys-academy-480.webp" alt="" loading="lazy" decoding="async" className="w-16 h-12 md:w-20 md:h-[60px] rounded-md border border-zinc-300 object-cover object-top" />
     ),
     cta: { label: "Get Quote", href: waLink("Hi Yusuf, I'm interested in Web Development (Starting from RM2,000). Can you share more details?"), Icon: MessageCircle },
     details: <PricingDetails groups={[{ title: "Web Development Pricing", tiers: webDevTiers }]} />,
@@ -352,7 +345,7 @@ const coachingServices: Service[] = [
     description: "Private, hands-on session on setting up and running Hermes AI agents for your own business.",
     price: "RM500/90 min",
     renderIcon: () => (
-      <img src="/hermes-logo.png" alt="Hermes AI" className="w-full h-full border-0 bg-transparent object-contain" />
+      <img src="/hermes-logo.webp" alt="Hermes AI" loading="lazy" decoding="async" className="w-full h-full border-0 bg-transparent object-contain" />
     ),
     cta: { label: "Book Class", href: waLink("Hi Yusuf, I'm interested in the Hermes 1-to-1 Class (RM500/90 min). Can you share more details?"), Icon: MessageCircle },
     details: <PricingDetails groups={hermesPricingSheet} />,
@@ -413,7 +406,6 @@ const serviceSections: ServiceSection[] = [
 
 export default function ServicesWidget() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
-  const yearsOfExperience = getYearsSince(CAREER_START);
 
   useEffect(() => {
     let focusTimer: number | undefined;
@@ -458,7 +450,7 @@ export default function ServicesWidget() {
         >
           <div className="w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden border border-zinc-200 shrink-0 bg-white">
             <img
-              src="/hero1.jpg"
+              src="/hero/hero1.webp"
               alt="Yusuf Suhair"
               className="w-full h-full object-cover object-top"
             />
@@ -472,13 +464,8 @@ export default function ServicesWidget() {
               Software Engineer · AI Agent Builder · Founder, YS Academy
             </p>
             <p className="text-zinc-600 text-sm md:text-base mt-5 max-w-[540px] leading-relaxed">
-              I&apos;m a software engineer and AI agent builder with {yearsOfExperience}+ years of
-              experience. I&apos;ve shipped{" "}
-              <a href="/#projects" className="text-zinc-900 underline decoration-zinc-400 underline-offset-4 hover:decoration-zinc-900">
-                70+ web and mobile products
-              </a>
-              , with my mobile apps reaching{" "}
-              <span className="underline underline-offset-4">6M+ installs on Google Play Store &amp; iOS App Store</span>. I&apos;m an HRD Corp TTT Certified Trainer. Through YS Academy, I teach people to build apps with AI,
+              <BioOpening linkClassName="text-zinc-900 underline decoration-zinc-400 underline-offset-4 hover:decoration-zinc-900" />{" "}
+              Through YS Academy, I teach people to build apps with AI,
               create AI agents and automate workflows. I also help businesses implement these
               technologies in their operations.
             </p>
@@ -549,7 +536,7 @@ export default function ServicesWidget() {
                         </div>
 
                         <div className="flex flex-wrap md:flex-col items-center md:items-end justify-between gap-3 shrink-0 w-full md:w-auto md:text-right">
-                          <span className="text-base md:text-lg font-semibold text-zinc-950 whitespace-nowrap" style={mono}>
+                          <span className="text-base md:text-lg font-semibold text-zinc-950" style={mono}>
                             {service.price}
                           </span>
                           <a
@@ -624,15 +611,15 @@ export default function ServicesWidget() {
                   href={product.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-start gap-4 rounded-xl border border-zinc-200 bg-white p-5 hover:border-zinc-400 transition-colors"
+                  className="group flex flex-wrap items-start gap-4 rounded-xl border border-zinc-200 bg-white p-5 hover:border-zinc-400 transition-colors"
                 >
                   {/* Tile needs a definite size — with an auto-sized box the logo
                       falls back to its intrinsic dimensions. h-16 ≈ the title+description block. */}
                   <div className="flex items-center justify-center w-16 h-16 rounded-lg bg-zinc-100 shrink-0 overflow-hidden">
-                    <img src={product.logo} alt="" className="w-11 h-11 object-contain" />
+                    <img src={product.logo} alt="" loading="lazy" decoding="async" className="w-11 h-11 object-contain" />
                   </div>
-                  <div className="min-w-0">
-                    <div className="flex items-center gap-2">
+                  <div className="min-w-0 flex-1 basis-32">
+                    <div className="flex flex-wrap items-center gap-x-2">
                       <h3 className="font-semibold text-sm text-zinc-950">{product.name}</h3>
                       <span className="text-xs text-zinc-500"><span aria-hidden="true">· </span>{product.tagline}</span>
                     </div>

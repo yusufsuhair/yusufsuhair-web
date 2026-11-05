@@ -14,7 +14,7 @@ export default function ContactWidget() {
           initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="rounded-3xl border border-white/10 bg-[#0a0a0a] px-6 py-12 sm:px-10 md:px-14 md:py-16 text-center"
+          className="rounded-3xl border border-white/10 bg-surface px-6 py-12 sm:px-10 md:px-14 md:py-16 text-center"
         >
           <h2 className="text-3xl md:text-5xl font-medium tracking-tight text-white mb-4">
             Have a project or a role in mind?
@@ -35,7 +35,7 @@ export default function ContactWidget() {
             </a>
             <a
               href={`mailto:${EMAIL}`}
-              className="inline-flex min-h-11 items-center justify-center gap-2 px-6 text-sm font-medium text-white border border-white/15 rounded-full hover:bg-white/10 transition-colors"
+              className="inline-flex min-h-11 max-w-full items-center justify-center gap-2 px-6 text-sm font-medium text-white border border-white/15 rounded-full hover:bg-white/10 transition-colors [overflow-wrap:anywhere]"
             >
               <Mail size={16} aria-hidden="true" />
               {EMAIL}

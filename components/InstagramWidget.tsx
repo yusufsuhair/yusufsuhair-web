@@ -65,13 +65,13 @@ export default function InstagramWidget() {
               href={reel.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex flex-col rounded-2xl bg-[#0f0f0f] border border-white/5 hover:border-white/15 transition-all duration-500 overflow-hidden hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)]"
+              className="group relative flex flex-col rounded-2xl bg-surface-raised border border-white/5 hover:border-white/15 transition-all duration-500 overflow-hidden hover:-translate-y-1 hover:shadow-lift"
             >
               {/* Cover ratio matches the IG grid crop these were captured at */}
               <div className="aspect-[227/320] w-full relative overflow-hidden bg-zinc-900">
                 <img
                   src={reel.thumb}
-                  alt={reel.title}
+                  alt=""
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
@@ -97,20 +97,20 @@ export default function InstagramWidget() {
         </div>
 
         {/* Profile CTA */}
-        <div className="flex items-center justify-between rounded-2xl bg-[#0f0f0f] border border-white/5 px-6 py-5">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center">
+        <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-surface-raised border border-white/5 px-6 py-5">
+          <div className="flex min-w-0 items-center gap-3">
+            <div className="w-8 h-8 shrink-0 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center">
               <Instagram size={15} className="text-zinc-400" />
             </div>
-            <p className="text-sm text-zinc-400">@yusufsuhair</p>
+            <p className="min-w-0 text-sm text-zinc-400 [overflow-wrap:anywhere]">@yusufsuhair</p>
           </div>
           <a
             href={PROFILE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-shrink-0 inline-flex min-h-11 items-center gap-2 px-5 text-sm font-medium text-white bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors duration-300"
+            className="inline-flex min-h-11 max-w-full items-center gap-2 px-5 text-sm font-medium text-white bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors duration-300"
           >
-            Follow
+            Follow on Instagram
             <ExternalLink size={13} className="opacity-60" />
           </a>
         </div>

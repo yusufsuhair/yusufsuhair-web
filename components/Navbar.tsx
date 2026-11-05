@@ -21,10 +21,10 @@ export default function Navbar({ theme = "dark" }: NavbarProps) {
   return (
     <nav
       className={`fixed top-0 inset-x-0 z-50 border-b backdrop-blur-xl ${
-        isLight ? "border-zinc-200 bg-white/80" : "border-white/5 bg-[#050505]/70"
+        isLight ? "border-zinc-200 bg-white/80" : "border-white/5 bg-page/70"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-16 py-1 flex flex-wrap items-center justify-between gap-x-2">
         <a
           href="/"
           className={`inline-flex min-h-11 min-w-11 items-center text-xl font-medium tracking-tighter ${
@@ -34,7 +34,7 @@ export default function Navbar({ theme = "dark" }: NavbarProps) {
           YS.
         </a>
 
-        <div className="flex items-center gap-1 sm:gap-4 text-sm">
+        <div className="flex flex-wrap items-center gap-1 sm:gap-4 text-sm">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (

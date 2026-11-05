@@ -1,13 +1,13 @@
 # DESIGN.md: yusufsuhair.xyz
 
-Recorded from the site as shipped on 2026-10-09, after the antislop audit (`anti-slop/audit-001-2026-10-09.md`). Each reason below is a reading of what the choice already does. Yusuf: correct any reason that isn't yours, and the next change follows the corrected version.
+Recorded from the site as shipped on 2026-10-09, after the antislop audit (`anti-slop/audit-001-2026-10-09.md`), and refreshed on 2026-11-05 after the Impeccable audit. Each reason below is a reading of what the choice already does. Yusuf: correct any reason that isn't yours, and the next change follows the corrected version.
 
 **Design Read:** a personal portfolio and services page for a software engineer and founder, written for clients, employers and followers who arrive from Instagram, YouTube and LinkedIn. **Dial: ENERGY 2 / RHYTHM 2 / MOTION 2.**
 
 ## Identity
 
 - **Who it speaks for:** one engineer who ships products, teaches (YS Academy) and runs a business (MudahAI). The proof is the work: real screenshots, real employers, real links.
-- **Motif:** the working terminal (bottom-right button). It is the one place the "engineer" voice is played for fun, and it does real things: commands, links, history. It isn't repeated as decoration anywhere else.
+- **Motif:** the terminal. The bottom-right button opens a working one, with commands, links and history. The Skills section borrows its window so the skill lists read as command output. It appears nowhere else.
 
 ## Theme
 
@@ -16,11 +16,13 @@ Recorded from the site as shipped on 2026-10-09, after the antislop audit (`anti
 
 ## Colour
 
-- **Core:** near-black and white with the zinc greys.
+- **Core:** near-black and white with the zinc greys. Greys use Tailwind's zinc scale directly.
+- **Surfaces:** named tokens in `app/globals.css`, from the page up: `page` (#050505), `surface` (#0a0a0a), `surface-tab` (#0c0c0c), `surface-raised` (#0f0f0f), plus `page-light` (#f7f7f8) for Services.
 - **Text on dark:** zinc-400 for secondary text and labels (7.5:1 on #0f0f0f). Nothing smaller than 18 px uses zinc-500 or darker on the dark pages.
 - **Text on light:** zinc-500 or darker (4.5:1 on #f7f7f8).
 - **Accents, one per surface:**
-  - **Terminal:** green (prompts and commands) inside the terminal only.
+  - **Terminal:** green (prompts and commands) inside the terminal and the Skills window.
+  - **Skills tabs:** one colour per skill area, to tell the tabs apart. These are the only hard-coded hex values left in the components.
   - **Services:** blue-600, for its qualifiers, check marks and jump-link hover.
   - **Platform cues:** the YouTube card's red hover, because it marks YouTube.
 
@@ -31,10 +33,14 @@ Recorded from the site as shipped on 2026-10-09, after the antislop audit (`anti
 
 ## Layout
 
-- **Home order:** hero (who, with links to evidence), skills, experience, selected work, YouTube, Instagram, contact. It runs from who he is to proof to how to reach him.
+- **Home order:** hero (who, with links to evidence), skills, experience with credentials, selected work, YouTube, Instagram, contact. It runs from who he is to proof to how to reach him.
+- **Credentials:** a one-line list at the end of Experience, not a section of its own. Shipped work is the stronger proof, so certificates support it and don't delay it. Current credentials only, each with a thumbnail of the real certificate, a link to the full image and an official verification link where one exists.
+- **Selected Work tiers:** weight follows importance. Featured (two-column cards with large media) for what he runs now, standard (three-column cards) for his apps and larger builds, compact rows under "Also built" for smaller and older work. Set per project with `tier`.
+- **Phones:** Experience drops the timeline rail and shows two points per role, with the rest behind "Show all details". Selected Work shows six projects, with the rest behind "Show more".
 - **Alignment:** list sections (skills, experience, work) use left-aligned headings because their content is left-aligned. The media sections (YouTube, Instagram) are centred over their three cards.
 - **Navigation:** Home, Services and "Let's talk" stay visible at every width. Three items fit a 320 px phone, so there is no hidden menu.
 - **Touch targets:** every control is at least 44 px tall.
+- **Overflow:** no sideways scroll at 320 px or with text at 200%. Text wraps; the Skills tab row is the one deliberate scroller.
 
 ## Surfaces
 
@@ -45,11 +51,21 @@ Recorded from the site as shipped on 2026-10-09, after the antislop audit (`anti
 ## Motion
 
 - **Purpose:** sections fade up once on scroll to mark arrival, the hero types its greeting, and cards lift on hover.
+- **Hero greeting:** the letters are in the server HTML and CSS reveals them, so the name appears without JavaScript and nothing shifts.
 - **Reduced motion:** framer-motion's `MotionConfig reducedMotion="user"` turns off transforms. The hero renders as plain text, and smooth scrolling is off.
+- **Without JavaScript:** a `noscript` style shows every revealed and collapsed element and hides controls that can't work.
 - **Loops:** none run forever.
+
+## Images
+
+- **Project screenshots:** add the source to `scripts/optimize-images.mjs` and run `npm run optimize:images`, which builds 480 and 960 px WebP files in `public/projects`. Cards load them lazily with `srcset`.
+- **Hero photos:** 320 px WebP in `public/hero`, loaded straight away because they sit in the first screen.
+- **Certificates:** real files only, in `public/certificates`. Check for personal numbers before publishing; the TTT certificate must use the redacted copy.
+- **Caching:** `public/_headers` gives `/projects/*`, `/hero/*` and `/certificates/*` a week. A replaced image needs a new filename to reach returning visitors sooner.
 
 ## Content rules
 
 - **Numbers:** each one links to its evidence: projects for "70+ products", the Google Play developer page for "6M+ installs".
+- **Links:** name the destination ("Visit Fynecta", "Fake Live on Google Play"), never a status or platform word alone ("Live", "Android") or "Explore".
 - **Facts:** the experience timeline is the source of truth, and the terminal's `experience` and `about` follow it.
 - **Punctuation:** no em dashes in copy. Use a colon in titles ("Name: tagline") and "to" in date ranges.

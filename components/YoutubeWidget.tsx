@@ -50,19 +50,18 @@ export default function YoutubeWidget() {
               href={`https://youtube.com/watch?v=${video.id}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex flex-col rounded-2xl bg-[#0f0f0f] border border-white/5 group-hover:border-red-500/20 hover:border-white/15 transition-all duration-500 overflow-hidden hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)]"
+              className="group relative flex flex-col rounded-2xl bg-surface-raised border border-white/5 group-hover:border-red-500/20 hover:border-white/15 transition-all duration-500 overflow-hidden hover:-translate-y-1 hover:shadow-lift"
             >
               <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
               {/* Thumbnail Header */}
               <div className="h-44 w-full relative overflow-hidden border-b border-white/5 bg-zinc-900">
                 <img
-                  src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
-                  alt={video.title}
+                  src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
-                  }}
                 />
                 {/* Subtle dark gradient over thumbnail */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -91,20 +90,20 @@ export default function YoutubeWidget() {
         </div>
 
         {/* Channel CTA */}
-        <div className="flex items-center justify-between rounded-2xl bg-[#0f0f0f] border border-white/5 px-6 py-5">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center">
+        <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-surface-raised border border-white/5 px-6 py-5">
+          <div className="flex min-w-0 items-center gap-3">
+            <div className="w-8 h-8 shrink-0 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center">
               <Youtube size={15} className="text-zinc-400" />
             </div>
-            <p className="text-sm text-zinc-400">@YusufSuhair</p>
+            <p className="min-w-0 text-sm text-zinc-400 [overflow-wrap:anywhere]">@YusufSuhair</p>
           </div>
           <a
             href={CHANNEL_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-shrink-0 inline-flex min-h-11 items-center gap-2 px-5 text-sm font-medium text-white bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors duration-300"
+            className="inline-flex min-h-11 max-w-full items-center gap-2 px-5 text-sm font-medium text-white bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors duration-300"
           >
-            View Channel
+            View YouTube channel
             <ExternalLink size={13} className="opacity-60" />
           </a>
         </div>

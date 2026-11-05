@@ -2,10 +2,11 @@
 
 import { Github, Instagram, Linkedin, Mail, Youtube } from "lucide-react";
 import { FaThreads } from "react-icons/fa6";
-import { useReducedMotion } from "framer-motion";
-import { TypingAnimation } from "@/components/ui/typing-animation";
+import BioOpening from "@/components/BioOpening";
 
-const CAREER_START_YEAR = 2019;
+const GREETING = "Hello, I'm Yusuf.";
+const LETTER_START_MS = 150;
+const LETTER_STEP_MS = 60;
 const mono = { fontFamily: "var(--font-jetbrains-mono), monospace" };
 
 const socialLinks = [
@@ -43,28 +44,28 @@ const socialLinks = [
 
 const photoFrames = [
   {
-    src: "/hero1.jpg",
+    src: "/hero/hero1.webp",
     rotation: "-rotate-6",
     desktopPosition: "left-2 top-[7%]",
     imagePosition: "center 18%",
     imageScale: "scale-[1.08]",
   },
   {
-    src: "/hero2.jpg",
+    src: "/hero/hero2.webp",
     rotation: "rotate-5",
     desktopPosition: "left-14 bottom-[3%]",
     imagePosition: "center 25%",
     imageScale: "scale-[1.05]",
   },
   {
-    src: "/hero3.jpg",
+    src: "/hero/hero3.webp",
     rotation: "rotate-6",
     desktopPosition: "right-2 top-[9%]",
     imagePosition: "center 30%",
     imageScale: "scale-[1.05]",
   },
   {
-    src: "/hero4.jpg",
+    src: "/hero/hero4.webp",
     rotation: "-rotate-5",
     desktopPosition: "right-14 bottom-[2%]",
     imagePosition: "center 22%",
@@ -102,7 +103,6 @@ function PhotoPrint({
         <img
           src={src}
           alt=""
-          loading="lazy"
           decoding="async"
           className={`h-full w-full object-cover ${imageScale}`}
           style={{ objectPosition: imagePosition }}
@@ -113,10 +113,6 @@ function PhotoPrint({
 }
 
 export default function HomeWidget() {
-  const yearsOfExperience = new Date().getFullYear() - CAREER_START_YEAR;
-  const reduceMotion = useReducedMotion();
-  const headingClass =
-    "min-h-[3.75rem] sm:min-h-[4.5rem] md:min-h-[5.5rem] text-5xl sm:text-6xl md:text-7xl font-medium tracking-tight text-white leading-tight";
   const evidenceLink = "text-zinc-200 underline decoration-white/30 underline-offset-4 hover:decoration-white";
 
   return (
@@ -127,19 +123,23 @@ export default function HomeWidget() {
         ))}
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          {reduceMotion ? (
-            <h1 className={headingClass}>Hello, I&apos;m Yusuf.</h1>
-          ) : (
-            <TypingAnimation
-              as="h1"
-              typeSpeed={75}
-              delay={250}
-              aria-label="Hello, I'm Yusuf."
-              className={headingClass}
-            >
-              Hello, I&apos;m Yusuf.
-            </TypingAnimation>
-          )}
+          {/* Every letter ships in the server HTML, so the name needs no JavaScript. */}
+          <h1
+            aria-label={GREETING}
+            className="text-5xl sm:text-6xl md:text-7xl font-medium tracking-tight text-white leading-tight"
+          >
+            <span aria-hidden="true">
+              {Array.from(GREETING).map((letter, index) => (
+                <span
+                  key={index}
+                  className="hero-letter"
+                  style={{ animationDelay: `${LETTER_START_MS + index * LETTER_STEP_MS}ms` }}
+                >
+                  {letter}
+                </span>
+              ))}
+            </span>
+          </h1>
           <p
             className="mt-4 text-[11px] uppercase tracking-[0.12em] text-zinc-400"
             style={mono}
@@ -178,20 +178,16 @@ export default function HomeWidget() {
             })}
           </div>
 
-          <p className="mt-10 mx-auto max-w-[540px] text-sm md:text-base text-zinc-400 leading-relaxed">
-            I&apos;m a software engineer and AI agent builder with {yearsOfExperience}+ years of
-            experience. I&apos;ve shipped{" "}
-            <a href="#projects" className={evidenceLink}>
-              70+ web and mobile products
-            </a>
-            , with my mobile apps reaching{" "}
-            <span className="underline underline-offset-4">6M+ installs on Google Play Store &amp; iOS App Store</span>. I&apos;m an HRD Corp TTT Certified Trainer. Through YS Academy, I teach people to build with AI. Through MudahAI, I design,
-            deploy and maintain AI agents for businesses. I also create content on YouTube and
-            Instagram, breaking down AI, automation and what it takes to ship real products.
-          </p>
-          <a href="#certifications" className="mt-4 inline-flex min-h-11 items-center text-sm text-zinc-400 underline underline-offset-4 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
-            View certifications and professional development
-          </a>
+          <div className="mt-10 mx-auto max-w-[540px] space-y-3 text-left sm:text-center text-sm md:text-base text-zinc-400 leading-relaxed">
+            <p>
+              <BioOpening linkClassName={evidenceLink} />
+            </p>
+            <p>
+              Through YS Academy, I teach people to build with AI. Through MudahAI, I design, deploy
+              and maintain AI agents for businesses. I also create content on YouTube and Instagram,
+              breaking down AI, automation and what it takes to ship real products.
+            </p>
+          </div>
         </div>
       </div>
     </section>

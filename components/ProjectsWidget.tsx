@@ -1,25 +1,30 @@
 "use client";
 
-import { ExternalLink, Globe, Smartphone, Link, Code2, ShoppingBag, Gamepad2, PanelsTopLeft } from "lucide-react";
+import { ExternalLink, Smartphone } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+type ProjectTier = "featured" | "standard" | "compact";
+
 interface Project {
+  name: string;
   title: string;
   role: string;
-  url?: string;
+  url: string;
   description: string;
   tech: string[];
   android?: string;
-  ios?: string;
-  image?: string;
+  /** Slug of the pair of files built by `npm run optimize:images`. */
+  image: string;
+  /** Link text, when "Visit {name}" isn't the right verb. */
   cta?: string;
   category: "web" | "mobile" | "widget" | "games" | "crypto" | "ecommerce";
-  storesOnly?: boolean;
+  tier: ProjectTier;
 }
 
 const projectsData: Project[] = [
   {
+    name: "MudahAI",
     title: "MudahAI: Managed AI Agents for Businesses",
     role: "Founder / AI Agent Builder",
     url: "https://mudahai.com",
@@ -27,10 +32,11 @@ const projectsData: Project[] = [
       "A done-for-you AI operations system that handles WhatsApp enquiries, bookings, reminders, rescheduling and follow-ups, with human escalation built into the workflow.",
     tech: ["AI Agents", "n8n", "WhatsApp Cloud API", "OpenAI", "Supabase", "DevOps"],
     category: "web",
-    image: "https://mudahai.com/opengraph-image?b83510d8ccd8f3df",
-    cta: "Visit MudahAI",
+    image: "mudahai",
+    tier: "featured",
   },
   {
+    name: "LepakMamak",
     title: "LepakMamak: Malaysian Multiplayer Browser Game",
     role: "Creator / Full-Stack Engineer",
     url: "https://lepakmamak.my",
@@ -38,10 +44,12 @@ const projectsData: Project[] = [
       "A free multiplayer browser game set in a miniature Kuala Lumpur, where players can explore the city, ride around, meet friends at the mamak and chat through live text and voice.",
     tech: ["Three.js", "WebGL", "Supabase", "Multiplayer", "Voice Chat"],
     category: "games",
-    image: "https://lepakmamak.my/og.png",
+    image: "lepakmamak",
+    tier: "featured",
     cta: "Play LepakMamak",
   },
   {
+    name: "Slipstream",
     title: "Slipstream: Interactive F1 Field Guide",
     role: "Creator / 3D Web Engineer",
     url: "https://f1.yusufsuhair.xyz",
@@ -49,20 +57,23 @@ const projectsData: Project[] = [
       "A 3D study site for the 2026 Formula 1 season: hands-on lessons on the cars, active aero, power units, tyres, circuits, race starts, flags and the steering wheel, plus a quiz, with a physically modelled engine and crowd soundtrack.",
     tech: ["Three.js", "WebGL", "Web Audio", "Blender", "Cloudflare Workers"],
     category: "web",
-    image: "/screenshot-slipstream-f1.png",
+    image: "slipstream",
+    tier: "featured",
     cta: "Open Slipstream",
   },
   {
+    name: "YS Academy",
     title: "YS Academy: Kelas AI Online",
     role: "Founder / Full-Stack Engineer",
     url: "https://ysacademy.my",
     description: "A subscription learning platform with live workshops, member accounts, Stripe billing, lesson progress, access expiry and Telegram community integration.",
     tech: ["Next.js", "Supabase", "Stripe", "Telegram", "AI Education"],
     category: "web",
-    image: "/screenshot-ys-academy.png",
-    cta: "Visit YS Academy",
+    image: "ys-academy",
+    tier: "featured",
   },
   {
+    name: "AI Balance",
     title: "AI Balance: Credit Tracker",
     role: "Founder / Mobile Developer",
     url: "https://aibalance.pages.dev/",
@@ -70,10 +81,11 @@ const projectsData: Project[] = [
       "A mobile dashboard for AI API credits: balances and monthly spend from nine providers, including OpenAI, Claude, DeepSeek and OpenRouter, with balance history, low-balance alerts, model usage reports and home-screen widgets. Keys stay on the phone.",
     tech: ["Flutter", "Dart", "iOS", "Android", "WidgetKit"],
     category: "mobile",
-    image: "/projects/10-ai-balance.webp",
-    cta: "Explore AI Balance",
+    image: "ai-balance",
+    tier: "standard",
   },
   {
+    name: "Shotivo",
     title: "Shotivo: Screenshot & Video Mockup Studio",
     role: "Founder / Mobile Developer",
     url: "https://shotivo.pages.dev/",
@@ -81,10 +93,11 @@ const projectsData: Project[] = [
       "A mobile studio for turning screenshots and screen recordings into device mockups, with customizable frames and backgrounds, saved styles, batch image exports and on-device video processing for iOS and Android.",
     tech: ["Flutter", "Dart", "iOS", "Android"],
     category: "mobile",
-    image: "/projects/08-shotivo.webp",
-    cta: "Explore Shotivo",
+    image: "shotivo",
+    tier: "standard",
   },
   {
+    name: "Ganti Solat",
     title: "Ganti Solat: Missed Prayer & Fast Tracker",
     role: "Founder / Mobile Developer",
     url: "https://gantisolat.pages.dev/",
@@ -92,10 +105,11 @@ const projectsData: Project[] = [
       "A private Malay app for making up missed prayers and fasts, with a balance for each prayer time, a daily qada target, sourced reminders and home-screen widgets. No account; records stay on the phone.",
     tech: ["Flutter", "Dart", "iOS", "Android", "WidgetKit"],
     category: "mobile",
-    image: "/projects/09-ganti-solat.webp",
-    cta: "Explore Ganti Solat",
+    image: "ganti-solat",
+    tier: "standard",
   },
   {
+    name: "Teleprompter",
     title: "Teleprompter: Floating Scripts & Video Recording",
     role: "Founder / Mobile Developer",
     url: "https://teleprompter-float.pages.dev/",
@@ -103,10 +117,11 @@ const projectsData: Project[] = [
       "An iPhone and iPad teleprompter with floating scripts over TikTok, Instagram, Camera and Zoom, plus built-in video recording. Adjustable scrolling, text styling and camera controls keep lines close to the lens, with scripts saved locally and recordings sent to Photos.",
     tech: ["iOS", "iPadOS", "Picture in Picture", "Video Recording"],
     category: "mobile",
-    image: "/projects/12-teleprompter.webp",
-    cta: "Explore Teleprompter",
+    image: "teleprompter",
+    tier: "standard",
   },
   {
+    name: "Petal",
     title: "Petal: Period & Cycle Tracker",
     role: "Founder / Mobile Developer",
     url: "https://petalcycle.pages.dev/",
@@ -114,10 +129,11 @@ const projectsData: Project[] = [
       "An iOS period and cycle tracker with visual check-ins for flow, symptoms, mood and daily notes, a cycle overview and journal history. Entries stay on the device, with journal export and deletion controls. Coming to iOS.",
     tech: ["iOS", "Cycle Tracking", "Visual Journaling", "On-device Storage"],
     category: "mobile",
-    image: "/projects/13-petal.webp",
-    cta: "Explore Petal",
+    image: "petal",
+    tier: "standard",
   },
   {
+    name: "Tiny Stats",
     title: "Tiny Stats: Mac Performance Monitor",
     role: "Creator / macOS Developer",
     url: "https://tiny-stats.pages.dev/",
@@ -125,30 +141,35 @@ const projectsData: Project[] = [
       "A lightweight Mac menu bar monitor for CPU, RAM and GPU, with memory pressure, top processes and five-minute usage history. Built natively for Apple silicon, with performance readings kept on your Mac.",
     tech: ["Swift", "AppKit", "macOS", "Apple Silicon"],
     category: "widget",
-    image: "/projects/11-tiny-stats.webp",
-    cta: "Explore Tiny Stats",
+    image: "tiny-stats",
+    tier: "standard",
   },
   {
+    name: "Fynecta",
     title: "Fynecta: The Intelligent Terminal for Global Market",
     role: "Full-Stack Engineer",
     url: "https://www.fynecta.io/",
     description:
       "A trading terminal for crypto and commodities, with live price feeds, portfolio performance tracking and real-time trade signals, and algorithmic strategies running the managed portfolios.",
     tech: ["Next.js", "React", "Tailwind", "Real-time Data", "Trading"],
-    image: "/screenshot-fynecta.png",
     category: "crypto",
+    image: "fynecta",
+    tier: "standard",
   },
   {
+    name: "Dalbass",
     title: "Dalbass: Platform Sinyal XAUUSD",
     role: "Full-Stack Engineer",
     url: "https://dalbass.com",
     description:
       "A gold (XAUUSD) trading signal platform: scalping and intraday signals with entry, stop loss and TP1 to TP3 levels, an automatic lot calculator, open performance recaps and Telegram delivery.",
     tech: ["Next.js", "React", "Tailwind", "Telegram", "Trading"],
-    image: "/screenshot-dalbass.png",
     category: "crypto",
+    image: "dalbass",
+    tier: "standard",
   },
   {
+    name: "Fake Live",
     title: "Fake Live: Livestream Simulator",
     role: "Founder / Mobile Developer",
     url: "https://fake-live-prank.pages.dev/",
@@ -156,67 +177,75 @@ const projectsData: Project[] = [
     android: "https://play.google.com/store/apps/details?id=com.yusufsuhair.fake_live",
     tech: ["Android", "Livestream Simulation", "Google Play"],
     category: "mobile",
-    image: "/projects/14-fake-live.webp",
-    cta: "Explore Fake Live",
+    image: "fake-live",
+    tier: "standard",
   },
   {
+    name: "Fake Celebs",
     title: "Fake Celebs: Call Prank App",
     role: "Founder / Mobile Developer",
     url: "https://fake-celebs-call.pages.dev/",
-    description: "An Android entertainment app for simulated celebrity video calls, voice calls, AI-powered chat and livestreams. Published on Google Play with more than 5,000 downloads.",
+    description: "Simulated celebrity video calls, voice calls, AI chat and livestreams. On Google Play with more than 5,000 downloads.",
     android: "https://play.google.com/store/apps/details?id=com.yusufsuhair.fake_video_call",
     tech: ["Android", "Video Calls", "AI Chat", "Google Play"],
     category: "mobile",
-    image: "/projects/15-fake-celebs-call.webp",
-    cta: "Explore Fake Celebs",
+    image: "fake-celebs",
+    tier: "compact",
   },
   {
+    name: "myClipper",
     title: "myClipper: Content Creation Platform",
     role: "Full-Stack Engineer",
     url: "https://myclipper.vercel.app/",
-    description: "A SaaS platform where businesses run campaigns and creators earn based on views delivered, with commission-based workflows for both sides of the marketplace.",
+    description: "A marketplace where businesses run campaigns and creators earn based on views delivered.",
     tech: ["Next.js", "TypeScript", "Tailwind", "SaaS"],
-    image: "/screenshot-myclipper.png",
     category: "web",
+    image: "myclipper",
+    tier: "compact",
   },
   {
+    name: "$EJOE",
     title: "$EJOE NFT Marketplace",
     role: "CTO / Lead Web3 Engineer",
     url: "http://ejoe-nft.vercel.app/",
-    description: "An NFT marketplace for discovering, collecting and selling NFTs, with wallet connect, search and filtering by item type, sale type and price range, backed by smart contracts and Web3 infrastructure.",
+    description: "An NFT marketplace with wallet connect, search and price filters, backed by smart contracts.",
     tech: ["Solidity", "Next.js", "React", "Web3.js", "DevOps"],
-    image: "/screenshot-ejoe-nft.png",
     category: "crypto",
+    image: "ejoe-nft",
+    tier: "compact",
   },
   {
+    name: "$WALID",
     title: "$WALID Memecoin Landing Page",
     role: "Full-Stack Engineer",
     url: "https://walid-memecoin-website.vercel.app/",
-    description:
-      "A meme-native landing page for the $WALID token, with viral lore, a how-to-buy walkthrough, contract address copy, a pump.fun buy flow and in-page mini games.",
+    description: "A token landing page with a how-to-buy walkthrough, a pump.fun buy flow and in-page mini games.",
     tech: ["Next.js", "React", "Tailwind", "Solana", "pump.fun"],
-    image: "/screenshot-walid.png",
     category: "crypto",
+    image: "walid",
+    tier: "compact",
   },
   {
+    name: "$REMBUYANG",
     title: "$REMBUYANG Memecoin Landing Page",
     role: "Full-Stack Engineer",
     url: "https://rembuyang.vercel.app/",
-    description:
-      "A community memecoin landing page with wallet connect, live price and 24h change, buy flow and a built-in anthem player running as a persistent bottom bar.",
+    description: "A community token page with wallet connect, live price, a buy flow and a built-in anthem player.",
     tech: ["Next.js", "React", "Tailwind", "Web3", "Wallet Connect"],
-    image: "/screenshot-rembuyang.png",
     category: "crypto",
+    image: "rembuyang",
+    tier: "compact",
   },
   {
+    name: "NuuhaBeauty",
     title: "NuuhaBeauty: Halal Korean Skincare Store",
     role: "AI / Computer Vision Engineer",
     url: "https://nuuhabeauty.com/",
-    description:
-      "A Shopify storefront for a halal Korean skincare brand, with an AI face-recognition feature that detects acne from a selfie and recommends products using computer vision and deep learning.",
+    description: "A Shopify store for halal Korean skincare, with AI that detects acne from a selfie and recommends products.",
     tech: ["Shopify", "Computer Vision", "Deep Learning", "Python", "E-commerce"],
-    image: "/screenshot-nuuhabeauty.png",
     category: "ecommerce",
+    image: "nuuhabeauty",
+    tier: "compact",
   },
 ];
 
@@ -232,65 +261,137 @@ const categories = [
   { id: "ecommerce", label: "E-commerce" },
 ];
 
-// fallback glyph for a card with no screenshot
-const categoryIcon = { web: Globe, mobile: Smartphone, widget: PanelsTopLeft, games: Gamepad2, crypto: Link, ecommerce: ShoppingBag };
+const MEDIA_SIZES: Record<ProjectTier, string> = {
+  featured: "(min-width: 1280px) 600px, (min-width: 768px) 50vw, 100vw",
+  standard: "(min-width: 1280px) 390px, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw",
+  compact: "96px",
+};
 
-const PlayStoreGlyph = () => (
-  <svg viewBox="0 0 24 24" className="w-7 h-7 text-white" fill="currentColor" aria-hidden>
-    <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.802 8.99l-2.302 2.302-8.636-8.635z" />
-  </svg>
-);
-
-const AppStoreGlyph = () => (
-  <svg viewBox="0 0 24 24" className="w-8 h-8 text-white" fill="currentColor" aria-hidden>
-    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-  </svg>
-);
-
-function StoreBadge({ label, children }: { label: string; children: React.ReactNode }) {
+function ProjectImage({ project }: { project: Project }) {
   return (
-    <div className="flex flex-col items-center gap-2">
-      <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center group-hover:bg-white/15 group-hover:border-white/25 transition-colors duration-300">
-        {children}
-      </div>
-      <span className="text-[11px] font-medium text-zinc-400">{label}</span>
-    </div>
+    <img
+      src={`/projects/${project.image}-960.webp`}
+      srcSet={`/projects/${project.image}-480.webp 480w, /projects/${project.image}-960.webp 960w`}
+      sizes={MEDIA_SIZES[project.tier]}
+      alt=""
+      loading="lazy"
+      decoding="async"
+      className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+    />
   );
 }
 
-function CardMedia({ project }: { project: Project }) {
-  const Icon = categoryIcon[project.category];
-  if (project.storesOnly) {
-    return (
-      <>
-        <div className="absolute inset-0 bg-gradient-to-br from-white/[0.06] to-white/[0.02]" />
-        <div className="absolute inset-0 flex items-center justify-center gap-5">
-          {project.android && <StoreBadge label="Play Store"><PlayStoreGlyph /></StoreBadge>}
-          {project.ios && <StoreBadge label="App Store"><AppStoreGlyph /></StoreBadge>}
-        </div>
-      </>
-    );
-  }
-  if (project.image) {
-    return (
-      <>
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-transparent to-transparent opacity-60" />
-      </>
-    );
-  }
+function ProjectLinks({ project, className }: { project: Project; className: string }) {
   return (
-    <div className="absolute inset-0 flex items-center justify-center bg-white/[0.03]">
-      <Icon size={44} className="text-zinc-400 opacity-60" />
-    </div>
+    <>
+      <a href={project.url} target="_blank" rel="noopener noreferrer" className={className}>
+        <ExternalLink size={12} aria-hidden="true" />
+        {project.cta ?? `Visit ${project.name}`}
+      </a>
+      {project.android && (
+        <a href={project.android} target="_blank" rel="noopener noreferrer" className={className}>
+          <Smartphone size={12} aria-hidden="true" />
+          {project.name} on Google Play
+        </a>
+      )}
+    </>
   );
 }
 
 const cardLinkClass = "inline-flex min-h-11 min-w-11 items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors";
+const featuredLinkClass = "inline-flex min-h-11 min-w-11 items-center gap-1.5 text-sm text-zinc-200 hover:text-white transition-colors";
+
+interface ProjectCardProps {
+  project: Project;
+  hiddenOnPhone: boolean;
+  revealDelay: number;
+}
+
+function ProjectCard({ project, hiddenOnPhone, revealDelay }: ProjectCardProps) {
+  const isFeatured = project.tier === "featured";
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.4, ease: "easeOut", delay: revealDelay }}
+      className={`group relative flex-col rounded-2xl bg-surface-raised border border-white/5 hover:border-white/15 transition-all duration-500 overflow-hidden hover:-translate-y-1 hover:shadow-lift ${
+        hiddenOnPhone ? "phone-collapsed hidden md:flex" : "flex"
+      }`}
+    >
+      <a
+        href={project.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        tabIndex={-1}
+        aria-hidden="true"
+        className={`w-full relative overflow-hidden border-b border-white/5 bg-surface block ${
+          isFeatured ? "aspect-[2/1]" : "h-40"
+        }`}
+      >
+        <ProjectImage project={project} />
+        <div className="absolute inset-0 bg-gradient-to-t from-surface-raised via-transparent to-transparent opacity-60" />
+      </a>
+
+      <div className={`flex-1 flex flex-col relative z-10 ${isFeatured ? "p-5 md:p-6" : "p-5"}`}>
+        <div className="mb-2 text-[11px] font-medium uppercase tracking-[0.12em] text-zinc-400">
+          {project.role}
+        </div>
+        <h3 className={`font-medium text-white mb-2 tracking-tight ${isFeatured ? "text-xl md:text-2xl" : "text-base"}`}>
+          {project.title}
+        </h3>
+        <p className={`text-zinc-400 mb-4 flex-1 leading-relaxed ${isFeatured ? "text-sm md:text-base" : "text-sm"}`}>
+          {project.description}
+        </p>
+
+        <div className="flex flex-wrap gap-1.5 mb-3">
+          {project.tech.slice(0, 4).map((tech) => (
+            <span key={tech} className="px-2 py-0.5 text-xs text-zinc-300 bg-white/5 rounded border border-white/5">
+              {tech}
+            </span>
+          ))}
+          {project.tech.length > 4 && (
+            <span className="px-2 py-0.5 text-xs text-zinc-400 bg-white/5 rounded border border-white/5">
+              +{project.tech.length - 4}
+            </span>
+          )}
+        </div>
+
+        <div className="flex flex-wrap items-center gap-x-4 mt-auto border-t border-white/5">
+          <ProjectLinks project={project} className={isFeatured ? featuredLinkClass : cardLinkClass} />
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+function ProjectRow({ project, hiddenOnPhone }: { project: Project; hiddenOnPhone: boolean }) {
+  return (
+    <li className={`group gap-4 border-b border-white/5 py-5 ${hiddenOnPhone ? "phone-collapsed hidden md:flex" : "flex"}`}>
+      <a
+        href={project.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        tabIndex={-1}
+        aria-hidden="true"
+        className="hidden h-16 w-24 shrink-0 overflow-hidden rounded-lg border border-white/5 bg-surface sm:block"
+      >
+        <ProjectImage project={project} />
+      </a>
+
+      <div className="min-w-0 flex-1">
+        <h4 className="text-sm font-medium text-white tracking-tight">{project.title}</h4>
+        <div className="mt-1 text-[11px] font-medium uppercase tracking-[0.12em] text-zinc-400">
+          {project.role}
+        </div>
+        <p className="mt-2 text-sm text-zinc-400 leading-relaxed">{project.description}</p>
+        <div className="flex flex-wrap items-center gap-x-4">
+          <ProjectLinks project={project} className={cardLinkClass} />
+        </div>
+      </div>
+    </li>
+  );
+}
 
 export default function ProjectsWidget() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
@@ -301,8 +402,14 @@ export default function ProjectsWidget() {
       ? projectsData
       : projectsData.filter((p) => p.category === selectedCategory);
 
+  const featured = filteredProjects.filter((p) => p.tier === "featured");
+  const standard = filteredProjects.filter((p) => p.tier === "standard");
+  const compact = filteredProjects.filter((p) => p.tier === "compact");
+  const isHiddenOnPhone = (project: Project) =>
+    !showAll && filteredProjects.indexOf(project) >= MOBILE_LIMIT;
+
   return (
-    <section id="projects" className="py-24 relative">
+    <section id="projects" className="py-24 relative scroll-mt-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
@@ -317,7 +424,7 @@ export default function ProjectsWidget() {
           </p>
         </motion.div>
 
-        <div role="group" aria-label="Filter projects by category" className="flex flex-wrap gap-2 mb-10">
+        <div role="group" aria-label="Filter projects by category" className="js-only flex flex-wrap gap-2 mb-10">
           {categories.map((cat) => {
             const isActive = selectedCategory === cat.id;
             return (
@@ -338,82 +445,48 @@ export default function ProjectsWidget() {
           })}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project, index) => {
-            const projectLink = project.url || project.android || project.ios;
-            const mediaClass = "h-44 w-full relative overflow-hidden border-b border-white/5 bg-[#0a0a0a] block";
-
-            return (
-              <motion.div
+        {featured.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {featured.map((project, index) => (
+              <ProjectCard
                 key={project.title}
-                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.4, ease: "easeOut", delay: (index % 3) * 0.07 }}
-                className={`group relative flex flex-col rounded-2xl bg-[#0f0f0f] border border-white/5 hover:border-white/15 transition-all duration-500 overflow-hidden hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)] ${index >= MOBILE_LIMIT && !showAll ? "hidden md:flex" : ""}`}
-              >
-                {projectLink ? (
-                  <a href={projectLink} target="_blank" rel="noopener noreferrer" tabIndex={-1} aria-hidden="true" className={mediaClass}>
-                    <CardMedia project={project} />
-                  </a>
-                ) : (
-                  <div className={mediaClass}>
-                    <CardMedia project={project} />
-                  </div>
-                )}
+                project={project}
+                hiddenOnPhone={isHiddenOnPhone(project)}
+                revealDelay={(index % 2) * 0.07}
+              />
+            ))}
+          </div>
+        )}
 
-                <div className="p-5 flex-1 flex flex-col relative z-10">
-                  <div className="mb-2 text-[11px] font-medium uppercase tracking-[0.12em] text-zinc-400">
-                    {project.role}
-                  </div>
-                  <h3 className="text-base font-medium text-white mb-2 tracking-tight">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-zinc-400 mb-4 flex-1 leading-relaxed">
-                    {project.description}
-                  </p>
+        {standard.length > 0 && (
+          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ${featured.length > 0 ? "mt-6" : ""}`}>
+            {standard.map((project, index) => (
+              <ProjectCard
+                key={project.title}
+                project={project}
+                hiddenOnPhone={isHiddenOnPhone(project)}
+                revealDelay={(index % 3) * 0.07}
+              />
+            ))}
+          </div>
+        )}
 
-                  <div className="flex flex-wrap gap-1.5 mb-3">
-                    {project.tech.slice(0, 4).map((tech) => (
-                      <span key={tech} className="px-2 py-0.5 text-xs text-zinc-300 bg-white/5 rounded border border-white/5">
-                        {tech}
-                      </span>
-                    ))}
-                    {project.tech.length > 4 && (
-                      <span className="px-2 py-0.5 text-xs text-zinc-400 bg-white/5 rounded border border-white/5">
-                        +{project.tech.length - 4}
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="flex flex-wrap items-center gap-x-4 mt-auto border-t border-white/5">
-                    {project.url && (
-                      <a href={project.url} target="_blank" rel="noopener noreferrer" className={cardLinkClass}>
-                        <ExternalLink size={12} aria-hidden="true" />
-                        {project.cta || "Live"}
-                      </a>
-                    )}
-                    {project.android && (
-                      <a href={project.android} target="_blank" rel="noopener noreferrer" className={cardLinkClass}>
-                        <Smartphone size={12} aria-hidden="true" />
-                        Android
-                      </a>
-                    )}
-                    {project.ios && (
-                      <a href={project.ios} target="_blank" rel="noopener noreferrer" className={cardLinkClass}>
-                        <Code2 size={12} aria-hidden="true" />
-                        iOS
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
+        {compact.length > 0 && (
+          <div className={`${featured.length + standard.length > 0 ? "mt-12" : ""} ${
+            compact.every(isHiddenOnPhone) ? "phone-collapsed hidden md:block" : ""
+          }`}>
+            <h3 className="text-lg font-medium text-white tracking-tight mb-1">Also built</h3>
+            <ul className="grid grid-cols-1 md:grid-cols-2 md:gap-x-10">
+              {compact.map((project) => (
+                <ProjectRow key={project.title} project={project} hiddenOnPhone={isHiddenOnPhone(project)} />
+              ))}
+            </ul>
+          </div>
+        )}
 
         {/* Show more, mobile only */}
         {!showAll && filteredProjects.length > MOBILE_LIMIT && (
-          <div className="mt-8 flex justify-center md:hidden">
+          <div className="js-only mt-8 flex justify-center md:hidden">
             <button
               type="button"
               onClick={() => setShowAll(true)}
@@ -421,12 +494,6 @@ export default function ProjectsWidget() {
             >
               Show {filteredProjects.length - MOBILE_LIMIT} more projects
             </button>
-          </div>
-        )}
-
-        {filteredProjects.length === 0 && (
-          <div className="text-center py-16">
-            <p className="text-zinc-400 text-sm">No projects found in this category.</p>
           </div>
         )}
       </div>
