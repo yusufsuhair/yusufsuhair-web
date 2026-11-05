@@ -15,6 +15,7 @@ const projects = [
   { slug: "lepakmamak", source: "https://lepakmamak.my/og.png" },
   { slug: "slipstream", source: "public/screenshot-slipstream-f1.png" },
   { slug: "ys-academy", source: "public/screenshot-ys-academy.png" },
+  { slug: "alafasy", source: "public/projects/16-alafasy.webp" },
   { slug: "ai-balance", source: "public/projects/10-ai-balance.webp" },
   { slug: "shotivo", source: "public/projects/08-shotivo.webp" },
   { slug: "ganti-solat", source: "public/projects/09-ganti-solat.webp" },

@@ -12,6 +12,7 @@ const projects = [
   { filename: "01-mudahai.webp", url: "https://mudahai.com" },
   { filename: "07-lepakmamak.webp", url: "https://lepakmamak.my" },
   { filename: "02-ys-academy.webp", url: "https://ysacademy.my" },
+  { filename: "16-alafasy.webp", url: "https://www.alafasy.co/" },
   { filename: "10-ai-balance.webp", url: "https://aibalance.pages.dev/" },
   { filename: "08-shotivo.webp", url: "https://shotivo.pages.dev/" },
   { filename: "09-ganti-solat.webp", url: "https://gantisolat.pages.dev/" },

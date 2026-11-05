@@ -73,6 +73,19 @@ const projectsData: Project[] = [
     tier: "featured",
   },
   {
+    name: "Alafasy",
+    title: "Alafasy: Official App of Sheikh Mishary Rashid Alafasy",
+    role: "Product & Mobile Engineer",
+    url: "https://www.alafasy.co/",
+    description:
+      "A Muslim companion app with a Qur'an reader, prayer times, Qiblah, dhikr and nasheeds. Worked on it from idea to launch, and proposed its AI checking for tasmi' and tahsin recitation and its blockchain tracking for badal umrah. More than 68,000 users since launching in September 2025.",
+    android: "https://play.google.com/store/apps/details?id=com.alafasy.app",
+    tech: ["iOS", "Android", "AI Recitation Checking", "Blockchain"],
+    category: "mobile",
+    image: "alafasy",
+    tier: "standard",
+  },
+  {
     name: "AI Balance",
     title: "AI Balance: Credit Tracker",
     role: "Founder / Mobile Developer",
