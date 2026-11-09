@@ -27,6 +27,8 @@ const projects = [
   { slug: "fake-live", source: "public/projects/14-fake-live.webp" },
   { slug: "fake-celebs", source: "public/projects/15-fake-celebs-call.webp" },
   { slug: "insuransku", source: "https://insuransku.broadcast-studio.workers.dev/og.png" },
+  { slug: "supra-ai", source: "https://supra-ai.broadcast-studio.workers.dev/assets/og-image.png?v=20261109" },
+  { slug: "ling", source: "https://ling-web.broadcast-studio.workers.dev/og.png" },
   { slug: "myclipper", source: "public/screenshot-myclipper.png" },
   { slug: "ejoe-nft", source: "public/screenshot-ejoe-nft.png" },
   { slug: "walid", source: "public/screenshot-walid.png" },
