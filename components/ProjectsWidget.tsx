@@ -63,7 +63,7 @@ const projectsData: Project[] = [
     description: "A subscription learning platform with live workshops, member accounts, Stripe billing, lesson progress, access expiry and Telegram community integration.",
     tech: ["Next.js", "Supabase", "Stripe", "Telegram", "AI Education"],
     category: "web",
-    image: "ys-academy",
+    image: "ys-academy-og",
   },
   {
     name: "Alafasy",

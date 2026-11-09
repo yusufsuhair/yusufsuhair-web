@@ -320,7 +320,7 @@ const developmentServices: Service[] = [
     description: "Landing pages and custom web platforms, including payment gateways and backend logic.",
     price: "Starting from RM2,000",
     renderIcon: () => (
-      <img src="/projects/ys-academy-480.webp" alt="" loading="lazy" decoding="async" className="w-16 h-12 md:w-20 md:h-[60px] rounded-md border border-zinc-300 object-cover object-top" />
+      <img src="/projects/ys-academy-og-480.webp" alt="" loading="lazy" decoding="async" className="w-16 h-12 md:w-20 md:h-[60px] rounded-md border border-zinc-300 object-cover object-top" />
     ),
     cta: { label: "Get Quote", href: waLink("Hi Yusuf, I'm interested in Web Development (Starting from RM2,000). Can you share more details?"), Icon: MessageCircle },
     details: <PricingDetails groups={[{ title: "Web Development Pricing", tiers: webDevTiers }]} />,

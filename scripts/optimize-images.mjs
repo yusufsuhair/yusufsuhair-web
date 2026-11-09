@@ -14,7 +14,7 @@ const projects = [
   { slug: "mudahai", source: "https://mudahai.com/opengraph-image?b83510d8ccd8f3df" },
   { slug: "lepakmamak", source: "https://lepakmamak.my/og.png" },
   { slug: "slipstream", source: "public/screenshot-slipstream-f1.png" },
-  { slug: "ys-academy", source: "https://www.ysacademy.my/og-image.png?v=whiteboard-3" },
+  { slug: "ys-academy-og", source: "https://www.ysacademy.my/og-image.png?v=whiteboard-3" },
   { slug: "alafasy", source: "public/projects/16-alafasy.webp" },
   { slug: "ai-balance", source: "public/projects/10-ai-balance.webp" },
   { slug: "shotivo", source: "public/projects/08-shotivo.webp" },
