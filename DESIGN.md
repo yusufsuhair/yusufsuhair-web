@@ -35,8 +35,8 @@ Recorded from the site as shipped on 2026-10-09, after the antislop audit (`anti
 
 - **Home order:** hero (who, with links to evidence), skills, experience with credentials, selected work, YouTube, Instagram, contact. It runs from who he is to proof to how to reach him.
 - **Credentials:** a one-line list at the end of Experience, not a section of its own. Shipped work is the stronger proof, so certificates support it and don't delay it. Current credentials only, each with a thumbnail of the real certificate, a link to the full image and an official verification link where one exists.
-- **Selected Work tiers:** weight follows importance. Featured (two-column cards with large media) for what he runs now, standard (three-column cards) for his apps and larger builds, compact rows under "Also built" for smaller and older work. Set per project with `tier`.
-- **Phones:** Experience drops the timeline rail and shows two points per role, with the rest behind "Show all details". Selected Work shows six projects, with the rest behind "Show more".
+- **Selected Work:** every project is a two-column card with large media (Yusuf, 9 Nov 2026: "all needed to be featured, no need also built"). Six show at first, three full rows. Below them the top of the next row peeks out and fades into the page, so the list reads as continuing, then a "6 of 24 projects" count with a thin progress line and a "Show 6 more" button. When everything is shown the button becomes "Show fewer".
+- **Phones:** Experience drops the timeline rail and shows two points per role, with the rest behind "Show all details". Selected Work pages the same way as on desktop, in one column.
 - **Alignment:** list sections (skills, experience, work) use left-aligned headings because their content is left-aligned. The media sections (YouTube, Instagram) are centred over their three cards.
 - **Navigation:** Home, Services and "Let's talk" stay visible at every width. Three items fit a 320 px phone, so there is no hidden menu.
 - **Touch targets:** every control is at least 44 px tall.

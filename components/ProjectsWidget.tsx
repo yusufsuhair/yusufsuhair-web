@@ -1,7 +1,7 @@
 "use client";
 
 import { ExternalLink, Smartphone } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 interface Project {
@@ -279,7 +279,8 @@ const projectsData: Project[] = [
   },
 ];
 
-const MOBILE_LIMIT = 6;
+// Three full rows of the two-column grid.
+const PAGE_SIZE = 6;
 
 const categories = [
   { id: "all", label: "All" },
@@ -328,18 +329,20 @@ const linkClass = "inline-flex min-h-11 min-w-11 items-center gap-1.5 text-sm te
 
 interface ProjectCardProps {
   project: Project;
-  hiddenOnPhone: boolean;
+  index: number;
+  collapsed: boolean;
   revealDelay: number;
 }
 
-function ProjectCard({ project, hiddenOnPhone, revealDelay }: ProjectCardProps) {
+function ProjectCard({ project, index, collapsed, revealDelay }: ProjectCardProps) {
   return (
     <motion.div
+      data-index={index}
       initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.4, ease: "easeOut", delay: revealDelay }}
       className={`group relative flex-col rounded-2xl bg-surface-raised border border-white/5 hover:border-white/15 transition-all duration-500 overflow-hidden hover:-translate-y-1 hover:shadow-lift ${
-        hiddenOnPhone ? "phone-collapsed hidden md:flex" : "flex"
+        collapsed ? "phone-collapsed hidden" : "flex"
       }`}
     >
       <a
@@ -386,17 +389,77 @@ function ProjectCard({ project, hiddenOnPhone, revealDelay }: ProjectCardProps) 
   );
 }
 
+/** The top of the next row, fading into the page, so a long list reads as continuing. */
+function NextRowPeek({ projects }: { projects: Project[] }) {
+  return (
+    <div
+      aria-hidden="true"
+      inert
+      className="js-only pointer-events-none relative mt-6 h-28 md:h-36 overflow-hidden [mask-image:linear-gradient(to_bottom,black,transparent)]"
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {projects.map((project, i) => (
+          <div
+            key={project.title}
+            className={`rounded-2xl border border-white/5 bg-surface-raised overflow-hidden ${i > 0 ? "hidden md:block" : ""}`}
+          >
+            <div className="aspect-[2/1] bg-surface">
+              <ProjectImage project={project} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const pagerButtonClass =
+  "inline-flex min-h-11 items-center px-6 rounded-full text-sm font-medium text-zinc-200 bg-white/5 border border-white/10 hover:bg-white/10 hover:text-white transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
+
 export default function ProjectsWidget() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
-  const [showAll, setShowAll] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const pagerRef = useRef<HTMLButtonElement>(null);
+  // Where focus goes after the list changes: a card index, the pager, or nowhere.
+  const focusTargetRef = useRef<number | "pager" | null>(null);
 
   const filteredProjects =
     selectedCategory === "all"
       ? projectsData
       : projectsData.filter((p) => p.category === selectedCategory);
 
-  const isHiddenOnPhone = (project: Project) =>
-    !showAll && filteredProjects.indexOf(project) >= MOBILE_LIMIT;
+  const total = filteredProjects.length;
+  const shown = Math.min(visibleCount, total);
+  const remaining = total - shown;
+  const nextRow = filteredProjects.slice(shown, shown + 2);
+
+  // "Show more" focuses the first new card. "Show fewer" focuses the pager, which
+  // scrolls the page to where the shortened list now ends instead of leaving the
+  // reader far below it.
+  useEffect(() => {
+    const target = focusTargetRef.current;
+    if (target === null) return;
+    focusTargetRef.current = null;
+    if (target === "pager") {
+      pagerRef.current?.focus();
+      pagerRef.current?.scrollIntoView({ block: "center" });
+      return;
+    }
+    gridRef.current
+      ?.querySelector<HTMLAnchorElement>(`[data-index="${target}"] a:not([tabindex="-1"])`)
+      ?.focus({ preventScroll: true });
+  }, [visibleCount]);
+
+  const showMore = () => {
+    focusTargetRef.current = shown;
+    setVisibleCount(shown + PAGE_SIZE);
+  };
+
+  const showFewer = () => {
+    focusTargetRef.current = "pager";
+    setVisibleCount(PAGE_SIZE);
+  };
 
   return (
     <section id="projects" className="py-24 relative scroll-mt-16">
@@ -422,7 +485,7 @@ export default function ProjectsWidget() {
                 key={cat.id}
                 type="button"
                 aria-pressed={isActive}
-                onClick={() => { setSelectedCategory(cat.id); setShowAll(false); }}
+                onClick={() => { setSelectedCategory(cat.id); setVisibleCount(PAGE_SIZE); }}
                 className={`inline-flex min-h-11 items-center px-4 rounded-full text-sm font-medium transition-colors duration-200 ${
                   isActive
                     ? "bg-white text-black"
@@ -435,27 +498,42 @@ export default function ProjectsWidget() {
           })}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredProjects.map((project, index) => (
             <ProjectCard
               key={project.title}
               project={project}
-              hiddenOnPhone={isHiddenOnPhone(project)}
+              index={index}
+              collapsed={index >= shown}
               revealDelay={(index % 2) * 0.07}
             />
           ))}
         </div>
 
-        {/* Show more, mobile only */}
-        {!showAll && filteredProjects.length > MOBILE_LIMIT && (
-          <div className="js-only mt-8 flex justify-center md:hidden">
-            <button
-              type="button"
-              onClick={() => setShowAll(true)}
-              className="inline-flex min-h-11 items-center px-6 text-sm font-medium text-zinc-300 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 hover:text-white transition-colors duration-300"
-            >
-              Show {filteredProjects.length - MOBILE_LIMIT} more projects
-            </button>
+        {remaining > 0 && <NextRowPeek projects={nextRow} />}
+
+        {total > PAGE_SIZE && (
+          <div className="js-only mt-8 flex flex-col items-center gap-4">
+            <div className="flex flex-col items-center gap-2" aria-live="polite">
+              <span className="font-mono text-xs text-zinc-400">
+                {shown} of {total} projects
+              </span>
+              <span className="block h-0.5 w-32 rounded-full bg-white/10 overflow-hidden" aria-hidden="true">
+                <span
+                  className="block h-full bg-white/60 transition-[width] duration-500 ease-out"
+                  style={{ width: `${(shown / total) * 100}%` }}
+                />
+              </span>
+            </div>
+            {remaining > 0 ? (
+              <button ref={pagerRef} type="button" onClick={showMore} className={pagerButtonClass}>
+                Show {Math.min(PAGE_SIZE, remaining)} more
+              </button>
+            ) : (
+              <button ref={pagerRef} type="button" onClick={showFewer} className={pagerButtonClass}>
+                Show fewer
+              </button>
+            )}
           </div>
         )}
       </div>
