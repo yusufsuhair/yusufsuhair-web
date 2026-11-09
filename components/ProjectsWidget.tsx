@@ -206,6 +206,17 @@ const projectsData: Project[] = [
     tier: "compact",
   },
   {
+    name: "InsuransKu",
+    title: "InsuransKu: Car Insurance Admin",
+    role: "Full-Stack Engineer",
+    url: "https://insuransku.broadcast-studio.workers.dev/",
+    description: "A dashboard for car insurance brokers and ops teams that tracks every policy, flags missing or expired documents and sends renewal reminders before cover lapses.",
+    tech: ["Cloudflare Workers", "Dashboard", "Document Tracking", "SaaS"],
+    category: "web",
+    image: "insuransku",
+    tier: "compact",
+  },
+  {
     name: "myClipper",
     title: "myClipper: Content Creation Platform",
     role: "Full-Stack Engineer",
