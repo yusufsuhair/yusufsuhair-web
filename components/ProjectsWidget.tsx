@@ -212,7 +212,7 @@ const projectsData: Project[] = [
     url: "https://insuransku.broadcast-studio.workers.dev/",
     description: "A dashboard for car insurance brokers and ops teams that tracks every policy, flags missing or expired documents and sends renewal reminders before cover lapses.",
     tech: ["Cloudflare Workers", "Dashboard", "Document Tracking", "SaaS"],
-    category: "web",
+    category: "ecommerce",
     image: "insuransku",
     tier: "compact",
   },
