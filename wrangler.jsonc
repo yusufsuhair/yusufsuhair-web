@@ -12,9 +12,6 @@
   "services": [
     { "binding": "WORKER_SELF_REFERENCE", "service": "yusufsuhair-web" }
   ],
-  "r2_buckets": [
-    { "binding": "NEXT_INC_CACHE_R2_BUCKET", "bucket_name": "yusufsuhair-web-opennext-cache" }
-  ],
   "images": { "binding": "IMAGES" },
   "observability": { "enabled": true }
 }
