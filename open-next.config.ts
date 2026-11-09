@@ -1,6 +1,8 @@
 import { defineCloudflareConfig } from "@opennextjs/cloudflare";
-import r2IncrementalCache from "@opennextjs/cloudflare/overrides/incremental-cache/r2-incremental-cache";
+import staticAssetsIncrementalCache from "@opennextjs/cloudflare/overrides/incremental-cache/static-assets-incremental-cache";
 
+// Every route is prerendered and nothing revalidates, so the cache ships with the
+// static assets. Deploys no longer upload it to R2, where uploads have timed out.
 export default defineCloudflareConfig({
-  incrementalCache: r2IncrementalCache,
+  incrementalCache: staticAssetsIncrementalCache,
 });
