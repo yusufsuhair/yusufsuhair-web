@@ -30,7 +30,8 @@ const projects = [
   { slug: "ejoe-nft", source: "public/screenshot-ejoe-nft.png" },
   { slug: "walid", source: "public/screenshot-walid.png" },
   { slug: "rembuyang", source: "public/screenshot-rembuyang.png" },
-  { slug: "nuuhabeauty", source: "public/screenshot-nuuhabeauty.png" },
+  { slug: "kasoot", source: "public/projects/17-kasoot.webp" },
+  { slug: "maison", source: "public/projects/18-maison.webp" },
 ];
 
 // Each file is shown at no more than half this width, so it stays sharp on 2x screens.

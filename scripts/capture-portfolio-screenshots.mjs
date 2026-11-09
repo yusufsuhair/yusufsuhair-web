@@ -23,7 +23,15 @@ const projects = [
   { filename: "15-fake-celebs-call.webp", url: "https://fake-celebs-call.pages.dev/" },
   { filename: "05-myclipper.webp", url: "https://myclipper.vercel.app" },
   { filename: "06-ejoe-nft.webp", url: "http://ejoe-nft.vercel.app/" },
+  { filename: "17-kasoot.webp", url: "https://kasoot-storefront.broadcast-studio.workers.dev/my" },
+  { filename: "18-maison.webp", url: "https://maison-storefront.broadcast-studio.workers.dev/my" },
 ];
+
+// Pass names to capture only some, e.g. `node scripts/capture-portfolio-screenshots.mjs kasoot maison`.
+const filters = process.argv.slice(2);
+const selected = filters.length
+  ? projects.filter((project) => filters.some((filter) => project.filename.includes(filter)))
+  : projects;
 
 const hiddenSelectors = [
   "[id*='cookie' i]",
@@ -74,7 +82,7 @@ const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext({ viewport, deviceScaleFactor: 1 });
 
 try {
-  for (const project of projects) {
+  for (const project of selected) {
     const page = await context.newPage();
     const temporaryPath = path.join(outputDir, project.filename.replace(/\.webp$/, ".png"));
 
