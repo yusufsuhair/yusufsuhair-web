@@ -4,8 +4,6 @@ import { ExternalLink, Smartphone } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-type ProjectTier = "featured" | "standard" | "compact";
-
 interface Project {
   name: string;
   title: string;
@@ -19,7 +17,6 @@ interface Project {
   /** Link text, when "Visit {name}" isn't the right verb. */
   cta?: string;
   category: "web" | "mobile" | "widget" | "games" | "crypto" | "ecommerce";
-  tier: ProjectTier;
 }
 
 const projectsData: Project[] = [
@@ -33,7 +30,6 @@ const projectsData: Project[] = [
     tech: ["AI Agents", "n8n", "WhatsApp Cloud API", "OpenAI", "Supabase", "DevOps"],
     category: "web",
     image: "mudahai",
-    tier: "featured",
   },
   {
     name: "LepakMamak",
@@ -45,7 +41,6 @@ const projectsData: Project[] = [
     tech: ["Three.js", "WebGL", "Supabase", "Multiplayer", "Voice Chat"],
     category: "games",
     image: "lepakmamak",
-    tier: "featured",
     cta: "Play LepakMamak",
   },
   {
@@ -58,7 +53,6 @@ const projectsData: Project[] = [
     tech: ["Three.js", "WebGL", "Web Audio", "Blender", "Cloudflare Workers"],
     category: "web",
     image: "slipstream",
-    tier: "featured",
     cta: "Open Slipstream",
   },
   {
@@ -70,7 +64,6 @@ const projectsData: Project[] = [
     tech: ["Next.js", "Supabase", "Stripe", "Telegram", "AI Education"],
     category: "web",
     image: "ys-academy",
-    tier: "featured",
   },
   {
     name: "Alafasy",
@@ -83,7 +76,6 @@ const projectsData: Project[] = [
     tech: ["iOS", "Android", "AI Recitation Checking", "Blockchain"],
     category: "mobile",
     image: "alafasy",
-    tier: "standard",
   },
   {
     name: "AI Balance",
@@ -95,7 +87,6 @@ const projectsData: Project[] = [
     tech: ["Flutter", "Dart", "iOS", "Android", "WidgetKit"],
     category: "mobile",
     image: "ai-balance",
-    tier: "standard",
   },
   {
     name: "Shotivo",
@@ -107,7 +98,6 @@ const projectsData: Project[] = [
     tech: ["Flutter", "Dart", "iOS", "Android"],
     category: "mobile",
     image: "shotivo",
-    tier: "standard",
   },
   {
     name: "Ganti Solat",
@@ -119,7 +109,6 @@ const projectsData: Project[] = [
     tech: ["Flutter", "Dart", "iOS", "Android", "WidgetKit"],
     category: "mobile",
     image: "ganti-solat",
-    tier: "standard",
   },
   {
     name: "Teleprompter",
@@ -131,7 +120,6 @@ const projectsData: Project[] = [
     tech: ["iOS", "iPadOS", "Picture in Picture", "Video Recording"],
     category: "mobile",
     image: "teleprompter",
-    tier: "standard",
   },
   {
     name: "Petal",
@@ -143,7 +131,6 @@ const projectsData: Project[] = [
     tech: ["iOS", "Cycle Tracking", "Visual Journaling", "On-device Storage"],
     category: "mobile",
     image: "petal",
-    tier: "standard",
   },
   {
     name: "Tiny Stats",
@@ -155,7 +142,6 @@ const projectsData: Project[] = [
     tech: ["Swift", "AppKit", "macOS", "Apple Silicon"],
     category: "widget",
     image: "tiny-stats",
-    tier: "standard",
   },
   {
     name: "Fynecta",
@@ -167,7 +153,6 @@ const projectsData: Project[] = [
     tech: ["Next.js", "React", "Tailwind", "Real-time Data", "Trading"],
     category: "crypto",
     image: "fynecta",
-    tier: "standard",
   },
   {
     name: "Dalbass",
@@ -179,7 +164,6 @@ const projectsData: Project[] = [
     tech: ["Next.js", "React", "Tailwind", "Telegram", "Trading"],
     category: "crypto",
     image: "dalbass",
-    tier: "standard",
   },
   {
     name: "Fake Live",
@@ -191,7 +175,6 @@ const projectsData: Project[] = [
     tech: ["Android", "Livestream Simulation", "Google Play"],
     category: "mobile",
     image: "fake-live",
-    tier: "standard",
   },
   {
     name: "Fake Celebs",
@@ -203,7 +186,6 @@ const projectsData: Project[] = [
     tech: ["Android", "Video Calls", "AI Chat", "Google Play"],
     category: "mobile",
     image: "fake-celebs",
-    tier: "compact",
   },
   {
     name: "InsuransKu",
@@ -214,7 +196,6 @@ const projectsData: Project[] = [
     tech: ["Cloudflare Workers", "Dashboard", "Document Tracking", "SaaS"],
     category: "ecommerce",
     image: "insuransku",
-    tier: "compact",
   },
   {
     name: "myClipper",
@@ -225,7 +206,6 @@ const projectsData: Project[] = [
     tech: ["Next.js", "TypeScript", "Tailwind", "SaaS"],
     category: "web",
     image: "myclipper",
-    tier: "compact",
   },
   {
     name: "$EJOE",
@@ -236,7 +216,6 @@ const projectsData: Project[] = [
     tech: ["Solidity", "Next.js", "React", "Web3.js", "DevOps"],
     category: "crypto",
     image: "ejoe-nft",
-    tier: "compact",
   },
   {
     name: "$WALID",
@@ -247,7 +226,6 @@ const projectsData: Project[] = [
     tech: ["Next.js", "React", "Tailwind", "Solana", "pump.fun"],
     category: "crypto",
     image: "walid",
-    tier: "compact",
   },
   {
     name: "$REMBUYANG",
@@ -258,7 +236,6 @@ const projectsData: Project[] = [
     tech: ["Next.js", "React", "Tailwind", "Web3", "Wallet Connect"],
     category: "crypto",
     image: "rembuyang",
-    tier: "compact",
   },
   {
     name: "Kasoot",
@@ -269,7 +246,6 @@ const projectsData: Project[] = [
     tech: ["Next.js", "Cloudflare Workers", "FPX", "E-commerce"],
     category: "ecommerce",
     image: "kasoot",
-    tier: "compact",
   },
   {
     name: "Maison",
@@ -280,7 +256,6 @@ const projectsData: Project[] = [
     tech: ["Next.js", "Cloudflare Workers", "FPX", "E-commerce"],
     category: "ecommerce",
     image: "maison",
-    tier: "compact",
   },
 ];
 
@@ -296,18 +271,14 @@ const categories = [
   { id: "ecommerce", label: "E-commerce" },
 ];
 
-const MEDIA_SIZES: Record<ProjectTier, string> = {
-  featured: "(min-width: 1280px) 600px, (min-width: 768px) 50vw, 100vw",
-  standard: "(min-width: 1280px) 390px, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw",
-  compact: "96px",
-};
+const MEDIA_SIZES = "(min-width: 1280px) 600px, (min-width: 768px) 50vw, 100vw";
 
 function ProjectImage({ project }: { project: Project }) {
   return (
     <img
       src={`/projects/${project.image}-960.webp`}
       srcSet={`/projects/${project.image}-480.webp 480w, /projects/${project.image}-960.webp 960w`}
-      sizes={MEDIA_SIZES[project.tier]}
+      sizes={MEDIA_SIZES}
       alt=""
       loading="lazy"
       decoding="async"
@@ -333,8 +304,7 @@ function ProjectLinks({ project, className }: { project: Project; className: str
   );
 }
 
-const cardLinkClass = "inline-flex min-h-11 min-w-11 items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors";
-const featuredLinkClass = "inline-flex min-h-11 min-w-11 items-center gap-1.5 text-sm text-zinc-200 hover:text-white transition-colors";
+const linkClass = "inline-flex min-h-11 min-w-11 items-center gap-1.5 text-sm text-zinc-200 hover:text-white transition-colors";
 
 interface ProjectCardProps {
   project: Project;
@@ -343,8 +313,6 @@ interface ProjectCardProps {
 }
 
 function ProjectCard({ project, hiddenOnPhone, revealDelay }: ProjectCardProps) {
-  const isFeatured = project.tier === "featured";
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
@@ -360,22 +328,20 @@ function ProjectCard({ project, hiddenOnPhone, revealDelay }: ProjectCardProps) 
         rel="noopener noreferrer"
         tabIndex={-1}
         aria-hidden="true"
-        className={`w-full relative overflow-hidden border-b border-white/5 bg-surface block ${
-          isFeatured ? "aspect-[2/1]" : "h-40"
-        }`}
+        className="w-full relative overflow-hidden border-b border-white/5 bg-surface block aspect-[2/1]"
       >
         <ProjectImage project={project} />
         <div className="absolute inset-0 bg-gradient-to-t from-surface-raised via-transparent to-transparent opacity-60" />
       </a>
 
-      <div className={`flex-1 flex flex-col relative z-10 ${isFeatured ? "p-5 md:p-6" : "p-5"}`}>
+      <div className="flex-1 flex flex-col relative z-10 p-5 md:p-6">
         <div className="mb-2 text-[11px] font-medium uppercase tracking-[0.12em] text-zinc-400">
           {project.role}
         </div>
-        <h3 className={`font-medium text-white mb-2 tracking-tight ${isFeatured ? "text-xl md:text-2xl" : "text-base"}`}>
+        <h3 className="font-medium text-white mb-2 tracking-tight text-xl md:text-2xl">
           {project.title}
         </h3>
-        <p className={`text-zinc-400 mb-4 flex-1 leading-relaxed ${isFeatured ? "text-sm md:text-base" : "text-sm"}`}>
+        <p className="text-zinc-400 mb-4 flex-1 leading-relaxed text-sm md:text-base">
           {project.description}
         </p>
 
@@ -393,38 +359,10 @@ function ProjectCard({ project, hiddenOnPhone, revealDelay }: ProjectCardProps) 
         </div>
 
         <div className="flex flex-wrap items-center gap-x-4 mt-auto border-t border-white/5">
-          <ProjectLinks project={project} className={isFeatured ? featuredLinkClass : cardLinkClass} />
+          <ProjectLinks project={project} className={linkClass} />
         </div>
       </div>
     </motion.div>
-  );
-}
-
-function ProjectRow({ project, hiddenOnPhone }: { project: Project; hiddenOnPhone: boolean }) {
-  return (
-    <li className={`group gap-4 border-b border-white/5 py-5 ${hiddenOnPhone ? "phone-collapsed hidden md:flex" : "flex"}`}>
-      <a
-        href={project.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        tabIndex={-1}
-        aria-hidden="true"
-        className="hidden h-16 w-24 shrink-0 overflow-hidden rounded-lg border border-white/5 bg-surface sm:block"
-      >
-        <ProjectImage project={project} />
-      </a>
-
-      <div className="min-w-0 flex-1">
-        <h4 className="text-sm font-medium text-white tracking-tight">{project.title}</h4>
-        <div className="mt-1 text-[11px] font-medium uppercase tracking-[0.12em] text-zinc-400">
-          {project.role}
-        </div>
-        <p className="mt-2 text-sm text-zinc-400 leading-relaxed">{project.description}</p>
-        <div className="flex flex-wrap items-center gap-x-4">
-          <ProjectLinks project={project} className={cardLinkClass} />
-        </div>
-      </div>
-    </li>
   );
 }
 
@@ -437,9 +375,6 @@ export default function ProjectsWidget() {
       ? projectsData
       : projectsData.filter((p) => p.category === selectedCategory);
 
-  const featured = filteredProjects.filter((p) => p.tier === "featured");
-  const standard = filteredProjects.filter((p) => p.tier === "standard");
-  const compact = filteredProjects.filter((p) => p.tier === "compact");
   const isHiddenOnPhone = (project: Project) =>
     !showAll && filteredProjects.indexOf(project) >= MOBILE_LIMIT;
 
@@ -480,44 +415,16 @@ export default function ProjectsWidget() {
           })}
         </div>
 
-        {featured.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {featured.map((project, index) => (
-              <ProjectCard
-                key={project.title}
-                project={project}
-                hiddenOnPhone={isHiddenOnPhone(project)}
-                revealDelay={(index % 2) * 0.07}
-              />
-            ))}
-          </div>
-        )}
-
-        {standard.length > 0 && (
-          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ${featured.length > 0 ? "mt-6" : ""}`}>
-            {standard.map((project, index) => (
-              <ProjectCard
-                key={project.title}
-                project={project}
-                hiddenOnPhone={isHiddenOnPhone(project)}
-                revealDelay={(index % 3) * 0.07}
-              />
-            ))}
-          </div>
-        )}
-
-        {compact.length > 0 && (
-          <div className={`${featured.length + standard.length > 0 ? "mt-12" : ""} ${
-            compact.every(isHiddenOnPhone) ? "phone-collapsed hidden md:block" : ""
-          }`}>
-            <h3 className="text-lg font-medium text-white tracking-tight mb-1">Also built</h3>
-            <ul className="grid grid-cols-1 md:grid-cols-2 md:gap-x-10">
-              {compact.map((project) => (
-                <ProjectRow key={project.title} project={project} hiddenOnPhone={isHiddenOnPhone(project)} />
-              ))}
-            </ul>
-          </div>
-        )}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {filteredProjects.map((project, index) => (
+            <ProjectCard
+              key={project.title}
+              project={project}
+              hiddenOnPhone={isHiddenOnPhone(project)}
+              revealDelay={(index % 2) * 0.07}
+            />
+          ))}
+        </div>
 
         {/* Show more, mobile only */}
         {!showAll && filteredProjects.length > MOBILE_LIMIT && (
