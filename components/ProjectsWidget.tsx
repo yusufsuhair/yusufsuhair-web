@@ -162,7 +162,7 @@ const projectsData: Project[] = [
     description:
       "A gold (XAUUSD) trading signal platform: scalping and intraday signals with entry, stop loss and TP1 to TP3 levels, an automatic lot calculator, open performance recaps and Telegram delivery.",
     tech: ["Next.js", "React", "Tailwind", "Telegram", "Trading"],
-    category: "crypto",
+    category: "web",
     image: "dalbass",
   },
   {
