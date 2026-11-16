@@ -1,0 +1,511 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-16T08:29:03.378620+00:00",
+  "title": "Design System: Growza Dashboard",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "primary",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.04801 208.15)",
+          "oklch(26.43% 0.04801 208.15)",
+          "oklch(37.86% 0.04801 208.15)",
+          "oklch(49.29% 0.04801 208.15)",
+          "oklch(60.71% 0.04801 208.15)",
+          "oklch(72.14% 0.04801 208.15)",
+          "oklch(83.57% 0.04801 208.15)",
+          "oklch(95.00% 0.04801 208.15)"
+        ]
+      },
+      "muted": {
+        "role": "primary",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15.00% 0.03699 210.85)",
+          "oklch(26.43% 0.03699 210.85)",
+          "oklch(37.86% 0.03699 210.85)",
+          "oklch(49.29% 0.03699 210.85)",
+          "oklch(60.71% 0.03699 210.85)",
+          "oklch(72.14% 0.03699 210.85)",
+          "oklch(83.57% 0.03699 210.85)",
+          "oklch(95.00% 0.03699 210.85)"
+        ]
+      },
+      "green": {
+        "role": "secondary",
+        "displayName": "Green",
+        "tonalRamp": [
+          "oklch(15.00% 0.09119 156.05)",
+          "oklch(26.43% 0.09119 156.05)",
+          "oklch(37.86% 0.09119 156.05)",
+          "oklch(49.29% 0.09119 156.05)",
+          "oklch(60.71% 0.09119 156.05)",
+          "oklch(72.14% 0.09119 156.05)",
+          "oklch(83.57% 0.09119 156.05)",
+          "oklch(95.00% 0.09119 156.05)"
+        ]
+      },
+      "coral": {
+        "role": "tertiary",
+        "displayName": "Coral",
+        "tonalRamp": [
+          "oklch(15.00% 0.16026 16.80)",
+          "oklch(26.43% 0.16026 16.80)",
+          "oklch(37.86% 0.16026 16.80)",
+          "oklch(49.29% 0.16026 16.80)",
+          "oklch(60.71% 0.16026 16.80)",
+          "oklch(72.14% 0.16026 16.80)",
+          "oklch(83.57% 0.16026 16.80)",
+          "oklch(95.00% 0.16026 16.80)"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Ground",
+        "tonalRamp": [
+          "oklch(15.00% 0.02304 239.54)",
+          "oklch(26.43% 0.02304 239.54)",
+          "oklch(37.86% 0.02304 239.54)",
+          "oklch(49.29% 0.02304 239.54)",
+          "oklch(60.71% 0.02304 239.54)",
+          "oklch(72.14% 0.02304 239.54)",
+          "oklch(83.57% 0.02304 239.54)",
+          "oklch(95.00% 0.02304 239.54)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Border",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Panel",
+        "tonalRamp": [
+          "oklch(15.00% 0.00346 219.53)",
+          "oklch(26.43% 0.00346 219.53)",
+          "oklch(37.86% 0.00346 219.53)",
+          "oklch(49.29% 0.00346 219.53)",
+          "oklch(60.71% 0.00346 219.53)",
+          "oklch(72.14% 0.00346 219.53)",
+          "oklch(83.57% 0.00346 219.53)",
+          "oklch(95.00% 0.00346 219.53)"
+        ]
+      },
+      "sidebar": {
+        "role": "neutral",
+        "displayName": "Sidebar",
+        "tonalRamp": [
+          "oklch(15.00% 0.00346 219.53)",
+          "oklch(26.43% 0.00346 219.53)",
+          "oklch(37.86% 0.00346 219.53)",
+          "oklch(49.29% 0.00346 219.53)",
+          "oklch(60.71% 0.00346 219.53)",
+          "oklch(72.14% 0.00346 219.53)",
+          "oklch(83.57% 0.00346 219.53)",
+          "oklch(95.00% 0.00346 219.53)"
+        ]
+      },
+      "dashboard": {
+        "role": "neutral",
+        "displayName": "Dashboard",
+        "tonalRamp": [
+          "oklch(15.00% 0.00549 211.04)",
+          "oklch(26.43% 0.00549 211.04)",
+          "oklch(37.86% 0.00549 211.04)",
+          "oklch(49.29% 0.00549 211.04)",
+          "oklch(60.71% 0.00549 211.04)",
+          "oklch(72.14% 0.00549 211.04)",
+          "oklch(83.57% 0.00549 211.04)",
+          "oklch(95.00% 0.00549 211.04)"
+        ]
+      },
+      "button-light": {
+        "role": "neutral",
+        "displayName": "Button Light",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ]
+      },
+      "primary-hover": {
+        "role": "primary",
+        "displayName": "Primary Hover",
+        "tonalRamp": [
+          "oklch(15.00% 0.06089 206.21)",
+          "oklch(26.43% 0.06089 206.21)",
+          "oklch(37.86% 0.06089 206.21)",
+          "oklch(49.29% 0.06089 206.21)",
+          "oklch(60.71% 0.06089 206.21)",
+          "oklch(72.14% 0.06089 206.21)",
+          "oklch(83.57% 0.06089 206.21)",
+          "oklch(95.00% 0.06089 206.21)"
+        ]
+      },
+      "positive": {
+        "role": "secondary",
+        "displayName": "Positive",
+        "tonalRamp": [
+          "oklch(15.00% 0.12512 152.12)",
+          "oklch(26.43% 0.12512 152.12)",
+          "oklch(37.86% 0.12512 152.12)",
+          "oklch(49.29% 0.12512 152.12)",
+          "oklch(60.71% 0.12512 152.12)",
+          "oklch(72.14% 0.12512 152.12)",
+          "oklch(83.57% 0.12512 152.12)",
+          "oklch(95.00% 0.12512 152.12)"
+        ]
+      },
+      "positive-bg": {
+        "role": "secondary",
+        "displayName": "Positive Bg",
+        "tonalRamp": [
+          "oklch(15.00% 0.05327 162.26)",
+          "oklch(26.43% 0.05327 162.26)",
+          "oklch(37.86% 0.05327 162.26)",
+          "oklch(49.29% 0.05327 162.26)",
+          "oklch(60.71% 0.05327 162.26)",
+          "oklch(72.14% 0.05327 162.26)",
+          "oklch(83.57% 0.05327 162.26)",
+          "oklch(95.00% 0.05327 162.26)"
+        ]
+      },
+      "negative": {
+        "role": "tertiary",
+        "displayName": "Negative",
+        "tonalRamp": [
+          "oklch(15.00% 0.15312 15.75)",
+          "oklch(26.43% 0.15312 15.75)",
+          "oklch(37.86% 0.15312 15.75)",
+          "oklch(49.29% 0.15312 15.75)",
+          "oklch(60.71% 0.15312 15.75)",
+          "oklch(72.14% 0.15312 15.75)",
+          "oklch(83.57% 0.15312 15.75)",
+          "oklch(95.00% 0.15312 15.75)"
+        ]
+      },
+      "negative-bg": {
+        "role": "tertiary",
+        "displayName": "Negative Bg",
+        "tonalRamp": [
+          "oklch(15.00% 0.05234 27.05)",
+          "oklch(26.43% 0.05234 27.05)",
+          "oklch(37.86% 0.05234 27.05)",
+          "oklch(49.29% 0.05234 27.05)",
+          "oklch(60.71% 0.05234 27.05)",
+          "oklch(72.14% 0.05234 27.05)",
+          "oklch(83.57% 0.05234 27.05)",
+          "oklch(95.00% 0.05234 27.05)"
+        ]
+      },
+      "dialog": {
+        "role": "neutral",
+        "displayName": "Dialog",
+        "tonalRamp": [
+          "oklch(15.00% 0.00548 211.04)",
+          "oklch(26.43% 0.00548 211.04)",
+          "oklch(37.86% 0.00548 211.04)",
+          "oklch(49.29% 0.00548 211.04)",
+          "oklch(60.71% 0.00548 211.04)",
+          "oklch(72.14% 0.00548 211.04)",
+          "oklch(83.57% 0.00548 211.04)",
+          "oklch(95.00% 0.00548 211.04)"
+        ]
+      },
+      "input-border": {
+        "role": "neutral",
+        "displayName": "Input Border",
+        "tonalRamp": [
+          "oklch(15.00% 0.02559 209.25)",
+          "oklch(26.43% 0.02559 209.25)",
+          "oklch(37.86% 0.02559 209.25)",
+          "oklch(49.29% 0.02559 209.25)",
+          "oklch(60.71% 0.02559 209.25)",
+          "oklch(72.14% 0.02559 209.25)",
+          "oklch(83.57% 0.02559 209.25)",
+          "oklch(95.00% 0.02559 209.25)"
+        ]
+      },
+      "metal-text": {
+        "role": "neutral",
+        "displayName": "Metal Text",
+        "tonalRamp": [
+          "oklch(15.00% 0.01297 208.77)",
+          "oklch(26.43% 0.01297 208.77)",
+          "oklch(37.86% 0.01297 208.77)",
+          "oklch(49.29% 0.01297 208.77)",
+          "oklch(60.71% 0.01297 208.77)",
+          "oklch(72.14% 0.01297 208.77)",
+          "oklch(83.57% 0.01297 208.77)",
+          "oklch(95.00% 0.01297 208.77)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Principal flow total",
+        "purpose": "Large Money Flow amount with tabular numerals and quieter decimals."
+      },
+      "headline": {
+        "displayName": "Greeting",
+        "purpose": "Personal greeting at the top of the workspace."
+      },
+      "title": {
+        "displayName": "Panel title",
+        "purpose": "Names of the financial tools."
+      },
+      "body": {
+        "displayName": "Interface body",
+        "purpose": "Controls, descriptions, and transaction names."
+      },
+      "label": {
+        "displayName": "Supporting label",
+        "purpose": "Chart legends, transaction details, and small context with the implemented 11px floor."
+      },
+      "metric": {
+        "displayName": "Summary metric",
+        "purpose": "Four summary balances with tabular numerals."
+      },
+      "brand": {
+        "displayName": "Growza wordmark",
+        "purpose": "Dotted identity used in the sidebar and payment cards."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sidebar-active",
+        "value": "0 4px 7px #1e545308",
+        "purpose": "Slight separation for the selected sidebar row."
+      },
+      {
+        "name": "transaction",
+        "value": "0 5px 9px #0f3e3d03",
+        "purpose": "Nearly flat transaction-row depth."
+      },
+      {
+        "name": "platinum-rest",
+        "value": "0 3px 5px #102a3d28",
+        "purpose": "Separates the foremost metal card from the fan."
+      },
+      {
+        "name": "card-selected",
+        "value": "0 8px 22px #103f4230",
+        "purpose": "Confirms the raised selected payment card."
+      },
+      {
+        "name": "dialog",
+        "value": "0 24px 80px #002d3540",
+        "purpose": "Lifts a temporary form above the financial workspace."
+      },
+      {
+        "name": "toast",
+        "value": "0 7px 24px #00313926",
+        "purpose": "Separates transient status feedback from the page."
+      }
+    ],
+    "motion": [
+      {
+        "name": "control-state",
+        "value": "background-color .18s ease,box-shadow .18s ease,transform .22s ease",
+        "purpose": "Control hover and press feedback."
+      },
+      {
+        "name": "card-selection",
+        "value": "transform .35s cubic-bezier(.2,.8,.2,1),filter .2s,box-shadow .2s",
+        "purpose": "Raises a chosen card within the overlap."
+      },
+      {
+        "name": "mobile-drawer",
+        "value": "transform .25s ease",
+        "purpose": "Opens and closes navigation."
+      },
+      {
+        "name": "toggle",
+        "value": "transform .2s",
+        "purpose": "Moves the preference switch thumb."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "transition:none!important;animation:none!important;scroll-behavior:auto!important",
+        "purpose": "Applied to all elements and pseudo-elements under prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "1700px"
+      },
+      {
+        "name": "compact-desktop",
+        "value": "1250px"
+      },
+      {
+        "name": "tablet",
+        "value": "1050px"
+      },
+      {
+        "name": "mobile",
+        "value": "760px"
+      },
+      {
+        "name": "wide-mobile-min",
+        "value": "540px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Capsule action with the implemented hover, focus, press, and disabled states.",
+      "html": "<button class=\"ds-primary\"><svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 4v16M4 12h16\"/></svg>Deposit</button>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;gap:calc(11 * var(--unit,1px));border:1px solid white;border-radius:99px;padding:calc(11 * var(--unit,1px)) calc(18 * var(--unit,1px));min-height:calc(44 * var(--unit,1px));cursor:pointer;transition:background-color .18s ease,box-shadow .18s ease,transform .22s ease;font-family:'DM Sans',sans-serif;font-weight:400;font-size:calc(14 * var(--unit,1px));line-height:1.45;background:var(--ink,#002f35);color:#fff;border-color:var(--ink,#002f35);}.ds-primary:hover{background:#125057}.ds-primary:focus-visible{outline:3px solid #24705f;outline-offset:4px}.ds-primary:active{transform:translateY(1px)}.ds-primary:disabled{cursor:wait;opacity:.6}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
+    },
+    {
+      "name": "Secondary action",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Capsule action with the implemented hover, focus, press, and disabled states.",
+      "html": "<button class=\"ds-secondary\"><svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M6 18 18 6M6 6h12v12\"/></svg>Send</button>",
+      "css": ".ds-secondary{display:inline-flex;align-items:center;justify-content:center;gap:calc(11 * var(--unit,1px));border:1px solid white;border-radius:99px;padding:calc(11 * var(--unit,1px)) calc(18 * var(--unit,1px));min-height:calc(44 * var(--unit,1px));cursor:pointer;transition:background-color .18s ease,box-shadow .18s ease,transform .22s ease;font-family:'DM Sans',sans-serif;font-weight:400;font-size:calc(14 * var(--unit,1px));line-height:1.45;background:rgba(255,255,255,.8);color:var(--ink,#002f35);}.ds-secondary:hover{background:#fff}.ds-secondary:focus-visible{outline:3px solid #24705f;outline-offset:4px}.ds-secondary:active{transform:translateY(1px)}.ds-secondary:disabled{cursor:wait;opacity:.6}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none}}"
+    },
+    {
+      "name": "Active navigation",
+      "kind": "nav",
+      "refersTo": "navigation-active",
+      "description": "White active capsule with a dark icon circle; inactive tabs use translucent surfaces.",
+      "html": "<nav aria-label=\"Dashboard\"><button class=\"ds-nav\" aria-current=\"page\"><span class=\"ds-nav-icon\"><svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9\"/></svg></span>Overview</button></nav>",
+      "css": ".ds-nav{font-family:'DM Sans',sans-serif;font-weight:400;font-size:calc(14 * var(--unit,1px));line-height:1.45;display:inline-flex;align-items:center;gap:calc(9 * var(--unit,1px));padding:calc(5 * var(--unit,1px)) calc(13 * var(--unit,1px)) calc(5 * var(--unit,1px)) calc(5 * var(--unit,1px));border:1px solid var(--border,rgba(255,255,255,.9));border-radius:99px;background:#fff;color:var(--ink,#002f35);cursor:pointer;transition:background-color .18s ease}.ds-nav-icon{display:grid;place-items:center;width:calc(34 * var(--unit,1px));height:calc(34 * var(--unit,1px));border-radius:50%;background:var(--ink,#002f35);color:#fff}.ds-nav:hover{background:#ffffffc9}.ds-nav:focus-visible{outline:3px solid #24705f;outline-offset:4px}.ds-nav:active{transform:translateY(1px)}@media(prefers-reduced-motion:reduce){.ds-nav{transition:none}}"
+    },
+    {
+      "name": "Form field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Labeled dialog field with stronger outline, 16px input text, and the shared keyboard focus treatment.",
+      "html": "<label class=\"ds-field\">Recipient<input class=\"ds-input\" placeholder=\"Name or email\" /></label>",
+      "css": ".ds-field{font-family:'DM Sans',sans-serif;font-weight:400;font-size:calc(14 * var(--unit,1px));line-height:1.45;display:flex;flex-direction:column;gap:7px;font-size:13px;color:var(--ink,#002f35)}.ds-input{font-family:inherit;color:inherit;width:100%;padding:13px 14px;border:1px solid #b0c7cb;border-radius:10px;background:#fff;font-size:16px;caret-color:#003139}.ds-input::placeholder{color:#537078}.ds-input:focus-visible{outline:3px solid #24705f;outline-offset:4px}"
+    },
+    {
+      "name": "Positive change",
+      "kind": "chip",
+      "refersTo": "change-positive",
+      "description": "A non-interactive percentage annotation for the sample summary metric.",
+      "html": "<span class=\"ds-positive\">+6.3%</span>",
+      "css": ".ds-positive{font-family:'DM Sans',sans-serif;font-weight:400;font-size:calc(14 * var(--unit,1px));line-height:1.45;display:inline-flex;color:#08733a;background:#b7e1cb82;border-radius:50px;padding:1px 6px;font-size:10px}"
+    },
+    {
+      "name": "Negative change",
+      "kind": "chip",
+      "refersTo": "change-negative",
+      "description": "A non-interactive percentage annotation for the sample summary metric.",
+      "html": "<span class=\"ds-negative\">−3.1%</span>",
+      "css": ".ds-negative{font-family:'DM Sans',sans-serif;font-weight:400;font-size:calc(14 * var(--unit,1px));line-height:1.45;display:inline-flex;color:#ab3547;background:#f1c4be91;border-radius:50px;padding:1px 6px;font-size:10px}"
+    },
+    {
+      "name": "Financial panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Translucent financial container with a white seam and no default cast shadow.",
+      "html": "<section class=\"ds-panel\"><h2 class=\"ds-panel-title\">Money Flow</h2><p class=\"ds-panel-label\">Money in</p><div class=\"ds-panel-value\">$1,240<span>.00</span></div></section>",
+      "css": ".ds-panel{font-family:'DM Sans',sans-serif;font-weight:400;font-size:calc(14 * var(--unit,1px));line-height:1.45;color:var(--ink,#002f35);background:var(--panel,rgba(249,252,253,.54));border:1px solid white;border-radius:var(--radius,24px);padding:calc(18 * var(--unit,1px))}.ds-panel-title{margin:0;font-size:calc(16 * var(--unit,1px));font-weight:400;letter-spacing:-.025em}.ds-panel-label{margin:16px 0 0;text-align:center;color:var(--muted,#506f75)}.ds-panel-value{text-align:center;font-size:calc(42 * var(--unit,1px));line-height:1.35;letter-spacing:-.045em;font-variant-numeric:tabular-nums}.ds-panel-value span{color:#6b858a}"
+    },
+    {
+      "name": "Transaction row",
+      "kind": "button",
+      "refersTo": "transaction",
+      "description": "Full-row detail action with a circular category icon and a right-aligned amount.",
+      "html": "<button class=\"ds-transaction\"><span class=\"ds-transaction-icon\"><svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"7\" r=\"4\"/><path d=\"M4 21c0-10 16-10 16 0\"/></svg></span><span class=\"ds-transaction-description\"><strong>Alex Smith</strong><small>Transfer · Nov 4</small></span><span class=\"ds-transaction-amount\"><strong>+$5.00</strong><small>Income</small></span></button>",
+      "css": ".ds-transaction{font-family:'DM Sans',sans-serif;font-weight:400;font-size:calc(14 * var(--unit,1px));line-height:1.45;color:var(--ink,#002f35);display:flex;align-items:center;gap:calc(12 * var(--unit,1px));width:100%;text-align:left;border:1px solid #fff;background:rgba(247,250,250,.65);border-radius:calc(18 * var(--unit,1px));padding:calc(8 * var(--unit,1px)) calc(10 * var(--unit,1px));min-height:calc(52 * var(--unit,1px));box-shadow:0 5px 9px #0f3e3d03;cursor:pointer;transition:background-color .18s ease}.ds-transaction:hover{background:#fff}.ds-transaction:focus-visible{outline:3px solid #24705f;outline-offset:4px}.ds-transaction:active{transform:translateY(1px)}.ds-transaction-icon{display:grid;place-items:center;flex:none;width:calc(36 * var(--unit,1px));height:calc(36 * var(--unit,1px));border-radius:50%;background:#e7eded}.ds-transaction-description{flex:1;min-width:0}.ds-transaction strong{display:block;font-weight:400;font-size:calc(14 * var(--unit,1px))}.ds-transaction-description strong{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ds-transaction small{display:block;color:var(--muted,#506f75);font-size:max(11px,calc(11 * var(--unit,1px)))}.ds-transaction-amount{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}.ds-transaction-amount strong{color:#087b3a}@media(prefers-reduced-motion:reduce){.ds-transaction{transition:none}}"
+    },
+    {
+      "name": "Platinum material",
+      "kind": "custom",
+      "refersTo": "platinum-card",
+      "description": "Dark conic metal and circular engraving from the front payment card; hover demonstrates its lift.",
+      "html": "<button class=\"ds-platinum\" aria-label=\"Select Platinum Card\"><span class=\"ds-engraving\" aria-hidden=\"true\"></span><span class=\"ds-platinum-top\">Platinum<span class=\"ds-card-brand\">GROWZA</span></span><span class=\"ds-card-number\">•••• •••• 4821</span><span class=\"ds-visa\">VISA</span></button>",
+      "css": ".ds-platinum{font-family:'DM Sans',sans-serif;font-weight:400;font-size:calc(14 * var(--unit,1px));line-height:1.45;position:relative;display:block;width:260px;max-width:100%;height:160px;text-align:left;overflow:hidden;border:1px solid #698187;border-radius:15px 15px 9px 9px;padding:15px;color:#ecf8fa;background:conic-gradient(from 3deg at 60% 57%,#1e3f43,#4a686a 30deg,#1e393b 79deg,#6b8587 130deg,#183438 185deg,#648083 230deg,#253f44 270deg,#627e81 308deg,#1e3f43);box-shadow:0 3px 5px #102a3d28;cursor:pointer;transition:transform .35s cubic-bezier(.2,.8,.2,1),filter .2s,box-shadow .2s}.ds-platinum:before{content:\"\";position:absolute;inset:0;background:#00242633;pointer-events:none}.ds-engraving{position:absolute;inset:-60%;pointer-events:none;background:repeating-radial-gradient(circle at 55% 54%,transparent 0 2px,#ffffff09 2px 2.5px)}.ds-platinum-top{position:absolute;top:13px;left:14px;right:14px;display:flex;justify-content:space-between;font-size:10px}.ds-card-brand{font-family:Doto,monospace;font-weight:700;font-size:10px}.ds-card-number{position:absolute;left:15px;bottom:15px;font-size:10px;font-variant-numeric:tabular-nums}.ds-visa{position:absolute;right:14px;bottom:11px;color:#142f34;font-size:27px;font-weight:700;font-style:italic;letter-spacing:-.06em}.ds-platinum:hover{transform:translateY(-7px)}.ds-platinum:focus-visible{outline:3px solid #24705f;outline-offset:0}.ds-platinum:active{transform:translateY(1px)}@media(prefers-reduced-motion:reduce){.ds-platinum{transition:none}}"
+    },
+    {
+      "name": "Dialog surface",
+      "kind": "custom",
+      "refersTo": "dialog",
+      "description": "Pale modal surface with a compact header; the application supplies native dialog behavior and a blurred backdrop.",
+      "html": "<section class=\"ds-dialog\" role=\"group\" aria-label=\"Dialog appearance\"><div class=\"ds-dialog-header\"><h2>Send money</h2><button class=\"ds-dialog-close\" aria-label=\"Close dialog\"><svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m6 6 12 12M6 18 18 6\"/></svg></button></div><p class=\"ds-dialog-intro\">Preview a transfer in this demo workspace.</p></section>",
+      "css": ".ds-dialog{font-family:'DM Sans',sans-serif;font-weight:400;font-size:calc(14 * var(--unit,1px));line-height:1.45;color:var(--ink,#002f35);background:#f5fafb;border:1px solid white;border-radius:24px;width:min(460px,calc(100% - 32px));padding:25px;box-shadow:0 24px 80px #002d3540;max-height:85dvh;overflow-y:auto}.ds-dialog-header{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:20px}.ds-dialog-header h2{margin:0;font-size:25px;font-weight:400;letter-spacing:-.025em}.ds-dialog-close{display:inline-flex;align-items:center;justify-content:center;flex:none;width:36px;height:36px;border:0;border-radius:50%;background:none;color:inherit;cursor:pointer;transition:background-color .18s ease}.ds-dialog-close:hover{background:rgba(255,255,255,.65)}.ds-dialog-close:focus-visible{outline:3px solid #24705f;outline-offset:4px}.ds-dialog-close:active{transform:translateY(1px)}.ds-dialog-intro{margin:0 0 20px;color:var(--muted,#506f75);font-size:14px}@media(prefers-reduced-motion:reduce){.ds-dialog-close{transition:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Cloud-and-glass banking workspace",
+    "overview": "This system records the completed local recreation of Alamin Hossen's [Fintech Banking Dashboard UI Design](https://dribbble.com/shots/27892428-Fintech-Banking-Dashboard-UI-Design). The user-selected reference defines the visual authority. The interface places dense financial information over a photographic sky, with translucent pale surfaces and a prominent fan of payment cards. The metal shading, white seams, capsule navigation, and pixel details belong to that requested world.\n\nThe cloud image and profile portrait are replacement assets. The original reference supplies the composition and material direction, while the built HTML, CSS, and JavaScript supply the values below. This is a close recreation; the original standalone assets and exact original type metrics were unavailable. The fixed light appearance preserves the reference. The recorded dials are Energy 2, Rhythm 2, Motion 1.",
+    "keyCharacteristics": [
+      "A photographic cloud field remains visible around and above the financial workspace.",
+      "Deep teal text anchors pale glass surfaces, with green and coral financial marks.",
+      "Five overlapping payment cards use distinct frosted, green, platinum, and gold materials.",
+      "Rounded geometric text and a dotted wordmark connect with the circle and pixel charts.",
+      "Short feedback transitions and responsive reflow preserve access to the banking tools."
+    ],
+    "rules": [
+      {
+        "name": "The Financial Color Rule",
+        "body": "Keep incoming and outgoing series consistently distinguishable, and retain their text labels alongside color.",
+        "section": "colors"
+      },
+      {
+        "name": "The Numeric Hierarchy Rule",
+        "body": "Use the large display role for the principal flow amount, the metric role for summary balances, and quieter text for decimals and context.",
+        "section": "typography"
+      },
+      {
+        "name": "The Material Hierarchy Rule",
+        "body": "Keep the sky behind translucent financial surfaces, reserve metallic shading for payment cards, and use stronger elevation for selection or temporary overlays.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve the photographic cloud field, translucent layers, and payment-card materials supplied by the reference.",
+      "Do keep the desktop card fan and four-part summary band recognizable when extending this recreation.",
+      "Do retain the distinct bubble, dotted arc, and square chart geometries.",
+      "Do pair financial colors with labels, amounts, or status text.",
+      "Do use the recorded responsive transitions and visible keyboard focus when adding controls.",
+      "Do disclose demo activity and replacement imagery wherever the interface explains its provenance."
+    ],
+    "donts": [
+      "Don't flatten the payment cards into identical white panels or remove their intentional overlap.",
+      "Don't apply metallic gradients to forms, charts, or ordinary navigation.",
+      "Don't replace the local DM Sans and Doto pairing without a new approved visual direction.",
+      "Don't introduce decorative entrance animations into this quiet interaction model.",
+      "Don't describe the replacement sky, portrait, or font match as pixel-exact source assets."
+    ]
+  }
+}

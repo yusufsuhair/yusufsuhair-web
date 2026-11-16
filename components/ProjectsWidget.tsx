@@ -24,7 +24,7 @@ const projectsData: Project[] = [
     name: "Growza",
     title: "Growza: Interactive Banking Dashboard",
     role: "Frontend Developer / UI Implementation",
-    url: "https://growza.yusufsuhair.xyz",
+    url: "https://growza-dashboard.broadcast-studio.workers.dev",
     description:
       "A responsive banking dashboard demo with interactive payment cards, spending charts, transaction search, and simulated transfers. Frontend recreation of Alamin Hossen’s dashboard design, using sample financial data.",
     tech: ["JavaScript", "CSS", "SVG", "Vite", "Cloudflare Workers"],

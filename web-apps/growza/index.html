@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#003139" />
+  <meta name="description" content="An interactive recreation of Growza's cloud-inspired banking dashboard. Demo data only." />
+  <title>Growza | Your money, in view</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to dashboard</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <div class="brand-row">
+        <a class="brand" href="#main" data-action="home" aria-label="Growza overview"><span class="brand-symbol" aria-hidden="true"></span><span>GROWZA</span></a>
+        <button class="icon-button sidebar-toggle" aria-label="Collapse sidebar" data-action="sidebar"><i data-icon="sidebar"></i></button>
+      </div>
+      <div class="sidebar-section primary-navigation">
+        <button class="search-trigger" data-action="search"><i data-icon="search"></i><span>Search...</span><kbd>⌘ K</kbd></button>
+        <p class="section-label">Main</p>
+        <nav class="side-nav">
+          <button class="side-link active" data-view="overview"><i data-icon="home"></i><span>Cash</span></button>
+          <button class="side-link" data-action="cards"><i data-icon="card"></i><span>Cards</span></button>
+          <button class="side-link" data-action="invest"><i data-icon="chart"></i><span>Invest</span></button>
+          <button class="side-link" data-action="rewards"><i data-icon="gift"></i><span>Rewards</span></button>
+          <button class="side-link" data-action="send"><i data-icon="transfer"></i><span>Transfers</span></button>
+          <button class="side-link" data-action="statements"><i data-icon="file"></i><span>Statements</span></button>
+        </nav>
+      </div>
+      <div class="sidebar-section account-section">
+        <button class="section-label disclosure" aria-expanded="true" aria-controls="account-list" data-action="accounts">Accounts<i data-icon="chevron-up"></i></button>
+        <div id="account-list">
+          <button class="side-link account-link" data-action="usd"><span class="flag flag-us" aria-hidden="true"></span><span>US Dollar</span></button>
+          <div class="nested-accounts">
+            <button class="side-link" data-select-card="platinum"><i data-icon="card"></i><span>Platinum Card</span></button>
+            <button class="side-link" data-select-card="virtual"><i data-icon="card"></i><span>Virtual Card</span></button>
+            <button class="side-link" data-select-card="debit"><i data-icon="card"></i><span>Debit Card</span></button>
+            <button class="side-link muted" data-action="add-card"><i data-icon="plus"></i><span>Add Card</span></button>
+          </div>
+          <button class="side-link account-link" data-action="eur"><span class="flag flag-eu" aria-hidden="true"><span>✦</span></span><span>Euro</span></button>
+          <button class="side-link muted" data-action="add-account"><i data-icon="plus"></i><span>Add Account</span></button>
+        </div>
+      </div>
+      <div class="sidebar-section support-section">
+        <p class="section-label">Support</p>
+        <button class="side-link" data-action="security"><i data-icon="shield"></i><span>Security Settings</span></button>
+        <button class="side-link" data-action="help"><i data-icon="message"></i><span>Get Help</span></button>
+      </div>
+      <div class="upgrade-card">
+        <span class="upgrade-emblem"><i data-icon="sparkle"></i></span>
+        <h2><strong>Upgrade</strong> to Infinite</h2>
+        <p>Travel insurance, VIP lounges &amp; more</p>
+        <button data-action="upgrade">Upgrade</button>
+      </div>
+      <p class="demo-label">Demo workspace · Sample data</p>
+    </aside>
+
+    <main id="main" class="main-content">
+      <header class="topbar">
+        <button class="mobile-menu pill" data-action="mobile-menu" aria-controls="sidebar" aria-expanded="false"><i data-icon="menu"></i><span>Menu</span></button>
+        <nav class="top-nav" aria-label="Dashboard navigation">
+          <button class="nav-pill active" data-view="overview"><span class="nav-icon"><i data-icon="home"></i></span><span>Overview</span></button>
+          <button class="nav-pill" data-view="activity"><span class="nav-icon"><i data-icon="file"></i></span><span>Activity</span></button>
+          <button class="nav-pill" data-action="wallets"><span class="nav-icon"><i data-icon="card"></i></span><span>Wallets</span><i data-icon="chevron-down" class="chevron"></i></button>
+          <button class="nav-pill" data-action="settings"><span class="nav-icon"><i data-icon="settings"></i></span><span>Settings</span></button>
+        </nav>
+        <div class="topbar-actions">
+          <button class="icon-button glass-circle" aria-label="Messages" data-action="messages"><i data-icon="message"></i></button>
+          <button class="icon-button glass-circle notification-button" aria-label="Notifications, one unread" data-action="notifications"><i data-icon="bell"></i><span class="notification-dot"></span></button>
+          <button class="profile-button" aria-label="Alex's profile" data-action="profile"><img src="/assets/avatar.jpg" alt="" /></button>
+        </div>
+      </header>
+
+      <section class="greeting">
+        <div><h1>Good morning, Alex</h1><p>Wednesday, 4 November 2026</p></div>
+        <div class="money-actions"><button class="pill send-button" data-action="send"><i data-icon="arrow-up-right"></i>Send</button><button class="pill primary" data-action="deposit"><i data-icon="plus"></i>Deposit</button></div>
+      </section>
+
+      <section class="cards-stage" aria-label="Your payment cards">
+        <span class="your-cards">Your cards</span>
+        <div class="card-fan">
+          <button class="bank-card debit-card" data-select-card="debit" aria-label="Select Debit Card"><span class="card-name">Debit Card</span><span class="card-bottom">•••• 2408</span></button>
+          <button class="bank-card virtual-card" data-select-card="virtual" aria-label="Select Virtual Card"><span class="card-name">Virtual Card</span><span class="card-bottom">•••• 1863</span></button>
+          <button class="bank-card platinum-card selected" data-select-card="platinum" aria-label="Select Platinum Card" aria-pressed="true"><span class="metal-engraving" aria-hidden="true"></span><span class="card-top"><span>Platinum</span><span class="mini-brand"><span class="brand-symbol"></span>GROWZA</span></span><span class="chip-row"><span class="chip" aria-hidden="true"><b></b></span><i data-icon="contactless"></i></span><span class="card-bottom">•••• •••• 4821</span><span class="visa-logo">VISA</span></button>
+          <button class="bank-card gold-card" data-select-card="gold" aria-label="Select Gold Card"><span class="metal-engraving" aria-hidden="true"></span><span class="mini-brand"><span class="brand-symbol"></span>GROWZA</span><span class="card-bottom">•••• 9286</span><span class="mastercard-logo" aria-hidden="true"></span></button>
+          <button class="bank-card white-card" data-select-card="infinite" aria-label="Select Infinite Card"><span class="visa-small">VISA</span><span class="card-bottom">•••• 7501</span></button>
+        </div>
+        <button class="plan-label" data-action="upgrade"><span>Infinite</span><small>$99.99 / Year</small></button>
+      </section>
+
+      <div class="dashboard-surface" id="overview-view">
+        <section class="stats-row" aria-label="Account summary">
+          <div class="stat"><div><p>Total Balance <span class="delta">+6.3%</span></p><div class="stat-value" id="balance-value">$579<span>.02</span></div></div><div class="mini-chart" data-chart="balance" aria-hidden="true"></div></div>
+          <div class="stat"><div><p>Money In <span class="delta">+8.2%</span></p><div class="stat-value" id="income-value">$1,240<span>.00</span></div></div><div class="mini-chart" data-chart="income" aria-hidden="true"></div></div>
+          <div class="stat"><div><p>Money Out <span class="delta negative">−3.1%</span></p><div class="stat-value" id="outflow-value">$660<span>.98</span></div></div><div class="mini-chart" data-chart="outflow" aria-hidden="true"></div></div>
+          <div class="stat"><div><p>Portfolio <span class="delta">+7.6%</span></p><div class="stat-value">$260<span>.05</span></div></div><div class="mini-chart" data-chart="portfolio" aria-hidden="true"></div></div>
+        </section>
+
+        <div class="dashboard-grid">
+          <section class="panel flow-panel">
+            <div class="panel-heading"><h2>Money Flow</h2><label class="month-select"><span class="sr-only">Money flow month</span><select id="month"><option value="October">October</option><option value="September">September</option><option value="August">August</option></select><i data-icon="chevron-down"></i></label></div>
+            <div class="flow-total"><p>Money in</p><div id="flow-value">$1,240<span>.00</span></div></div>
+            <div id="flow-chart" class="flow-chart" role="img" aria-label="Monthly money flow from April through October. Bubble sizes represent amounts. Income is teal; outgoings are coral."></div>
+            <div class="flow-key"><span>Size: <b>Amount</b></span><span>Color: <b><em class="legend-dot teal"></em>In <em class="legend-dot coral"></em>Out</b></span><span class="flow-out">Oct out <b>$660.98</b></span></div>
+          </section>
+
+          <section class="panel spending-panel">
+            <div class="panel-heading"><h2>Spending</h2><button class="icon-button panel-expand" aria-label="View spending details" data-action="spending"><i data-icon="arrow-up-right"></i></button></div>
+            <div class="spending-visual"><div id="spending-chart" aria-hidden="true"></div><div class="spending-total"><span class="spending-icon"><i data-icon="card"></i></span><p>TOTAL SPENT</p><div>$660<span>.98</span></div></div></div>
+            <div class="spending-key"><div><strong><em class="legend-dot teal"></em>58%</strong><p>Card · $383.37</p></div><div><strong><em class="legend-dot green"></em>42%</strong><p>Transfers · $277.61</p></div></div>
+          </section>
+
+          <section class="panel monthly-panel">
+            <div class="panel-heading"><h2>Monthly Overview</h2><button class="icon-button panel-expand" aria-label="View monthly overview" data-action="monthly"><i data-icon="arrow-up-right"></i></button></div>
+            <div class="monthly-summary"><div>$579<span>.02</span><small>Oct net</small></div><p><em class="legend-square teal"></em>Jump <em class="legend-square outline"></em>Drop</p></div>
+            <div id="monthly-chart" class="monthly-chart" role="img" aria-label="Monthly net balance chart, generally rising from April to October."></div>
+            <div class="month-axis"><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span></div>
+          </section>
+
+          <section class="panel transactions-panel">
+            <div class="panel-heading"><div class="transaction-title"><h2>Transactions</h2><span>+$1,215.50 net this week</span></div><button class="text-button" data-view="activity">View All</button></div>
+            <div id="recent-transactions" class="transaction-list"></div>
+          </section>
+        </div>
+      </div>
+
+      <section class="activity-surface panel" id="activity-view" hidden>
+        <div class="panel-heading"><div><h2>All transactions</h2><p class="muted">Your account activity, in one place.</p></div><button class="pill" data-action="export"><i data-icon="download"></i>Export CSV</button></div>
+        <div class="activity-filters"><label class="input-with-icon"><i data-icon="search"></i><input id="transaction-search" type="search" placeholder="Search transactions" aria-label="Search transactions" /></label><select id="transaction-filter" aria-label="Transaction type"><option value="all">All transactions</option><option value="income">Money in</option><option value="expense">Money out</option></select></div>
+        <div id="all-transactions" class="transaction-list"></div>
+      </section>
+    </main>
+  </div>
+  <div class="sidebar-scrim" data-action="mobile-menu" hidden></div>
+  <dialog id="app-dialog" aria-labelledby="dialog-title"><div class="dialog-header"><h2 id="dialog-title"></h2><button class="icon-button" data-action="close-dialog" aria-label="Close dialog"><i data-icon="close"></i></button></div><div id="dialog-body"></div></dialog>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

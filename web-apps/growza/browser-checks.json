@@ -1,0 +1,100 @@
+{
+  "checks": [
+    "Invest \u2192 Your portfolio",
+    "Rewards \u2192 Rewards",
+    "Statements \u2192 Account statements",
+    "US Dollar \u2192 US Dollar account",
+    "Euro \u2192 Euro account",
+    "Add account \u2192 Add an account",
+    "Add card \u2192 Add a card",
+    "Security \u2192 Security settings",
+    "Help \u2192 How can we help?",
+    "Upgrade \u2192 Growza Infinite",
+    "Wallets \u2192 Your wallets",
+    "Settings \u2192 Settings",
+    "Messages \u2192 Messages",
+    "Notifications \u2192 Notifications",
+    "Profile \u2192 Your profile",
+    "Spending \u2192 Spending breakdown",
+    "Monthly overview \u2192 October overview",
+    "Send empty form \u2192 Enter a recipient\u2019s name or email.",
+    "Send over balance \u2192 You have $579.02 available. Enter a smaller amount.",
+    "Send $5 \u2192 Transfer complete",
+    "Balance after send \u2192 $574.02",
+    "Deposit $5 \u2192 Deposit complete",
+    "Balance restored \u2192 $579.02",
+    "Search with no matches \u2192 No matching transactions\n\nTry another name or select a different transaction type.\n\nClear filters",
+    "Income filter \u2192 3 results",
+    "Name search \u2192 Northwind Ltd",
+    "Month selector \u2192 $1,100.00",
+    "Freeze card \u2192 Card number\n\u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 4821\nCardholder\nAlex Morgan\nNetwork\nVisa\nMonthly limit\n$5,000.00\nStatus\nFrozen",
+    "debit card selected \u2192 true",
+    "virtual card selected \u2192 true",
+    "gold card selected \u2192 true",
+    "infinite card selected \u2192 true",
+    "platinum card selected \u2192 true",
+    "Create card \u2192 Card created",
+    "Create account \u2192 Account created",
+    "Accounts collapse \u2192 false",
+    "Sidebar collapse and expand \u2192 restored",
+    "Balance visibility toggle \u2192 \u2022\u2022\u2022\u2022.\u2022\u2022",
+    "Profile saved \u2192 Good morning, Alex",
+    "Global search \u2192 Coffee Lab\nFood & Drink \u00b7 $4.50",
+    "Transaction detail \u2192 Coffee Lab",
+    "Escape closes dialog \u2192 false",
+    "CSV statement download \u2192 /Users/yusufsuhair/Downloads/growza-demo-statement-november-2026.csv",
+    "Mobile menu opened \u2192 true",
+    "Mobile Escape \u2192 false",
+    "help-transfer \u2192 Sending and depositing",
+    "help-cards \u2192 Managing your cards",
+    "help-demo \u2192 About this dashboard",
+    "Transaction 1 \u2192 Alex Smith",
+    "Transaction 2 \u2192 Add to Invest",
+    "Transaction 3 \u2192 Coffee Lab",
+    "Transaction 4 \u2192 Music subscription",
+    "Transaction 5 \u2192 Northwind Ltd",
+    "Portfolio activity \u2192 Add to Invest",
+    "Spending activity \u2192 3 outgoing records",
+    "Transaction alerts \u2192 toggled and restored",
+    "Card spending notifications \u2192 toggled and restored",
+    "Top Activity and Overview \u2192 switched views"
+  ],
+  "responsiveChecks": [
+    {
+      "mainWidth": 272,
+      "overflow": false,
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "mainWidth": 334,
+      "overflow": false,
+      "scrollWidth": 382,
+      "width": 390
+    },
+    {
+      "mainWidth": 544,
+      "overflow": false,
+      "scrollWidth": 592,
+      "width": 600
+    },
+    {
+      "mainWidth": 635,
+      "overflow": false,
+      "scrollWidth": 892,
+      "width": 900
+    },
+    {
+      "mainWidth": 858,
+      "overflow": false,
+      "scrollWidth": 1272,
+      "width": 1280
+    },
+    {
+      "mainWidth": 966,
+      "overflow": false,
+      "scrollWidth": 1432,
+      "width": 1440
+    }
+  ]
+}

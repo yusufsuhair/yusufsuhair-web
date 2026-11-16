@@ -1,0 +1,8 @@
+{
+  "name": "growza-dashboard",
+  "account_id": "3fed402660f31f6d09f132e093f352a7",
+  "compatibility_date": "2026-11-17",
+  "assets": { "directory": "./dist" },
+  "workers_dev": true,
+  "routes": []
+}
