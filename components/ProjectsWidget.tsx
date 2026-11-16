@@ -206,7 +206,7 @@ const projectsData: Project[] = [
     url: "https://insuransku.broadcast-studio.workers.dev/",
     description: "A dashboard for car insurance brokers and ops teams that tracks every policy, flags missing or expired documents and sends renewal reminders before cover lapses.",
     tech: ["Cloudflare Workers", "Dashboard", "Document Tracking", "SaaS"],
-    category: "ecommerce",
+    category: "web",
     image: "insuransku",
   },
   {
@@ -278,16 +278,6 @@ const projectsData: Project[] = [
     tech: ["Next.js", "Cloudflare Workers", "FPX", "E-commerce"],
     category: "ecommerce",
     image: "kasoot",
-  },
-  {
-    name: "Maison",
-    title: "Maison: Fine Jewellery and Watches",
-    role: "Full-Stack Engineer",
-    url: "https://maison-storefront.broadcast-studio.workers.dev/my",
-    description: "An online store for fine jewellery and watches, delivering across Malaysia with payment by FPX, card or e-wallet.",
-    tech: ["Next.js", "Cloudflare Workers", "FPX", "E-commerce"],
-    category: "ecommerce",
-    image: "maison",
   },
 ];
 
