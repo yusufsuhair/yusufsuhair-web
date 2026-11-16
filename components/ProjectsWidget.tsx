@@ -21,6 +21,18 @@ interface Project {
 
 const projectsData: Project[] = [
   {
+    name: "Growza",
+    title: "Growza: Interactive Banking Dashboard",
+    role: "Frontend Developer / UI Implementation",
+    url: "https://growza.yusufsuhair.xyz",
+    description:
+      "A responsive banking dashboard demo with interactive payment cards, spending charts, transaction search, and simulated transfers. Frontend recreation of Alamin Hossen’s dashboard design, using sample financial data.",
+    tech: ["JavaScript", "CSS", "SVG", "Vite", "Cloudflare Workers"],
+    category: "web",
+    image: "growza",
+    cta: "Open Growza Demo",
+  },
+  {
     name: "MudahAI",
     title: "MudahAI: Managed AI Agents for Businesses",
     role: "Founder / AI Agent Builder",
