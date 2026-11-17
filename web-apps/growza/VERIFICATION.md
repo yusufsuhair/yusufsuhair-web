@@ -1,5 +1,17 @@
 # Verification
 
+## Full-viewport refinement, 2026-11-18
+
+- PASS: shell begins at x=0/y=0 and spans 100% of the viewport at 320, 390, 600, 760, 900, 1050, 1280, 1440, 1920, and 2560px. No horizontal document overflow or runtime errors. Measurements: `.impeccable/review/fullscreen/viewport-checks.json`.
+- PASS: desktop, tablet, mobile, ultrawide, and mobile-dialog renders inspected. The sky fades smoothly into the page ground; the four financial sections remain distinct. Captures: `.impeccable/review/fullscreen/after-*.png` and `mobile-dialog.png`.
+- PASS: 14 focused regression checks cover sidebar collapse/expand, reachable scrolling navigation, activity and empty search, card selection, form validation, Escape, mobile background isolation, dialog fit, visible keyboard focus, resizing back to desktop, and a clean console. Record: `.impeccable/review/fullscreen/interaction-checks.json`.
+- PASS: production build completed after the layout update. Existing banking behavior in `main.js` and document structure in `index.html` were not changed.
+- PASS: all five layout-detector warnings were inspected in the rendered browser. The brand row is 55.8px high with vertical centering; sidebar sections have 9.9px top padding; summary items have 12.6px right padding. The mobile financial wrapper deliberately removes its border and horizontal inset while each child panel keeps 16px padding. These rules explain the static padding warnings; captures show no clipped text.
+
+Design read: an Operate-mode personal banking dashboard in Growza's cloud-and-glass visual language, ENERGY 2 / RHYTHM 2 / MOTION 1. Full-width layout returns space to financial tasks; stronger panel opacity separates data from the sky; the content cap prevents excessive chart stretching; mobile removes one layer of horizontal framing.
+
+The delivery gate below was rechecked for this CSS-only refinement. Existing control coverage is recorded separately from the 14 new regression checks; no additional banking features or assets were introduced. The independent review at the end applies to the original recreation, not this refinement.
+
 ## Build and browser checks
 
 - Production build: `npm run build` passed.
@@ -114,7 +126,7 @@ The user selected During mode. The supplied visual reference is the design autho
 - R-07 PASS: chart rules and dot fields encode financial categories and periods; no unrelated background grid.
 - R-08 PASS: arrows denote sending money or opening details, following the reference.
 - R-09 PASS: small capsules carry numerical deltas, navigation, or actions; no redundant eyebrow badge.
-- R-10 PASS: translucency is explicitly required by the reference, concentrated in the shell and dashboard surface.
+- R-10 PASS: the requested cloud-and-glass identity remains in the header and payment cards; the full-viewport shell is transparent and financial surfaces now use 90–94% opaque fills for readability.
 - R-12 PASS: restrained shadows distinguish active navigation, card elevation, and dialogs; no page-wide floating effect.
 - R-13 PASS: the notification marker represents an unread notification and clears when opened; no animated decorative glow.
 - R-14 PASS: component sizes reflect their distinct content: tall flow chart, semicircle spending, month grid, transaction rows.

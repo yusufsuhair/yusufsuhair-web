@@ -6,12 +6,12 @@ colors:
   muted: "#506f75"
   green: "#83c69c"
   coral: "#e76672"
-  ground: "#a3b2bd"
+  ground: "#edf3f5"
   white: "#ffffff"
   border: "rgba(255,255,255,.9)"
-  panel: "rgba(249,252,253,.54)"
-  sidebar: "rgba(248,251,252,.65)"
-  dashboard: "rgba(243,248,249,.67)"
+  panel: "rgba(249,252,253,.9)"
+  sidebar: "rgba(248,251,252,.9)"
+  dashboard: "rgba(243,248,249,.94)"
   button-light: "rgba(255,255,255,.8)"
   primary-hover: "#125057"
   positive: "#08733a"
@@ -76,7 +76,8 @@ spacing:
   compact: "calc(7 * var(--unit))"
   control-gap: "calc(11 * var(--unit))"
   grid-gap: "calc(13 * var(--unit))"
-  shell: "calc(15 * var(--unit))"
+  shell: "clamp(16px,1.4vw,24px)"
+  workspace-gap: "24px"
   panel: "calc(18 * var(--unit))"
   dashboard: "calc(19 * var(--unit))"
   mobile-panel: "16px"
@@ -151,13 +152,13 @@ components:
 
 **Creative North Star: "Cloud-and-glass banking workspace"**
 
-This system records the completed local recreation of Alamin Hossen's [Fintech Banking Dashboard UI Design](https://dribbble.com/shots/27892428-Fintech-Banking-Dashboard-UI-Design). The user-selected reference defines the visual authority. The interface places dense financial information over a photographic sky, with translucent pale surfaces and a prominent fan of payment cards. The metal shading, white seams, capsule navigation, and pixel details belong to that requested world.
+This system records the local recreation of Alamin Hossen's [Fintech Banking Dashboard UI Design](https://dribbble.com/shots/27892428-Fintech-Banking-Dashboard-UI-Design), refined on 2026-11-18 at the user's request into a full-viewport application. The reference governs the visual identity; the later instruction replaces its presentation frame with compact page padding and a subdued sky. The metal shading, white seams, capsule navigation, sectioned financial panels, and pixel details remain.
 
 The cloud image and profile portrait are replacement assets. The original reference supplies the composition and material direction, while the built HTML, CSS, and JavaScript supply the values below. This is a close recreation; the original standalone assets and exact original type metrics were unavailable. The fixed light appearance preserves the reference. The recorded dials are Energy 2, Rhythm 2, Motion 1.
 
 **Key Characteristics:**
 
-- A photographic cloud field remains visible around and above the financial workspace.
+- A softened photographic cloud field remains visible behind the header and payment cards, fading to the pale page ground by 680px.
 - Deep teal text anchors pale glass surfaces, with green and coral financial marks.
 - Five overlapping payment cards use distinct frosted, green, platinum, and gold materials.
 - Rounded geometric text and a dotted wordmark connect with the circle and pixel charts.
@@ -187,7 +188,7 @@ The palette pairs cool blue-gray surfaces with dark teal content; green and cora
 
 - **Cloud ground (`ground`)** continues the photographic field below the image.
 - **White and white border (`white`, `border`)** form the fine seams and active surfaces.
-- **Panel, sidebar, and dashboard** preserve three different translucent layers. Their alpha values are part of the material, so do not replace them with opaque sampled colors.
+- **Panel, sidebar, and dashboard** use nearly opaque pale surfaces to keep financial information readable. Subtle translucency preserves the reference's material identity without letting clouds compete with data.
 - **Dialog** uses a more solid pale surface for forms. **Input border** provides a stronger field outline than the white seams used by display panels.
 
 **The Financial Color Rule.** Keep incoming and outgoing series consistently distinguishable, and retain their text labels alongside color.
@@ -204,15 +205,15 @@ The source uses a fluid sizing unit, `clamp(.8px,.0625vw,1.05px)`, across much o
 
 ## Layout
 
-The desktop shell occupies 86.5% of the viewport, up to 1660px, with a 19.2% sidebar and the remaining width allocated to the main workspace. The shell gap and inset share the `shell` spacing token. The top navigation and greeting sit over the sky. The payment-card fan occupies the space above the financial surface and deliberately overlaps its upper edge.
+The shell fills the viewport width and has a minimum height of 100dvh, with 16–24px page padding. A 240px sidebar sits beside a fluid workspace with a 24px gap. Main content stops growing at 1440px to preserve chart proportions and readable transaction rows on very wide monitors. The sidebar stays in view and scrolls independently when its navigation exceeds the available height. The top navigation and greeting sit over a subdued sky; the payment-card fan, capped at 900px, overlaps the financial surface's upper edge.
 
 Four summary figures form a single horizontal band. Under them, the financial grid uses column proportions of 1.49:0.79:1.05. The tall flow chart spans two rows at left; Spending and Monthly Overview sit above Transactions at right. Financial panels vary in height and content structure because each chart has a different reading pattern.
 
 The actual responsive transitions are:
 
-- At 1250px and below, the shell widens to 94%, uses a 20% sidebar, and compresses control spacing with a `.9px` sizing unit.
-- At 1050px and below, the shell uses a 185px sidebar and 12px outer gaps. The summary becomes two columns. Flow and Transactions span the full main width, with the two smaller charts between them. Inactive top-navigation labels collapse to icons.
-- At 760px and below, the shell has 12px viewport gutters, the sidebar becomes a 245px fixed drawer, and money actions move beneath the greeting. Summary figures remain two columns. Financial panels stack in reading order with 12px gaps and 16px padding. Menu and principal actions use 44px minimum height; navigation and panel detail controls receive mobile sizing overrides.
+- At 1250px and below, the sidebar becomes 220px and the workspace gap 20px. Control spacing uses the existing `.9px` sizing unit.
+- From 761px through 1050px, the sidebar becomes 200px and the gap 16px. The summary becomes two columns. Flow and Transactions span the full main width, with the two smaller charts between them. Inactive top-navigation labels collapse to icons.
+- At 760px and below, the page uses 16px content gutters with safe-area support and no decorative outer frame. The sidebar becomes a 245px fixed drawer, and money actions move beneath the greeting. Summary figures remain two columns. Financial panels stack with 12px gaps and 16px padding, while their surrounding surface has no horizontal padding or border. Menu, principal actions, notification, and profile controls use 44px touch targets.
 - From 540px through 760px, Spending and Monthly Overview share a row, while Flow and Transactions span both columns. The card fan grows taller and restores more top-navigation icons.
 - At 1700px and above, panel corners become 28px and the flow plot retains a larger minimum height.
 
@@ -220,7 +221,7 @@ The overlapping payment cards are intentional. Financial panels and transaction 
 
 ## Elevation & Depth
 
-Depth comes mainly from photographic distance, translucent fills, white borders, and card overlap. The primary financial surface applies a 15px backdrop blur. The dialog backdrop uses 6px blur; the mobile drawer scrim uses 4px blur. These treatments reproduce the requested cloud-and-glass world and isolate temporary controls. Most chart panels rely on their surface and seam rather than a cast shadow.
+Depth comes mainly from the subdued sky, white borders, and card overlap. The desktop financial surface retains its 15px backdrop blur beneath a 94% opaque fill. On mobile the surrounding financial surface is solid and has no blur. The dialog backdrop uses 6px blur; the mobile drawer scrim uses 4px blur. Most chart panels rely on their surface and seam rather than a cast shadow.
 
 The shadow vocabulary in the sidecar records the subtle active sidebar row, the almost-flat transaction rows, the resting platinum card, the lifted selected card, the modal, and the toast. The modal has the largest diffuse shadow because it sits above the workspace. Payment-card metal uses conic gradients plus low-opacity concentric engraving, with a dark overlay on platinum to keep its text readable.
 

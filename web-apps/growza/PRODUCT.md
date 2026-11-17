@@ -5,7 +5,7 @@
 web
 
 ## Product Purpose
-Recreate the exact dashboard composition in the user-selected Dribbble shot as a working local frontend.
+Provide a working local banking-dashboard demo based on the user-selected Dribbble shot. The user's 2026-11-18 refinement changes the presentation frame into a full-viewport app with a subtle sky background while retaining the interior financial sections.
 
 ## Stack
 Vanilla HTML, CSS, JavaScript, and Vite. Implementation choice: no framework is needed for this single-screen demo.
@@ -14,7 +14,7 @@ Vanilla HTML, CSS, JavaScript, and Vite. Implementation choice: no framework is 
 The reference controls the visual direction. Banking data is sample data transcribed from the design. Money movement is simulated locally; there is no banking integration or external transmission. Card selection, account switching, chart filtering, transaction search, statement export, settings, and action dialogs work locally.
 
 ## Brand Commitments
-Growza identity, sky photograph, translucent light panels, deep teal type, green/coral data markers, layered payment cards, and the exact desktop composition.
+Growza identity, subdued sky photograph, readable pale panels, deep teal type, green/coral data markers, layered payment cards, and sectioned financial content within a full-viewport shell.
 
 ## Evidence on Hand
 https://dribbble.com/shots/27892428-Fintech-Banking-Dashboard-UI-Design

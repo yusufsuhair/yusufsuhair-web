@@ -1,0 +1,19 @@
+{
+  "url": "https://growza-dashboard.broadcast-studio.workers.dev/",
+  "version": "7a6f9fa9-477e-4abd-82d8-addeeb1ded5a",
+  "desktop": {
+    "shellX": 0,
+    "shellY": 0,
+    "shellWidth": 1440,
+    "viewport": 1440,
+    "scrollWidth": 1440
+  },
+  "mobile": {
+    "shellWidth": 390,
+    "scrollWidth": 390,
+    "viewport": 390
+  },
+  "depositDialog": "PASS",
+  "mobileMenu": "PASS",
+  "errors": []
+}

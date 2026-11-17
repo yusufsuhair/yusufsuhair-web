@@ -48,3 +48,92 @@ dialog{color:var(--ink);background:#f5fafb;border:1px solid white;border-radius:
 .platinum-card{color:#ecf8fa}.platinum-card:before{content:'';position:absolute;inset:0;background:#00242633;pointer-events:none}.gold-card{color:#30290b}.upgrade-card p{color:#fff}.upgrade-card button:hover{background:#367353}.demo-label{font-size:11px}.transaction small,.transaction-title>span,.spending-key p,.monthly-summary small,.monthly-summary p,.month-axis,.flow-key,.plan-label small{font-size:max(11px,calc(11 * var(--unit)))}.spending-total p{font-size:10px}.delta{font-size:10px}.card-top,.card-bottom{font-size:max(10px,calc(10 * var(--unit)))}.bank-card .mini-brand{font-size:max(10px,calc(10 * var(--unit)))}
 @media(max-width:760px){.transaction-title>span{font-size:11px}.spending-key p{font-size:12px}.flow-key{font-size:11px}.card-top,.card-bottom{font-size:10px}.bank-card .mini-brand{font-size:8px}.platinum-card .card-top{gap:3px}.plan-label small{font-size:10px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+:root {
+  --page-inset: clamp(16px, 1.4vw, 24px);
+  --workspace-gap: 24px;
+  --sidebar-width: 240px;
+  --workspace-max: 1440px;
+  --panel: rgba(249, 252, 253, .9);
+  background: #edf3f5;
+}
+
+body {
+  min-height: 100dvh;
+  padding: 0;
+  background-color: #edf3f5;
+  background-image: linear-gradient(180deg, rgba(237, 243, 245, .76), rgba(237, 243, 245, .9) 320px, #edf3f5 680px), url('/assets/sky.webp');
+  background-size: 100% 100%, 100% auto;
+  background-position: top center;
+}
+
+.app-shell {
+  width: 100%;
+  max-width: none;
+  min-height: 100dvh;
+  margin: 0;
+  padding: var(--page-inset);
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  gap: var(--workspace-gap);
+  align-items: start;
+  background: transparent;
+}
+
+.main-content {
+  width: 100%;
+  max-width: var(--workspace-max);
+  justify-self: center;
+}
+
+.sidebar {
+  position: sticky;
+  top: var(--page-inset);
+  height: calc(100dvh - 2 * var(--page-inset));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: rgba(248, 251, 252, .9);
+}
+
+.sidebar > * { flex-shrink: 0; }
+.dashboard-surface { background: rgba(243, 248, 249, .94); }
+.card-fan { max-width: 900px; margin-inline: auto; }
+
+@media (max-width: 1250px) {
+  :root { --sidebar-width: 220px; --workspace-gap: 20px; }
+}
+
+@media (min-width: 761px) and (max-width: 1050px) {
+  :root { --sidebar-width: 200px; --workspace-gap: 16px; }
+}
+
+@media (max-width: 760px) {
+  body { background-size: 100% 100%, auto 680px; }
+
+  .app-shell,
+  .app-shell.sidebar-collapsed {
+    width: 100%;
+    min-height: 100dvh;
+    padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: max(12px, env(safe-area-inset-top));
+    bottom: max(12px, env(safe-area-inset-bottom));
+    height: auto;
+    background: #f0f7f9;
+  }
+
+  .dashboard-surface {
+    padding: 16px 0 0;
+    border: 0;
+    border-radius: 20px 20px 0 0;
+    background: #edf3f5;
+    backdrop-filter: none;
+  }
+
+  .glass-circle,
+  .profile-button { width: 44px; height: 44px; }
+}

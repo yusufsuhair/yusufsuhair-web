@@ -4,7 +4,30 @@ An interactive, responsive recreation of [Alamin Hossen's Fintech Banking Dashbo
 
 Live demo: https://growza-dashboard.broadcast-studio.workers.dev/
 
-Source lives in `yusufsuhair-web/web-apps/growza`, listed in the repository's Web Apps portfolio. Cloudflare Worker: `growza-dashboard`, using its workers.dev address without a custom domain. Rebuild with `npm run build`, then deploy with `wrangler deploy`.
+Source lives in `yusufsuhair-web/web-apps/growza`, listed in the repository's Web Apps portfolio. Cloudflare Worker: `growza-dashboard`, using its workers.dev address without a custom domain.
+
+## Deployment from GitHub
+
+Production updates flow through native Cloudflare Workers Builds. Commit Growza changes under `web-apps/growza/` and push them to `main` in the public [yusufsuhair-web repository](https://github.com/yusufsuhair/yusufsuhair-web). The repository's default branch remains `master`; Growza's production integration explicitly uses `main`.
+
+| Setting | Value |
+| --- | --- |
+| Worker | `growza-dashboard` |
+| Cloudflare account | `3fed402660f31f6d09f132e093f352a7` |
+| Production branch | `main` |
+| Application root | `web-apps/growza` |
+| Build command | `npm run build` |
+| Deploy command | `npm run deploy` |
+| Watch paths | `web-apps/growza/*` |
+| Node.js | 24, selected by `.node-version` |
+| Wrangler | Exact version in this application's `devDependencies` and lockfile |
+| Preview builds | Disabled |
+
+Integration settings live in Cloudflare → Workers & Pages → growza-dashboard → Settings → Builds. The GitHub app connection and build credential are managed by Cloudflare; no deployment secret belongs in the repository. Changes outside Growza's directory do not trigger its build.
+
+Before pushing, run `npm ci`, `npm run build`, and `npm run deploy:check` from this directory. After pushing, verify that the Cloudflare build uses the pushed SHA and completes its production deployment. `npm run deploy` remains available for explicitly requested manual recovery; routine releases should use Git pushes.
+
+The standalone working copy at `~/Documents/growza-dashboard` is for local development. Sync its intended source changes into `web-apps/growza` before committing, since the standalone folder is not the connected Git repository.
 
 ## Run locally
 

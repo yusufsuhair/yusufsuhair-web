@@ -1,0 +1,58 @@
+[
+  {
+    "check": "Desktop sidebar collapses",
+    "status": "PASS"
+  },
+  {
+    "check": "Desktop sidebar expands",
+    "status": "PASS"
+  },
+  {
+    "check": "Scrollable sidebar support remains reachable",
+    "status": "PASS"
+  },
+  {
+    "check": "Activity view and empty search reflow",
+    "status": "PASS"
+  },
+  {
+    "check": "Payment cards remain selectable",
+    "status": "PASS"
+  },
+  {
+    "check": "Send form validation remains visible",
+    "status": "PASS"
+  },
+  {
+    "check": "Escape closes dialog",
+    "status": "PASS"
+  },
+  {
+    "check": "Mobile drawer opens and isolates background",
+    "status": "PASS"
+  },
+  {
+    "check": "Mobile support remains reachable in drawer",
+    "status": "PASS"
+  },
+  {
+    "check": "Mobile drawer closes with Escape",
+    "status": "PASS"
+  },
+  {
+    "check": "Mobile form fits viewport",
+    "status": "PASS"
+  },
+  {
+    "check": "Keyboard focus remains visible",
+    "status": "PASS"
+  },
+  {
+    "check": "Resize restores desktop navigation",
+    "status": "PASS"
+  },
+  {
+    "check": "No browser console errors",
+    "status": "PASS"
+  }
+]
