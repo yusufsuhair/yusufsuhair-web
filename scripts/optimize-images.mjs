@@ -13,6 +13,7 @@ const PROJECT_WIDTHS = [480, 960];
 const requestedSlugs = process.argv.slice(2);
 
 const projects = [
+  { slug: "replyza", source: "https://replyza-ai-support.pages.dev/og/replyza-social-v1.jpg" },
   { slug: "ys-academy-learning", source: "https://ys-academy-learning.broadcast-studio.workers.dev/assets/ys-academy-og.jpg" },
   { slug: "vera", source: "web-apps/vera/dist/assets/og-hero.jpg" },
   { slug: "trustvest", source: "https://trustvest-yusuf.pages.dev/images/trustvest-og-v1.jpg" },

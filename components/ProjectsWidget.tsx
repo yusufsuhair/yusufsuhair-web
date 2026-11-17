@@ -21,6 +21,18 @@ interface Project {
 
 const projectsData: Project[] = [
   {
+    name: "Replyza",
+    title: "Replyza: AI Customer Support Demo",
+    role: "Frontend Developer / UI Implementation",
+    url: "https://replyza-ai-support.pages.dev",
+    description:
+      "An AI customer support website demo with scripted conversations, editable sample knowledge and a browser-local workspace. Frontend recreation of Topnotch Studio’s Dribbble concept.",
+    tech: ["React", "Vite", "CSS", "Cloudflare Pages"],
+    category: "web",
+    image: "replyza",
+    cta: "Open Replyza Demo",
+  },
+  {
     name: "YS Academy Learning",
     title: "YS Academy Learning: AI for Kids & Teens",
     role: "Frontend Developer / UI Implementation",
