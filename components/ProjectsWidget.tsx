@@ -21,6 +21,18 @@ interface Project {
 
 const projectsData: Project[] = [
   {
+    name: "TrustVest",
+    title: "TrustVest: Financial Dashboard & Homepage",
+    role: "Frontend Developer / UI Implementation",
+    url: "https://trustvest-yusuf.pages.dev/",
+    description:
+      "A responsive fintech homepage and dashboard with currency accounts, card controls, payments and browser-saved sample data. Frontend recreation of Alamin Hossen’s TrustVest dashboard design.",
+    tech: ["React", "Vite", "JavaScript", "Cloudflare Pages"],
+    category: "web",
+    image: "trustvest",
+    cta: "Open TrustVest Demo",
+  },
+  {
     name: "Coastal Tented Events",
     title: "Coastal: Event Tent Rental Website",
     role: "Frontend Developer / UI Implementation",
