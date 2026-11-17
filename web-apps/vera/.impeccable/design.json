@@ -1,0 +1,534 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-16T19:04:31.319155+00:00",
+  "title": "Design System: Vera LMS",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0092 255.61)",
+          "oklch(26.43% 0.0092 255.61)",
+          "oklch(37.86% 0.0092 255.61)",
+          "oklch(49.29% 0.0092 255.61)",
+          "oklch(60.71% 0.0092 255.61)",
+          "oklch(72.14% 0.0092 255.61)",
+          "oklch(83.57% 0.0092 255.61)",
+          "oklch(95% 0.0092 255.61)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15% 0.0179 257.24)",
+          "oklch(26.43% 0.0179 257.24)",
+          "oklch(37.86% 0.0179 257.24)",
+          "oklch(49.29% 0.0179 257.24)",
+          "oklch(60.71% 0.0179 257.24)",
+          "oklch(72.14% 0.0179 257.24)",
+          "oklch(83.57% 0.0179 257.24)",
+          "oklch(95% 0.0179 257.24)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "tonalRamp": [
+          "oklch(15% 0.0029 264.54)",
+          "oklch(26.43% 0.0029 264.54)",
+          "oklch(37.86% 0.0029 264.54)",
+          "oklch(49.29% 0.0029 264.54)",
+          "oklch(60.71% 0.0029 264.54)",
+          "oklch(72.14% 0.0029 264.54)",
+          "oklch(83.57% 0.0029 264.54)",
+          "oklch(95% 0.0029 264.54)"
+        ]
+      },
+      "soft": {
+        "role": "neutral",
+        "displayName": "Soft",
+        "tonalRamp": [
+          "oklch(15% 0.0029 264.54)",
+          "oklch(26.43% 0.0029 264.54)",
+          "oklch(37.86% 0.0029 264.54)",
+          "oklch(49.29% 0.0029 264.54)",
+          "oklch(60.71% 0.0029 264.54)",
+          "oklch(72.14% 0.0029 264.54)",
+          "oklch(83.57% 0.0029 264.54)",
+          "oklch(95% 0.0029 264.54)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "tonalRamp": [
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26.43% 0.0000 0.00)",
+          "oklch(37.86% 0.0000 0.00)",
+          "oklch(49.29% 0.0000 0.00)",
+          "oklch(60.71% 0.0000 0.00)",
+          "oklch(72.14% 0.0000 0.00)",
+          "oklch(83.57% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
+        ]
+      },
+      "sky-fallback": {
+        "role": "primary",
+        "displayName": "Sky Fallback",
+        "tonalRamp": [
+          "oklch(15% 0.0766 247.67)",
+          "oklch(26.43% 0.0766 247.67)",
+          "oklch(37.86% 0.0766 247.67)",
+          "oklch(49.29% 0.0766 247.67)",
+          "oklch(60.71% 0.0766 247.67)",
+          "oklch(72.14% 0.0766 247.67)",
+          "oklch(83.57% 0.0766 247.67)",
+          "oklch(95% 0.0766 247.67)"
+        ]
+      },
+      "academy-blue": {
+        "role": "primary",
+        "displayName": "Academy Blue",
+        "tonalRamp": [
+          "oklch(15% 0.1240 260.56)",
+          "oklch(26.43% 0.1240 260.56)",
+          "oklch(37.86% 0.1240 260.56)",
+          "oklch(49.29% 0.1240 260.56)",
+          "oklch(60.71% 0.1240 260.56)",
+          "oklch(72.14% 0.1240 260.56)",
+          "oklch(83.57% 0.1240 260.56)",
+          "oklch(95% 0.1240 260.56)"
+        ]
+      },
+      "academy-coral": {
+        "role": "secondary",
+        "displayName": "Academy Coral",
+        "tonalRamp": [
+          "oklch(15% 0.1634 39.72)",
+          "oklch(26.43% 0.1634 39.72)",
+          "oklch(37.86% 0.1634 39.72)",
+          "oklch(49.29% 0.1634 39.72)",
+          "oklch(60.71% 0.1634 39.72)",
+          "oklch(72.14% 0.1634 39.72)",
+          "oklch(83.57% 0.1634 39.72)",
+          "oklch(95% 0.1634 39.72)"
+        ]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Focus",
+        "tonalRamp": [
+          "oklch(15% 0.1683 260.38)",
+          "oklch(26.43% 0.1683 260.38)",
+          "oklch(37.86% 0.1683 260.38)",
+          "oklch(49.29% 0.1683 260.38)",
+          "oklch(60.71% 0.1683 260.38)",
+          "oklch(72.14% 0.1683 260.38)",
+          "oklch(83.57% 0.1683 260.38)",
+          "oklch(95% 0.1683 260.38)"
+        ]
+      },
+      "action-dark": {
+        "role": "neutral",
+        "displayName": "Action Dark",
+        "tonalRamp": [
+          "oklch(15% 0.0046 264.43)",
+          "oklch(26.43% 0.0046 264.43)",
+          "oklch(37.86% 0.0046 264.43)",
+          "oklch(49.29% 0.0046 264.43)",
+          "oklch(60.71% 0.0046 264.43)",
+          "oklch(72.14% 0.0046 264.43)",
+          "oklch(83.57% 0.0046 264.43)",
+          "oklch(95% 0.0046 264.43)"
+        ]
+      },
+      "action-dark-hover": {
+        "role": "neutral",
+        "displayName": "Action Dark Hover",
+        "tonalRamp": [
+          "oklch(15% 0.0464 251.53)",
+          "oklch(26.43% 0.0464 251.53)",
+          "oklch(37.86% 0.0464 251.53)",
+          "oklch(49.29% 0.0464 251.53)",
+          "oklch(60.71% 0.0464 251.53)",
+          "oklch(72.14% 0.0464 251.53)",
+          "oklch(83.57% 0.0464 251.53)",
+          "oklch(95% 0.0464 251.53)"
+        ]
+      },
+      "action-light-ink": {
+        "role": "neutral",
+        "displayName": "Action Light Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0067 258.37)",
+          "oklch(26.43% 0.0067 258.37)",
+          "oklch(37.86% 0.0067 258.37)",
+          "oklch(49.29% 0.0067 258.37)",
+          "oklch(60.71% 0.0067 258.37)",
+          "oklch(72.14% 0.0067 258.37)",
+          "oklch(83.57% 0.0067 258.37)",
+          "oklch(95% 0.0067 258.37)"
+        ]
+      },
+      "action-light-hover": {
+        "role": "neutral",
+        "displayName": "Action Light Hover",
+        "tonalRamp": [
+          "oklch(15% 0.0091 258.34)",
+          "oklch(26.43% 0.0091 258.34)",
+          "oklch(37.86% 0.0091 258.34)",
+          "oklch(49.29% 0.0091 258.34)",
+          "oklch(60.71% 0.0091 258.34)",
+          "oklch(72.14% 0.0091 258.34)",
+          "oklch(83.57% 0.0091 258.34)",
+          "oklch(95% 0.0091 258.34)"
+        ]
+      },
+      "outline": {
+        "role": "neutral",
+        "displayName": "Outline",
+        "tonalRamp": [
+          "oklch(15% 0.0055 274.96)",
+          "oklch(26.43% 0.0055 274.96)",
+          "oklch(37.86% 0.0055 274.96)",
+          "oklch(49.29% 0.0055 274.96)",
+          "oklch(60.71% 0.0055 274.96)",
+          "oklch(72.14% 0.0055 274.96)",
+          "oklch(83.57% 0.0055 274.96)",
+          "oklch(95% 0.0055 274.96)"
+        ]
+      },
+      "outline-hover": {
+        "role": "neutral",
+        "displayName": "Outline Hover",
+        "tonalRamp": [
+          "oklch(15% 0.0154 257.20)",
+          "oklch(26.43% 0.0154 257.20)",
+          "oklch(37.86% 0.0154 257.20)",
+          "oklch(49.29% 0.0154 257.20)",
+          "oklch(60.71% 0.0154 257.20)",
+          "oklch(72.14% 0.0154 257.20)",
+          "oklch(83.57% 0.0154 257.20)",
+          "oklch(95% 0.0154 257.20)"
+        ]
+      },
+      "field-surface": {
+        "role": "neutral",
+        "displayName": "Field Surface",
+        "tonalRamp": [
+          "oklch(15% 0.0029 264.54)",
+          "oklch(26.43% 0.0029 264.54)",
+          "oklch(37.86% 0.0029 264.54)",
+          "oklch(49.29% 0.0029 264.54)",
+          "oklch(60.71% 0.0029 264.54)",
+          "oklch(72.14% 0.0029 264.54)",
+          "oklch(83.57% 0.0029 264.54)",
+          "oklch(95% 0.0029 264.54)"
+        ]
+      },
+      "field-border": {
+        "role": "neutral",
+        "displayName": "Field Border",
+        "tonalRamp": [
+          "oklch(15% 0.0157 248.00)",
+          "oklch(26.43% 0.0157 248.00)",
+          "oklch(37.86% 0.0157 248.00)",
+          "oklch(49.29% 0.0157 248.00)",
+          "oklch(60.71% 0.0157 248.00)",
+          "oklch(72.14% 0.0157 248.00)",
+          "oklch(83.57% 0.0157 248.00)",
+          "oklch(95% 0.0157 248.00)"
+        ]
+      },
+      "tab-selected": {
+        "role": "neutral",
+        "displayName": "Tab Selected",
+        "tonalRamp": [
+          "oklch(15% 0.0064 271.04)",
+          "oklch(26.43% 0.0064 271.04)",
+          "oklch(37.86% 0.0064 271.04)",
+          "oklch(49.29% 0.0064 271.04)",
+          "oklch(60.71% 0.0064 271.04)",
+          "oklch(72.14% 0.0064 271.04)",
+          "oklch(83.57% 0.0064 271.04)",
+          "oklch(95% 0.0064 271.04)"
+        ]
+      },
+      "status-positive": {
+        "role": "tertiary",
+        "displayName": "Status Positive",
+        "tonalRamp": [
+          "oklch(15% 0.0981 153.35)",
+          "oklch(26.43% 0.0981 153.35)",
+          "oklch(37.86% 0.0981 153.35)",
+          "oklch(49.29% 0.0981 153.35)",
+          "oklch(60.71% 0.0981 153.35)",
+          "oklch(72.14% 0.0981 153.35)",
+          "oklch(83.57% 0.0981 153.35)",
+          "oklch(95% 0.0981 153.35)"
+        ]
+      },
+      "status-positive-surface": {
+        "role": "tertiary",
+        "displayName": "Status Positive Surface",
+        "tonalRamp": [
+          "oklch(15% 0.0149 151.77)",
+          "oklch(26.43% 0.0149 151.77)",
+          "oklch(37.86% 0.0149 151.77)",
+          "oklch(49.29% 0.0149 151.77)",
+          "oklch(60.71% 0.0149 151.77)",
+          "oklch(72.14% 0.0149 151.77)",
+          "oklch(83.57% 0.0149 151.77)",
+          "oklch(95% 0.0149 151.77)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Large-screen hero headline; responsive exceptions are documented in Layout and Typography."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Main section headings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Feature titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Supporting feature and pricing prose."
+      },
+      "field": {
+        "displayName": "Field",
+        "purpose": "Dialog input content."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Form labels."
+      },
+      "navigation": {
+        "displayName": "Navigation",
+        "purpose": "Desktop header links; the specimen shows the mobile variant."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Shared action labels."
+      },
+      "price": {
+        "displayName": "Price",
+        "purpose": "Large regular-weight example pricing."
+      }
+    },
+    "shadows": [
+      {
+        "name": "dashboard-frame",
+        "value": "0 20px 55px #526c7b17",
+        "purpose": "Lifts the translucent dashboard browser frame above the sky."
+      },
+      {
+        "name": "followup-card",
+        "value": "0 20px 40px #263f5310",
+        "purpose": "Separates the standalone learner list from the page."
+      },
+      {
+        "name": "floating-metric",
+        "value": "0 5px 20px #344d6a04",
+        "purpose": "Adds shallow depth to overlapping metric illustrations."
+      },
+      {
+        "name": "light-action",
+        "value": "0 0 0 4px #ffffff45,0 5px 10px #314f6b1c",
+        "purpose": "Gives white actions a restrained halo on photographic or colored surfaces."
+      },
+      {
+        "name": "navigation-popup",
+        "value": "0 10px 40px #23435b2b",
+        "purpose": "Elevates the desktop feature dropdown."
+      },
+      {
+        "name": "search-results",
+        "value": "0 8px 30px #20304529",
+        "purpose": "Separates a temporary results list from the dashboard."
+      },
+      {
+        "name": "dialog",
+        "value": "0 24px 100px #192f4b33",
+        "purpose": "Establishes the active modal surface."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "The source --ease for chart and story movement."
+      },
+      {
+        "name": "control-transition",
+        "value": ".2s",
+        "purpose": "Button color, shadow and transform feedback."
+      },
+      {
+        "name": "data-transition",
+        "value": ".65s",
+        "purpose": "Chart-height and story-track changes."
+      },
+      {
+        "name": "toast-transition",
+        "value": ".25s",
+        "purpose": "Opacity and vertical movement for short status feedback."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow-phone",
+        "value": "370px"
+      },
+      {
+        "name": "mobile",
+        "value": "720px"
+      },
+      {
+        "name": "tablet",
+        "value": "980px"
+      },
+      {
+        "name": "compact-desktop",
+        "value": "1190px"
+      },
+      {
+        "name": "wide-desktop",
+        "value": "1600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Charcoal action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Shared action with the source hover, activation and keyboard-focus treatments.",
+      "html": "<button type=\"button\" class=\"ds-btn-primary\">Create sample course</button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;min-height:44px;gap:8px;padding:11px 21px;border:0;border-radius:9px;font-family:var(--font,'DM Sans',sans-serif);font-size:15px;font-weight:400;line-height:1.3;letter-spacing:-.02em;background:#0b0c0e;color:#fff;cursor:pointer;transition:background .2s,box-shadow .2s,transform .2s;}.ds-btn-primary:hover{background:#283c52;transform:translateY(-2px);}.ds-btn-primary:active{transform:translateY(0)}.ds-btn-primary:focus-visible{outline:3px solid #245fc3;outline-offset:4px;}.ds-btn-primary:disabled{cursor:default;opacity:.6}@media(prefers-reduced-motion:reduce){.ds-btn-primary{transition:none}.ds-btn-primary:hover{transform:none}}"
+    },
+    {
+      "name": "White action",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "Shared action with the source hover, activation and keyboard-focus treatments.",
+      "html": "<button type=\"button\" class=\"ds-btn-light\">Start free</button>",
+      "css": ".ds-btn-light{display:inline-flex;align-items:center;justify-content:center;min-height:44px;gap:8px;padding:11px 21px;border:0;border-radius:9px;font-family:var(--font,'DM Sans',sans-serif);font-size:15px;font-weight:400;line-height:1.3;letter-spacing:-.02em;background:#fff;color:#17191c;cursor:pointer;transition:background .2s,box-shadow .2s,transform .2s;box-shadow:0 0 0 4px #ffffff45,0 5px 10px #314f6b1c;}.ds-btn-light:hover{background:#f5f9ff;transform:translateY(-2px);box-shadow:0 0 0 4px #ffffff60,0 7px 16px #314f6b25;}.ds-btn-light:active{transform:translateY(0)}.ds-btn-light:focus-visible{outline:3px solid #245fc3;outline-offset:4px;}.ds-btn-light:disabled{cursor:default;opacity:.6}@media(prefers-reduced-motion:reduce){.ds-btn-light{transition:none}.ds-btn-light:hover{transform:none}}"
+    },
+    {
+      "name": "Outlined action",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Shared action with the source hover, activation and keyboard-focus treatments.",
+      "html": "<button type=\"button\" class=\"ds-btn-outline\">Open draft</button>",
+      "css": ".ds-btn-outline{display:inline-flex;align-items:center;justify-content:center;min-height:44px;gap:8px;padding:11px 21px;border:0;border-radius:9px;font-family:var(--font,'DM Sans',sans-serif);font-size:15px;font-weight:400;line-height:1.3;letter-spacing:-.02em;background:#fff;color:var(--ink,#16191d);cursor:pointer;transition:background .2s,box-shadow .2s,transform .2s;border:1px solid #d9dade;}.ds-btn-outline:hover{background:#edf4fe;transform:translateY(-2px);border-color:#b2c8e9;}.ds-btn-outline:active{transform:translateY(0)}.ds-btn-outline:focus-visible{outline:3px solid #245fc3;outline-offset:4px;}.ds-btn-outline:disabled{cursor:default;opacity:.6}@media(prefers-reduced-motion:reduce){.ds-btn-outline{transition:none}.ds-btn-outline:hover{transform:none}}"
+    },
+    {
+      "name": "Labeled field",
+      "kind": "input",
+      "refersTo": "text-field",
+      "description": "The dialog field used to name a course or workspace.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-course-title\">Course title</label><input id=\"ds-course-title\" placeholder=\"Introduction to creative thinking\" required maxlength=\"90\"></div>",
+      "css": ".ds-field{font-family:var(--font,'DM Sans',sans-serif);color:var(--ink,#16191d)}.ds-field label{display:block;font-size:12px;font-weight:550;line-height:1.5;margin-bottom:7px}.ds-field input{width:100%;padding:12px;border:1px solid #d6dfe8;background:#fbfcfe;border-radius:7px;font-family:var(--font,'DM Sans',sans-serif);font-size:14px;color:var(--ink,#16191d);caret-color:#2f73dd}.ds-field input:focus-visible{outline:3px solid #245fc3;outline-offset:4px;}"
+    },
+    {
+      "name": "Mobile navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "The expanded mobile menu, with its actual dark labels on a white panel.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Vera sections\"><a href=\"#features\">Features</a><a href=\"#academies\">Academies</a><a href=\"#pricing\">Pricing</a></nav>",
+      "css": ".ds-nav{display:flex;flex-direction:column;align-items:stretch;padding:12px;background:white;color:#1f3348;border-radius:12px;box-shadow:0 15px 35px #21365126;font-family:var(--font,'DM Sans',sans-serif);}.ds-nav a{display:flex;align-items:center;min-height:44px;padding:10px 12px;font-size:14px;border-radius:6px;color:inherit;text-decoration:none}.ds-nav a:hover{background:#f0f5fc}.ds-nav a:focus-visible{outline:3px solid #245fc3;outline-offset:4px;}"
+    },
+    {
+      "name": "Chart metric tabs",
+      "kind": "chip",
+      "refersTo": "chart-tab",
+      "description": "The mobile tab appearance preserves readable labels and full-height targets.",
+      "html": "<div class=\"ds-tabs\" role=\"tablist\" aria-label=\"Performance metric\"><button role=\"tab\" aria-selected=\"true\">New signups</button><button role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">Revenue</button><button role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">Product sales</button><button role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">Active learners</button></div>",
+      "css": ".ds-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px}.ds-tabs button{font-family:var(--font,'DM Sans',sans-serif);background:none;color:var(--ink,#16191d);border:1px solid var(--line,#e9eaec);padding:5px 7px;border-radius:5px;font-size:11px;min-height:44px;cursor:pointer}.ds-tabs button[aria-selected=true]{background:#101114;color:white;border-color:#101114}.ds-tabs button:hover:not([aria-selected=true]){background:#edf3fc}.ds-tabs button:focus-visible{outline:3px solid #245fc3;outline-offset:4px;}"
+    },
+    {
+      "name": "Feedback card",
+      "kind": "card",
+      "refersTo": "feedback-card",
+      "description": "Flat bordered sample-feedback container.",
+      "html": "<article class=\"ds-feedback\"><div class=\"ds-feedback-person\"><span class=\"ds-feedback-avatar\">AL</span><span><b>Academy lead</b><small>Sample feedback</small></span></div><p>Everything in one place. The small things that used to get missed now have a place on the list.</p><small class=\"ds-feedback-note\">ILLUSTRATIVE CONTENT</small></article>",
+      "css": ".ds-feedback{border:1px solid var(--line,#e9eaec);border-radius:6px;padding:18px 17px;display:flex;flex-direction:column;color:var(--ink,#16191d);font-family:var(--font,'DM Sans',sans-serif);}.ds-feedback-person{display:flex;gap:7px;align-items:center}.ds-feedback-person b{display:block;font-size:11px;font-weight:550}.ds-feedback-person small{display:block;font-size:9px;color:var(--muted,#646b75)}.ds-feedback-avatar{display:inline-flex;align-items:center;justify-content:center;width:26px;height:28px;background:#e7dacc;color:#6f523c;border-radius:6px;font-size:8px;font-weight:600}.ds-feedback p{font-size:12px;line-height:1.65;margin:15px 0 25px}.ds-feedback-note{font-size:7px;letter-spacing:.06em;color:var(--muted,#646b75);text-align:right}@media(max-width:720px){.ds-feedback{padding:19px}.ds-feedback p{font-size:13px;margin:17px 0 23px}.ds-feedback-person b{font-size:12px}.ds-feedback-person small{font-size:10px}.ds-feedback-note{font-size:9px}}"
+    },
+    {
+      "name": "Follow-up card",
+      "kind": "card",
+      "refersTo": "followup-card",
+      "description": "A soft lifted card with divided learner rows and an explicit sample label.",
+      "html": "<section class=\"ds-follow\"><h3>Needs Follow Up</h3><p>New signups without a first response.</p><div class=\"ds-follow-row\"><span class=\"ds-follow-avatar\">JD</span><span class=\"ds-follow-name\"><strong>Jamie Davis</strong><small>Sample learner</small></span><button type=\"button\">Contact</button></div><small class=\"ds-follow-note\">Sample learners · try a follow-up</small></section>",
+      "css": ".ds-follow{padding:22px 23px 16px;border:1px solid #e2e5e9;box-shadow:0 20px 40px #263f5310;border-radius:14px;background:white;color:var(--ink,#16191d);font-family:var(--font,'DM Sans',sans-serif);}.ds-follow h3{margin:0;font-size:15px;font-weight:550;letter-spacing:-.015em;line-height:1.15}.ds-follow>p{font-size:11px;line-height:1.6;color:var(--muted,#646b75);margin:5px 0 0}.ds-follow-row{display:flex;gap:9px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line,#e9eaec)}.ds-follow-avatar{display:flex;align-items:center;justify-content:center;width:30px;height:32px;border-radius:6px;background:#e7dacc;color:#6f523c;font-size:10px}.ds-follow-name{flex:1}.ds-follow-name strong{display:block;font-size:12px;font-weight:500}.ds-follow-name small{display:block;font-size:10px;color:var(--muted,#646b75)}.ds-follow-row button{font-family:var(--font,'DM Sans',sans-serif);border:1px solid #e4e5e7;border-radius:5px;background:white;min-height:30px;font-size:11px;padding:3px 9px;cursor:pointer}.ds-follow-row button:hover{border-color:#8fadd4;background:#f2f6fc}.ds-follow-row button:focus-visible{outline:3px solid #245fc3;outline-offset:4px;}.ds-follow-note{display:block;text-align:center;font-size:9px;color:var(--muted,#646b75);margin-top:10px}@media(max-width:720px){.ds-follow-row button{min-height:44px;padding-inline:12px}.ds-follow-note{font-size:10px}}"
+    },
+    {
+      "name": "Pricing shell",
+      "kind": "card",
+      "refersTo": "plan-shell",
+      "description": "The pale outer shell and white inset, shown without asset-dependent decoration.",
+      "html": "<article class=\"ds-plan\"><div class=\"ds-plan-top\"><span class=\"ds-plan-name\">GROWTH</span><p class=\"ds-plan-price\">$49<span>/monthly</span></p><p class=\"ds-plan-description\">For growing academies running courses and keeping learners on track.</p><small class=\"ds-plan-note\">Example plan · no subscription</small></div><ul><li><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 12 4 4L19 6\"/></svg>Live cohort classes</li><li><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 12 4 4L19 6\"/></svg>Course progress tracking</li></ul></article>",
+      "css": ".ds-plan{background:var(--soft,#f6f7f9);border-radius:18px;padding:7px;color:var(--ink,#16191d);font-family:var(--font,'DM Sans',sans-serif);}.ds-plan-top{background:white;border-radius:15px;padding:22px 22px 20px}.ds-plan-name{font-size:12px;letter-spacing:.02em}.ds-plan-price{font-size:49px;line-height:1.2;letter-spacing:-.04em;margin:32px 0 14px}.ds-plan-price span{font-size:17px;letter-spacing:-.02em;margin-left:7px}.ds-plan-description{font-size:15px;line-height:1.5;color:var(--muted,#646b75);margin:0;max-width:310px}.ds-plan-note{display:block;font-size:10px;color:var(--muted,#646b75);margin-top:15px}.ds-plan ul{list-style:none;padding:17px 22px 23px;margin:0}.ds-plan li{display:flex;align-items:center;gap:9px;font-size:14px;margin:14px 0}.ds-plan svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}"
+    },
+    {
+      "name": "Dialog surface",
+      "kind": "custom",
+      "refersTo": "dialog",
+      "description": "Static surface specimen for the native dialog; the live app supplies modal behavior.",
+      "html": "<section class=\"ds-dialog\" aria-labelledby=\"ds-dialog-title\"><button class=\"ds-dialog-close\" type=\"button\" aria-label=\"Close dialog\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m6 6 12 12M18 6 6 18\"/></svg></button><h2 id=\"ds-dialog-title\">Your demo workspace</h2><p>Personalize the preview or clear the changes you made here.</p></section>",
+      "css": ".ds-dialog{position:relative;border:1px solid #e2e8ee;border-radius:17px;width:min(520px,calc(100% - 32px));padding:34px;box-shadow:0 24px 100px #192f4b33;color:var(--ink,#16191d);background:white;font-family:var(--font,'DM Sans',sans-serif);}.ds-dialog h2{font-size:29px;font-weight:400;letter-spacing:-.04em;line-height:1.15;margin:8px 26px 16px 0}.ds-dialog p{font-size:14px;line-height:1.6;color:#6a7480;margin:0 0 22px}.ds-dialog-close{position:absolute;right:15px;top:15px;display:inline-flex;align-items:center;justify-content:center;min-height:32px;min-width:32px;background:#f7f9fb;border:0;border-radius:7px;color:inherit;cursor:pointer}.ds-dialog-close svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}.ds-dialog-close:hover{background:#edf3fc}.ds-dialog-close:focus-visible{outline:3px solid #245fc3;outline-offset:4px;}@media(max-width:720px){.ds-dialog{padding:28px 24px}.ds-dialog h2{font-size:27px}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Soft sky, precise academy",
+    "overview": "Vera pairs a photographic sky with white academy administration surfaces. The sky, flowering branch, bird and small potted plants give the page its soft, natural character. Fine borders, compact controls and aligned figures keep the product demonstrations precise. This names the visual world already approved in the supplied Vera reference; it does not introduce another direction.\n\nLarge regular-weight headings and generous section space frame the denser dashboard. Blue and coral academy panels provide broader color changes through the page, while white and charcoal buttons retain a consistent action hierarchy. The fixed light appearance follows the supplied reference. Dial: ENERGY 2 / RHYTHM 3 / MOTION 1.",
+    "keyCharacteristics": [
+      "Photographic sky and transparent botanical decoration.",
+      "Open DM Sans display type with compact administration details.",
+      "White surfaces separated by pale hairlines.",
+      "Blue and coral story panels, with restrained shadows on lifted surfaces.",
+      "Interaction feedback that respects reduced-motion preferences."
+    ],
+    "rules": [
+      {
+        "name": "The Color Placement Rule",
+        "body": "Keep broad color on the sky and academy panels; use white and charcoal for the main action hierarchy.",
+        "section": "colors"
+      },
+      {
+        "name": "The Open Heading Rule",
+        "body": "Preserve regular-weight display type, close letter spacing and deliberate line breaks; use size and placement to establish the hierarchy.",
+        "section": "typography"
+      },
+      {
+        "name": "The Selective Lift Rule",
+        "body": "Use shadows where a surface overlaps another surface or temporarily sits above it; retain hairlines for adjoining content.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve the photographic sky, transparent natural decoration and white administration surfaces.",
+      "Do use regular-weight DM Sans headings and the observed role hierarchy.",
+      "Do align section dividers and card contents to the shared page container.",
+      "Do keep fine borders as the default separation and reserve elevation for overlapping surfaces.",
+      "Do preserve the mobile reflow, visible keyboard focus and reduced-motion behavior.",
+      "Do keep sample data, academy stories, feedback and example pricing visibly identified as illustrative."
+    ],
+    "donts": [
+      "Don't replace the approved photographic decorations with generic flat or CSS-drawn substitutes.",
+      "Don't turn every surface into a pill or add a shadow to every card.",
+      "Don't apply the compressed dashboard preview typography to general page copy or new form controls.",
+      "Don't reuse unused root color variables as if they were the effective shipped palette.",
+      "Don't treat glyph placeholders, the release eyebrow or the hard inline-icon offset shadow as reusable design rules.",
+      "Don't remove the example-content disclosures when reusing the demonstration components."
+    ]
+  }
+}

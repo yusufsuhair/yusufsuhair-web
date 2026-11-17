@@ -1,0 +1,4 @@
+{
+  "prompt": "Use case: background-extraction. Edit the supplied website screenshot to produce ONLY a clean photographic sky background asset for rebuilding this exact landing page. Retain the same desaturated powder-blue sky and subtle milky, wispy clouds, airy bright daylight, with blue #85b6e6 across the top transitioning to pale #dce7ed lower down. Remove ALL text, interface, logo, bird, branch, flowers, frames and dashboard. Reconstruct uninterrupted sky behind everything. Composition 1600 x 1200 landscape. No text, no objects, no ground, no horizon, no vignette. The result is a single naturally textured sky photograph, very subtle.\n",
+  "createdAt": "2026-11-16T18:55:31.581Z"
+}

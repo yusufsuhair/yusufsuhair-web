@@ -21,6 +21,18 @@ interface Project {
 
 const projectsData: Project[] = [
   {
+    name: "Vera",
+    title: "Vera: Academy LMS Landing Page",
+    role: "Frontend Developer / UI Implementation",
+    url: "https://vera-academy-lms.pages.dev",
+    description:
+      "A responsive LMS landing page with an interactive academy dashboard, course previews, learner search and follow-up drafts. Frontend recreation of JetDesigns’ Vera concept, using sample data.",
+    tech: ["HTML", "CSS", "JavaScript", "Cloudflare Pages"],
+    category: "web",
+    image: "vera",
+    cta: "Open Vera Demo",
+  },
+  {
     name: "Growza",
     title: "Growza: Interactive Banking Dashboard",
     role: "Frontend Developer / UI Implementation",

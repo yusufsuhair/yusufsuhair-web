@@ -11,6 +11,7 @@ const QUALITY = 72;
 const PROJECT_WIDTHS = [480, 960];
 
 const projects = [
+  { slug: "vera", source: "web-apps/vera/dist/assets/og-hero.jpg" },
   { slug: "mudahai", source: "https://mudahai.com/opengraph-image?b83510d8ccd8f3df" },
   { slug: "lepakmamak", source: "https://lepakmamak.my/og.png" },
   { slug: "slipstream", source: "public/screenshot-slipstream-f1.png" },
