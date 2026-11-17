@@ -1,5 +1,6 @@
 // Builds the light WebP files the site actually serves. Sources stay untouched.
 // Run with `npm run optimize:images` after capturing or replacing a screenshot.
+// Pass project slugs to rebuild only those cards: npm run optimize:images -- coastal-tent-rental
 import { mkdir, readFile, stat, writeFile } from "node:fs/promises";
 import { homedir } from "node:os";
 import path from "node:path";
@@ -12,6 +13,7 @@ const PROJECT_WIDTHS = [480, 960];
 const requestedSlugs = process.argv.slice(2);
 
 const projects = [
+  { slug: "coastal-tent-rental", source: "https://coastal-tent-rental.pages.dev/og/coastal-hero-v1.jpg" },
   { slug: "healthsync", source: "https://healthsync-ai-clinic.broadcast-studio.workers.dev/assets/healthsync-og-v1.jpg" },
   { slug: "mudahai", source: "https://mudahai.com/opengraph-image?b83510d8ccd8f3df" },
   { slug: "lepakmamak", source: "https://lepakmamak.my/og.png" },

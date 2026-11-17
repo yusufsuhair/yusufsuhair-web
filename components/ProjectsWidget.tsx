@@ -21,6 +21,18 @@ interface Project {
 
 const projectsData: Project[] = [
   {
+    name: "Coastal Tented Events",
+    title: "Coastal: Event Tent Rental Website",
+    role: "Frontend Developer / UI Implementation",
+    url: "https://coastal-tent-rental.pages.dev/",
+    description:
+      "A responsive event tent rental demo with a five-step tent planner and a Google Flow animated hero. Frontend recreation of Bato’s Coastal concept, using temporary reference branding and browser-only inquiry drafts.",
+    tech: ["React", "TypeScript", "Vite", "Google Flow", "Cloudflare Pages"],
+    category: "web",
+    image: "coastal-tent-rental",
+    cta: "Open Coastal Demo",
+  },
+  {
     name: "HealthSync",
     title: "HealthSync: AI Clinic Platform Concept",
     role: "Frontend Developer / UI Implementation",
