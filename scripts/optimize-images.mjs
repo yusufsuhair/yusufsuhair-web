@@ -15,6 +15,7 @@ const requestedSlugs = process.argv.slice(2);
 const projects = [
   { slug: "ys-academy-learning", source: "https://ys-academy-learning.broadcast-studio.workers.dev/assets/ys-academy-og.jpg" },
   { slug: "vera", source: "web-apps/vera/dist/assets/og-hero.jpg" },
+  { slug: "trustvest", source: "https://trustvest-yusuf.pages.dev/images/trustvest-og-v1.jpg" },
   { slug: "coastal-tent-rental", source: "https://coastal-tent-rental.pages.dev/og/coastal-hero-v1.jpg" },
   { slug: "healthsync", source: "https://healthsync-ai-clinic.broadcast-studio.workers.dev/assets/healthsync-og-v1.jpg" },
   { slug: "mudahai", source: "https://mudahai.com/opengraph-image?b83510d8ccd8f3df" },
