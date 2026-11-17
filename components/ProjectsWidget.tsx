@@ -36,10 +36,10 @@ const projectsData: Project[] = [
     name: "Vera",
     title: "Vera: Academy LMS Landing Page",
     role: "Frontend Developer / UI Implementation",
-    url: "https://vera-academy-lms.pages.dev",
+    url: "https://vera-academy-lms.broadcast-studio.workers.dev/",
     description:
       "A responsive LMS landing page with an interactive academy dashboard, course previews, learner search and follow-up drafts. Frontend recreation of JetDesigns’ Vera concept, using sample data.",
-    tech: ["HTML", "CSS", "JavaScript", "Cloudflare Pages"],
+    tech: ["HTML", "CSS", "JavaScript", "Cloudflare Workers"],
     category: "web",
     image: "vera",
     cta: "Open Vera Demo",

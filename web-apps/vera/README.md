@@ -34,4 +34,4 @@ This is a front-end design concept. Authentication, payment processing, email de
 
 The layout follows the supplied reference. The sky, flowering branch, bird and academy photograph were regenerated for this implementation; fonts and some compact dashboard details are approximations. Mobile layouts are adapted because no mobile reference was supplied.
 
-Static hosting uses `.openai/hosting.json`. The site is private to its owner by default.
+The public site is hosted on [Cloudflare Workers](https://vera-academy-lms.broadcast-studio.workers.dev/). Source lives in `web-apps/vera` on the repository's `main` branch. See [CLOUDFLARE.md](CLOUDFLARE.md) for deployment commands and native Git integration settings.

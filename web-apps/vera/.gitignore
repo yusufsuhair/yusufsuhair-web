@@ -2,3 +2,8 @@
 .impeccable/review/
 *.tar.gz
 node_modules/
+.wrangler/
+.env
+.env.*
+.dev.vars*
+*.log
