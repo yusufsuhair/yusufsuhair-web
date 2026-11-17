@@ -21,6 +21,18 @@ interface Project {
 
 const projectsData: Project[] = [
   {
+    name: "YS Academy Learning",
+    title: "YS Academy Learning: AI for Kids & Teens",
+    role: "Frontend Developer / UI Implementation",
+    url: "https://ys-academy-learning.broadcast-studio.workers.dev/",
+    description:
+      "An AI learning landing page for kids and teens, with sample course paths, an interactive pattern lesson and locally saved interests. English recreation of setayeshtalebi’s AI Academy design.",
+    tech: ["HTML", "CSS", "JavaScript", "Cloudflare Workers"],
+    category: "web",
+    image: "ys-academy-learning",
+    cta: "Open Learning Demo",
+  },
+  {
     name: "Vera",
     title: "Vera: Academy LMS Landing Page",
     role: "Frontend Developer / UI Implementation",

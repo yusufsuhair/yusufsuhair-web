@@ -11,6 +11,7 @@ const QUALITY = 72;
 const PROJECT_WIDTHS = [480, 960];
 
 const projects = [
+  { slug: "ys-academy-learning", source: "https://ys-academy-learning.broadcast-studio.workers.dev/assets/ys-academy-og.jpg" },
   { slug: "vera", source: "web-apps/vera/dist/assets/og-hero.jpg" },
   { slug: "mudahai", source: "https://mudahai.com/opengraph-image?b83510d8ccd8f3df" },
   { slug: "lepakmamak", source: "https://lepakmamak.my/og.png" },
@@ -76,18 +77,25 @@ async function writeWebp(input, output, width, quality = QUALITY) {
   console.log(`${output}  ${Math.round(size / 1024)} KB`);
 }
 
-for (const { slug, source } of projects) {
+const requestedProjects = process.argv.slice(2);
+const unknownProjects = requestedProjects.filter(slug => !projects.some(project => project.slug === slug));
+if (unknownProjects.length) throw new Error(`Unknown project: ${unknownProjects.join(", ")}`);
+const selectedProjects = requestedProjects.length
+  ? projects.filter(project => requestedProjects.includes(project.slug))
+  : projects;
+
+for (const { slug, source } of selectedProjects) {
   const input = await loadSource(source);
   for (const width of PROJECT_WIDTHS) {
     await writeWebp(input, `public/projects/${slug}-${width}.webp`, width);
   }
 }
 
-for (const { output, source, width } of singles) {
+for (const { output, source, width } of requestedProjects.length ? [] : singles) {
   await writeWebp(await loadSource(source), output, width);
 }
 
-for (const { slug, source } of certificates) {
+for (const { slug, source } of requestedProjects.length ? [] : certificates) {
   const input = await loadSource(source);
   await writeWebp(input, `public/certificates/${slug}.webp`, 1400, 82);
   await writeWebp(input, `public/certificates/${slug}-thumb.webp`, 240);
