@@ -9,8 +9,10 @@ import sharp from "sharp";
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const QUALITY = 72;
 const PROJECT_WIDTHS = [480, 960];
+const requestedSlugs = process.argv.slice(2);
 
 const projects = [
+  { slug: "healthsync", source: "https://healthsync-ai-clinic.broadcast-studio.workers.dev/assets/healthsync-og-v1.jpg" },
   { slug: "mudahai", source: "https://mudahai.com/opengraph-image?b83510d8ccd8f3df" },
   { slug: "lepakmamak", source: "https://lepakmamak.my/og.png" },
   { slug: "slipstream", source: "public/screenshot-slipstream-f1.png" },
@@ -75,18 +77,22 @@ async function writeWebp(input, output, width, quality = QUALITY) {
   console.log(`${output}  ${Math.round(size / 1024)} KB`);
 }
 
-for (const { slug, source } of projects) {
+for (const slug of requestedSlugs) {
+  if (!projects.some((project) => project.slug === slug)) throw new Error(`Unknown project: ${slug}`);
+}
+
+for (const { slug, source } of projects.filter((project) => !requestedSlugs.length || requestedSlugs.includes(project.slug))) {
   const input = await loadSource(source);
   for (const width of PROJECT_WIDTHS) {
     await writeWebp(input, `public/projects/${slug}-${width}.webp`, width);
   }
 }
 
-for (const { output, source, width } of singles) {
+for (const { output, source, width } of requestedSlugs.length ? [] : singles) {
   await writeWebp(await loadSource(source), output, width);
 }
 
-for (const { slug, source } of certificates) {
+for (const { slug, source } of requestedSlugs.length ? [] : certificates) {
   const input = await loadSource(source);
   await writeWebp(input, `public/certificates/${slug}.webp`, 1400, 82);
   await writeWebp(input, `public/certificates/${slug}-thumb.webp`, 240);

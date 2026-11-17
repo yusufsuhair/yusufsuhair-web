@@ -21,6 +21,18 @@ interface Project {
 
 const projectsData: Project[] = [
   {
+    name: "HealthSync",
+    title: "HealthSync: AI Clinic Platform Concept",
+    role: "Frontend Developer / UI Implementation",
+    url: "https://healthsync-ai-clinic.broadcast-studio.workers.dev/",
+    description:
+      "A responsive clinic platform concept with workflow tabs, an editable planning calculator and a downloadable meeting brief. Frontend recreation of Shakuro’s HealthSync design, with illustrative data and no clinical inference.",
+    tech: ["HTML", "CSS", "JavaScript", "Cloudflare Workers"],
+    category: "web",
+    image: "healthsync",
+    cta: "Open HealthSync Demo",
+  },
+  {
     name: "Growza",
     title: "Growza: Interactive Banking Dashboard",
     role: "Frontend Developer / UI Implementation",
